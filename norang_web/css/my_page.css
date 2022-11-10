@@ -1,0 +1,395 @@
+/* root */
+main {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* icon */
+.icon {
+    display: block;
+    width: 18px;
+    height: 19px;
+    text-indent: -9999px;
+}
+
+.icon_home {
+    background: url(../images/sub_page/home_icon.jpg) no-repeat;
+}
+
+.icon_arrow_up {
+    background: url(../images/arrow_open.png) no-repeat;
+}
+
+.icon_arrow_down {
+    background: url(../images/arrow_close.png) no-repeat;
+}
+
+/* breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin: 36px 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.breadcrumb li + li {
+    display: inline-block;
+    background: url(../images/pagenav.jpg) no-repeat 0 50%;
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+.breadcrumb li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 6px;
+}
+
+/* content */
+.mypage_menu_wrap h3,
+.mypage_product_wrap h3 {
+    color: #3e30c4;
+    font-weight: bold;
+}
+
+.content_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 92px;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content_title.yellow {
+    background-color: #f9f7cf;
+}
+
+.content_title.green {
+    background-color: #edfcb7;
+}
+
+.content_wrap {
+    padding: 30px 0;
+}
+
+.content_wrap::after {
+    display: block;
+    content: ' ';
+    clear: both;
+}
+
+.content_left_wrap {
+    float: left;
+    width: 208px;
+}
+
+.content_right_wrap {
+    margin-left: 228px;
+    padding: 22px 40px;   
+}
+
+.mypage_title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grade_name {
+    color: #2672e4;
+}
+
+.mypage_main_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 0 60px 0;
+}
+
+.mypage_main_item {
+    display: flex;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    flex-direction: column;
+}
+
+.item_cnt {
+    color: #374fcd;
+    margin: 10px 0;
+}
+
+.mypage_menu_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mypage_menu_box {
+    border: 1px solid #666;
+    width: 268px;
+    height: 284px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px 12px;
+    margin-top: 10px;
+}
+
+.mypage_menu_box button {
+    border: 1px solid #666;
+    width: 109px;
+    height: 35px;
+}
+
+.menu_btn_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 125px;
+}
+
+.mypage_menu_box li:not(:first-child) {
+    margin-top: 40px;
+}
+
+.mypage_menu_box li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mypage_product_wrap {
+    margin: 40px 0;
+}
+
+.mypage_product_wrap p {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.mypage_product_wrap .more_icon {
+    display: block;
+    background: url(../images/notice_more_icon.jpg) no-repeat;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+
+.btn_parent {
+    position: relative;
+}
+
+.mypage_product_container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.mypage_product_box {
+    border: 1px solid #666;
+    width: 411px;
+    height: 174px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* aside */
+.aside_menu {
+    padding: 15px 0;
+    border: 1px solid #000;
+}
+
+.aside_item:hover > .aside_link ,
+.aside_item.open > .aside_link {
+    background: #dadada;
+}
+
+.aside_item.open [data-open="true"],
+.aside_item:not(.open) [data-open="false"],
+.aside_item .aside_sub_menu {
+    display: none;
+}
+
+.aside_item:not(.open) [data-open="true"],
+.aside_item.open [data-open="false"],
+.aside_item.open .aside_sub_menu {
+    display: block;
+}
+
+.aside_title {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.aside_link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.aside_sub_menu .aside_link {
+    padding-left: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+/* form */
+.form_container {
+    width: 615px;
+    margin: 0 auto;
+}
+
+.form_footer {
+    display: flex;
+    padding: 16px 0;
+}
+
+.form_footer .form_btn + .form_btn {
+    margin-left: 10px;
+}
+
+.form_title {
+    margin: 55px 0;
+    text-align: center;
+    word-break: keep-all;
+}
+
+.form_divider {
+    margin: 20px 0;
+}
+
+.form_inline {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.form_label {
+    margin-right: 20px;
+    min-width: 140px;
+    text-align: right;
+    white-space: nowrap;
+    color: #212529;
+}
+
+.form_group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.form_group_between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form_control {
+    padding: 12px 16px;
+    width: 100%;
+    border: 1px solid #666;
+}
+
+.form_btn {
+    padding: 16px 32px;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form_gray_btn {
+    background: #b6b6b6;
+}
+
+.form_yellow_btn {
+    background: #ffc72c;
+}
+
+.form_link {
+    text-decoration: underline;
+}
+
+.err_txt {
+    color: red;
+}
+
+/* card */
+.card {
+    border: 1px solid #666;
+}
+
+.card-header {
+    border-bottom: 1px solid #666;
+    padding: 10px 20px;
+}
+
+.card-body {
+    padding: 16px 20px;
+}
+
+.card_text {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card_section {
+    margin: 5px 0;
+}
+
+.card_inner_section {
+    margin: 5px 0 5px 20px;
+}
+
+/* accordion */
+.accordion {
+    margin-top: 16px;
+}
+
+.accordion_toggle {
+    display: flex;
+    padding: 8px 0;
+    font-weight: bold;
+}
+
+.accordion_content {
+    margin-bottom: 8px;
+    padding: 10px 10px 10px 24px;
+    border: 1px solid #666;
+    font-size: 12px;
+}
+
+.accordion_content ul li {
+    list-style-type: disc;
+    word-break: keep-all;
+}
+.accordion [data-open] {
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.accordion.open [data-open="true"],
+.accordion:not(.open) [data-open="false"],
+.accordion .accordion_content {
+    display: none;
+}
+
+.accordion:not(.open) [data-open="true"],
+.accordion.open [data-open="false"],
+.accordion.open .accordion_content {
+    display: block;
+}
+

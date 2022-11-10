@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+div,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "한컴 고딕", "나눔 고딕", "맑은 고딕", "돋움";
+  font-size: 14px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  /* inherit */
+}
+
+hr {
+  margin: 0;
+}
+
+input,
+select {
+  outline: none;
+}
+
+button {
+  border: 0;
+  background: inherit;
+}
+
+address {
+  font-style: normal;
+  display: inline;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,271 @@
+.footer_top {
+  position: relative;
+  width: 1200px;
+  display: flex;
+  margin: 33px auto;
+}
+
+.consult {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+.consult h3 {
+  margin: 11px 0;
+  font-size: 14px;
+}
+
+.consult span {
+  color: #1c1c93;
+}
+
+.pack_image {
+  width: 58px;
+  height: 59px;
+  background: url(../../images/pack_icon.jpg) no-repeat;
+}
+
+.free_image {
+  width: 58px;
+  height: 59px;
+  background: url(../../images/free_icon.jpg) no-repeat;
+}
+
+.consult_info {
+  margin: 0 53px 0 75px;
+}
+
+.consult_info h3 {
+  border: 1px solid #000;
+  display: inline-block;
+  padding: 7px 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.consult_info p {
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+.notice {
+  position: absolute;
+  right: 0;
+}
+
+.notice h3 {
+  margin-bottom: 16px;
+}
+
+.notice ul {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #666;
+}
+
+.notice li {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #666;
+  padding: 6px 70px 6px 0px;
+  white-space: nowrap;
+}
+
+.notice i {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url(../../images/notice_icon.png) no-repeat;
+  margin: 0 10px;
+}
+
+.notice a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../../images/notice_more_icon.jpg) no-repeat;
+  text-indent: -9999px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.util_table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  width: 1200px;
+  height: 37px;
+  margin: 0 auto;
+  text-align: center;
+  table-layout: fixed;
+  font-size: 12px;
+  font-weight: bold;
+  background: #e2e2e2;
+}
+
+.util_table td {
+  border: 1px solid #000;
+}
+
+.term_sns_wrap {
+  width: 1200px;
+  height: 41px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  margin: 2px 0;
+}
+
+.terms ul {
+  display: flex;
+  padding: 14px 5px;
+}
+
+.terms a {
+  margin-right: 25px;
+}
+
+.sns ul {
+  display: flex;
+  padding: 4px 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sns_icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+}
+
+.fb {
+  background: url(../../images/sns/fb_icon.png) no-repeat;
+  margin: 0 4px;
+}
+
+.inst {
+  background: url(../../images/sns/inst_icon.png) no-repeat;
+  margin: 0 4px;
+}
+
+.ytb {
+  background: url(../../images/sns/ytb_icon.png) no-repeat;
+  margin: 0 4px;
+}
+
+.kakao {
+  background: url(../../images/sns/kakao_icon.png) no-repeat;
+  margin: 0 4px;
+}
+
+.blog {
+  background: url(../../images/sns/blog_icon.png) no-repeat;
+  margin: 0 4px;
+}
+
+.post {
+  background: url(../../images/sns/post_icon.png) no-repeat;
+  margin-right: 6px;
+}
+
+.company_info {
+  position: relative;
+}
+
+.info {
+  margin-top: 6px;
+}
+
+.info_txt_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.info_txt:after {
+  content: "|";
+  margin: 0 8px;
+}
+
+.info_link {
+  display: inline-block;
+  border: 1px solid #666;
+  width: 74px;
+  height: 16px;
+  font-size: 8px;
+  text-align: center;
+  margin: 0 8px;
+}
+
+.contact_mail {
+  width: 250px;
+  height: 105px;
+  border-left: 1px solid #666;
+  padding: 5px 26px;
+  position: absolute;
+  top: 10px;
+  right: 180px;
+}
+
+.contact_mail p {
+  margin: 6px 0;
+}
+
+.awards {
+  margin: 10px 0;
+}
+
+.awards ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.award {
+  width: 232px;
+  height: 60px;
+  text-indent: -9999px;
+}
+
+.award1 {
+  background: url(../../images/awards/award1.jpg) no-repeat;
+}
+
+.award2 {
+  background: url(../../images/awards/award2.jpg) no-repeat;
+}
+
+.award3 {
+  background: url(../../images/awards/award3.jpg) no-repeat;
+}
+
+.award4 {
+  background: url(../../images/awards/award4.jpg) no-repeat;
+}
+
+.award5 {
+  background: url(../../images/awards/award5.jpg) no-repeat;
+}
+
+.company_name {
+  display: flex;
+  align-items: center;
+}
+
+.company_name img {
+  margin-left: 34px;
+}
+
+.copy_right {
+  text-align: center;
+}
+
+.copy_right p {
+  margin: 3px 0;
+}
+
+.copy_right.txt {
+  margin: 20px 0;
+}

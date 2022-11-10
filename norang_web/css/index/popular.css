@@ -1,0 +1,105 @@
+.popular_section h2 {
+  width: 145px;
+  height: 31px;
+  background: url(../../images/popular_place/popular_title.jpg) no-repeat;
+  margin: 0 auto;
+  text-indent: -9999px;
+}
+
+.popular_section ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 33px auto 60px;
+  padding: 0 58px;
+}
+
+.popu_li_container {
+  width: 1200px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.popu_li_container a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.popular_item {
+  width: 170px;
+  height: 170px;
+  margin: 18px;
+}
+
+.popular_item.active,
+.slick-center .popular_item {
+  transform: scale(1.2);
+}
+
+.popu_dn {
+  background: url(../../images/popular_place/popu_dn.png) no-repeat;
+}
+
+.popu_tk {
+  background: url(../../images/popular_place/popu_tk.png) no-repeat;
+}
+
+.popu_gm {
+  background: url(../../images/popular_place/popu_gm.png) no-repeat;
+}
+
+.popu_ss {
+  background: url(../../images/popular_place/popu_ss.png) no-repeat;
+}
+
+.popu_sp {
+  background: url(../../images/popular_place/popu_sp.png) no-repeat;
+}
+
+.popu_kt {
+  background: url(../../images/popular_place/popu_kt.png) no-repeat;
+}
+
+.popu_sg {
+  background: url(../../images/popular_place/popu_sg.png) no-repeat;
+}
+
+.popu_nt {
+  background: url(../../images/popular_place/popu_nt.png) no-repeat;
+}
+
+.popu_sai {
+  background: url(../../images/popular_place/popu_sai.png) no-repeat;
+}
+
+.popu_mg {
+  background: url(../../images/popular_place/popu_mg.png) no-repeat;
+}
+
+.popu_center .slick-prev.slick-arrow {
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  background: url(../../images/prev.jpg) no-repeat;
+  text-indent: -9999px;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translate(0, -50%);
+}
+
+.popu_center .slick-next.slick-arrow {
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  background: url(../../images/next.jpg) no-repeat;
+  text-indent: -9999px;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translate(0, -50%);
+}

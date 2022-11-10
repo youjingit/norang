@@ -1,0 +1,175 @@
+.join_container {
+    width: 619px;
+    margin: 0 auto;
+}
+  
+#join_title {
+font-size: 36px;
+text-align: center;
+margin: 80px auto;
+}
+
+.join_subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.benefit_wrap {
+    display: flex;
+    margin: 80px 0;
+    height: 188px;
+}
+
+
+.benefit_wrap li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 58px;
+    justify-content: space-between;
+}
+
+
+.benefit_wrap li:not(:last-child) {
+    border-right: 1px solid #000 ;
+}
+
+.illust {
+width: 110px;
+height: 100px;
+}   
+
+.illust1 {
+    width: 90px;
+    height: 90px;
+}
+
+.illust2 {
+    width: 98px;
+    height: 75px;
+}
+
+.illust3 {
+    width: 76px;
+    height: 83px;
+}
+
+.benef_text {
+    text-align: center;
+}
+
+.benef_text span{
+    display: inline-block;
+    margin: 3px 0;
+    font-weight: bold;
+}
+
+#join_btn {
+    width: 100%;
+    height: 54px;
+    background: #ffc72c;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+.simple_join_title {
+position: relative;
+padding: 10px 0;
+margin-top: 50px;
+}
+
+.simple_join_text {
+position: absolute;
+width: 100%;
+top: 0;
+left: 0;
+display: flex;
+justify-content: center;
+font-weight: bold;
+}
+
+.simple_join_text span {
+background: #fff;
+padding: 0 51px;
+}
+
+.simple_join_line {
+border-top: 1px solid #666;
+}
+
+
+.join_button {
+align-items: center;
+display: flex;
+justify-content: center;
+width: 100%;
+height: 54px;
+font-size: 16px;
+font-weight: bold;
+text-align: center;
+margin: 18px 0;
+position: relative;
+}
+
+.naver_join {
+background-color: #26d107;
+color: #fff;
+}
+
+.kakao_join {
+background-color: #fae300;
+color: #000;
+}
+
+.fb_join {
+background-color: #537cd9;
+color: #fff;
+}
+
+.apple_join {
+background-color: #000;
+color: #fff;
+}
+
+footer p {
+text-align: center;
+}
+
+.join_icon {
+width: 33px;
+height: 30px;
+position: absolute;
+left: 21px;
+top: 12px;
+}
+
+.join_icon.naver {
+background: url(../images/naver_icon.png) no-repeat;
+}
+
+.join_icon.kakao {
+background: url(../images/kakao_icon.png) no-repeat;
+}
+
+.join_icon.fb {
+background: url(../images/fb_icon.png) no-repeat;
+}
+
+.join_icon.apple {
+background: url(../images/apple_icon.png) no-repeat;
+}
+
+.footer_top {
+margin-top: 30px;
+}
+
+.footer_top p {
+font-size: 12px;
+}
+
+.copy_right {
+margin: 45px auto;
+font-size: 12px;
+}

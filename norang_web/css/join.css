@@ -1,0 +1,210 @@
+main {
+  width: 516px;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+.join_title {
+  font-size: 36px;
+  text-align: center;
+  margin: 80px auto;
+}
+
+.input_wrap input {
+  border: 1px solid #666;
+  height: 43px;
+  padding-left: 16px;
+  margin: 16px 0;
+}
+
+.input_wrap input:focus {
+  border: 1px solid #ffc72c;
+}
+
+.email_wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.email_input {
+  width: 400px;
+  display: flex;
+}
+
+#email_id {
+  width: 256px;
+  height: 100%;
+  margin-top: 0;
+}
+
+select {
+  width: 144px;
+  height: 43px;
+  border: 1px solid #666;
+}
+
+#id_search_btn,
+#auth_number_send {
+  width: 100px;
+  height: 43px;
+  background: #ffc72c;
+  font-weight: bold;
+}
+
+.warning {
+  color: #323c84;
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+
+#pwd,
+#re_pwd,
+#u_name {
+  width: 513px;
+}
+
+.mobile_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#mobile,
+#birth {
+  width: 400px;
+}
+
+.addition_info {
+  display: flex;
+}
+
+.gender_wrap {
+  display: flex;
+}
+
+.gender_group {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+[name="gender"] {
+  margin-right: 7px !important;
+}
+
+.privacy_title {
+  margin-bottom: 10px;
+}
+
+.privacy_cont {
+  border: 1px solid #666;
+  font-size: 12px;
+  padding: 10px 10px 10px 24px;
+  display: none;
+}
+
+.privacy_cont.open {
+  display: block;
+  cursor: pointer;
+}
+
+.privacy_arrow {
+  display: none;
+  cursor: pointer;
+}
+
+.privacy_arrow.open {
+  display: inline-block;
+}
+
+.privacy_cont li {
+  list-style-type: disc;
+}
+
+.valid_period {
+  display: flex;
+  margin: 12px 0;
+}
+
+.valid_period li {
+  display: flex;
+  align-items: center;
+  margin-right: 18px;
+}
+
+[name="privacy_year"] {
+  margin-right: 7px;
+}
+
+.terms_apply li {
+  margin: 5px 0;
+}
+
+.read_all {
+  text-decoration: underline;
+}
+
+.apply {
+  border: 1px solid #666;
+  border-bottom: 0;
+  padding: 10px 14px;
+}
+
+.essential_cont {
+  margin-bottom: 15px;
+}
+
+.terms {
+  border: 1px solid #666;
+  padding: 10px 14px;
+}
+
+.terms:first-child {
+  margin-bottom: 15px;
+}
+
+.terms p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.apply2_li {
+  display: flex;
+  margin-left: 20px;
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
+}
+
+#submit_btn {
+  width: 100%;
+  height: 54px;
+  background: #ffc72c;
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.copy_right {
+  margin: 45px auto;
+  font-size: 12px;
+  text-align: center;
+}
+
+*:focus {
+  border: 1px solid #ffc72c;
+  outline: 0 none;
+  background: rgb(248, 241, 241);
+}
+
+.err_txt {
+  font-size: 14px;
+  color: red;
+}
+

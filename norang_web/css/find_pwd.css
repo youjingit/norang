@@ -1,0 +1,109 @@
+main {
+  width: 620px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+#find_pwd {
+  font-size: 36px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.title {
+  width: 310px;
+  height: 45px;
+  border: 1px solid #666;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title.pwd {
+  border-bottom: 0;
+}
+
+.title.id {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.title.id a {
+  color: #666;
+}
+
+.form_wrap {
+  margin: 40px 0 25px 0;
+}
+
+.email_wrap {
+  display: flex;
+  margin: 18px 0 25px 0;
+}
+
+#uid {
+  width: 479px;
+  height: 54px;
+  border: 1px solid #666;
+  padding-left: 16px;
+}
+
+#uid:focus {
+  border: 1px solid #ffc72c;
+}
+
+#email_find {
+  width: 131px;
+  height: 54px;
+  background: #ffc72c;
+  margin-left: 9px;
+  font-weight: bold;
+}
+
+.authentic_wrap {
+  width: 620px;
+  border: 1px solid #000;
+  font-size: 12px;
+}
+
+.authentic_cont {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.authentic_cont p {
+  margin-bottom: 3px;
+}
+
+.authentic_cont span {
+  color: #323c84;
+}
+
+#authentic_find {
+  width: 256px;
+  height: 43px;
+  background: #f9d2d2;
+  border: 1px solid #000;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.authentic_cont p {
+  margin-bottom: 3px;
+}
+
+footer p {
+  margin: 45px auto;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}

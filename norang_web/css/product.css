@@ -1,0 +1,295 @@
+.product_header {
+    padding : 15px 25px;
+    display: flex;
+}
+
+.main_product_title {
+    margin-left: 58px;
+    position: relative;
+}
+
+.tourinfo_btn {
+    border: 1px solid #666;
+    border-radius: 12px;
+    padding: 6px 8px;
+}
+
+.label_btn_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    align-items: center;
+}
+
+main h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+main h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 22px;
+}
+
+main h5 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+main p {
+    line-height: 25px;
+}
+
+.main_product_explain {
+    margin-top: 28px;
+}
+
+.score::after {
+    content : none;
+  }
+
+.main_product_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.main_product_price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.price_wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.main_content_wrap {
+    display: flex;
+}
+
+.content_left {
+    width: 848px;
+    padding: 25px 20px;
+}
+
+.schedule_summary_wrap {
+    display: flex;
+    align-items: baseline;
+}
+
+.airport_number {
+    color: rgb(25, 162, 241);
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.price_table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.price_table th {
+    border-bottom: 1px solid #000;
+    height: 35px;
+}
+
+.price_table tr {
+    height: 30px;
+}
+
+.table_total_price {
+    font-weight: bold;
+    color: #f25b5b;
+}
+
+.corona19_notice {
+    background-image: url(../images/product/corona.jpg);
+    width: 802px;
+    height: 227px;
+    text-indent: -9999px;
+}
+
+.price_notice {
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+.include_i,
+.exclude_i,
+.reference_i{
+    display: block;
+    width:20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.include_i {
+    background-image: url(../images/product/include_i.jpg);
+}
+
+.exclude_i {
+    background-image: url(../images/product/exclude_i.jpg);
+}
+
+.reference_i {
+    background-image: url(../images/product/reference_i.jpg);
+}
+
+.detail_title {
+    display: flex;
+    align-items: center;
+}
+
+.detail_subtitle{
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 22px;
+}
+
+.plan_category_wrap {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 23px 0;
+}
+
+.plan_category{
+    border: 1px solid #666;
+    width: 132px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.plan_category.active {
+    background-color: #ffc72c;
+}
+
+.day_title {
+    border: 1px solid #e2e2e2; 
+    background-color: #e2e2e2;
+    font-weight: bold;
+    width: 792px;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 0px 33px;
+    position: relative;
+}
+
+.day_title.active {
+    background-color: #ffc72c;
+}
+
+.day_number {
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 36px;
+}
+
+.day_content {
+    padding: 33px;
+}
+
+.day_i {
+    display: block;
+    background: url(../images/product/day_open.png) no-repeat;
+    width: 16px;
+    height: 11px;
+    text-indent: -9999px;
+    position: absolute;
+    right: 33px;
+}
+
+.content_right {
+    border-left: 1px solid #666;
+    padding: 25px 20px;
+    width: 100%;
+}
+
+.person {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.person_number {
+    margin-top: 16px;
+}
+
+.person_number li {
+    margin: 16px 0;
+}
+
+.person_price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f25b5b;
+}
+
+.total_price_txt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.person_price.total {
+    font-size: 28px;
+    margin-left: 20px;
+}
+
+.point_save {
+    text-align: right;
+}
+
+.reserve_btn {
+    width: 100%;
+    height: 47px;
+    background-color: #ffc72c;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+.product_etc_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.product_etc_menu {
+    display: flex;
+    align-items: center;
+}
+.print_i {
+    display: inline-block;
+    background: url(../images/product/print_i.jpg);
+    width: 38px;
+    height: 38px;
+    text-indent: -9999px;
+}
+
+.favorite_i {
+    display: inline-block;
+    background: url(../images/product/favorite_i.jpg);
+    width: 38px;
+    height: 38px;
+    text-indent: -9999px;
+}
+
+.snslink_i{
+    background: url(../images/product/snslink_i.jpg);
+    width: 38px;
+    height: 38px;
+}
+

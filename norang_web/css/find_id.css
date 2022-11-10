@@ -1,0 +1,124 @@
+main {
+  width: 618px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+#find_id {
+  font-size: 36px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.title {
+  width: 310px;
+  height: 45px;
+  border: 1px solid #666;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title.id {
+  border-bottom: 0;
+}
+
+.title.pwd {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.title.pwd a {
+  color: #666;
+}
+
+.form_wrap {
+  margin-top: 40px;
+}
+
+.find_form {
+  width: 100%;
+}
+
+#name,
+#mobile {
+  width: 479px;
+  height: 54px;
+  border: 1px solid #666;
+  padding-left: 16px;
+}
+
+#name:focus,
+#mobile:focus {
+  border: 1px solid #ffc72c;
+}
+
+#name {
+  margin: 18px 0 16px;
+}
+
+.mobile_wrap {
+  display: flex;
+}
+
+#auth_number_send {
+  width: 130px;
+  height: 54px;
+  background: #ffc72c;
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#mobile_find {
+  width: 100%;
+  height: 54px;
+  background: #ffc72c;
+  margin: 25px auto;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#authentic_find {
+  width: 256px;
+  height: 43px;
+  background: #f9d2d2;
+  border: 1px solid #000;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.authentic_wrap {
+  width: 617px;
+  border: 1px solid #000;
+  font-size: 12px;
+}
+
+.authentic_cont {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.authentic_cont p {
+  margin-bottom: 3px;
+}
+
+.authentic_cont span {
+  color: #323c84;
+}
+
+footer p {
+  margin: 45px auto;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}

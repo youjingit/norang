@@ -1,0 +1,52 @@
+
+.banner_slider {
+    margin: 60px 0;
+}
+
+.banner_control_box {
+display: flex;
+border: 1px solid #000;
+width: 70px;
+height: 25px;
+border-radius: 12px;
+position: absolute;
+bottom: 12px;
+right: 20px;
+align-items: center;
+}
+
+.banner_control_prev {
+display: block;
+width: 9px;
+height: 9px;
+background: url(../../images/banner/banner_prev.png) no-repeat;
+margin: 0 5px;
+cursor: pointer;
+}
+
+.banner_control_next {
+display: block;
+width: 9px;
+height: 9px;
+background: url(../../images/banner/banner_next.png) no-repeat;
+margin: 0 5px;
+cursor: pointer;
+}
+
+.banner_wrap {
+overflow: hidden;
+margin: auto;
+position: relative;
+}
+
+.banner_wrap img {
+width: 1200px;
+}
+
+.banner_wrap li {
+float: left;
+}
+
+.banner_wrap ul {
+position: relative;
+}

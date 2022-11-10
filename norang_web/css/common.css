@@ -1,0 +1,41 @@
+.depth1 {
+    display: flex;
+    align-items: center;
+    padding: 13px 0;
+    justify-content: space-between;
+}
+
+.depth1_left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.depth1_right {
+    font-weight: bold;
+}
+
+.logo {
+    width: 240px;
+    height: 64px;
+    margin-right: 33px;
+}
+
+.logo a {
+    display: block;
+    width: 240px;
+    height: 64px;
+    background: url(../images/logo.jpg) no-repeat;
+    text-indent: -9999px;
+}
+
+.depth1_top_menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.depth1_top_menu li {
+    margin-left: 21px;
+    font-size: 12px;
+}

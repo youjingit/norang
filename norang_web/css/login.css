@@ -1,0 +1,169 @@
+.login_container {
+  width: 619px;
+  margin: 0 auto;
+}
+
+.form_section {
+  display: flex;
+  justify-content: center;
+}
+
+#login {
+  font-size: 36px;
+  text-align: center;
+  margin: 80px auto;
+}
+
+.form_input {
+  width: 479px;
+  height: 54px;
+  border: 1px solid #666;
+  font-size: 14px;
+  color: #666;
+  padding-left: 16px;
+}
+
+.form_input:focus {
+  border: 1px solid #ffc72c;
+  outline: 0 none;
+  background: rgb(248, 241, 241);
+}
+
+.form_input:first-child {
+  margin-bottom: 15px;
+}
+
+#login_button {
+  width: 124px;
+  height: 124px;
+  border: 1px solid #ffc72c;
+  background: #ffc72c;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 14px;
+}
+
+.sub_menu {
+  display: flex;
+  margin: 40px 0;
+}
+
+.sub_menu li {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.sub_menu li a {
+  display: block;
+  font-weight: bold;
+}
+
+.sub_menu li + li::before {
+  content: "|";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.simple_login_title {
+  position: relative;
+  padding: 10px 0;
+}
+
+.simple_login_text {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.simple_login_text span {
+  background: #fff;
+  padding: 0 51px;
+}
+
+.simple_login_line {
+  border-top: 1px solid #666;
+}
+
+.log_button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 54px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 18px 0;
+  position: relative;
+}
+
+.naver_log {
+  background-color: #26d107;
+  color: #fff;
+}
+
+.kakao_log {
+  background-color: #fae300;
+  color: #000;
+}
+
+.fb_log {
+  background-color: #537cd9;
+  color: #fff;
+}
+
+.apple_log {
+  background-color: #000;
+  color: #fff;
+}
+
+.log_icon {
+  width: 33px;
+  height: 30px;
+  position: absolute;
+  left: 21px;
+  top: 12px;
+}
+
+.log_icon.naver {
+  background: url(../images/naver_icon.png) no-repeat;
+}
+
+.log_icon.kakao {
+  background: url(../images/kakao_icon.png) no-repeat;
+}
+
+.log_icon.fb {
+  background: url(../images/fb_icon.png) no-repeat;
+}
+
+.log_icon.apple {
+  background: url(../images/apple_icon.png) no-repeat;
+}
+
+.footer_info {
+  margin-top: 30px;
+}
+
+.footer_info p {
+  text-align: center;
+  font-size: 12px;
+}
+
+.copy_right {
+  margin: 45px 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+.err_txt {
+  font-size: 14px;
+  color: red;
+}
