@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>노랑풍선 - 비밀번호 찾기</title>
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./css/base.css">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/find_pwd.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/find_pwd.css">
 </head>
 
 <body>
@@ -17,13 +17,13 @@
         <div class="container">
             <div class="depth1">
                 <div class="depth1_left">
-                    <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                    <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                 </div>
                 <div class="depth1_right">
                     <h2 class="screen_out">사용자메뉴</h2>
                     <ul class="depth1_top_menu">
-                        <li><a href="login.php">로그인</a></li>
-                        <li><a href="join_pre.html">회원가입</a></li>
+                        <li><a href="../login/login.php">로그인</a></li>
+                        <li><a href="join_pre.php">회원가입</a></li>
                         <li><a href="#">고객센터</a></li>
                         <li><a href="#">EN</a></li>
                     </ul>
@@ -36,17 +36,20 @@
         <h2 id="find_pwd">아이디/비밀번호 찾기</h2>
 
         <div class="title_wrap">
-            <h3 class="title id"><a href="find_id.html">아이디 찾기</a></h3>
+            <h3 class="title id"><a href="find_id.php">아이디 찾기</a></h3>
             <h3 class="title pwd"><a href="#">비밀번호 찾기</a></h3>
         </div>
 
         <div class="form_wrap">
-            <form class="find_form" name="" action="" method="">
+            <form class="find_form" name="find_form" action="find.php" method="post" onsubmit="find_form_check()">
                 <fieldset>
                     <legend class="hide">비밀번호 찾기</legend>
                     <p>회원가입 시 등록한 이메일 정보를 입력해주세요.</p>
                     <div class="email_wrap">
-                        <input type="text" name="uid" id="uid" placeholder="아이디(이메일주소형식)">
+                        <div>
+                            <input type="text" name="u_id" id="u_id" placeholder="아이디(이메일주소형식)">
+                            <span id="err_id" class="err_txt"></span>
+                        </div>
                         <button type="submit" name="email_find" id="email_find">확인</button>
                     </div>
                 </fieldset>
@@ -66,6 +69,21 @@
     <footer>
         <p>© Yellow Balloon tour. All Rights Reserved.</p>
     </footer>
+    <script>
+        function find_form_check() {
+            var u_id = document.getElementById("u_id");
+
+         if (u_id.value == "") {
+                var txt = document.getElementById("err_id");
+                txt.innerHTML = "<em>이메일을 입력하세요.</em>";
+                u_id.focus();
+                return false;
+            } else {
+                var txt = document.getElementById("err_id");
+                txt.innerHTML = "";
+            }
+        };
+    </script>
 </body>
 
 </html>

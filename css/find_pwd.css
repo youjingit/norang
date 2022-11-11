@@ -49,14 +49,14 @@ main {
   margin: 18px 0 25px 0;
 }
 
-#uid {
+#u_id {
   width: 479px;
   height: 54px;
   border: 1px solid #666;
   padding-left: 16px;
 }
 
-#uid:focus {
+#u_id:focus {
   border: 1px solid #ffc72c;
 }
 
@@ -99,6 +99,11 @@ main {
 
 .authentic_cont p {
   margin-bottom: 3px;
+}
+
+.err_txt {
+  font-size: 12px;
+  color: red;
 }
 
 footer p {

@@ -48,7 +48,7 @@ main {
   width: 100%;
 }
 
-#name,
+#u_name,
 #mobile {
   width: 479px;
   height: 54px;
@@ -56,12 +56,12 @@ main {
   padding-left: 16px;
 }
 
-#name:focus,
+#u_name:focus,
 #mobile:focus {
   border: 1px solid #ffc72c;
 }
 
-#name {
+#u_name {
   margin: 18px 0 16px;
 }
 
@@ -114,6 +114,11 @@ main {
 
 .authentic_cont span {
   color: #323c84;
+}
+
+.err_txt {
+  font-size: 12px;
+  color: red;
 }
 
 footer p {

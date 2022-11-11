@@ -18,13 +18,13 @@
         <div class="container">
             <div class="depth1">
                 <div class="depth1_left">
-                    <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                    <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                 </div>
                 <div class="depth1_right">
                     <h2 class="screen_out">사용자메뉴</h2>
                     <ul class="depth1_top_menu">
-                        <li><a href="login.php">로그인</a></li>
-                        <li><a href="join_pre.html">회원가입</a></li>
+                        <li><a href="../login/login.php">로그인</a></li>
+                        <li><a href="join_pre.php">회원가입</a></li>
                         <li><a href="#">고객센터</a></li>
                         <li><a href="#">EN</a></li>
                     </ul>
@@ -136,7 +136,7 @@
                                         <input type="checkbox" class="essent_ap" name="essen_apply1" id="essen_apply1">
                                         <label for="essen_apply1">노랑풍선 이용약관 동의</label>
                                     </div>
-                                    <span class="read_all"><a href="join_terms.html" target="_blank">전체보기</a></span>
+                                    <span class="read_all"><a href="join_terms.php" target="_blank">전체보기</a></span>
                                 </li>
                                 <li>
                                     <input type="checkbox" class="essent_ap" name="14age" id="14age">
@@ -148,7 +148,7 @@
                                         <input type="checkbox" class="essent_ap" name="essen_apply2" id="essen_apply2">
                                         <label for="essen_apply2">개인정보 수집 및 이용 동의</label>
                                     </div>
-                                    <span class="read_all"><a href="join_terms.html" target="_blank">전체보기</a></span>
+                                    <span class="read_all"><a href="join_terms.php" target="_blank">전체보기</a></span>
                                 </li>
                             </ul>
                         </div>
@@ -167,7 +167,7 @@
                                         <input type="checkbox" class="opt_ap receive_apply" name="info_collect_apply" id="opt_apply1" value="y">
                                         <label for="opt_apply1">개인정보 수집 및 이용동의</label>
                                     </div>
-                                    <span class="read_all"><a href="join_terms.html" target="_blank">전체보기</a></span>
+                                    <span class="read_all"><a href="join_terms.php" target="_blank">전체보기</a></span>
                                 </li>
                                 <li>
                                     <input type="checkbox" class="opt_ap receive_apply" name="marketing_apply" id="opt_apply2" value="y">

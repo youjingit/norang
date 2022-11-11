@@ -1,5 +1,4 @@
 <?php
-
 // DB 연결
 include "../inc/dbcon.php";
 
@@ -36,13 +35,13 @@ $array = mysqli_fetch_array($result);
         <div class="container">
             <div class="depth1">
                 <div class="depth1_left">
-                    <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                    <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                 </div>
                 <div class="depth1_right">
                     <h2 class="screen_out">사용자메뉴</h2>
                     <ul class="depth1_top_menu">
-                        <li><a href="login.php">로그인</a></li>
-                        <li><a href="join_pre.html">회원가입</a></li>
+                        <li><a href="../login/login.php">로그인</a></li>
+                        <li><a href="join_pre.php">회원가입</a></li>
                         <li><a href="#">고객센터</a></li>
                         <li><a href="#">EN</a></li>
                     </ul>

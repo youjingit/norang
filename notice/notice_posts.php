@@ -1,26 +1,8 @@
 <?php
-// 세션으로 데이터 가져오기
-/* session_start();
-$s_idx =  isset($_SESSION["s_idx"])?  $_SESSION["s_idx"] : ""; */
-include "../inc/session.php";
-
-// DB 연결
-include "../inc/dbcon.php";
-
-// 쿼리 작성
-$sql = "select * from members where idx=$s_idx;";
-// 쿼리 실행
-$result = mysqli_query($dbcon, $sql);
-
-// DB에서 데이터 가져오기
-// mysqi_fetch_row(쿼리실행문) -- 필드순서
-// mysqi_fetch_array(쿼리실행문) -- 필드이름
-// mysqi_num_rows(쿼리실행문) -- 전체 행 개수
-$array = mysqli_fetch_array($result);
+include "../inc/session.php"
 ?>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,9 +13,9 @@ $array = mysqli_fetch_array($result);
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/index/header.css">
     <link rel="stylesheet" type="text/css" href="../css/index/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/my_page.css">
+    <link rel="stylesheet" type="text/css" href="../css/notice.css">
+    <link rel="stylesheet" type="text/css" href="../css/notice_post.css">
 </head>
-
 <body>
     <header>
         <nav class="gnb">
@@ -41,7 +23,7 @@ $array = mysqli_fetch_array($result);
             <div class="container">
                 <div class="depth1">
                     <div class="depth1_left">
-                        <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                        <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                         <div>
                             <h2 class="blind">주요메뉴</h2>
                             <ul class="depth1_menu">
@@ -54,9 +36,20 @@ $array = mysqli_fetch_array($result);
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
-                            <li><a href="login.php">로그인</a></li>
-                            <li><a href="join_pre.html">회원가입</a></li>
-                            <li><a href="#">예약확인</a></li>
+                        <?php if(!$s_idx){ ?>
+                            <!-- 로그인 전 -->
+                            <li><a href="../login/login.php">로그인</a></li>
+                            <li><a href="../members/join_pre.php">회원가입</a></li>
+                            <li><a href="../nonmember_reserve_pkg.php">예약확인</a></li>
+                        <?php } else if($s_id == "admin@abc.com"){ ?>
+                            <!-- 관리자 로그인 -->
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <?php } else{ ?>
+                        <!-- 로그인 후 -->   
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../members/my_page.php">마이페이지</a></li>
+                        <?php }; ?>    
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
                             <li><a href="#">EN</a></li>
@@ -131,7 +124,7 @@ $array = mysqli_fetch_array($result);
                 </div>
             </div>
 
-          <!-- 3depth -->
+            <!-- 3depth -->
             <div class="container">
                 <div class="depth3">
                     <div class="depth3_left">
@@ -1528,107 +1521,27 @@ $array = mysqli_fetch_array($result);
     </header>
     <main>
         <ul class="breadcrumb">
-            <li><a href="index.php"><i class="icon icon_home">메인홈</i></a></li>
-            <li><a href="javascript:void(0);">마이페이지</a></li>
-            <li><a href="javascript:void(0);">개인정보 수정</a></li>
+            <li><a class="home_icon" href="index.php">메인홈</a></li>
+            <li class="pagenav"><a href="">고객센터</a></li>
+            <li class="pagenav"><a href="notice_list.php">공지사항</a></li>
         </ul>
-        <div class="content_title green">
-            <h2>개인정보 수정</h2>
+        <div class="content_title yellow">
+            <h2>공지사항</h2>
         </div>
         <div class="content_wrap">
             <div class="content_left_wrap">
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
                 <ul class="aside_menu">
-                    <li class="aside_title">마이페이지</li>
+                    <li class="aside_title">고객센터</li>
                     <li class="aside_item open">
                         <a href="javascript:void(0);" class="aside_link">
-                            예약/취소내역
-                            <i class="icon icon_arrow_up" data-open="true"></i>
-                            <i class="icon icon_arrow_down" data-open="false"></i>
+                            공지사항
                         </a>
-                        <ul class="aside_sub_menu">
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">예약내역</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">취소내역</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">내 예약 찾기</a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
-                            플래너
-                            <i class="icon icon_arrow_up" data-open="true"></i>
-                            <i class="icon icon_arrow_down" data-open="false"></i>
+                            자주하는 질문
                         </a>
-                        <ul class="aside_sub_menu">
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">플래너 목록</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="aside_item">
-                        <a href="javascript:void(0);" class="aside_link">
-                            관심내역
-                            <i class="icon icon_arrow_up" data-open="true"></i>
-                            <i class="icon icon_arrow_down" data-open="false"></i>
-                        </a>
-                        <ul class="aside_sub_menu">
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">최근 본 상품</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">위시리스트</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">장바구니</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="aside_item">
-                        <a href="javascript:void(0);" class="aside_link">
-                            노랑풍선 회원등급
-                            <i class="icon icon_arrow_up" data-open="true"></i>
-                            <i class="icon icon_arrow_down" data-open="false"></i>
-                        </a>
-                        <ul class="aside_sub_menu">
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">등급별 혜택</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="aside_item">
-                        <a href="javascript:void(0);" class="aside_link">
-                            포인트
-                            <i class="icon icon_arrow_up" data-open="true"></i>
-                            <i class="icon icon_arrow_down" data-open="false"></i>
-                        </a>
-                        <ul class="aside_sub_menu">
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">포인트 조회</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">포인트 선물</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="aside_item">
-                        <a href="javascript:void(0);" class="aside_link">
-                            쿠폰함
-                            <i class="icon icon_arrow_up" data-open="true"></i>
-                            <i class="icon icon_arrow_down" data-open="false"></i>
-                        </a>
-                        <ul class="aside_sub_menu">
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">내 쿠폰함</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">쿠폰존</a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
@@ -1638,209 +1551,170 @@ $array = mysqli_fetch_array($result);
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">패키지여행 1:1 문의내역</a>
+                                <a href="javascript:void(0);" class="aside_link">1:1 문의</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">자유여행 문의내역</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">견적 문의 내역</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">개선/건의하기 내역</a>
+                                <a href="javascript:void(0);" class="aside_link">견적문의</a>
                             </li>
                         </ul>
                     </li>
                     <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
-                            참여내역
+                            고객의 소리
                             <i class="icon icon_arrow_up" data-open="true"></i>
                             <i class="icon icon_arrow_down" data-open="false"></i>
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">이벤트</a>
+                                <a href="javascript:void(0);" class="aside_link">칭찬합니다</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">나의 여행기</a>
+                                <a href="javascript:void(0);" class="aside_link">개선/건의하기</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">칭찬합시다</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">고객리뷰</a>
+                                <a href="javascript:void(0);" class="aside_link">고객만족도조사</a>
                             </li>
                         </ul>
                     </li>
                     <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
-                            개인정보
+                            Best of Best
+                        </a>
+                    </li>
+                    <li class="aside_item">
+                        <a href="javascript:void(0);" class="aside_link">
+                            이용안내
                             <i class="icon icon_arrow_up" data-open="true"></i>
                             <i class="icon icon_arrow_down" data-open="false"></i>
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">개인정보 수정</a>
+                                <a href="javascript:void(0);" class="aside_link">예약안내</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">비밀번호 변경</a>
+                                <a href="javascript:void(0);" class="aside_link">결제 방법 안내</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">SNS 연결 설정</a>
+                                <a href="javascript:void(0);" class="aside_link">회원등급 안내</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">회원탈퇴</a>
+                                <a href="javascript:void(0);" class="aside_link">포인트 안내</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">쿠폰 안내</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">여행상품권 안내</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">국내항공권 이용안내</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">현금영수증 발급안내</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="aside_item">
+                        <a href="javascript:void(0);" class="aside_link">
+                            소비자중심경영
+                            <i class="icon icon_arrow_up" data-open="true"></i>
+                            <i class="icon icon_arrow_down" data-open="false"></i>
+                        </a>
+                        <ul class="aside_sub_menu">
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">소비자중심경영(CCM)</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">CCO 인사말</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">고객서비스 헌장</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">노랑풍선 수상내역</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="aside_item">
+                        <a href="javascript:void(0);" class="aside_link">
+                            Contact Us
+                            <i class="icon icon_arrow_up" data-open="true"></i>
+                            <i class="icon icon_arrow_down" data-open="false"></i>
+                        </a>
+                        <ul class="aside_sub_menu">
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">오시는 길</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">상담 전화번호 안내</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div class="content_right_wrap">
-                <div class="form_container">
-                    <form class="form" name="edit_form" action="edit.php" method="post" onsubmit="return edit_form_check()">
-                        <fieldset class="form_body">
-                            <legend class="hide">회원정보</legend>
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="form_inline">
-                                        <input type="hidden" name="g_idx" value="<?php echo $array["idx"]; ?>">
-                                        <label class="form_label">이메일 아이디</label>
-                                        <div class="form_group">
-                                            <input type="text" id="u_id" name="u_id" class="form_control" placeholder="이메일" value="<?php echo $array["u_id"];?>" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">비밀번호</label>
-                                        <div>
-                                            <div class="form_group">
-                                                <input type="password" id="pwd" name="pwd" class="form_control" placeholder="비밀번호">
-                                            </div>
-                                            <span id="err_pwd" class="err_txt"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">비밀번호 확인</label>
-                                        <div>
-                                            <div class="form_group">
-                                                <input type="password" id="re_pwd" name="re_pwd" class="form_control" placeholder="비밀번호 확인">
-                                            </div>
-                                            <span id="err_repwd" class="err_txt"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">이름</label>
-                                        <div class="form_group">
-                                            <input type="text" id="u_name" name="u_name" class="form_control" placeholder="이름" value="<?php echo $array["u_name"];?>" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">휴대폰 번호</label>
-                                        <div class="form_group">
-                                            <input type="text" id="mobile" name="mobile" class="form_control" placeholder="휴대폰 번호" value="<?php echo $array["mobile"];?>" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <?php $birth = str_replace("-", "", $array["birth"]);?>
-                                        <label class="form_label">생년월일</label>
-                                        <div class="form_group">
-                                            <input type="text" id="birth" name="birth" class="form_control" placeholder="생년월일" value="<?php echo $birth;?>">
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">성별</label>
-                                        <div class="form_group">
-                                            <div class="form_check">
-                                                <input type="radio" name="gender" id="male" class="form_check_input" value="m" <?php if($array["gender"] == "m") echo " checked";?>>
-                                                <label class="form_check_label">남</label>
-                                            </div>
-                                            <div class="form_check">
-                                                <input type="radio" name="gender" id="female" class="form_check_input" value="f" <?php if($array["gender"] == "f") echo " checked";?>>
-                                                <label class="form_check_label">여</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion open">
-                                <div class="accordion_toggle">
-                                    개인정보 유효기간
-                                    <i class="icon icon_arrow_up" data-open="true"></i>
-                                    <i class="icon icon_arrow_down" data-open="false"></i>
-                                </div>
-                                <div class="accordion_content">
-                                    <ul>
-                                        <li>3년 이상으로 설정하시면 장기 미 이용 시에 휴면계정으로 전환되지 않고 노랑풍선 회원으로 유지되어 다양한 혜택을 이용하실 수 있습니다.</li>
-                                        <li>개인정보 파기 또는 분리 저장·관리하는 서비스 미이용 기간을 위의 선택 기간으로 요청합니다.</li>
-                                        <li>별도의 요청(선택)이 없으실 경우 서비스 미이용 기간은 1년(기본값)으로 설정됩니다.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="form_inline">
-                                <div class="form_group">
-                                    <div class="form_check">
-                                        <input type="radio" class="form_check_input" id="until_withdraw" class="privacy" name="privacy_period" value="until_withdraw"<?php if($array["privacy_period"] == "until_withdraw") echo " checked";?>>
-                                        <label class="form_check_label">회원 탈퇴 시 까지</label>
-                                    </div>
-                                    <div class="form_check">
-                                        <input type="radio" class="form_check_input" id="5years" class="privacy" name="privacy_period" value="5y"<?php if($array["privacy_period"] == "5y") echo " checked";?>>
-                                        <label class="form_check_label">5년</label>
-                                    </div>
-                                    <div class="form_check">
-                                        <input type="radio" class="form_check_input" id="3years" class="privacy" name="privacy_period" value="3y"<?php if($array["privacy_period"] == "3y") echo " checked";?>>
-                                        <label class="form_check_label">3년</label>
-                                    </div>
-                                    <div class="form_check">
-                                        <input type="radio" class="form_check_input" id="1year" class="privacy" name="privacy_period" value="1y"<?php if($array["privacy_period"] == "1y") echo " checked";?>>
-                                        <label class="form_check_label">1년</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="form_check">
-                                        <input type="checkbox" class="form_check_input" id="option_ap">
-                                        <label class="form_check_label">선택 약관에 동의합니다.</label>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card_text">선택</p>
-                                    <div class="card_section">
-                                        <div class="form_group_between">
-                                            <div class="form_check">
-                                                <input type="checkbox" class="form_check_input opt_ap" name="info_collect_apply" id="opt_apply1" value="y"<?php if($array["info_collect_apply"] == "y") echo " checked";?>>
-                                                <label class="form_check_label">개인정보 수집 및 이용 동의</label>
-                                            </div>
-                                            <a href="javascript:void(0);" class="form_link">전체보기</a>
-                                        </div>
-                                    </div>
-                                    <div class="card_section">
-                                        <div class="form_check">
-                                            <input type="checkbox" class="form_check_input opt_ap" name="marketing_apply" id="opt_apply2" value="y"<?php if($array["marketing_apply"] == "y") echo " checked";?>>
-                                            <label class="form_check_label">마케팅 정보 수신 동의</label>
-                                        </div>
-                                        <div class="card_inner_section">
-                                            <div class="form_group">
-                                                <div class="form_check">
-                                                    <input type="checkbox" class="form_check_input opt_ap" name="email_apply" id="email_apply" value="y"<?php if($array["email_apply"] == "y") echo " checked";?>>
-                                                    <label class="form_check_label">이메일</label>
-                                                </div>
-                                                <div class="form_check">
-                                                    <input type="checkbox" class="form_check_input opt_ap" name="sms_apply" id="sms_apply" value="y"<?php if($array["sms_apply"] == "y") echo " checked";?>>
-                                                    <label class="form_check_label">SNS</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div class="form_footer">
-                            <button type="button" class="form_btn form_gray_btn" onclick="history.back()">취소</button>
-                            <button type="submit" class="form_btn form_yellow_btn">정보수정</button>
-                        </div>
-                    </form>
+            <section class="post_wrap">
+                <div class="post_title">
+                    <div>
+                        <i class="fix">상시</i>
+                        <i class="air">항공권소식</i>
+                        <span>[2022년 10월 국내선/국제선 유류할증료 안내]</span>
+                    </div>
+                    <span class="post_date">2022.09.20</span>
                 </div>
-            </div>
+                <div class="post_content">
+                    <br>
+                    <p>안녕하세요.</p><br>
+                    <p>여행을 가볍게, 노랑풍선 항공사업부입니다.</p>
+                    <p>10월 유류할증료 안내드립니다.</p>
+                    <p>유류할증료는 고객님께서 예약하시는 시점, 결제시한과는 관계 없이</p>
+                    <p>실제 발권이 진행되는 날을 기준으로 적용되기때문에</p>
+                    <p>9월 30일(금) 17시 전까지 예약/발권을 하셔야 인상 전 유류할증료가 적용됩니다. (토, 일요일 및 공휴일 발권 불가)</p>
+                    <p>이후 요청에 대해서는 인상된 유류할증료를 지불하셔야 하는점 양해 부탁드립니다.</p>
+                    <p>※ 10월 발권부터 항공료 금액이 인상될 수 있으니 미리 구매하시기 바랍니다.</p>
+                    <p>※ 변경 적용 운임은 편도기준이며, 국제 유가에 따라 변동될 수 있습니다.</p><br><br>
+                    <table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center; background-color: rgb(255, 204, 0);">노선</td>
+                                <td style="text-align: center; background-color: rgb(255, 204, 0);">현행</td>
+                                <td style="text-align: center; background-color: rgb(255, 204, 0);">변경</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">한국 출발 국제선 운임<br>
+                                ex) 미주,캐나다,중남미</td>
+                                <td style="text-align: center;">편도 : KRW 198,900<br>
+                                왕복 : KRW 397,800</td>
+                                <td style="text-align: center;">편도 : KRW 219,500<br>
+                                왕복 : KRW 439,000</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">한국 출발 하와이 운임</td>
+                                <td style="text-align: center;">편도 : KRW 162,400<br>
+                                왕복 : KRW 324,800</td>
+                                <td style="text-align: center;">편도 : KRW 180,600<br>
+                                왕복 : KRW 361,200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="prev_post_wrap">
+                    <a href="#">
+                        <i class="prev_post">이전글</i>
+                        <span class="prev_label">이전글</span>
+                        <span>이전글이 없습니다.</span>
+                    </a>
+                </div>
+                <div class="next_post_wrap">
+                    <a href="#">
+                        <i class="next_post">다음글</i>
+                        <span class="next_label">다음글</span>
+                        <span>[공지사항] [해외항공] 해외입국자 Q-Code(검역정보 사전입력시스템) 안내</span>
+                    </a>
+                </div>
+                <div class="button_wrap">
+                    <button type="button" class="list_return" onclick="location.href='notice_list.php'">목록보기</button>
+                </div>
+            </section>
         </div>
     </main>
     <hr>
@@ -1932,7 +1806,7 @@ $array = mysqli_fetch_array($result);
             <h3 class="hide">기업정보</h3>
             <div class="info title">
                 <span class="company_name">(주)노랑풍선
-                    <img src="./images/logo_kosdaq.jpg" alt="코스닥상장법인">
+                    <img src="../images/logo_kosdaq.jpg" alt="코스닥상장법인">
                 </span>
             </div>
             <div class="info origin">
@@ -2046,146 +1920,18 @@ $array = mysqli_fetch_array($result);
                 depth3PopupEl.stop().slideUp("fast");
             });
 
-            // aside(좌측메뉴)
+            //aside 메뉴 열고 닫기
             var asideItemEls = $('.aside_item');
             asideItemEls.click(function(){
                 var asideItemEl = $(this);
                 var isOpen = asideItemEl.hasClass('open');
                 asideItemEls.removeClass('open');
-                
+
                 if(!isOpen) {
                     asideItemEl.addClass('open');
                 } 
             });
-
-            // accordion(개인정보 유효기간)
-            var accordionArrowEls = $('.accordion [data-open]');
-            var asideItemEls = $('.aside_item');
-            accordionArrowEls.click(function(){
-                var accordionEl = $(this).closest('.accordion');
-                var isOpen = accordionEl.hasClass('open');
-                accordionEl.removeClass('open');
-                if(!isOpen) {
-                    accordionEl.addClass('open');
-                } 
-            });
-
-            // 선택약관 전체동의 
-            var optionEl = document.getElementById("option_ap");
-            optionEl.onclick = function () {
-                var isChecked = optionEl.checked;
-                var optEls = document.querySelectorAll(".opt_ap");
-
-                for (var index = 0; index < optEls.length; index++) {
-                    var optEl = optEls[index];
-                    optEl.checked = isChecked;
-                }
-            }
-
-            // 선택약관 항목별 자동선택
-            var collectApplyEl = document.getElementById("opt_apply1");
-            var marketApplyEl = document.getElementById("opt_apply2");
-            var emailApplyEl = document.getElementById("email_apply");
-            var smsApplyEl = document.getElementById("sms_apply");
-
-            collectApplyEl.onclick = function(){
-                var isChecked = collectApplyEl.checked;
-                optionEl.checked = isChecked;
-                marketApplyEl.checked = isChecked;
-                emailApplyEl.checked = isChecked;
-                smsApplyEl.checked = isChecked;
-            }
-            marketApplyEl.onclick = function(){
-                var isChecked = marketApplyEl.checked;
-                if(isChecked){
-                    optionEl.checked = true;
-                    collectApplyEl.checked = true;
-                    emailApplyEl.checked = true;
-                    smsApplyEl.checked = true;
-                } else {
-                    optionEl.checked = false;
-                    emailApplyEl.checked = false;
-                    smsApplyEl.checked = false;
-                }
-            }
-            emailApplyEl.onclick = function(){
-                var isChecked = emailApplyEl.checked;
-                var isSmsChecked = smsApplyEl.checked;
-                if(isChecked === true){
-                    collectApplyEl.checked = true;
-                    marketApplyEl.checked = true;
-                    if(isSmsChecked === true){
-                        optionEl.checked = true;
-                    }
-                } else {
-                    if(isSmsChecked === false){
-                        marketApplyEl.checked = false;
-                    }
-                    optionEl.checked = false;
-                }
-            }
-            smsApplyEl.onclick = function(){
-                var isChecked = smsApplyEl.checked;
-                var isEmailChecked = emailApplyEl.checked;
-                if(isChecked === true){
-                    collectApplyEl.checked = true;
-                    marketApplyEl.checked = true;
-                    if(isEmailChecked === true){
-                        optionEl.checked = true;
-                    }
-                } else {
-                    if(!isEmailChecked){
-                        marketApplyEl.checked = false;
-                    }
-                    optionEl.checked = false;
-                }
-            }
         });
-        function edit_form_check(){
-            var u_pwd = document.getElementById("pwd");
-            var u_repwd = document.getElementById("re_pwd");
-
-            if(u_pwd.value){
-                var cnt = 0;
-                var format1 = /[0-9]/;
-                if (format1.test(u_pwd.value)) {
-                    cnt++;
-                }
-
-                var format2 = /[a-zA-Z]/;
-                if (format2.test(u_pwd.value)) {
-                    cnt++;
-                }
-
-                var format3 = /[~?!@#$%<>^&*\()\-=+_\’\:\;\.\,\"\'\[\]\{\}\/\|\`]/gi;
-                if (format3.test(u_pwd.value)) {
-                    cnt++;
-                }
-
-                var txt = document.getElementById("err_pwd");
-                if ((cnt >= 2 && u_pwd.value.length >= 10) || (cnt >= 3 && u_pwd.value.length >= 8)) {
-                    txt.innerHTML = "";
-                } else {
-                    txt.innerHTML =
-                        "<em>-영문,숫자,특수문자 중 2가지 종류이상을 조합으로 10자리이상 입력하세요.<br>-영문,숫자,특수문자 중 3가지 종류이상을 조합으로 8자리이상 입력하세요.</em>";
-                    u_pwd.focus();
-                    return false;
-                }
-                
-                if (u_pwd.value != u_repwd.value) {
-                    var txt = document.getElementById("err_repwd");
-                    txt.innerHTML = "<em>비밀번호를 확인하세요.</em>";
-                    u_repwd.focus();
-                    return false;
-                } else {
-                    var txt = document.getElementById("err_repwd");
-                    txt.innerHTML = "";
-                }
-            }
-        };
-
-            
-            
     </script>
 </body>
 

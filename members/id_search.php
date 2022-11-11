@@ -7,12 +7,14 @@
     <title>아이디 검색</title>
     <style type="text/css">
         body,input,button{font-size:20px}
+        hr{color: #ffc72c}
     </style>
 </head>
 <body>
     <form name="id_search_form" action="id_search_result.php" method="post">
         <fieldset>
             <legend>아이디 검색</legend>
+            <hr>
             <p>
                 <label for="user_id">입력</label>
                 <input type="text" name="user_id" id="user_id">

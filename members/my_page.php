@@ -1,3 +1,6 @@
+<?php
+include "../inc/session.php";
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -6,12 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>노랑풍선 [여행을 가볍게]</title>
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./css/base.css">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/index/header.css">
-    <link rel="stylesheet" type="text/css" href="./css/index/footer.css">
-    <link rel="stylesheet" type="text/css" href="./css/notice.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/index/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/index/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/my_page.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
 
 <body>
@@ -21,7 +25,7 @@
             <div class="container">
                 <div class="depth1">
                     <div class="depth1_left">
-                        <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                        <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                         <div>
                             <h2 class="blind">주요메뉴</h2>
                             <ul class="depth1_menu">
@@ -34,9 +38,8 @@
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
-                            <li><a href="login.php">로그인</a></li>
-                            <li><a href="join_pre.html">회원가입</a></li>
-                            <li><a href="#">예약확인</a></li>
+                            <li><a href="./login/logout.php">로그아웃</a></li>
+                            <li><a href="">마이페이지</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
                             <li><a href="#">EN</a></li>
@@ -1508,27 +1511,106 @@
     </header>
     <main>
         <ul class="breadcrumb">
-            <li><a class="home_icon" href="index.php">메인홈</a></li>
-            <li class="pagenav"><a href="">고객센터</a></li>
-            <li class="pagenav"><a href="notice.html">공지사항</a></li>
+            <li><a href="index.php"><i class="icon icon_home">메인홈</i></a></li>
+            <li><a href="javascript:void(0);">마이페이지</a></li>
         </ul>
-        <div class="content_title yellow">
-            <h2>공지사항</h2>
+        <div class="content_title green">
+            <h2>마이페이지</h2>
         </div>
         <div class="content_wrap">
             <div class="content_left_wrap">
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
                 <ul class="aside_menu">
-                    <li class="aside_title">고객센터</li>
+                    <li class="aside_title">마이페이지</li>
                     <li class="aside_item open">
                         <a href="javascript:void(0);" class="aside_link">
-                            공지사항
+                            예약/취소내역
+                            <i class="icon icon_arrow_up" data-open="true"></i>
+                            <i class="icon icon_arrow_down" data-open="false"></i>
                         </a>
+                        <ul class="aside_sub_menu">
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">예약내역</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">취소내역</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">내 예약 찾기</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
-                            자주하는 질문
+                            플래너
+                            <i class="icon icon_arrow_up" data-open="true"></i>
+                            <i class="icon icon_arrow_down" data-open="false"></i>
                         </a>
+                        <ul class="aside_sub_menu">
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">플래너 목록</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="aside_item">
+                        <a href="javascript:void(0);" class="aside_link">
+                            관심내역
+                            <i class="icon icon_arrow_up" data-open="true"></i>
+                            <i class="icon icon_arrow_down" data-open="false"></i>
+                        </a>
+                        <ul class="aside_sub_menu">
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">최근 본 상품</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">위시리스트</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">장바구니</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="aside_item">
+                        <a href="javascript:void(0);" class="aside_link">
+                            노랑풍선 회원등급
+                            <i class="icon icon_arrow_up" data-open="true"></i>
+                            <i class="icon icon_arrow_down" data-open="false"></i>
+                        </a>
+                        <ul class="aside_sub_menu">
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">등급별 혜택</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="aside_item">
+                        <a href="javascript:void(0);" class="aside_link">
+                            포인트
+                            <i class="icon icon_arrow_up" data-open="true"></i>
+                            <i class="icon icon_arrow_down" data-open="false"></i>
+                        </a>
+                        <ul class="aside_sub_menu">
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">포인트 조회</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">포인트 선물</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="aside_item">
+                        <a href="javascript:void(0);" class="aside_link">
+                            쿠폰함
+                            <i class="icon icon_arrow_up" data-open="true"></i>
+                            <i class="icon icon_arrow_down" data-open="false"></i>
+                        </a>
+                        <ul class="aside_sub_menu">
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">내 쿠폰함</a>
+                            </li>
+                            <li class="aside_item">
+                                <a href="javascript:void(0);" class="aside_link">쿠폰존</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
@@ -1538,269 +1620,154 @@
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">1:1 문의</a>
+                                <a href="javascript:void(0);" class="aside_link">패키지여행 1:1 문의내역</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">견적문의</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="aside_item">
-                        <a href="javascript:void(0);" class="aside_link">
-                            고객의 소리
-                            <i class="icon icon_arrow_up" data-open="true"></i>
-                            <i class="icon icon_arrow_down" data-open="false"></i>
-                        </a>
-                        <ul class="aside_sub_menu">
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">칭찬합니다</a>
+                                <a href="javascript:void(0);" class="aside_link">자유여행 문의내역</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">개선/건의하기</a>
+                                <a href="javascript:void(0);" class="aside_link">견적 문의 내역</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">고객만족도조사</a>
+                                <a href="javascript:void(0);" class="aside_link">개선/건의하기 내역</a>
                             </li>
                         </ul>
                     </li>
                     <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
-                            Best of Best
-                        </a>
-                    </li>
-                    <li class="aside_item">
-                        <a href="javascript:void(0);" class="aside_link">
-                            이용안내
+                            참여내역
                             <i class="icon icon_arrow_up" data-open="true"></i>
                             <i class="icon icon_arrow_down" data-open="false"></i>
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">예약안내</a>
+                                <a href="javascript:void(0);" class="aside_link">이벤트</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">결제 방법 안내</a>
+                                <a href="javascript:void(0);" class="aside_link">나의 여행기</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">회원등급 안내</a>
+                                <a href="javascript:void(0);" class="aside_link">칭찬합시다</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">포인트 안내</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">쿠폰 안내</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">여행상품권 안내</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">국내항공권 이용안내</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">현금영수증 발급안내</a>
+                                <a href="javascript:void(0);" class="aside_link">고객리뷰</a>
                             </li>
                         </ul>
                     </li>
                     <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
-                            소비자중심경영
+                            개인정보
                             <i class="icon icon_arrow_up" data-open="true"></i>
                             <i class="icon icon_arrow_down" data-open="false"></i>
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">소비자중심경영(CCM)</a>
+                                <a href="my_page_auth.php" class="aside_link">개인정보 수정</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">CCO 인사말</a>
+                                <a href="javascript:void(0);" class="aside_link">비밀번호 변경</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">고객서비스 헌장</a>
+                                <a href="javascript:void(0);" class="aside_link">SNS 연결 설정</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">노랑풍선 수상내역</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="aside_item">
-                        <a href="javascript:void(0);" class="aside_link">
-                            Contact Us
-                            <i class="icon icon_arrow_up" data-open="true"></i>
-                            <i class="icon icon_arrow_down" data-open="false"></i>
-                        </a>
-                        <ul class="aside_sub_menu">
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">오시는 길</a>
-                            </li>
-                            <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">상담 전화번호 안내</a>
+                                <a href="javascript:void(0);" class="aside_link">회원탈퇴</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <section class="notice_board_wrap">
+            <div class="content_right_wrap">
+                <p class="mypage_title">안녕하세요, 노랑풍선 <span class="grade_name">FAMILY</span><span> <?php echo $s_name;?></span>님!</p>
+                <div class="mypage_main_menu">
+                    <ul class="mypage_main_wrap">
+                        <li class="mypage_main_item"><a href="my_page_auth.php"><div><img src="../images/mypage/mypage_1.jpg" alt="개인정보 수정"></div>
+                        <span class="item_cnt">0개</span><h3>개인정보 수정</h3></a></li>
+                        <li class="mypage_main_item"><a href="#"><div><img src="../images/mypage/mypage_2.jpg" alt="보유 포인트"></div>
+                        <span class="item_cnt">0개</span><h3>보유 포인트</h3></a></li>
+                        <li class="mypage_main_item"><a href="#"><div><img src="../images/mypage/mypage_3.jpg" alt="보유 쿠폰"></div>
+                        <span class="item_cnt">0개</span><h3>보유 쿠폰</h3></a></li>
+                        <li class="mypage_main_item"><a href="#"><div><img src="../images/mypage/mypage_4.jpg" alt="나의 장바구니"></div>
+                        <span class="item_cnt">0개</span><h3>나의 장바구니</h3></a></li>
+                    </ul>
+                </div>          
+                <div class="mypage_menu_wrap">    
+                    <div>
+                        <h3>예약내역</h3>
+                        <div class="mypage_menu_box">
+                            <ul>
+                                <li>패키지여행 예약<a href="#">0건</a></li>
+                                <li>자유여행 예약<a href="#">0건</a></li>
+                            </ul>
+                            <div class="menu_btn_wrap">
+                                <button type="button">내 예약찾기</button>
+                                <button type="button">전체보기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>문의내역</h3>
+                        <div class="mypage_menu_box">
+                            <ul>
+                                <li>패키지여행 1:1 문의 <a href="#">0건</a></li>
+                                <li>견적 문의 <a href="#">0건</a></li>
+                                <li>개선/건의하기 <a href="#">0건</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>참여내역</h3>
+                        <div class="mypage_menu_box">
+                            <ul>    
+                                <li>이벤트 <a href="#">0건</a></li>
+                                <li>나의 여행기 <a href="#">0건</a></li>
+                                <li>칭찬합시다 <a href="#">0건</a></li>
+                                <li>고객리뷰 <a href="#">0건</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div>
-                    <h2 class="hide">공지사항 게시글 검색하기</h2>
-                    <form>
-                        <select>
-                            <option>전체</option>
-                            <option>제목</option>
-                            <option>내용</option>
-                        </select>
-                        <input type="text" placeholder="검색어를 입력하세요">
-                        <button class="list_search" type="submit">검색</button>
-                    </form>
-                    <table class="notice_category">
-                        <tr>
-                            <td class="notice_cate cate_all active"><a href="javascript:void(0)">전체</a></td>
-                            <td class="notice_cate cate_notice"><a href="javascript:void(0)">공지사항</a></td>
-                            <td class="notice_cate cate_honey"><a href="javascript:void(0)">허니문</a></td>
-                            <td class="notice_cate cate_golf"><a href="javascript:void(0)">골프</a></td>
-                            <td class="notice_cate cate_cruise"><a href="javascript:void(0)">크루즈</a></td>
-                            <td class="notice_cate cate_domest"><a href="javascript:void(0)">국내</a></td>
-                            <td class="notice_cate cate_busan"><a href="javascript:void(0)">부산/대구</a></td>
-                            <td class="notice_cate cate_air"><a href="javascript:void(0)">항공권 소식</a></td>
-                            <td class="notice_cate cate_hotel"><a href="javascript:void(0)">호텔</a></td>
-                        </tr>
-                    </table>
+                    <div class="mypage_product_wrap">
+                        <h3>최근 본 상품</h3>
+                        <div class="mypage_product_container">
+                            <div class="btn_parent">
+                                <p>상품</p>
+                                <div class="mypage_product_box">
+                                    최근 본 상품이 없습니다.
+                                </div>
+                                <a href="#" class="more_icon">더보기</a>
+                            </div>
+                            <div class="btn_parent">
+                                <p>출발일 지정 상품</p>
+                                <div class="mypage_product_box">
+                                    최근 본 상품이 없습니다.
+                                </div>
+                                <a href="#" class="more_icon">더보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mypage_product_wrap">
+                        <h3>위시리스트</h3>
+                        <div class="mypage_product_container">
+                            <div class="btn_parent">
+                                <p>상품</p>
+                                <div class="mypage_product_box">
+                                    등록된 위시리스트가 없습니다.
+                                </div>
+                                <a href="#" class="more_icon">더보기</a>
+                            </div>
+                            <div class="btn_parent">
+                                <p>출발일 지정 상품</p>
+                                <div class="mypage_product_box">
+                                    등록된 위시리스트가 없습니다.
+                                </div>
+                                <a href="#" class="more_icon">더보기</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <p class="sumcount">총 2706건</p>
-                <table class="notice_board">
-                    <caption class="hide">공지사항 목록</caption>
-                    <colgroup>
-                        <col class="col1">
-                        <col class="col2">
-                        <col class="col3">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>등록일</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><i class="fix">상시</i></td>
-                            <td><a href="notice_posts.html"><i class="air">항공권소식</i> [2022년 10월 국내선/국제선 유류할증료 안내]</a></td>
-                            <td>2022.09.20</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix">상시</i></td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [해외항공] 해외입국자 Q-Code(검역정보 사전입력시스템) 안내</a></td>
-                            <td>2022.09.07</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix">상시</i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [아시아나]국내선 단독 미성년자 셀프체크인 제한 적용 안내</a></td>
-                            <td>2022.08.25</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix">상시</i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [국내항공][제주항공]국내선 탑승 게이트 위탁 수하물 요금 시행</a></td>
-                            <td>2022.07.25</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix">상시</i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [국내항공]제주항공 악기 보유 좌석 구매 불가 안내</a></td>
-                            <td>2022.06.22</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix">상시</i></td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 개인정보 처리방침 개정 안내</a></td>
-                            <td>2022.05.31</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix">상시</i></td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 노랑풍선 상품권 유효기간 연장</a></td>
-                            <td>2022.03.28</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix">상시</i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [국내항공] 제주항공 탑승수속 마감시간 변경 안내</a></td>
-                            <td>2022.03.08</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix">상시</i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [해외항공] 전화상담 중단 안내</a></td>
-                            <td>2021.06.16</td>
-                        </tr>
-                        <tr>
-                            <td>2695</td>
-                            <td><a href="#">[코로나19] 필리핀_어라이벌 카드 (e-Arrival Card) 작성 안내</a></td>
-                            <td>2022.10.18</td>
-                        </tr>
-                        <tr>
-                            <td>2694</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [Best 여행후기] 9월 당첨자 발표!</a></td>
-                            <td>2022.10.17</td>
-                        </tr>
-                        <tr>
-                            <td>2693</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [노랑풍선 앱/웹 이용 현황 조사] 당첨자 발표!</a></td>
-                            <td>2022.10.14</td>
-                        </tr>
-                        <tr>
-                            <td>2692</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 노랑풍선 시스템 긴급점검 완료 안내</a></td>
-                            <td>2022.09.22</td>
-                        </tr>
-                        <tr>
-                            <td>2691</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 노랑풍선 전화 시스템 긴급점검 공지</a></td>
-                            <td>2022.09.22</td>
-                        </tr>
-                        <tr>
-                            <td>2690</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 2022년 8월 고객만족도조사 참여 이벤트 당첨자 발표</a></td>
-                            <td>2022.09.15</td>
-                        </tr>
-                        <tr>
-                            <td>2689</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [Best 여행후기] 8월 당첨자 발표!</a></td>
-                            <td>2022.09.13</td>
-                        </tr>
-                        <tr>
-                            <td>2688</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [자유여행] 추석 연휴기간 자유여행 이용안내</a></td>
-                            <td>2022.09.06</td>
-                        </tr>
-                        <tr>
-                            <td>2687</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 2022년 7월 고객만족도조사 참여 이벤트 당첨자 발표</a></td>
-                            <td>2022.08.25</td>
-                        </tr>
-                        <tr>
-                            <td>2686</td>
-                            <td><a href="#"><i class="air">항공권소식</i> [2022년 9월부 유류할증료 안내]</a></td>
-                            <td>2022.08.22</td>
-                        </tr>
-                        <tr>
-                            <td>2685</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [해외여행 이용 의향 조사] 당첨자 발표!</a></td>
-                            <td>2022.08.19</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="notice_pagination">
-                    <button type="button" class="firstpage">맨 첫 페이지로 가기</button>
-                    <button type="button" class="prev">이전 페이지로 가기</button>
-                    <a href="#" class="list_pager active" data-page="1">1</a>
-                    <a href="#" class="list_pager" data-page="2">2</a>
-                    <a href="#" class="list_pager" data-page="3">3</a>
-                    <a href="#" class="list_pager" data-page="4">4</a>
-                    <a href="#" class="list_pager" data-page="5">5</a>
-                    <a href="#" class="list_pager" data-page="6">6</a>
-                    <a href="#" class="list_pager" data-page="7">7</a>
-                    <a href="#" class="list_pager" data-page="8">8</a>
-                    <a href="#" class="list_pager" data-page="9">9</a>
-                    <a href="#" class="list_pager" data-page="10">10</a>
-                    <button type="button" class="next">다음 페이지로 가기</button>
-                    <button type="button" class="lastpage">맨 마지막 페이지로 가기</button>
-                </div>
-            </section>
+            </div>
         </div>
     </main>
     <hr>
@@ -1892,7 +1859,7 @@
             <h3 class="hide">기업정보</h3>
             <div class="info title">
                 <span class="company_name">(주)노랑풍선
-                    <img src="./images/logo_kosdaq.jpg" alt="코스닥상장법인">
+                    <img src="../images/logo_kosdaq.jpg" alt="코스닥상장법인">
                 </span>
             </div>
             <div class="info origin">
@@ -2006,7 +1973,7 @@
                 depth3PopupEl.stop().slideUp("fast");
             });
 
-            //aside 메뉴 열고 닫기
+            // aside(좌측메뉴)
             var asideItemEls = $('.aside_item');
             asideItemEls.click(function(){
                 var asideItemEl = $(this);
@@ -2016,69 +1983,6 @@
                 if(!isOpen) {
                     asideItemEl.addClass('open');
                 } 
-            });
-
-            //공지사항 카테고리 
-            var noticeCateEls = $('.notice_cate');
-            noticeCateEls.click(function(){
-                noticeCateEls.removeClass('active');
-
-                var noticeCateEl = $(this);
-                noticeCateEl.addClass('active');
-            })
-
-            //목록 페이지 밑줄 표시
-            var listPagerEls = $('.list_pager');
-            listPagerEls.click(function(){
-                listPagerEls.removeClass('active');
-
-                var listPagerEl = $(this);
-                listPagerEl.addClass('active');
-            })
-
-            //목록 페이지 이동 버튼
-            var firstPageEl = $('.firstpage');
-            var lastPageEl = $('.lastpage');
-            var prevEl = $('.prev');
-            var nextEl = $('.next');
-            var listPagerEls = $('.list_pager');
-
-            firstPageEl.click(function(){
-                var pageEl = $('.list_pager:first');
-
-                listPagerEls.removeClass('active');
-                pageEl.addClass('active');
-
-            });
-
-            lastPageEl.click(function(){
-                var pageEl = $('.list_pager:last');
-
-                listPagerEls.removeClass('active');
-                pageEl.addClass('active');
-
-            });
-
-            prevEl.click(function(){
-                var activePageEl = $('.list_pager.active');
-                var page = parseInt(activePageEl.attr('data-page'));
-                if(page <= 1){
-                    return;
-                }
-                listPagerEls.removeClass('active');
-                var pageEl = $('.list_pager[data-page="' + (page - 1) + '"]');
-                pageEl.addClass('active');
-            });
-
-            nextEl.click(function(){
-                var activePageEl = $('.list_pager.active');
-                var page = parseInt(activePageEl.attr('data-page'));
-                if(page >= 10){
-                    return;
-                }
-                listPagerEls.removeClass('active');
-                var pageEl = $('.list_pager[data-page="' + (page + 1) + '"]');
-                pageEl.addClass('active');
             });
         });
     </script>

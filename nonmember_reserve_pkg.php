@@ -23,8 +23,8 @@
                 <div class="depth1_right">
                     <h2 class="screen_out">사용자메뉴</h2>
                     <ul class="depth1_top_menu">
-                        <li><a href="login.php">로그인</a></li>
-                        <li><a href="join_pre.html">회원가입</a></li>
+                        <li><a href="./login/login.php">로그인</a></li>
+                        <li><a href="./members/join_pre.php">회원가입</a></li>
                         <li><a href="#">고객센터</a></li>
                         <li><a href="#">EN</a></li>
                     </ul>
@@ -53,7 +53,7 @@
             </fieldset>
         </form>
         <hr>
-        <button class="join_button" type="submit">회원가입</button>
+        <button type="button" class="join_button" onclick="location.href='./members/join_pre.php'">회원가입</button>
 
     </main>
     <footer>

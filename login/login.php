@@ -17,13 +17,13 @@
         <div class="container">
             <div class="depth1">
                 <div class="depth1_left">
-                    <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                    <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                 </div>
                 <div class="depth1_right">
                     <h2 class="screen_out">사용자메뉴</h2>
                     <ul class="depth1_top_menu">
                         <li><a href="#">로그인</a></li>
-                        <li><a href="join_pre.html">회원가입</a></li>
+                        <li><a href="../members/join_pre.php">회원가입</a></li>
                         <li><a href="#">고객센터</a></li>
                         <li><a href="#">EN</a></li>
                     </ul>
@@ -52,9 +52,9 @@
             </form>
             <div>
                 <ul class="sub_menu">
-                    <li><a href="find_id.html">아이디/비밀번호 찾기</a></li>
-                    <li><a href="nonmember_reserve_pkg.html">비회원 예약조회</a></li>
-                    <li><a href="join_pre.html">간편 회원가입</a></li>
+                    <li><a href="../members/find_id.html">아이디/비밀번호 찾기</a></li>
+                    <li><a href="../nonmember_reserve_pkg.html">비회원 예약조회</a></li>
+                    <li><a href="../members/join_pre.php">간편 회원가입</a></li>
                 </ul>
             </div>
             <div class="simple_login_title">
