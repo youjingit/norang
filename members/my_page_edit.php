@@ -13,9 +13,9 @@ $sql = "select * from members where idx=$s_idx;";
 $result = mysqli_query($dbcon, $sql);
 
 // DB에서 데이터 가져오기
-// mysqi_fetch_row(쿼리실행문) -- 필드순서
-// mysqi_fetch_array(쿼리실행문) -- 필드이름
-// mysqi_num_rows(쿼리실행문) -- 전체 행 개수
+// mysqli_fetch_row(쿼리실행문) -- 필드순서
+// mysqli_fetch_array(쿼리실행문) -- 필드이름
+// mysqli_num_rows(쿼리실행문) -- 전체 행 개수
 $array = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>

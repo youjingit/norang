@@ -1723,15 +1723,32 @@ if($e_pageNum > $total_page){
                     </form>
                     <table class="notice_category">
                         <tr>
-                            <td class="notice_cate cate_all active"><a href="javascript:void(0)">전체</a></td>
-                            <td class="notice_cate cate_notice"><a href="javascript:void(0)">공지사항</a></td>
-                            <td class="notice_cate cate_honey"><a href="javascript:void(0)">허니문</a></td>
-                            <td class="notice_cate cate_golf"><a href="javascript:void(0)">골프</a></td>
-                            <td class="notice_cate cate_cruise"><a href="javascript:void(0)">크루즈</a></td>
-                            <td class="notice_cate cate_domest"><a href="javascript:void(0)">국내</a></td>
-                            <td class="notice_cate cate_busan"><a href="javascript:void(0)">부산/대구</a></td>
-                            <td class="notice_cate cate_air"><a href="javascript:void(0)">항공권 소식</a></td>
-                            <td class="notice_cate cate_hotel"><a href="javascript:void(0)">호텔</a></td>
+                            <td class="notice_cate cate_all<?php if($cate=="") echo " active" ?>">
+                                <a href="notice_list.php?cate=&page=1">전체</a>
+                            </td>
+                            <td class="notice_cate cate_notice<?php if($cate=="notice") echo " active" ?>">
+                                <a href="notice_list.php?cate=notice&page=1">공지사항</a></td>
+                            <td class="notice_cate cate_honey<?php if($cate=="honey") echo " active" ?>">
+                                <a href="notice_list.php?cate=honey&page=1">허니문</a>
+                            </td>
+                            <td class="notice_cate cate_golf<?php if($cate=="golf") echo " active" ?>">
+                                <a href="notice_list.php?cate=golf&page=1">골프</a>
+                            </td>
+                            <td class="notice_cate cate_cruise<?php if($cate=="cruise") echo " active" ?>">
+                                <a href="notice_list.php?cate=cruise&page=1">크루즈</a>
+                            </td>
+                            <td class="notice_cate cate_domest<?php if($cate=="domestic") echo " active" ?>">
+                                <a href="notice_list.php?cate=domestic&page=1">국내</a>
+                            </td>
+                            <td class="notice_cate cate_busan<?php if($cate=="busanDaegu") echo " active" ?>">
+                                <a href="notice_list.php?cate=busanDaegu&page=1">부산/대구</a>
+                            </td>
+                            <td class="notice_cate cate_air<?php if($cate=="airport") echo " active" ?>">
+                                <a href="notice_list.php?cate=airport&page=1">항공권 소식</a>
+                            </td>
+                            <td class="notice_cate cate_hotel<?php if($cate=="hotel") echo " active" ?>">
+                                <a href="notice_list.php?cate=hotel&page=1">호텔</a>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -1754,6 +1771,8 @@ if($e_pageNum > $total_page){
                             <th class="n_title">제목</th>
                             <th class="w_date">등록일</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <?php
                         // paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
                         $start = ($page - 1) * $list_num;
@@ -1762,9 +1781,9 @@ if($e_pageNum > $total_page){
                         // limit 몇번부터, 몇 개
                         // 쿼리 작성
                         if($cate){
-                            $sql = "select * from $table_name where cate='$cate' order by idx desc limit $start, $list_num;";
+                            $sql = "select * from $table_name where cate='$cate' order by always desc, idx desc limit $start, $list_num;";
                         } else{
-                            $sql = "select * from $table_name order by idx desc limit $start, $list_num;";
+                            $sql = "select * from $table_name order by always desc, idx desc limit $start, $list_num;";
                         };
                         // echo $sql;
                         /* exit; */
@@ -1778,8 +1797,6 @@ if($e_pageNum > $total_page){
                         $i = $total - (($page - 1) * $list_num);
                         while($array = mysqli_fetch_array($result)){
                         ?>
-                    </thead>
-                    <tbody>
                         <!-- <tr>
                             <td><i class="fix"></i></td>
                             <td><a href="notice_posts.php"><i class="air">항공권소식</i> [2022년 10월 국내선/국제선 유류할증료 안내]</a></td>
@@ -1826,7 +1843,17 @@ if($e_pageNum > $total_page){
                             <td>2021.06.16</td>
                         </tr> -->
                         <tr>
-                            <td><?php echo $i; ?></td>
+                            <td>
+                                <?php
+                                if($array["always"] == "y"){
+                                ?>
+                                    <i class="fix"></i>
+                                <?php
+                                } else {
+                                    echo $i;
+                                }
+                                ?>
+                            </td>
                             <td><a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
                                 [<?php 
                                 if($array["cate"] == "all"){
@@ -1847,13 +1874,14 @@ if($e_pageNum > $total_page){
                                     echo "항공권 소식";
                                 }else if($array["cate"] == "hotel"){
                                     echo "호텔";
-                                };                
+                                };            
                                 ?>] 
                             <?php echo $array["n_title"]; ?></a></td>
                             <?php $w_date = substr($array["w_date"], 0, 10); ?>
                             <td><?php echo $w_date; ?></td>
                         </tr>
                         <?php
+                                $i--;
                             };
                         ?>
                         <!-- [코로나19] 필리핀_어라이벌 카드 (e-Arrival Card) 작성 안내 -->
@@ -1914,25 +1942,25 @@ if($e_pageNum > $total_page){
                 // pager : 이전 페이지
                 if($page <= 1){
                 ?>
-                <a href="list.php?cate=<?php echo $cate; ?>&page=1">이전</a>
+                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=1">이전</a>
                 <?php } else{ ?>
-                <a href="list.php?cate=<?php echo $cate; ?>&page=<?php echo ($page - 1); ?>">이전</a>
+                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo ($page - 1); ?>">이전</a>
                 <?php }; ?>
 
                 <?php
                 // pager : 페이지 번호 출력
                 for($print_page = $s_pageNum;  $print_page <= $e_pageNum; $print_page++){
                 ?>
-                <a href="list.php?cate=<?php echo $cate; ?>&page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
+                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
                 <?php }; ?>
 
                 <?php
                 // pager : 다음 페이지
                 if($page >= $total_page){
                 ?>
-                <a href="list.php?cate=<?php echo $cate; ?>&page=<?php echo $total_page; ?>">다음</a>
+                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo $total_page; ?>">다음</a>
                 <?php } else{ ?>
-                <a href="list.php?cate=<?php echo $cate; ?>&page=<?php echo ($page + 1); ?>">다음</a>
+                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo ($page + 1); ?>">다음</a>
                 <?php }; ?>
                 </p>
                 <!-- <div class="notice_pagination">
@@ -2168,15 +2196,6 @@ if($e_pageNum > $total_page){
                     asideItemEl.addClass('open');
                 } 
             });
-
-            //공지사항 카테고리 
-            var noticeCateEls = $('.notice_cate');
-            noticeCateEls.click(function(){
-                noticeCateEls.removeClass('active');
-
-                var noticeCateEl = $(this);
-                noticeCateEl.addClass('active');
-            })
 
             //목록 페이지 밑줄 표시
             var listPagerEls = $('.list_pager');

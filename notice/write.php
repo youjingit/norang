@@ -41,6 +41,10 @@ include "../inc/admin_check.php";
                 작성자 <?php echo $s_name; ?>
             </p>
             <p>
+                <label for="always">상시 여부</label>
+                <input type="checkbox" name="always" id="always" value="y">
+            </p>
+            <p>
                 <label for="cate">카테고리</label>
                 <select name="cate" id="cate" class="cate">
                     <option value="all">전체</option>
