@@ -52,8 +52,8 @@
             </form>
             <div>
                 <ul class="sub_menu">
-                    <li><a href="../members/find_id.html">아이디/비밀번호 찾기</a></li>
-                    <li><a href="../nonmember_reserve_pkg.html">비회원 예약조회</a></li>
+                    <li><a href="../members/find_id.php">아이디/비밀번호 찾기</a></li>
+                    <li><a href="../nonmember_reserve_pkg.php">비회원 예약조회</a></li>
                     <li><a href="../members/join_pre.php">간편 회원가입</a></li>
                 </ul>
             </div>

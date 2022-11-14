@@ -1758,7 +1758,10 @@ if($e_pageNum > $total_page){
                     <span><a href="write.php">[글쓰기]</a></span>
                 </p>
                 <?php } else{ ?>
-                <p>전체 <?php echo $total; ?>개</p>
+                <p class="write_area">
+                    <span>전체 <?php echo $total; ?>개</span>
+                    <span></span>
+                </p>
                 <?php }; ?>
                 <table class="notice_board">
                     <caption class="hide">공지사항 목록</caption>
@@ -1832,17 +1835,13 @@ if($e_pageNum > $total_page){
                                 }else if($array["cate"] == "hotel"){
                                     echo "[호텔]";
                                 };            
-                                ?>
-                            <?php echo $array["n_title"]; ?></a></td>
-                            <?php $w_date = substr($array["w_date"], 0, 10); ?>
-                            <?php $sql = "select * from $table_name order by w_date asc";?>
-                            <td><?php echo $w_date; ?></td>
+                                echo $array["n_title"]; ?></a></td>
+                            <td><?php echo substr($array["w_date"], 0, 10); ?></td>
                         </tr>
                         <?php
                                 $i--;
                             };
                         ?>
-                        
                     </tbody>
                 </table>
                 <p class="pager">
