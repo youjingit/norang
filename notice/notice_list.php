@@ -1753,10 +1753,12 @@ if($e_pageNum > $total_page){
                     </table>
                 </div>
                 <?php if($s_id == "admin@abc.com"){ ?>
-                <p class="sumcount">총 <?php echo $total; ?>건</p>
-                <p><a href="write.php">[글쓰기]</a></p>
+                <p class="write_area">
+                    <span>전체 <?php echo $total; ?>개</span>
+                    <span><a href="write.php">[글쓰기]</a></span>
+                </p>
                 <?php } else{ ?>
-                <p class="sumcount">총 <?php echo $total; ?>건</p>
+                <p>전체 <?php echo $total; ?>개</p>
                 <?php }; ?>
                 <table class="notice_board">
                     <caption class="hide">공지사항 목록</caption>
@@ -1797,51 +1799,6 @@ if($e_pageNum > $total_page){
                         $i = $total - (($page - 1) * $list_num);
                         while($array = mysqli_fetch_array($result)){
                         ?>
-                        <!-- <tr>
-                            <td><i class="fix"></i></td>
-                            <td><a href="notice_posts.php"><i class="air">항공권소식</i> [2022년 10월 국내선/국제선 유류할증료 안내]</a></td>
-                            <td>2022.09.20</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix"></i></td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [해외항공] 해외입국자 Q-Code(검역정보 사전입력시스템) 안내</a></td>
-                            <td>2022.09.07</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix"></i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [아시아나]국내선 단독 미성년자 셀프체크인 제한 적용 안내</a></td>
-                            <td>2022.08.25</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix"></i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [국내항공][제주항공]국내선 탑승 게이트 위탁 수하물 요금 시행</a></td>
-                            <td>2022.07.25</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix"></i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [국내항공]제주항공 악기 보유 좌석 구매 불가 안내</a></td>
-                            <td>2022.06.22</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix"></i></td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 개인정보 처리방침 개정 안내</a></td>
-                            <td>2022.05.31</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix"></i></td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 노랑풍선 상품권 유효기간 연장</a></td>
-                            <td>2022.03.28</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix"></i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [국내항공] 제주항공 탑승수속 마감시간 변경 안내</a></td>
-                            <td>2022.03.08</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fix"></i></td>
-                            <td><a href="#"><i class="air">항공권소식</i> [해외항공] 전화상담 중단 안내</a></td>
-                            <td>2021.06.16</td>
-                        </tr> -->
                         <tr>
                             <td>
                                 <?php
@@ -1854,87 +1811,38 @@ if($e_pageNum > $total_page){
                                 }
                                 ?>
                             </td>
-                            <td><a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
-                                [<?php 
+                            <td><a href="notice_posts.php?n_idx=<?php echo $array["idx"]; ?>">
+                                <?php 
                                 if($array["cate"] == "all"){
-                                    echo "전체";
-                                } else if($array["cate"] == "notice"){
-                                    echo "공지사항";
-                                } else if($array["cate"] == "honey"){
-                                    echo "허니문";
+                                    echo "";
+                                }else if($array["cate"] == "notice"){
+                                    echo "[공지사항]";
+                                }else if($array["cate"] == "honey"){
+                                    echo "[허니문]";
                                 }else if($array["cate"] == "golf"){
-                                    echo "골프";
+                                    echo "[골프]";
                                 }else if($array["cate"] == "cruise"){
-                                    echo "크루즈";
+                                    echo "[크루즈]";
                                 }else if($array["cate"] == "domestic"){
-                                    echo "국내";
+                                    echo "[국내]";
                                 }else if($array["cate"] == "busanDaegu"){
-                                    echo "부산/대구";
+                                    echo "[부산/대구]";
                                 }else if($array["cate"] == "airport"){
-                                    echo "항공권 소식";
+                                    echo "[항공권 소식]";
                                 }else if($array["cate"] == "hotel"){
-                                    echo "호텔";
+                                    echo "[호텔]";
                                 };            
-                                ?>] 
+                                ?>
                             <?php echo $array["n_title"]; ?></a></td>
                             <?php $w_date = substr($array["w_date"], 0, 10); ?>
+                            <?php $sql = "select * from $table_name order by w_date asc";?>
                             <td><?php echo $w_date; ?></td>
                         </tr>
                         <?php
                                 $i--;
                             };
                         ?>
-                        <!-- [코로나19] 필리핀_어라이벌 카드 (e-Arrival Card) 작성 안내 -->
-                        <!-- <tr>
-                            <td>2694</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [Best 여행후기] 9월 당첨자 발표!</a></td>
-                            <td>2022.10.17</td>
-                        </tr>
-                        <tr>
-                            <td>2693</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [노랑풍선 앱/웹 이용 현황 조사] 당첨자 발표!</a></td>
-                            <td>2022.10.14</td>
-                        </tr>
-                        <tr>
-                            <td>2692</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 노랑풍선 시스템 긴급점검 완료 안내</a></td>
-                            <td>2022.09.22</td>
-                        </tr>
-                        <tr>
-                            <td>2691</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 노랑풍선 전화 시스템 긴급점검 공지</a></td>
-                            <td>2022.09.22</td>
-                        </tr>
-                        <tr>
-                            <td>2690</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 2022년 8월 고객만족도조사 참여 이벤트 당첨자 발표</a></td>
-                            <td>2022.09.15</td>
-                        </tr>
-                        <tr>
-                            <td>2689</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [Best 여행후기] 8월 당첨자 발표!</a></td>
-                            <td>2022.09.13</td>
-                        </tr>
-                        <tr>
-                            <td>2688</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [자유여행] 추석 연휴기간 자유여행 이용안내</a></td>
-                            <td>2022.09.06</td>
-                        </tr>
-                        <tr>
-                            <td>2687</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> 2022년 7월 고객만족도조사 참여 이벤트 당첨자 발표</a></td>
-                            <td>2022.08.25</td>
-                        </tr>
-                        <tr>
-                            <td>2686</td>
-                            <td><a href="#"><i class="air">항공권소식</i> [2022년 9월부 유류할증료 안내]</a></td>
-                            <td>2022.08.22</td>
-                        </tr>
-                        <tr>
-                            <td>2685</td>
-                            <td><a href="#"><i class="notice_i">공지사항</i> [해외여행 이용 의향 조사] 당첨자 발표!</a></td>
-                            <td>2022.08.19</td>
-                        </tr> --> 
+                        
                     </tbody>
                 </table>
                 <p class="pager">
@@ -1942,43 +1850,27 @@ if($e_pageNum > $total_page){
                 // pager : 이전 페이지
                 if($page <= 1){
                 ?>
-                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=1">이전</a>
+                <a class="prev" href="notice_list.php?cate=<?php echo $cate; ?>&page=1">이전</a>
                 <?php } else{ ?>
-                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo ($page - 1); ?>">이전</a>
+                <a class="prev" href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo ($page - 1); ?>">이전</a>
                 <?php }; ?>
 
                 <?php
                 // pager : 페이지 번호 출력
                 for($print_page = $s_pageNum;  $print_page <= $e_pageNum; $print_page++){
                 ?>
-                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
+                <a class="pager_a" href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
                 <?php }; ?>
 
                 <?php
                 // pager : 다음 페이지
                 if($page >= $total_page){
                 ?>
-                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo $total_page; ?>">다음</a>
+                <a class="next" href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo $total_page; ?>">다음</a>
                 <?php } else{ ?>
-                <a href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo ($page + 1); ?>">다음</a>
+                <a class="next" href="notice_list.php?cate=<?php echo $cate; ?>&page=<?php echo ($page + 1); ?>">다음</a>
                 <?php }; ?>
                 </p>
-                <!-- <div class="notice_pagination">
-                    <button type="button" class="firstpage">맨 첫 페이지로 가기</button>
-                    <button type="button" class="prev">이전 페이지로 가기</button>
-                    <a href="#" class="list_pager active" data-page="1">1</a>
-                    <a href="#" class="list_pager" data-page="2">2</a>
-                    <a href="#" class="list_pager" data-page="3">3</a>
-                    <a href="#" class="list_pager" data-page="4">4</a>
-                    <a href="#" class="list_pager" data-page="5">5</a>
-                    <a href="#" class="list_pager" data-page="6">6</a>
-                    <a href="#" class="list_pager" data-page="7">7</a>
-                    <a href="#" class="list_pager" data-page="8">8</a>
-                    <a href="#" class="list_pager" data-page="9">9</a>
-                    <a href="#" class="list_pager" data-page="10">10</a>
-                    <button type="button" class="next">다음 페이지로 가기</button>
-                    <button type="button" class="lastpage">맨 마지막 페이지로 가기</button>
-                </div> -->
             </section>
         </div>
     </main>
@@ -2198,7 +2090,7 @@ if($e_pageNum > $total_page){
             });
 
             //목록 페이지 밑줄 표시
-            var listPagerEls = $('.list_pager');
+            var listPagerEls = $('.pager_a');
             listPagerEls.click(function(){
                 listPagerEls.removeClass('active');
 
@@ -2206,50 +2098,50 @@ if($e_pageNum > $total_page){
                 listPagerEl.addClass('active');
             })
 
-            //목록 페이지 이동 버튼
-            var firstPageEl = $('.firstpage');
-            var lastPageEl = $('.lastpage');
-            var prevEl = $('.prev');
-            var nextEl = $('.next');
-            var listPagerEls = $('.list_pager');
+            // //목록 페이지 이동 버튼
+            // var firstPageEl = $('.firstpage');
+            // var lastPageEl = $('.lastpage');
+            // var prevEl = $('.prev');
+            // var nextEl = $('.next');
+            // var listPagerEls = $('.list_pager');
 
-            firstPageEl.click(function(){
-                var pageEl = $('.list_pager:first');
+            // firstPageEl.click(function(){
+            //     var pageEl = $('.list_pager:first');
 
-                listPagerEls.removeClass('active');
-                pageEl.addClass('active');
+            //     listPagerEls.removeClass('active');
+            //     pageEl.addClass('active');
 
-            });
+            // });
 
-            lastPageEl.click(function(){
-                var pageEl = $('.list_pager:last');
+            // lastPageEl.click(function(){
+            //     var pageEl = $('.list_pager:last');
 
-                listPagerEls.removeClass('active');
-                pageEl.addClass('active');
+            //     listPagerEls.removeClass('active');
+            //     pageEl.addClass('active');
 
-            });
+            // });
 
-            prevEl.click(function(){
-                var activePageEl = $('.list_pager.active');
-                var page = parseInt(activePageEl.attr('data-page'));
-                if(page <= 1){
-                    return;
-                }
-                listPagerEls.removeClass('active');
-                var pageEl = $('.list_pager[data-page="' + (page - 1) + '"]');
-                pageEl.addClass('active');
-            });
+            // prevEl.click(function(){
+            //     var activePageEl = $('.list_pager.active');
+            //     var page = parseInt(activePageEl.attr('data-page'));
+            //     if(page <= 1){
+            //         return;
+            //     }
+            //     listPagerEls.removeClass('active');
+            //     var pageEl = $('.list_pager[data-page="' + (page - 1) + '"]');
+            //     pageEl.addClass('active');
+            // });
 
-            nextEl.click(function(){
-                var activePageEl = $('.list_pager.active');
-                var page = parseInt(activePageEl.attr('data-page'));
-                if(page >= 10){
-                    return;
-                }
-                listPagerEls.removeClass('active');
-                var pageEl = $('.list_pager[data-page="' + (page + 1) + '"]');
-                pageEl.addClass('active');
-            });
+            // nextEl.click(function(){
+            //     var activePageEl = $('.list_pager.active');
+            //     var page = parseInt(activePageEl.attr('data-page'));
+            //     if(page >= 10){
+            //         return;
+            //     }
+            //     listPagerEls.removeClass('active');
+            //     var pageEl = $('.list_pager[data-page="' + (page + 1) + '"]');
+            //     pageEl.addClass('active');
+            // });
         });
     </script>
 </body>

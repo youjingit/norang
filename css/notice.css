@@ -165,6 +165,12 @@ form {
   font-weight: bold;
 }
 
+.write_area{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
 table {
   border: 1px solid #000;
   border-collapse: collapse;
@@ -288,22 +294,6 @@ td {
   text-indent: -9999px;
 }
 
-.air {
-  display: inline-block;
-  width: 66px;
-  height: 20px;
-  background: url(../images/notice/air_i.png) no-repeat;
-  text-indent: -9999px;
-}
-
-.notice_i {
-  display: inline-block;
-  width: 57px;
-  height: 20px;
-  background: url(../images/notice/notice_i.png) no-repeat;
-  text-indent: -9999px;
-}
-
 .firstpage {
   width: 23px;
   height: 23px;
@@ -312,6 +302,7 @@ td {
 }
 
 .prev {
+  display: inline-block;
   width: 23px;
   height: 23px;
   background: url(../images/notice/prev.jpg) no-repeat;
@@ -319,6 +310,7 @@ td {
 }
 
 .next {
+  display: inline-block;
   width: 23px;
   height: 23px;
   background: url(../images/notice/next.jpg) no-repeat;
@@ -336,11 +328,18 @@ td {
   margin: 40px 0;
 }
 
-.list_pager {
-  padding:5px;
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
 }
 
-.list_pager.active{
+.pager_a {
+  margin: 0px 5px;
+}
+
+.pager_a.active{
   border-bottom: 1px solid #000;
 }
 

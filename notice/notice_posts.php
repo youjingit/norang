@@ -1,5 +1,31 @@
 <?php
-include "../inc/session.php"
+include "../inc/session.php";
+$n_idx = $_GET["n_idx"];
+
+// DB 연결
+include "../inc/dbcon.php";
+
+// 쿼리 작성
+$sql = "select * from notice where idx=$n_idx;";
+/* echo $sql;
+exit; */
+
+// 쿼리 전송
+$result = mysqli_query($dbcon, $sql);
+
+$total = mysqli_num_rows($result);
+
+// paging : 한 페이지 당 보여질 목록 수
+$list_num = 20;
+
+// paging : 현재 페이지
+$page = isset($_GET["page"])? $_GET["page"] : 1;
+
+$i = $total - (($page - 1) * $list_num);
+
+// DB에서 데이터 가져오기
+$array = mysqli_fetch_array($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -15,6 +41,14 @@ include "../inc/session.php"
     <link rel="stylesheet" type="text/css" href="../css/index/footer.css">
     <link rel="stylesheet" type="text/css" href="../css/notice.css">
     <link rel="stylesheet" type="text/css" href="../css/notice_post.css">
+    <script>
+        function remove_notice(){
+            var ck = confirm("정말 삭제하시겠습니까?");
+            if(ck){
+                location.href="delete.php?n_idx=<?php echo $n_idx; ?>";
+            };
+        };
+    </script>
 </head>
 <body>
     <header>
@@ -1528,6 +1562,11 @@ include "../inc/session.php"
         <div class="content_title yellow">
             <h2>공지사항</h2>
         </div>
+        <?php if($s_id == "admin@abc.com"){ ?>
+            <p class="write_area">
+            <span><a href="write.php">[글쓰기]</a></span>
+        </p>
+        <?php }; ?>
         <div class="content_wrap">
             <div class="content_left_wrap">
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
@@ -1654,48 +1693,54 @@ include "../inc/session.php"
             </div>
             <section class="post_wrap">
                 <div class="post_title">
-                    <div>
-                        <i class="fix">상시</i>
-                        <i class="air">항공권소식</i>
-                        <span>[2022년 10월 국내선/국제선 유류할증료 안내]</span>
+                    <?php
+                    if($array["always"] == "y"){
+                    ?>
+                        <i class="fix"></i>
+                    <?php
+                    } else {
+                        echo $i;
+                    }
+                    ?>
+                    <?php 
+                    if($array["cate"] == "all"){
+                        echo "";
+                    }else if($array["cate"] == "notice"){
+                        echo "[공지사항]";
+                    }else if($array["cate"] == "honey"){
+                        echo "[허니문]";
+                    }else if($array["cate"] == "golf"){
+                        echo "[골프]";
+                    }else if($array["cate"] == "cruise"){
+                        echo "[크루즈]";
+                    }else if($array["cate"] == "domestic"){
+                        echo "[국내]";
+                    }else if($array["cate"] == "busanDaegu"){
+                        echo "[부산/대구]";
+                    }else if($array["cate"] == "airport"){
+                        echo "[항공권 소식]";
+                    }else if($array["cate"] == "hotel"){
+                        echo "[호텔]";
+                    };            
+                    ?>
+                    <?php 
+                    $n_title = ($array["n_title"]);
+                    echo $n_title; 
+                    ?>
+                    <div class="post_date">
+                        <?php $w_date = substr($array["w_date"], 0, 10); 
+                        echo $w_date;
+                        ?>
                     </div>
-                    <span class="post_date">2022.09.20</span>
                 </div>
                 <div class="post_content">
-                    <br>
-                    <p>안녕하세요.</p><br>
-                    <p>여행을 가볍게, 노랑풍선 항공사업부입니다.</p>
-                    <p>10월 유류할증료 안내드립니다.</p>
-                    <p>유류할증료는 고객님께서 예약하시는 시점, 결제시한과는 관계 없이</p>
-                    <p>실제 발권이 진행되는 날을 기준으로 적용되기때문에</p>
-                    <p>9월 30일(금) 17시 전까지 예약/발권을 하셔야 인상 전 유류할증료가 적용됩니다. (토, 일요일 및 공휴일 발권 불가)</p>
-                    <p>이후 요청에 대해서는 인상된 유류할증료를 지불하셔야 하는점 양해 부탁드립니다.</p>
-                    <p>※ 10월 발권부터 항공료 금액이 인상될 수 있으니 미리 구매하시기 바랍니다.</p>
-                    <p>※ 변경 적용 운임은 편도기준이며, 국제 유가에 따라 변동될 수 있습니다.</p><br><br>
-                    <table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
-                        <tbody>
-                            <tr>
-                                <td style="text-align: center; background-color: rgb(255, 204, 0);">노선</td>
-                                <td style="text-align: center; background-color: rgb(255, 204, 0);">현행</td>
-                                <td style="text-align: center; background-color: rgb(255, 204, 0);">변경</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">한국 출발 국제선 운임<br>
-                                ex) 미주,캐나다,중남미</td>
-                                <td style="text-align: center;">편도 : KRW 198,900<br>
-                                왕복 : KRW 397,800</td>
-                                <td style="text-align: center;">편도 : KRW 219,500<br>
-                                왕복 : KRW 439,000</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">한국 출발 하와이 운임</td>
-                                <td style="text-align: center;">편도 : KRW 162,400<br>
-                                왕복 : KRW 324,800</td>
-                                <td style="text-align: center;">편도 : KRW 180,600<br>
-                                왕복 : KRW 361,200</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <?php 
+                    // textarea의 엔터를 br로 변경
+                    // str_repalce("어떤 문자를", "어떤 문자로", "어떤 값에서");
+                    $n_content = str_replace("\n", "<br>", $array["n_content"]);
+                    $n_content = str_replace(" ", "&nbsp;", $n_content);
+                    echo $n_content; 
+                    ?>
                 </div>
                 <div class="prev_post_wrap">
                     <a href="#">
@@ -1714,6 +1759,12 @@ include "../inc/session.php"
                 <div class="button_wrap">
                     <button type="button" class="list_return" onclick="location.href='notice_list.php'">목록보기</button>
                 </div>
+                <p class="list">
+                    <?php if($s_id == "admin@abc.com"){ ?>
+                    <a href="modify.php?n_idx=<?php echo $n_idx; ?>">[수정]</a>
+                    <a href="#" onclick="remove_notice()">[삭제]</a>
+                    <?php }; ?>
+                </p>
             </section>
         </div>
     </main>
