@@ -46,18 +46,6 @@ insert into notice(
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "y", '2022년 11월부 국내선/국제선 유류할증료 안내]', 'airport', '[항공권소식] [2022년 11월부 국내선/국제선 유류할증료 안내]',
-    '2022.08.28'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "y", '[제주항공] 인천-나리타 (ICN-NRT) 운항스케쥴 변경 안내', 'airport', '[제주항공] 인천-나리타 (ICN-NRT) 운항스케쥴 변경 안내',
-    '2022.07.28'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
     "y", '[해외항공] 해외입국자 Q-Code(검역정보 사전입력시스템) 안내', 'notice', '[공지사항] [해외항공] 해외입국자 Q-Code(검역정보 사전입력시스템) 안내',
     '2022.04.28'
 );
@@ -70,74 +58,566 @@ insert into notice(
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
+    "y", '2022년 11월부 국내선/국제선 유류할증료 안내]', 'airport', '[항공권소식] [2022년 11월부 국내선/국제선 유류할증료 안내]',
+    '2022.09.28'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "y", '[제주항공] 인천-나리타 (ICN-NRT) 운항스케쥴 변경 안내', 'airport', '[제주항공] 인천-나리타 (ICN-NRT) 운항스케쥴 변경 안내',
+    '2022.09.29'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
     "y", '[아시아나]국내선 단독 미성년자 셀프체크인 제한 적용 안내', 'airport', '[항공권소식] [아시아나]국내선 단독 미성년자 셀프체크인 제한 적용 안내',
-    '2020.04.28'
+    '2022.10.01'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "y", '[국내항공]제주항공 악기 보유 좌석 구매 불가 안내', 'airport', '[항공권소식] [국내항공]제주항공 악기 보유 좌석 구매 불가 안내',
-    '2022.04.28'
+    '2022.10.02'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "y", '노랑풍선 상품권 유효기간 연장', 'notice', '[공지사항] 노랑풍선 상품권 유효기간 연장',
-    '2021.02.28'
+    '2022.11.28'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "", '[제주항공] 인천-나리타 (ICN-NRT) 운항스케쥴 변경 안내', 'airport', '[제주항공] 인천-나리타 (ICN-NRT) 운항스케쥴 변경 안내',
-    '2020.04.28'
+    "", "공정위 시정조치 발표에 따른 사과문", 'notice', "[공지사항] 공정위 시정조치 발표에 따른 사과문",
+    '2007.03.23'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "", "[제주항공] S20 '코로나19' 로 인한 비운항 안내(일본/5월)", 'airport', "[제주항공] S20 '코로나19' 로 인한 비운항 안내(일본/5월)",
-    '2020.04.28'
+    "", " 3월25일 인천공항고속도로 대규모시위 예정에 따른안내", 'honey', "[허니문] 3월25일 인천공항고속도로 대규모시위 예정에 따른안내",
+    '2007.03.23'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "", '[스쿠트항공] (추가공지) 스쿠트 비운항 일정 안내', 'airport', '[스쿠트항공] (추가공지) 스쿠트 비운항 일정 안내',
-    '2020.04.28'
+    "", "[허니문] 발리 가루다항공 오전출발 시간 변경", 'honey', "[허니문] 발리 가루다항공 오전출발 시간 변경",
+    '2007.03.27'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "", '[타이항공](5/01-7/01) 인천 -방콕 및 인천-대만구간 결항 안내', 'airport', '[타이항공]](5/01-7/01) 인천 -방콕 및 인천-대만구간 결항 안내',
-    '2020.04.28'
+    "", "[허니문] '여행계약절차 및 알아두셔야할 사항'", 'honey', "[허니문] '여행계약절차 및 알아두셔야할 사항'",
+    '2007.03.29'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "", '[에티하드항공] 운항 중단 연장)', 'airport', '[에티하드항공] 운항 중단 연장',
-    '2020.04.28'
+    "", "인천공항고속도로 통행료 감면 폐지 관련 주민 집단시위 안내", 'honey', "[허니문] 인천공항고속도로 통행료 감면 폐지 관련 주민 집단시위 안내",
+    '2007.04.18'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "", '[비엣젯항공] 4-5월 비운항 항공편 추가 안내', 'airport', '[비엣젯항공] 4-5월 비운항 항공편 추가 안내',
-    '2020.04.28'
+    "", "현금영수증~ 이젠 고객님께서 직접 발행하실수 있습니다~", 'honey', "[허니문] 현금영수증~ 이젠 고객님께서 직접 발행하실수 있습니다~",
+    '2007.04.18'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "", "[아시아나항공] 20년 하계 국제여객 스케줄 변경통보 #18", 'airport', "[아시아나항공] 20년 하계 국제여객 스케줄 변경통보 #18",
-    '2020.04.28'
+    "", "서버점검 공지사항", 'notice', "[공지사항] 서버점검 공지사항",
+    '2007.05.29'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "", "몰디브 공항진흥기금 부과(ADC) 및 몰디브 국제공항 명칭변경(INIA) 안내", 'honey', "[아시아나항공] 20년 하계 국제여객 스케줄 변경통보 #18",
-    '2011.04.28'
+    "", "여행자 휴대품을 통한 위조상품 반입 단속 알림", 'notice', "[공지사항] 여행자 휴대품을 통한 위조상품 반입 단속 알림",
+    '2007.06.08'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
-    "", "2012년 가을 허니문 괌, 사이판 지역 상품 출시 안내문", 'honey', "[허니문] 2012년 가을 허니문 괌, 사이판 지역 상품 출시 안내문",
-    '2011.04.28'
+    "", "가을발리허니문 40~60만원 할인", 'honey', "[허니문] 가을발리허니문 40~60만원 할인",
+    '2007.07.03'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2007년 하반기 신입사원 공채 모집", 'notice', "[공지사항] 2007년 하반기 신입사원 공채 모집",
+    '2007.07.03'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "면세점 이용방법 및 주의사항", 'honey', "[허니문] 면세점 이용방법 및 주의사항",
+    '2007.09.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "베트남신부 사연공모전 당선작", 'notice', "[공지사항] 베트남신부 사연공모전 당선작",
+    '2007.10.19'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "11/17일 서버점검 안내", 'notice', "[공지사항] 11/17일 서버점검 안내",
+    '2007.11.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "", 'notice', "",
+    '2007.'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2008년 신혼여행 봄상품", 'honey', "[허니문] 2008년 신혼여행 봄상품",
+    '2007.11.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "비씨카드 전자결제 이벤트", 'notice', "[공지사항] 비씨카드 전자결제 이벤트",
+    '2007.11.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2007년 '네이버여행' 오픈프로모션이벤트 당첨자 발표", 'notice', "[공지사항] 2007년 '네이버여행' 오픈프로모션이벤트 당첨자 발표",
+    '2007.12.21'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2007년 송년 문화이벤트 영화 '나는 전설이다' 당첨자 발표", 'notice', "[공지사항] 2007년 송년 문화이벤트 영화 '나는 전설이다' 당첨자 발표",
+    '2007.12.21'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "여행자 휴대품을 통한 위조상품 반입 단속 알림", 'notice', "[공지사항] 여행자 휴대품을 통한 위조상품 반입 단속 알림",
+    '2007.12.21'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "국제선항공 유류할증료 인상 안내", 'notice', "[공지사항] 국제선항공 유류할증료 인상 안내",
+    '2007.12.24'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "노랑풍선, 명품 유럽여행 히트 상품전", 'notice', "[공지사항] 노랑풍선, 명품 유럽여행 히트 상품전",
+    '2007.12.25'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "‘베트남·캄보디아’ 겨울시즌 인기 여행지", 'notice', "[공지사항] ‘베트남·캄보디아’ 겨울시즌 인기 여행지",
+    '2007.12.31'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2008년 1월 카드 무이자 할부 안내", 'notice', "[공지사항] 2008년 1월 카드 무이자 할부 안내",
+    '2008.01.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "발리에 배우 권상우 캐슬 오픈!! -오션블루풀빌라", 'honey', "[허니문] 발리에 배우 권상우 캐슬 오픈!! -오션블루풀빌라",
+    '2008.01.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "신년특선, 설날 대만 단독 전세기", 'notice', "[공지사항] 신년특선, 설날 대만 단독 전세기",
+    '2008.01.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2008년 2월2일!! 서울 웨딩페어 보러오셔요~~", 'honey', "[허니문] 2008년 2월2일!! 서울 웨딩페어 보러오셔요~~",
+    '2008.01.23'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "구정연휴 신한은행/외환카드 전산센터 이전에 따른 결제 일시 중단 ", 'notice', "[공지사항] 구정연휴 신한은행/외환카드 전산센터 이전에 따른 결제 일시 중단 ",
+    '2008.02.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2008년 01월 베스트셀러 & 포토제닉 이벤트 당첨자 발표", 'notice', "[공지사항] 2008년 01월 베스트셀러 & 포토제닉 이벤트 당첨자 발표",
+    '2008.02.04'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "3월 전자결제 무이자할부 안내", 'notice', "[공지사항] 3월 전자결제 무이자할부 안내",
+    '2008.03.04'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2008년 02월 베스트셀러&포토제닉 이벤트 당첨자 발표", 'notice', "[공지사항] 2008년 02월 베스트셀러&포토제닉 이벤트 당첨자 발표",
+    '2008.03.03'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "′온라인 고객 회원정보수정′ 이벤트 당첨자 발표", 'notice', "[공지사항] ′온라인 고객 회원정보수정′ 이벤트 당첨자 발표",
+    '2008.03.03'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "☆ 몰디브를 즐기는 법 ☆", 'honey', "[허니문] ☆ 몰디브를 즐기는 법 ☆",
+    '2008.03.04'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "스크린에서 펼쳐질 필리핀의 아름다움 - 영화 <왠지 느낌이 좋아>", 'honey', "[허니문] 스크린에서 펼쳐질 필리핀의 아름다움 - 영화 <왠지 느낌이 좋아>",
+    '2008.03.05'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[허니문] 유류할증료 인상", 'honey', "[허니문] 유류할증료 인상",
+    '2008.03.27'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "4월 전자결제 무이자 할부 안내", 'notice', "[공지사항] 4월 전자결제 무이자 할부 안내",
+    '2008.03.31'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2008년 03월 베스트셀러&포토제닉 이벤트 당첨자 발표", 'notice', "[공지사항] 2008년 03월 베스트셀러&포토제닉 이벤트 당첨자 발표",
+    '2008.03.31'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[허니문] < 출국 내국인 면세점 구매한도액 안내입니다 >", 'honey', "[허니문] < 출국 내국인 면세점 구매한도액 안내입니다 >",
+    '2008.04.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2008년 04월 베스트셀러&포토제닉 이벤트 당첨자 발표", 'notice', "[공지사항] 2008년 04월 베스트셀러&포토제닉 이벤트 당첨자 발표",
+    '2008.05.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "5월 전자결제 무이자 할부 행사안내", 'notice', "[공지사항] 5월 전자결제 무이자 할부 행사안내",
+    '2008.05.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "이니시스 결제 일시 중단", 'notice', "[공지사항] 이니시스 결제 일시 중단",
+    '2008.05.20'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "가을요금으로 새롭게 선보입니다!!~", 'honey', "[허니문] 가을요금으로 새롭게 선보입니다!!~",
+    '2008.05.21'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2008년 05월 베스트셀러&포토제닉 이벤트 당첨자 발표", 'notice', "[공지사항] 2008년 05월 베스트셀러&포토제닉 이벤트 당첨자 발표",
+    '2008.05.22'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "6월 전자결제 무이자 할부 안내", 'notice', "[공지사항] 6월 전자결제 무이자 할부 안내",
+    '2008.05.21'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "삼성카드 이벤트안내", 'notice', "[공지사항] 삼성카드 이벤트안내",
+    '2008.05.30'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2008년 06월 베스트셀러&포토제닉 이벤트 당첨자 발표", 'notice', "[공지사항] 2008년 06월 베스트셀러&포토제닉 이벤트 당첨자 발표",
+    '2008.06.30'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "여권 발급 대리신청 제도 변경", 'honey', "[허니문] 여권 발급 대리신청 제도 변경",
+    '2008.07.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "8월 전자결제 무이자할부 안내", 'notice', "[공지사항] 8월 전자결제 무이자할부 안내",
+    '2008.07.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "삼성카드와 함께하는 경품이벤트 당첨자 발표", 'notice', "[공지사항] 삼성카드와 함께하는 경품이벤트 당첨자 발표",
+    '2008.08.14'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "08년8월25일부터 본인직접 전자여권 발급", 'honey', "[허니문] 08년8월25일부터 본인직접 전자여권 발급",
+    '2008.08.14'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "홍콩 So Hot 이벤트 ! 올릭핌 파이팅 Quiz 당첨자발표", 'notice', "[공지사항] 홍콩 So Hot 이벤트 ! 올릭핌 파이팅 Quiz 당첨자발표",
+    '2008.09.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "8월 베스트에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 8월 베스트에피소드&포토갤러리 당첨자발표",
+    '2008.09.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "9월 전자결제 무이자할부 안내", 'notice', "[공지사항] 9월 전자결제 무이자할부 안내",
+    '2008.09.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[클럽메드 상품 유류할증료 인상 안내]", 'honey', "[허니문] [클럽메드 상품 유류할증료 인상 안내]",
+    '2008.09.09'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "삼성카드 이벤트 당첨자 관련 공지", 'notice', "[공지사항] 삼성카드 이벤트 당첨자 관련 공지",
+    '2008.09.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "한가위 문화이벤트! <방콕데인저러스> 담청자발표", 'notice', "[공지사항] 한가위 문화이벤트! <방콕데인저러스> 담청자발표",
+    '2008.09.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "300여화(旅話) 여행책을 잡아랏! 이벤트 당첨자발표", 'notice', "[공지사항] 300여화(旅話) 여행책을 잡아랏! 이벤트 당첨자발표",
+    '2008.09.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "10월 전자결제 무이자할부 안내", 'notice', "[공지사항] 10월 전자결제 무이자할부 안내",
+    '2008.09.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "세계적으로 인정받은 아름다운 뉴칼레도니아의 산호초호", 'honey', "[허니문] 세계적으로 인정받은 아름다운 뉴칼레도니아의 산호초호",
+    '2008.10.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "9월 베스트에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 9월 베스트에피소드&포토갤러리 당첨자발표",
+    '2008.10.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "환율급등으로 인한 추가경비 안내", 'honey', "[허니문] 환율급등으로 인한 추가경비 안내",
+    '2008.10.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "시스템점검으로 인한 신용카드 결제안내", 'notice', "[공지사항] 시스템점검으로 인한 신용카드 결제안내",
+    '2008.10.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "전자결제 무이자할부 안내", 'notice', "[공지사항] 전자결제 무이자할부 안내",
+    '2008.10.29'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "10월 베스트 에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 10월 베스트 에피소드&포토갤러리 당첨자발표",
+    '2008.10.29'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "11월 베스트 에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 11월 베스트 에피소드&포토갤러리 당첨자발표",
+    '2008.12.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "미국비자 ESTA(전자여행허가) 는 어떻게 신청할까요?", 'honey', "[허니문] 미국비자 ESTA(전자여행허가) 는 어떻게 신청할까요?",
+    '2008.12.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "Hong Kong 댓글달고 홍콩자유여행 고고씽! 이벤트 당첨자발표", 'notice', "[공지사항] Hong Kong 댓글달고 홍콩자유여행 고고씽! 이벤트 당첨자발표",
+    '2008.12.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "사이트 접속 장애 안내", 'notice', "[공지사항] 사이트 접속 장애 안내",
+    '2008.12.29'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "1월 전자결제 무이자할부 안내", 'notice', "[공지사항] 1월 전자결제 무이자할부 안내",
+    '2009.01.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "12월 베스트 에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 12월 베스트 에피소드&포토갤러리 당첨자발표",
+    '2008.01.06'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "여행에피소드 및 포토갤러리 베스트선정 혜택 변경 안내", 'notice', "[공지사항] 여행에피소드 및 포토갤러리 베스트선정 혜택 변경 안내",
+    '2008.01.07'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "3월 전자결제 무이자할부 안내", 'notice', "[공지사항] 3월 전자결제 무이자할부 안내",
+    '2009.03.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2월 베스트 에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 2월 베스트 에피소드&포토갤러리 당첨자발표",
+    '2009.03.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[여행신문] 노랑풍선 3월 ‘골프데이’ 이벤트!", 'golf', "[골프] [여행신문] 노랑풍선 3월 ‘골프데이’ 이벤트!",
+    '2009.03.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "사이트 점검 공지", 'notice', "[공지사항] 사이트 점검 공지",
+    '2009.03.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "4월 전자결제 무이자할부 안내", 'notice', "[공지사항] 4월 전자결제 무이자할부 안내",
+    '2009.03.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "3월 베스트 에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 3월 베스트 에피소드&포토갤러리 당첨자발표",
+    '2009.04.01'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[여행미디어]노랑풍선 5월 골프이벤트~!", 'golf', "[골프] [여행미디어]노랑풍선 5월 골프이벤트~!",
+    '2009.05.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[세계여행신문]반환식 골프회원권 물의.", 'golf', "[골프] [세계여행신문]반환식 골프회원권 물의.",
+    '2009.06.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "6월 베스트 에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 6월 베스트 에피소드&포토갤러리 당첨자발표",
+    '2009.07.02'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "서버점검 안내", 'notice', "[공지사항] 서버점검 안내",
+    '2009.07.23'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "8월 전자결제 무이자할부 안내", 'notice', "[공지사항] 8월 전자결제 무이자할부 안내",
+    '2009.08.03'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "통합검색 서비스 일시 중지", 'notice', "[공지사항] 통합검색 서비스 일시 중지",
+    '2009.08.04'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "7월 베스트 에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 7월 베스트 에피소드&포토갤러리 당첨자발표",
+    '2009.08.04'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "8월15일 광복절 휴무 안내", 'honey', "[허니문] 8월15일 광복절 휴무 안내",
+    '2009.08.12'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "8월 베스트 에피소드&포토갤러리 당첨자발표", 'notice', "[공지사항] 8월 베스트 에피소드&포토갤러리 당첨자발표",
+    '2009.08.12'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2010년 7월 이후 유류할증료 및 항공요금 변경 안내", 'notice', "[공지사항] 2010년 7월 이후 유류할증료 및 항공요금 변경 안내",
+    '2010.07.09'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "입금시 유의사항", 'notice', "[공지사항] 입금시 유의사항",
+    '2010.07.13'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "17일 새벽 서버작업 공지", 'notice', "[공지사항] 17일 새벽 서버작업 공지",
+    '2010.07.16'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "노랑풍선 프리허그 이벤트!!", 'notice', "[공지사항] 노랑풍선 프리허그 이벤트!!",
+    '2010.07.17'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
@@ -202,6 +682,18 @@ insert into notice(
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
+    "", "2012년 8월 22일! 마지막 한중일 크루즈!", 'cruise', "2012년 8월 22일! 마지막 한중일 크루즈!",
+    '2012.07.26'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2012년 가을 허니문 괌, 사이판 지역 상품 출시 안내문", 'honey', "[허니문] 2012년 가을 허니문 괌, 사이판 지역 상품 출시 안내문",
+    '2012.08.28'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
     "", "여행신문 발췌 - [여행자보험 제대로 알고 계시나요?]", 'golf', "[골프] 여행신문 발췌 - [여행자보험 제대로 알고 계시나요?]",
     '2014.07.05'
 );
@@ -227,85 +719,271 @@ insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (3)", 'golf', "[골프] 태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (3)",
-    '2014.02.05'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "", "태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (2)", 'golf', "[골프] 태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (2)",
-    '2014.02.05'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "", "태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (1)", 'golf', "[골프] 태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (1)",
-    '2014.02.05'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "", "[골프장 정보] 다낭... 다낭 ? 다낭 !! 베트남 다낭 !?", 'golf', "[골프장 정보] 다낭... 다낭 ? 다낭 !! 베트남 다낭 !?",
     '2014.07.05'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
+    "", "태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (2)", 'golf', "[골프] 태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (2)",
+    '2014.07.05'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (1)", 'golf', "[골프] 태국 방콕공항에서 50분!! 아유타야 지역 골프장 출장기 (1)",
+    '2014.07.05'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[골프장 정보] 다낭... 다낭 ? 다낭 !! 베트남 다낭 !?", 'golf', "[골프장 정보] 다낭... 다낭 ? 다낭 !! 베트남 다낭 !?",
+    '2014.08.05'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
     "", "이스타 항공 홍콩 취항", 'golf', "[골프] 이스타 항공 홍콩 취항",
-    '2014.03.20'
+    '2014.09.20'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "★★ 금호타이어 KLPGA LADYS OPEN 후기", 'golf', "★★ 금호타이어 KLPGA LADYS OPEN 후기",
-    '2014.04.06'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "", "2012년 8월 22일! 마지막 한중일 크루즈!", 'cruise', "2012년 8월 22일! 마지막 한중일 크루즈!",
-    '2014.04.06'
+    '2014.09.26'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "세계 최대 크루즈 22만톤 오아시스호!!", 'cruise', "세계 최대 크루즈 22만톤 오아시스호!!",
-    '2012.04.06'
+    '2014.10.06'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "[마감임박] 한중일 크루즈 - 어린이 무료!!", 'cruise', "마감임박] 한중일 크루즈 - 어린이 무료!!",
-    '2012.04.06'
+    '2014.11.06'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "4/19 하모니 크루즈 추가 예약 OPEN!!!", 'cruise', "4/19 하모니 크루즈 추가 예약 OPEN!!!",
-    '2014.04.06'
+    '2015.03.16'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "4/15, 4/22 하모니 크루즈 단체 할인", 'cruise', "4/15, 4/22 하모니 크루즈 단체 할인",
-    '2014.04.06'
+    '2015.03.26'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "한일크루즈 - 클럽하모니호 5~6월 일정 추가", 'cruise', "한일크루즈 - 클럽하모니호 5~6월 일정 추가",
-    '2014.04.06'
+    '2015.04.30'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", '[제주항공] 인천-나리타 (ICN-NRT) 운항스케쥴 변경 안내', 'airport', '[제주항공] 인천-나리타 (ICN-NRT) 운항스케쥴 변경 안내',
+    '2015.05.28'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[제주항공] S20 '코로나19' 로 인한 비운항 안내(일본/5월)", 'airport', "[제주항공] S20 '코로나19' 로 인한 비운항 안내(일본/5월)",
+    '2015.05.28'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", '[스쿠트항공] (추가공지) 스쿠트 비운항 일정 안내', 'airport', '[스쿠트항공] (추가공지) 스쿠트 비운항 일정 안내',
+    '2015.05.29'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "봄내음 물씬 풍기는 오사카 ♥ 대구에서 출발하는 특가 여행 출시!!", 'busanDaegu', "봄내음 물씬 풍기는 오사카 ♥ 대구에서 출발하는 특가 여행 출시!!",
+    '2016.03.06'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", '[타이항공](5/01-7/01) 인천 -방콕 및 인천-대만구간 결항 안내', 'airport', '[타이항공]](5/01-7/01) 인천 -방콕 및 인천-대만구간 결항 안내',
+    '2016.04.28'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", '[에티하드항공] 운항 중단 연장)', 'airport', '[에티하드항공] 운항 중단 연장',
+    '2016.04.28'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", '[비엣젯항공] 4-5월 비운항 항공편 추가 안내', 'airport', '[비엣젯항공] 4-5월 비운항 항공편 추가 안내',
+    '2016.04.28'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "똑똑한골퍼를위한 9월 특선 골프 후쿠오카 기쿠치 3/4일", 'golf', "똑똑한골퍼를위한 9월 특선 골프 후쿠오카 기쿠치 3/4일",
+    '2017.03.27'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "뭉치자 6/28 마닐라 깔라따간!", 'golf', "뭉치자 6/28 마닐라 깔라따간!",
+    '2017.05.17'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[여름골프] 에어콘이 필요없는(?) 시원한 라운딩", 'golf', "[여름골프] 에어콘이 필요없는(?) 시원한 라운딩",
+    '2017.06.06'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "울릉도 여행도 노랑풍선과 함께하세요~ (부산출발)", 'busanDaegu', "울릉도 여행도 노랑풍선과 함께하세요~ (부산출발)",
+    '2018.04.06'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[괌] Dusit thani guam 공사안내", 'hotel', "[호텔] [괌] Dusit thani guam 공사안내",
+    '2019.07.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[ETAS]호주비자신청 시스템 점검", 'airport', "[항공권소식] [ETAS]호주비자신청 시스템 점검",
+    '2019.07.10'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[타이항공] 인천공항 체크인 카운터 변경 안내", 'airport', "[항공권소식] [타이항공] 인천공항 체크인 카운터 변경 안내",
+    '2019.07.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[티웨이항공] 10/27~03/28 후쿠오카-인천 및 후쿠오카-대구 운항시각", 'airport', "[항공권소식] [티웨이항공] 10/27~03/28 후쿠오카-인천 및 후쿠오카-대구 운항시각",
+    '2019.07.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[티웨이항공] 07/31~10/26 인천-나고야-괌 운항시각 변경 안내", 'airport', "[항공권소식] [티웨이항공] 07/31~10/26 인천-나고야-괌 운항시각 변경 안내",
+    '2019.07.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[이스타항공] 하계 부산-치토세/간사이 결항안내", 'airport', "[항공권소식] [이스타항공] 하계 부산-치토세/간사이 결항안내",
+    '2019.07.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[제주항공] 무안-블라디보스톡 운항스케줄 비운항 안내 (9/1~)", 'airport', "[항공권소식] [제주항공] 무안-블라디보스톡 운항스케줄 비운항 안내 (9/1~)",
+    '2019.07.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[에어마카오] 7-8월 방콕, 대만 구간 결항 및 리타이밍 안내", 'airport', "[항공권소식] [에어마카오] 7-8월 방콕, 대만 구간 결항 및 리타이밍 안내",
+    '2019.07.11'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "2019년 6월 고객만족도조사 참여 이벤트 당첨자 발표", 'notice', "[공지사항] 2019년 6월 고객만족도조사 참여 이벤트 당첨자 발표",
+    '2019.07.12'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[Best 여행후기] 6월 당첨자 발표!", 'notice', "[공지사항] [Best 여행후기] 6월 당첨자 발표!",
+    '2019.07.12'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[베트남항공] 인천공항 수속 카운터 변경 안내(19년 7월 22일", 'airport', "[항공권소식] [베트남항공] 인천공항 수속 카운터 변경 안내(19년 7월 22일",
+    '2019.07.12'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[대만여행 프로모션] 당첨자 발표", 'notice', "[공지사항] [대만여행 프로모션] 당첨자 발표",
+    '2019.07.19'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[에어마카오] 8월 전구간 리타이밍 안내", 'airport', "[항공권소식] [에어마카오] 8월 전구간 리타이밍 안내",
+    '2019.07.19'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[에어마카오] 인천-마카오-인천 NX826/825 리타이밍 안내", 'airport', "[항공권소식] [에어마카오] 인천-마카오-인천 NX826/825 리타이밍 안내",
+    '2019.07.19'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[에티하드항공] 인천공항 체크인 카운터 변경 안내", 'airport', "[항공권소식] [에티하드항공] 인천공항 체크인 카운터 변경 안내",
+    '2019.07.20'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[티웨이항공] 07/11~10/26 카오슝-인천 운항시각 변경 안내", 'airport', "[항공권소식] [티웨이항공] 07/11~10/26 카오슝-인천 운항시각 변경 안내",
+    '2019.07.20'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[티웨이항공] 06/30~10/26 인천-푸켓 왕복노선 운항시각 ", 'airport', "[항공권소식] [티웨이항공] 06/30~10/26 인천-푸켓 왕복노선 운항시각",
+    '2019.07.20'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[이스타항공] 하계 청주-푸동 ZE821/822 결항안내", 'airport', "[항공권소식] [이스타항공] 하계 청주-푸동 ZE821/822 결항안내",
+    '2019.07.20'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[루프트한자] 인천공항 체크인 카운터 위치 변경 안내 (2019년 ", 'airport', "[항공권소식] [루프트한자] 인천공항 체크인 카운터 위치 변경 안내 (2019년 ",
+    '2019.07.20'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "[아시아나항공] 20년 하계 국제여객 스케줄 변경통보 #18", 'airport', "[아시아나항공] 20년 하계 국제여객 스케줄 변경통보 #18",
+    '2020.04.28'
+);
+insert into notice(
+    always, n_title, cate, n_content, w_date
+) values(
+    "", "몰디브 공항진흥기금 부과(ADC) 및 몰디브 국제공항 명칭변경(INIA) 안내", 'honey', "[아시아나항공] 20년 하계 국제여객 스케줄 변경통보 #18",
+    '2020.04.28'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "[코로나19] 필리핀_어라이벌 카드 (e-Arrival Card) 작성 안내", 'all', "[코로나19] 필리핀_어라이벌 카드 (e-Arrival Card) 작성 안내",
-    '2022.04.06'
+    '2020.05.06'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "[노랑풍선 앱/웹 이용 현황 조사] 당첨자 발표!", 'notice', "[노랑풍선 앱/웹 이용 현황 조사] 당첨자 발표!",
-    '2022.04.06'
+    '2020.05.16'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
@@ -317,77 +995,48 @@ insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "부산 파라다이스 호텔 백신 패스 도입에 대한 안내", 'hotel', "부산 파라다이스 호텔 백신 패스 도입에 대한 안내",
-    '2022.04.06'
+    '2022.08.16'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "노랑풍선 사칭 취업 피싱 관련 안내", 'notice', "노랑풍선 사칭 취업 피싱 관련 안내",
-    '2021.07.06'
+    '2022.08.16'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "[대구지사]장거리 여행 예약시 멀티어댑터 드립니다.", 'busanDaegu', "[대구지사]장거리 여행 예약시 멀티어댑터 드립니다.",
-    '2017.04.06'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "", "울릉도 여행도 노랑풍선과 함께하세요~ (부산출발)", 'busanDaegu', "울릉도 여행도 노랑풍선과 함께하세요~ (부산출발)",
-    '2018.04.06'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "", "봄내음 물씬 풍기는 오사카 ♥ 대구에서 출발하는 특가 여행 출시!!", 'busanDaegu', "봄내음 물씬 풍기는 오사카 ♥ 대구에서 출발하는 특가 여행 출시!!",
-    '2016.03.06'
+    '2022.08.16'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "중국 최고의 명산 '황산' 부산출발 직항 전세기 운항", 'busanDaegu', "중국 최고의 명산 '황산' 부산출발 직항 전세기 운항",
-    '2017.11.06'
+    '2022.08.26'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "[공지사항] 노랑풍선x하나카드 프로모션 조기종료", 'notice', "[공지사항] 노랑풍선x하나카드 프로모션 조기종료",
-    '2020.04.06'
+    '2022.09.06'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "노랑풍선 시스템 작업 공지", 'notice', "노랑풍선 시스템 작업 공지",
-    '2022.04.22'
+    '2022.09.22'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "[자유여행] 설 연휴기간 자유여행 상품 예약 및 이용안내", 'notice', "[자유여행] 설 연휴기간 자유여행 상품 예약 및 이용안내",
-    '2022.01.27'
+    '2022.09.27'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "노랑풍선 현금영수증 발급방법", 'notice', "노랑풍선 현금영수증 발급방법",
-    '2022.05.06'
+    '2022.09.30'
 );
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "", "똑똑한골퍼를위한 9월 특선 골프 후쿠오카 기쿠치 3/4일", 'golf', "똑똑한골퍼를위한 9월 특선 골프 후쿠오카 기쿠치 3/4일",
-    '2012.01.27'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "", "[여름골프] 에어콘이 필요없는(?) 시원한 라운딩", 'golf', "[여름골프] 에어콘이 필요없는(?) 시원한 라운딩",
-    '2022.06.06'
-);
-insert into notice(
-    always, n_title, cate, n_content, w_date
-) values(
-    "", "뭉치자 6/28 마닐라 깔라따간!", 'golf', "뭉치자 6/28 마닐라 깔라따간!",
-    '2012.05.17'
-);
+

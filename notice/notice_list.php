@@ -1583,13 +1583,13 @@ if($e_pageNum > $total_page){
             <li class="pagenav"><a href="notice_list.php">공지사항</a></li>
         </ul>
         <div class="content_title yellow">
-            <h2>공지사항</h2>
+            <h3>공지사항</h3>
         </div>
         <div class="content_wrap">
             <div class="content_left_wrap">
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
                 <ul class="aside_menu">
-                    <li class="aside_title">고객센터</li>
+                    <li class="aside_title"><h2>고객센터</h2></li>
                     <li class="aside_item open">
                         <a href="javascript:void(0);" class="aside_link">
                             공지사항
@@ -1711,7 +1711,7 @@ if($e_pageNum > $total_page){
             </div>
             <section class="notice_board_wrap">
                 <div>
-                    <h2 class="hide">공지사항 게시글 검색하기</h2>
+                    <h4 class="hide">공지사항 게시글 검색하기</h4>
                     <form>
                         <select>
                             <option>전체</option>
@@ -2089,13 +2089,13 @@ if($e_pageNum > $total_page){
             });
 
             //목록 페이지 밑줄 표시
-            var listPagerEls = $('.pager_a');
-            listPagerEls.click(function(){
-                listPagerEls.removeClass('active');
+            // var listPagerEls = $('.pager_a');
+            // listPagerEls.click(function(){
+            //     listPagerEls.removeClass('active');
 
-                var listPagerEl = $(this);
-                listPagerEl.addClass('active');
-            })
+            //     var listPagerEl = $(this);
+            //     listPagerEl.addClass('active');
+            // })
 
             // //목록 페이지 이동 버튼
             // var firstPageEl = $('.firstpage');

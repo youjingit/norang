@@ -1,0 +1,144 @@
+form {
+    float: right;
+    width: 948px;
+    margin-right: 20px;
+  }
+
+main h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+main hr {
+    color: #666;
+}
+
+.withdraw_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.withdraw_info_txt {
+    font-size: 16px;
+}
+
+.withdraw_info_txt p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.withdraw_info_txt p{
+    margin: 5px;
+}
+
+.help_menu span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #666;
+    border-radius: 12px;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.agree_info {
+    line-height: 22px;
+}
+
+.agree_check {
+    margin: 10px 0;
+}
+
+.agree_txt {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.my_point {
+    padding: 20px 200px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.my_point_lt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+.my_point_lt span {
+    display: block;
+    margin: 10px 0;
+}
+
+.my_point_rt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 25px;
+}
+
+.point_num {
+    color: #f35757;
+    font-size: 18px;
+}
+
+.point_give {
+    border: 1px solid #666;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.input_wrap {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 24px;
+}
+
+.reason_wrap {
+    border-right: 1px solid #666;
+    padding-right: 95px;
+}
+
+.reason_check h4 {
+    display: inline;
+    color: #f35757;
+}
+
+.wish_wrap h4{
+    display: inline;
+}
+
+.wish_wrap textarea {
+    margin-top: 20px;
+    resize: none;
+}
+
+.wish_wrap textarea:focus {
+    outline: none;
+}
+
+.reason_check {
+    margin-bottom: 20px;
+}
+
+.last_info {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+    line-height: 24px;
+}
+
+.last_info span {
+    color: #f35757;
+}

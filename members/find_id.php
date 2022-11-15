@@ -41,7 +41,7 @@
         </div>
 
         <div class="form_wrap">
-            <form class="find_form" name="find_form" action="find.php" method="post" onsubmit="find_form_check()">
+            <form class="find_form" name="find_form" action="find_id_action.php" method="post" onsubmit="find_form_check()">
                 <fieldset>
                     <legend class="hide">아이디 찾기</legend>
                     <p>회원가입 시 등록한 휴대폰 번호를 입력해주세요.</p>

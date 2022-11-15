@@ -1,22 +1,5 @@
 <?php
-// 세션으로 데이터 가져오기
-/* session_start();
-$s_idx =  isset($_SESSION["s_idx"])?  $_SESSION["s_idx"] : ""; */
 include "../inc/session.php";
-
-// DB 연결
-include "../inc/dbcon.php";
-
-// 쿼리 작성
-$sql = "select * from members where idx=$s_idx;";
-// 쿼리 실행
-$result = mysqli_query($dbcon, $sql);
-
-// DB에서 데이터 가져오기
-// mysqli_fetch_row(쿼리실행문) -- 필드순서
-// mysqli_fetch_array(쿼리실행문) -- 필드이름
-// mysqli_num_rows(쿼리실행문) -- 전체 행 개수
-$array = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -32,6 +15,8 @@ $array = mysqli_fetch_array($result);
     <link rel="stylesheet" type="text/css" href="../css/index/header.css">
     <link rel="stylesheet" type="text/css" href="../css/index/footer.css">
     <link rel="stylesheet" type="text/css" href="../css/my_page.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/withdrawal.css">
 </head>
 
 <body>
@@ -54,9 +39,8 @@ $array = mysqli_fetch_array($result);
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
-                            <li><a href="login.php">로그인</a></li>
-                            <li><a href="join_pre.php">회원가입</a></li>
-                            <li><a href="#">예약확인</a></li>
+                            <li><a href="./login/logout.php">로그아웃</a></li>
+                            <li><a href="">마이페이지</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
                             <li><a href="#">EN</a></li>
@@ -1530,17 +1514,17 @@ $array = mysqli_fetch_array($result);
         <ul class="breadcrumb">
             <li><a href="index.php"><i class="icon icon_home">메인홈</i></a></li>
             <li><a href="javascript:void(0);">마이페이지</a></li>
-            <li><a href="javascript:void(0);">개인정보 수정</a></li>
+            <li><a href="javascript:void(0);">회원탈퇴</a></li>
         </ul>
         <div class="content_title green">
-            <h3>개인정보 수정</h3>
+            <h3>회원탈퇴</h3>
         </div>
         <div class="content_wrap">
             <div class="content_left_wrap">
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
                 <ul class="aside_menu">
                     <li class="aside_title"><h2>마이페이지</h2></li>
-                    <li class="aside_item open">
+                    <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
                             예약/취소내역
                             <i class="icon icon_arrow_up" data-open="true"></i>
@@ -1672,7 +1656,7 @@ $array = mysqli_fetch_array($result);
                             </li>
                         </ul>
                     </li>
-                    <li class="aside_item">
+                    <li class="aside_item open">
                         <a href="javascript:void(0);" class="aside_link">
                             개인정보
                             <i class="icon icon_arrow_up" data-open="true"></i>
@@ -1680,167 +1664,102 @@ $array = mysqli_fetch_array($result);
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">개인정보 수정</a>
+                                <a href="my_page_auth.php" class="aside_link">개인정보 수정</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">비밀번호 변경</a>
+                                <a href="my_page_auth.php;" class="aside_link">비밀번호 변경</a>
                             </li>
                             <li class="aside_item">
                                 <a href="javascript:void(0);" class="aside_link">SNS 연결 설정</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">회원탈퇴</a>
+                                <a href="withdrawal.php" class="aside_link">회원탈퇴</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div class="content_right_wrap">
-                <div class="form_container">
-                    <form class="form" name="edit_form" action="edit.php" method="post" onsubmit="return edit_form_check()">
-                        <fieldset class="form_body">
-                            <legend class="hide">회원정보</legend>
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="form_inline">
-                                        <input type="hidden" name="g_idx" value="<?php echo $array["idx"]; ?>">
-                                        <label class="form_label">이메일 아이디</label>
-                                        <div class="form_group">
-                                            <input type="text" id="u_id" name="u_id" class="form_control" placeholder="이메일" value="<?php echo $array["u_id"];?>" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">비밀번호</label>
-                                        <div>
-                                            <div class="form_group">
-                                                <input type="password" id="pwd" name="pwd" class="form_control" placeholder="비밀번호">
-                                            </div>
-                                            <span id="err_pwd" class="err_txt"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">비밀번호 확인</label>
-                                        <div>
-                                            <div class="form_group">
-                                                <input type="password" id="re_pwd" name="re_pwd" class="form_control" placeholder="비밀번호 확인">
-                                            </div>
-                                            <span id="err_repwd" class="err_txt"></span>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">이름</label>
-                                        <div class="form_group">
-                                            <input type="text" id="u_name" name="u_name" class="form_control" placeholder="이름" value="<?php echo $array["u_name"];?>" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">휴대폰 번호</label>
-                                        <div class="form_group">
-                                            <input type="text" id="mobile" name="mobile" class="form_control" placeholder="휴대폰 번호" value="<?php echo $array["mobile"];?>" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <?php $birth = str_replace("-", "", $array["birth"]);?>
-                                        <label class="form_label">생년월일</label>
-                                        <div class="form_group">
-                                            <input type="text" id="birth" name="birth" class="form_control" placeholder="생년월일" value="<?php echo $birth;?>">
-                                        </div>
-                                    </div>
-                                    <div class="form_inline">
-                                        <label class="form_label">성별</label>
-                                        <div class="form_group">
-                                            <div class="form_check">
-                                                <input type="radio" name="gender" id="male" class="form_check_input" value="m" <?php if($array["gender"] == "m") echo " checked";?>>
-                                                <label class="form_check_label">남</label>
-                                            </div>
-                                            <div class="form_check">
-                                                <input type="radio" name="gender" id="female" class="form_check_input" value="f" <?php if($array["gender"] == "f") echo " checked";?>>
-                                                <label class="form_check_label">여</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion open">
-                                <div class="accordion_toggle">
-                                    개인정보 유효기간
-                                    <i class="icon icon_arrow_up" data-open="true"></i>
-                                    <i class="icon icon_arrow_down" data-open="false"></i>
-                                </div>
-                                <div class="accordion_content">
-                                    <ul>
-                                        <li>3년 이상으로 설정하시면 장기 미 이용 시에 휴면계정으로 전환되지 않고 노랑풍선 회원으로 유지되어 다양한 혜택을 이용하실 수 있습니다.</li>
-                                        <li>개인정보 파기 또는 분리 저장·관리하는 서비스 미이용 기간을 위의 선택 기간으로 요청합니다.</li>
-                                        <li>별도의 요청(선택)이 없으실 경우 서비스 미이용 기간은 1년(기본값)으로 설정됩니다.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="form_inline">
-                                <div class="form_group">
-                                    <div class="form_check">
-                                        <input type="radio" class="form_check_input" id="until_withdraw" class="privacy" name="privacy_period" value="until_withdraw"<?php if($array["privacy_period"] == "until_withdraw") echo " checked";?>>
-                                        <label class="form_check_label">회원 탈퇴 시 까지</label>
-                                    </div>
-                                    <div class="form_check">
-                                        <input type="radio" class="form_check_input" id="5years" class="privacy" name="privacy_period" value="5y"<?php if($array["privacy_period"] == "5y") echo " checked";?>>
-                                        <label class="form_check_label">5년</label>
-                                    </div>
-                                    <div class="form_check">
-                                        <input type="radio" class="form_check_input" id="3years" class="privacy" name="privacy_period" value="3y"<?php if($array["privacy_period"] == "3y") echo " checked";?>>
-                                        <label class="form_check_label">3년</label>
-                                    </div>
-                                    <div class="form_check">
-                                        <input type="radio" class="form_check_input" id="1year" class="privacy" name="privacy_period" value="1y"<?php if($array["privacy_period"] == "1y") echo " checked";?>>
-                                        <label class="form_check_label">1년</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="form_check">
-                                        <input type="checkbox" class="form_check_input" id="option_ap">
-                                        <label class="form_check_label">선택 약관에 동의합니다.</label>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card_text">선택</p>
-                                    <div class="card_section">
-                                        <div class="form_group_between">
-                                            <div class="form_check">
-                                                <input type="checkbox" class="form_check_input opt_ap" name="info_collect_apply" id="opt_apply1" value="y"<?php if($array["info_collect_apply"] == "y") echo " checked";?>>
-                                                <label class="form_check_label">개인정보 수집 및 이용 동의</label>
-                                            </div>
-                                            <a href="javascript:void(0);" class="form_link">전체보기</a>
-                                        </div>
-                                    </div>
-                                    <div class="card_section">
-                                        <div class="form_check">
-                                            <input type="checkbox" class="form_check_input opt_ap" name="marketing_apply" id="opt_apply2" value="y"<?php if($array["marketing_apply"] == "y") echo " checked";?>>
-                                            <label class="form_check_label">마케팅 정보 수신 동의</label>
-                                        </div>
-                                        <div class="card_inner_section">
-                                            <div class="form_group">
-                                                <div class="form_check">
-                                                    <input type="checkbox" class="form_check_input opt_ap" name="email_apply" id="email_apply" value="y"<?php if($array["email_apply"] == "y") echo " checked";?>>
-                                                    <label class="form_check_label">이메일</label>
-                                                </div>
-                                                <div class="form_check">
-                                                    <input type="checkbox" class="form_check_input opt_ap" name="sms_apply" id="sms_apply" value="y"<?php if($array["sms_apply"] == "y") echo " checked";?>>
-                                                    <label class="form_check_label">SNS</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div class="form_footer">
-                            <button type="button" class="form_btn form_gray_btn" onclick="history.back()">취소</button>
-                            <button type="submit" class="form_btn form_yellow_btn">정보수정</button>
+            <form id="withdraw_form" action="withdraw_action.php" method="post" onsubmit="return withdraw_form_check()">
+                <fieldset>
+                    <legend class="hide">회원탈퇴 안내</legend>
+                    <div class="withdraw_info">
+                        <div class="withdraw_info_txt">
+                            <p>회원님 노랑풍선 서비스를 이용하시는데 불편함이 있으셨나요?</p>
+                            <p>1.노랑풍선에서 발송하는 SMS & 메일 수신거부는 ‘마이페이지 > 개인정보’ 에서 확인하세요.</p>
+                            <p>2.이용 불편 및 각종 문의 사항은 고객센터로 문의 주시면 성심 성의껏 답변 드리겠습니다.</p>
                         </div>
-                    </form>
-                </div>
-            </div>
+                        <div class="help_menu">
+                            <span><a href="#">자주하는 질문</a></span>
+                            <span><a href="#">1:1 문의</a></span>
+                            <span>전화문의 1544-2288</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h4>안내사항</h4>
+                        <ul class="agree_info">
+                            <li>‘전자상거래 등에서의 소비자 보호에 관한 법률’ 에 따라 계약 또는 청약철회에 관한 기록, 대금결제 및 재화 등의 공급에 관한<br>
+                            기록은 5년, 소비자의 불만 또는 분챙처리에 관한 기록은 3년 동안 보존됩니다.</li>
+                            <li>회원탈퇴 후 노랑풍선 서비스에 입력하신 상품문의 및 후기 등은 삭제되지 않으며,<br>회원정보 삭제로 인해 작성자 본인을 확인할 수 없어 편집 및 삭제 처리가 원천적으로 불가능 합니다.
+                            <br>- 상품문의 및 후기 삭제를 원하시는 경우에는 먼저 해당 게시물을 삭제하신 후 탈퇴를 신청하시기 바랍니다.</li>
+                            <li>회원탈퇴 후 모든 개인정보는 개인정보 처리방침에 의거하여 삭제됩니다. 노랑풍선 이벤트에 참여하신 댓글내역도 삭제됩니다.</li>
+                            <li>회원탈퇴 후 포인트는 전액 소멸되며 이후 재가입하셔도 복구하실 수 없습니다.</li>
+                            <li>이미 결제가 완료된 건은 탈퇴로 취소되지 않습니다.</li>
+                        </ul>
+                        <div class="agree_check">
+                            <input type="checkbox" id="agree">
+                            <label for="agree"><span class="agree_txt">위 내용을 모두 확인하였으며, 동의합니다.</span></label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="my_point">
+                        <div class="my_point_lt">
+                            <img src="../images/mypage/mypage_2.jpg">
+                            <span>나의 보유 포인트</span>
+                            <span class="point_num">0p</span>
+                        </div>
+                        <div class="my_point_rt">
+                            <span>탈퇴 하시기 전 보유하신 포인트를<br>다른 회원에게 선물할 수 있습니다.<br>(1P부터 선물가능)</span><br>
+                            <button type="button" class="point_give">노랑풍선 포인트 선물하기</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="input_wrap">
+                        <div class="reason_wrap">
+                            <div class="reason_check">
+                                <p>고객님들께 더 좋은 서비스를 제공하기 위하여 아래 회원<h4>탈퇴 사유를 선택해 주세요.(필수)</h4></p>
+                                <p>모든 고객님께서 만족하실 수 있는 노랑풍선이 되도록<br>항상 노력하겠습니다.</p>
+                            </div>
+                            <ul>
+                                <li><input type="radio" id="reason1"><label for="reason1">여행 상품에 대한 불만</label></li> 
+                                <li><input type="radio" id="reason2"><label for="reason2">예약과정이 어려움</label></li> 
+                                <li><input type="radio" id="reason3"><label for="reason3">가격/품질/행사일정</label></li> 
+                                <li><input type="radio" id="reason4"><label for="reason4">회원혜택부족</label></li> 
+                                <li><input type="radio" id="reason5"><label for="reason5">규정 미 동의</label></li> 
+                                <li><input type="radio" id="reason6"><label for="reason6">불친절 및 지연</label></li> 
+                                <li><input type="radio" id="reason7"><label for="reason7">여행정보부족</label></li> 
+                                <li><input type="radio" id="reason8"><label for="reason8">사후조치불만</label></li> 
+                                <li><input type="radio" id="reason9"><label for="reason9">상품찾기가 어려움</label></li>
+                            </ul>
+                        </div>
+                        <div class="wish_wrap">
+                            <h4>노랑풍선에 바라는 점 (선택)</h4>
+                            <p>기타 사유나 노랑풍선에 전달하실 내용이 있으시면 작성하세요.</p>
+                            <textarea class="wish" name="wish" id="wish_txt" cols="50" rows="16" placeholder="내용을 입력하세요."  title="노랑풍선에 바라는 점"></textarea>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="last_info">
+                        <p><span>'탈퇴하기'를 누르면 즉시 탈퇴</span>가 처리되며</p>
+                        <p>같은 아이디로 재가입 하더라도 기존 정보 복구는 불가능합니다.</p>
+                        <p>포인트도 전액 소멸되므로 다시 한번 확인해주세요.</p>
+                    </div>
+                    <div class="form_footer">
+                        <button type="button" class="form_btn form_gray_btn" onclick="history.back()">취소</button>
+                        <button type="submit" class="form_btn form_yellow_btn">회원탈퇴</button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </main>
     <hr>
@@ -2052,140 +1971,24 @@ $array = mysqli_fetch_array($result);
                 var asideItemEl = $(this);
                 var isOpen = asideItemEl.hasClass('open');
                 asideItemEls.removeClass('open');
-                
+
                 if(!isOpen) {
                     asideItemEl.addClass('open');
                 } 
             });
-
-            // accordion(개인정보 유효기간)
-            var accordionArrowEls = $('.accordion [data-open]');
-            var asideItemEls = $('.aside_item');
-            accordionArrowEls.click(function(){
-                var accordionEl = $(this).closest('.accordion');
-                var isOpen = accordionEl.hasClass('open');
-                accordionEl.removeClass('open');
-                if(!isOpen) {
-                    accordionEl.addClass('open');
-                } 
-            });
-
-            // 선택약관 전체동의 
-            var optionEl = document.getElementById("option_ap");
-            optionEl.onclick = function () {
-                var isChecked = optionEl.checked;
-                var optEls = document.querySelectorAll(".opt_ap");
-
-                for (var index = 0; index < optEls.length; index++) {
-                    var optEl = optEls[index];
-                    optEl.checked = isChecked;
-                }
-            }
-
-            // 선택약관 항목별 자동선택
-            var collectApplyEl = document.getElementById("opt_apply1");
-            var marketApplyEl = document.getElementById("opt_apply2");
-            var emailApplyEl = document.getElementById("email_apply");
-            var smsApplyEl = document.getElementById("sms_apply");
-
-            collectApplyEl.onclick = function(){
-                var isChecked = collectApplyEl.checked;
-                optionEl.checked = isChecked;
-                marketApplyEl.checked = isChecked;
-                emailApplyEl.checked = isChecked;
-                smsApplyEl.checked = isChecked;
-            }
-            marketApplyEl.onclick = function(){
-                var isChecked = marketApplyEl.checked;
-                if(isChecked){
-                    optionEl.checked = true;
-                    collectApplyEl.checked = true;
-                    emailApplyEl.checked = true;
-                    smsApplyEl.checked = true;
-                } else {
-                    optionEl.checked = false;
-                    emailApplyEl.checked = false;
-                    smsApplyEl.checked = false;
-                }
-            }
-            emailApplyEl.onclick = function(){
-                var isChecked = emailApplyEl.checked;
-                var isSmsChecked = smsApplyEl.checked;
-                if(isChecked === true){
-                    collectApplyEl.checked = true;
-                    marketApplyEl.checked = true;
-                    if(isSmsChecked === true){
-                        optionEl.checked = true;
-                    }
-                } else {
-                    if(isSmsChecked === false){
-                        marketApplyEl.checked = false;
-                    }
-                    optionEl.checked = false;
-                }
-            }
-            smsApplyEl.onclick = function(){
-                var isChecked = smsApplyEl.checked;
-                var isEmailChecked = emailApplyEl.checked;
-                if(isChecked === true){
-                    collectApplyEl.checked = true;
-                    marketApplyEl.checked = true;
-                    if(isEmailChecked === true){
-                        optionEl.checked = true;
-                    }
-                } else {
-                    if(!isEmailChecked){
-                        marketApplyEl.checked = false;
-                    }
-                    optionEl.checked = false;
-                }
-            }
         });
-        function edit_form_check(){
-            var u_pwd = document.getElementById("pwd");
-            var u_repwd = document.getElementById("re_pwd");
 
-            if(u_pwd.value){
-                var cnt = 0;
-                var format1 = /[0-9]/;
-                if (format1.test(u_pwd.value)) {
-                    cnt++;
-                }
+         function withdraw_form_check() {
+            var agreeCk = document.getElementById("agree:checked");
+            var reasonCk = document.getElementById("reason:checked");
 
-                var format2 = /[a-zA-Z]/;
-                if (format2.test(u_pwd.value)) {
-                    cnt++;
-                }
+            if (agreeCk == null) {
+                alert("안내사항에 동의해주세요.");
+                return false;
+            } else {
 
-                var format3 = /[~?!@#$%<>^&*\()\-=+_\’\:\;\.\,\"\'\[\]\{\}\/\|\`]/gi;
-                if (format3.test(u_pwd.value)) {
-                    cnt++;
-                }
-
-                var txt = document.getElementById("err_pwd");
-                if ((cnt >= 2 && u_pwd.value.length >= 10) || (cnt >= 3 && u_pwd.value.length >= 8)) {
-                    txt.innerHTML = "";
-                } else {
-                    txt.innerHTML =
-                        "<em>-영문,숫자,특수문자 중 2가지 종류이상을 조합으로 10자리이상 입력하세요.<br>-영문,숫자,특수문자 중 3가지 종류이상을 조합으로 8자리이상 입력하세요.</em>";
-                    u_pwd.focus();
-                    return false;
-                }
-                
-                if (u_pwd.value != u_repwd.value) {
-                    var txt = document.getElementById("err_repwd");
-                    txt.innerHTML = "<em>비밀번호를 확인하세요.</em>";
-                    u_repwd.focus();
-                    return false;
-                } else {
-                    var txt = document.getElementById("err_repwd");
-                    txt.innerHTML = "";
-                }
             }
         };
-
-            
-            
     </script>
 </body>
 

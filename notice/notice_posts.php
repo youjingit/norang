@@ -1560,7 +1560,7 @@ $array = mysqli_fetch_array($result);
             <li class="pagenav"><a href="notice_list.php">공지사항</a></li>
         </ul>
         <div class="content_title yellow">
-            <h2>공지사항</h2>
+            <h3>공지사항</h3>
         </div>
         <?php if($s_id == "admin@abc.com"){ ?>
             <p class="write_area">
@@ -1571,7 +1571,7 @@ $array = mysqli_fetch_array($result);
             <div class="content_left_wrap">
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
                 <ul class="aside_menu">
-                    <li class="aside_title">고객센터</li>
+                    <li class="aside_title"><h2>고객센터</h2></li>
                     <li class="aside_item open">
                         <a href="javascript:void(0);" class="aside_link">
                             공지사항

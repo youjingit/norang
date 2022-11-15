@@ -61,7 +61,7 @@ main {
     margin: 0 auto;
     height: 92px;
     background-color: transparent;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -225,10 +225,13 @@ main {
     display: block;
 }
 
+.aside_title h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .aside_title {
     margin-bottom: 15px;
-    font-size: 21px;
-    font-weight: bold;
     text-align: center;
 }
 
