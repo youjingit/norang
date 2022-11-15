@@ -109,6 +109,10 @@ main hr {
     padding-right: 95px;
 }
 
+.reason_wrap li {
+    margin: 2px 0;
+}
+
 .reason_check h4 {
     display: inline;
     color: #f35757;

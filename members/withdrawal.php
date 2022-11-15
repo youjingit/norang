@@ -1731,21 +1731,22 @@ include "../inc/session.php";
                                 <p>모든 고객님께서 만족하실 수 있는 노랑풍선이 되도록<br>항상 노력하겠습니다.</p>
                             </div>
                             <ul>
-                                <li><input type="radio" id="reason1"><label for="reason1">여행 상품에 대한 불만</label></li> 
-                                <li><input type="radio" id="reason2"><label for="reason2">예약과정이 어려움</label></li> 
-                                <li><input type="radio" id="reason3"><label for="reason3">가격/품질/행사일정</label></li> 
-                                <li><input type="radio" id="reason4"><label for="reason4">회원혜택부족</label></li> 
-                                <li><input type="radio" id="reason5"><label for="reason5">규정 미 동의</label></li> 
-                                <li><input type="radio" id="reason6"><label for="reason6">불친절 및 지연</label></li> 
-                                <li><input type="radio" id="reason7"><label for="reason7">여행정보부족</label></li> 
-                                <li><input type="radio" id="reason8"><label for="reason8">사후조치불만</label></li> 
-                                <li><input type="radio" id="reason9"><label for="reason9">상품찾기가 어려움</label></li>
+                                <li><input type="radio" name="reason" id="reason1" value="여행 상품에 대한 불만"><label for="reason1">여행 상품에 대한 불만</label></li> 
+                                <li><input type="radio" name="reason" id="reason2" value="예약과정이 어려움"><label for="reason2">예약과정이 어려움</label></li> 
+                                <li><input type="radio" name="reason" id="reason3" value="가격/품질/행사일정"><label for="reason3">가격/품질/행사일정</label></li> 
+                                <li><input type="radio" name="reason" id="reason4" value="회원혜택부족"><label for="reason4">회원혜택부족</label></li> 
+                                <li><input type="radio" name="reason" id="reason5" value="규정 미 동의"><label for="reason5">규정 미 동의</label></li> 
+                                <li><input type="radio" name="reason" id="reason6" value="불친절 및 지연"><label for="reason6">불친절 및 지연</label></li> 
+                                <li><input type="radio" name="reason" id="reason7" value="여행정보부족"><label for="reason7">여행정보부족</label></li> 
+                                <li><input type="radio" name="reason" id="reason8" value="사후조치불만"><label for="reason8">사후조치불만</label></li> 
+                                <li><input type="radio" name="reason" id="reason9" value="상품찾기가 어려움"><label for="reason9">상품찾기가 어려움</label></li>
                             </ul>
                         </div>
                         <div class="wish_wrap">
                             <h4>노랑풍선에 바라는 점 (선택)</h4>
                             <p>기타 사유나 노랑풍선에 전달하실 내용이 있으시면 작성하세요.</p>
-                            <textarea class="wish" name="wish" id="wish_txt" cols="50" rows="16" placeholder="내용을 입력하세요."  title="노랑풍선에 바라는 점"></textarea>
+                            <textarea class="wish" name="wish" id="wish_txt" cols="50" rows="16" maxlength="400" placeholder="내용을 입력하세요." title="노랑풍선에 바라는 점"></textarea>
+                            <div id="test_cnt">(0 / 400)</div>
                         </div>
                     </div>
                     <hr>
@@ -1977,18 +1978,37 @@ include "../inc/session.php";
                 } 
             });
         });
-
+        // 필수체크 안되어있을때 알림창
          function withdraw_form_check() {
-            var agreeCk = document.getElementById("agree:checked");
-            var reasonCk = document.getElementById("reason:checked");
+            var agreeCkEl = document.querySelector("#agree:checked");
+            var reasonCkEl = document.querySelector("[name=reason]:checked");
 
-            if (agreeCk == null) {
+            if (agreeCkEl == null) {
                 alert("안내사항에 동의해주세요.");
                 return false;
-            } else {
+            } 
 
+            if (reasonCkEl == null) {
+                alert("탈퇴사유에 체크해주세요.");
+                return false;
+            } 
+
+            var rtn_val = confirm("정말 탈퇴하시겠습니까?");
+            if(rtn_val == false){
+                return false;
             }
         };
+        // textarea 글자수 제한
+        $(document).ready(function() {
+            $('#wish_txt').on('keyup', function() {
+            $('#test_cnt').html("("+$(this).val().length+" / 400)");
+ 
+            if($(this).val().length > 400) {
+                $(this).val($(this).val().substring(0, 400));
+                $('#test_cnt').html("(400 / 400)");
+            }
+        });
+    });
     </script>
 </body>
 

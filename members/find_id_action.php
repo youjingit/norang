@@ -26,7 +26,10 @@ $array = mysqli_fetch_array($result);
 
 $u_id = $array["u_id"];
 
-if($sql){ 
+// DB 종료
+mysqli_close($dbcon);
+
+if($u_id){ 
     echo "
     <script type=\"text/javascript\">
         location.href = \"find_id_result.php?id=$u_id\";
@@ -40,9 +43,4 @@ if($sql){
     </script>
     ";
 };
-
-
-// DB 종료
-mysqli_close($dbcon);
-
 ?>

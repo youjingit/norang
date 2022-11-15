@@ -11,7 +11,10 @@ create table members(
     marketing_apply char(1),
     email_apply char(1), 
     sms_apply char(1),
-    reg_date datetime
+    reg_date datetime,
+    withdrawal char(1),
+    withdraw_reason varchar(15),
+    withdraw_wish varchar(400)
 );
 
 

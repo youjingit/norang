@@ -298,6 +298,9 @@
                 var txt = document.getElementById("err_birth");
                 txt.innerHTML = "<em>성별을 선택하세요.</em><br><br>";
                 return false;
+            } else {
+                var txt = document.getElementById("err_birth");
+                txt.innerHTML = "";
             }
 
             var priv_yearEl = document.querySelectorAll(".privacy:checked");
