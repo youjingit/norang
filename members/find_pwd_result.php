@@ -3,9 +3,9 @@
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$pwd = $_GET["pwd"];
+$u_id = $_GET["id"];
 
-$sql = "select * from members where pwd='$pwd';";
+$sql = "select * from members where u_id='$u_id';";
 // 쿼리 실행
 $result = mysqli_query($dbcon, $sql);
 
@@ -57,7 +57,7 @@ $array = mysqli_fetch_array($result);
         <p class="compl_subtitle">임시비밀번호가 발급되었습니다.<br>아래 임시비밀번호로 로그인 후 <br>반드시 마이페이지에서 비밀번호를 수정하세요</p>
 
         <div class="id_box">
-            <p>임시비밀번호 : <span><?php echo $pwd;?></span></p>
+            <p>임시비밀번호 : <span><?php echo $array["pwd"];?></span></p>
         </div>
 
         <div class="btn_wrap">
