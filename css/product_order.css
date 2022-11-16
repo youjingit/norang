@@ -1,0 +1,220 @@
+main {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  
+.main_title {
+    width: 1200px;
+    height: 92px;
+    margin: 0 auto;
+    background-color: #fae8fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main_title h2 {
+    font-size: 30px;
+}
+
+main h3 {
+    color: #1519a4;
+}
+
+main li {
+    font-size: 12px;
+    color: rgb(70, 70, 70);
+    line-height: 20px;
+}
+
+.product_title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.product_title_wrap {
+    border: 1px solid #666;
+    padding: 15px;
+}
+
+.product_title_wrap p {
+    display: flex;
+    align-items: center;
+}
+
+.vehicle_icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-indent: -9999px;
+    margin: 4px 5px;
+}
+
+.asiana {
+    background: url(../images/sub_page/OZ.png) no-repeat;
+}
+
+.cont_box {
+    border: 1px solid #666;
+    padding: 15px;
+}
+
+.term_wrap a {
+    display: inline-flex;
+    text-align: center;
+    border: 1px solid #666;
+    width: 100px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4px;
+}
+
+.term_title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.point_wrap {
+    display: flex;
+    width: 100%;
+}
+
+.point_wrap > .cont_box {
+    width: 50%;
+    text-align: center;
+}
+
+.save_point {
+    border-right: 1px solid #666;
+}
+
+.price_table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.price_table th {
+    border-bottom: 1px solid #000;
+    height: 35px;
+}
+
+.price_table tr {
+    height: 30px;
+}
+
+.table_total_price {
+    font-weight: bold;
+    color: #f25b5b;
+}
+
+.input_table {
+    border: 1px solid #000;
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.input_table th, 
+.input_table td {
+    border: 1px solid #666;
+    padding: 10px;
+}
+
+.input_table input, 
+.input_table select {
+    height: 30px;
+}
+
+.age_notice {
+    color: red;
+}
+
+.person_detail {
+    border: 1px solid #000;
+    width: 100%;
+    padding: 10px;
+}
+
+.person_detail input {
+    height: 30px;
+    margin-left: 10px;
+}
+
+#last_name1 {
+    width: 100px;
+}
+
+.gender_wrap {
+    display: flex;
+    align-items: center;
+}
+
+.gender_group {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.form_bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.office_column {
+    display: flex;
+    flex-direction: column ;
+    width: 45%;
+}
+
+.office_column2 {
+    width: 45%;
+    position: relative;
+}
+
+.office_wrap {
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coupon_btn {
+    display: inline-flex;
+    text-align: center;
+    border: 1px solid #666;
+    width: 80px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -13px;
+    right: 0px;
+}
+
+.dc_table th{
+    width: 100px;
+}
+
+.total_box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cont_item:not(:last-child){
+    border-right: 1px solid #666;
+}
+
+.cont_item {
+    text-align: center;
+}
+
+.item_title {
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -53,6 +53,10 @@ main {
     color: #3e30c4;
     font-weight: bold;
 }
+.content_title_h2 {
+    font-size: 30px;
+    font-weight: bold;
+  }
 
 .content_title {
     display: flex;
@@ -61,7 +65,7 @@ main {
     margin: 0 auto;
     height: 92px;
     background-color: transparent;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
 }
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./css/base.css">
     <link rel="stylesheet" type="text/css" href="./css/common.css">
     <link rel="stylesheet" type="text/css" href="./css/form.css">
-
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -35,12 +32,11 @@
     <hr>
     <main class="form_main">
         <h2 class="form_title">비회원 예약조회</h2>
-
         <div class="form_tab">
             <h3 class="form_tab_title"><a href="nonmember_reserve_pkg.html">패키지여행</a></h3>
             <h3 class="form_tab_title active"><a href="#">자유여행</a></h3>
         </div>
-        <form class="form">
+        <form class="form" name="nonmem_reserve_find" action="nonmem_free_find_action.php" method="post" onsubmit="find_form_check()">
             <fieldset>
                 <legend class="hide">비회원 자유여행 예약조회</legend>
                 <div class="form_section">
@@ -54,7 +50,7 @@
             </fieldset>
         </form>
         <hr>
-        <button type="button" class="join_button" onclick="location.href='./members/join_pre.php'">회원가입</button>
+        <button type="button" class="join_button" onclick="location.href='../members/join_pre.php'">회원가입</button>
 
     </main>
     <footer>

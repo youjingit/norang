@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/find_pwd.css">
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -41,7 +39,7 @@
         </div>
 
         <div class="form_wrap">
-            <form class="find_form" name="find_form" action="find.php" method="post" onsubmit="find_form_check()">
+            <form class="find_form" name="find_form" action="find_pwd_action.php" method="post" onsubmit="find_form_check()">
                 <fieldset>
                     <legend class="hide">비밀번호 찾기</legend>
                     <p>회원가입 시 등록한 이메일 정보를 입력해주세요.</p>

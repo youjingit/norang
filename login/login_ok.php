@@ -37,6 +37,7 @@ if(!$num){ // 일치하는 아이디가 없다면
     echo "
         <script type=\"text/javascript\">
             alert(\"일치하는 아이디가 없습니다.\");
+            location.href = \"login.php\";
         </script>
     ";
 

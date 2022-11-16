@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/index/header.css">
     <link rel="stylesheet" type="text/css" href="../css/index/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/west_europe.css">
-    <link rel="stylesheet" type="text/css" href="../css/product_info.css">
+    <link rel="stylesheet" type="text/css" href="../css/product_order.css">
 </head>
-
 <body>
     <header>
         <nav class="gnb">
@@ -1508,244 +1505,326 @@
         </nav>
     </header>
     <main>
-        <ul class="breadcrumb">
-            <li><a class="home_icon" href="index.php">메인홈</a></li>
-
-            <li class="pagenav"><a href="">패키지여행</a></li>
-
-            <li class="pagenav"><a href="">해외패키지</a></li>
-
-            <li class="pagenav"><a href="">유럽</a></li>
-
-            <li class="pagenav"><a href="west_europe.html">서유럽</a></li>
-        </ul>
-    <hr>
-    <section class="product_header">
-        <div class="main_image_slide">
-            <ul class="slider">
-                <li><img src="images/product/main01.jpg" alt="시에나"></li>
-                <!-- <li><img src="images/product/main02.jpg" alt="로마,콜로세움"></li>
-                <li><img src="images/product/main03.jpg" alt="피사,피사의사탑"></li>
-                <li><img src="images/product/main04.jpg" alt="베니스"></li>
-                <li><img src="images/product/main05.jpg" alt="로마,성베드로성당&광장"></li>
-                <li><img src="images/product/main06.jpg" alt="로마,스페인광장"></li> -->
-            </ul>
-            상품번호 EWP4110-221105OZ00
+        <div class="main_title">
+        <h2>예약하기</h2>
         </div>
-        <div class="main_product_title">
-            <div class="label_btn_wrap">
-                <div class="label_wrap">
-                    <div class="foreign_pkg_label">해외패키지</div>
+        <form id="reserve_form" action="reserve_action.php" method="post" onsubmit="return reserve_form_check()">
+            <fieldset>
+                <legend class="hide">상품예약</legend>
+                <div class="product_title_wrap">
+                    <h3 class="product_title">[돌체 이탈리아 9일] 슬로우 라이프_오르비에토/토스카나+나/폼/소+10대 맛체험[OZ/1급호텔]</h3>
+                    <p>출발일 : (한국 출발) 2022년 11월 05일(토) 11:30 (현지 도착) 2022년 11월 05일(토) 17:05  OZ561 <i class="vehicle_icon asiana"></i>아시아나항공</p>
+                    <p>도착일 : (현지 출발) 2022년 11월 12일(토) 18:40 (한국 도착) 2022년 11월 13일(일) 14:10  OZ562 <i class="vehicle_icon asiana"></i>아시아나항공</p>
                 </div>
-                <button type="button" class="tourinfo_btn">여행상품 핵심정보</button>
-            </div>
-            <h3>[돌체 이탈리아 9일] 슬로우 라이프_오르비에토/토스카나+나/폼/소+10대 맛체험[OZ]</h3>
-                <div class="main_product_explain">
-                    <p>★왕복국적기직항★ 여행자들의 로망, 여행가고 싶은 국가, 한번 더 방문하고 싶은 나라 이탈리아!!</p>
-                    <p>완벽 이태리일주 9일! 국적기 직항으로 다녀 올 수 있는 알찬 패키지여행입니다.</p>
-                </div>
-                    <div class="main_product_bottom">
-                        <div>
-                            <span>고객리뷰</span>
-                            <span class="score_i">★</span>
-                            <span class="score">3.4 / 5</span>
-                        </div>
-                        <div class="price_wrap">
-                            <span>성인 1인</span> 
-                            <span class="main_product_price">2,829,000 원</span>
-                        </div>
+                <div>
+                <h3>약관동의</h3>
+                    <div class="cont_box term_wrap">
+                        <span class="term_title">필수 약관 동의</span> 
+                        <input type="checkbox" id="term1"><label for="term1">특별 약관</label>
+                        <a href="">자세히 보기</a>
+                        <input type="checkbox" id="term2"><label for="term2">개인정보 제3자 제공</label>
+                        <a href="">자세히 보기</a>
+                        <input type="checkbox" id="term3"><label for="term3">개인정보 수집 및 이용동의</label>
+                        <a href="">자세히 보기</a>
+                        <input type="checkbox" id="term4"><label for="term4">고유식별정보 수집 및 이용동의</label>
+                        <a href="">자세히 보기</a>
                     </div>
-                </div>  
-        </section>
-    <hr>
-    <div class="main_content_wrap">
-        <section class="content_left">
-        <h3>여행 주요일정</h3>
-            <div class="schedule_summary_wrap">
-                <h4>일정</h4>
-                <div>
-                    <p>출발: 2022.11.05 (토) 11:30 → 2022.11.05 (토) 17:05<span class="airport_number">OZ561</span></p> 
-                    <p>도착: 2022.11.12 (토) 18:40 → 2022.11.13 (일) 14:10<span class="airport_number">OZ562</span></p>
+                    <div class="cont_box">
+                        <span class="term_title">선택 약관 동의</span>
+                        <input type="checkbox" id="term_opt"><label for="term_opt">개인정보 수집 및 이용동의</label>
+                        <a href="">자세히 보기</a>
+                    </div>
                 </div>
-            </div>
-            <div class="schedule_summary_wrap">
-                <h4>여행도시</h4>
                 <div>
-                    <p>인천 → 로마(1) → 시에나 → 산지미냐노 → 베니스(1) → 파르마(1) → 친퀘테레 → 피사 → 몬테카티니(1) →</p> 
-                    <p>피렌체 → 끼안치아노(1) → 오르비에토 → 아씨시 → 로마(1) → 폼페이 → 소렌토 →</p> 
-                    <p>나폴리 → 로마(1) → 인천</p>
-                </div>
-            </div>
-            <div class="schedule_summary_wrap">
-                <h4>예약현황</h4>
-                <div>
-                    <p>예약: 25석 남은좌석: 0석 (최소출발 20명)</p>
-                </div>
-            </div>
-            <table class="price_table">
-                <caption class="hide">연령별 금액</caption>
-                <tr>
-                    <th>구분</th>
-                    <th>성인</th>
-                    <th>아동 (만 2세~만 12세 미만)</th>
-                    <th>유아 (만 2세 미만)</th>
-                </tr>
-                <tr>
-                    <td>기본 상품가</td>
-                    <td>2,390,000원</td>
-                    <td>2,390,000원</td>
-                    <td>500,000원</td>
-                </tr>
-                <tr>
-                    <td>유류할증료</td>
-                    <td>439,000원</td>
-                    <td>439,000원</td>
-                    <td>0원</td>
-                </tr>
-                <tr>
-                    <td>총 상품가</td>
-                    <td class="table_total_price">2,829,000원</td>
-                    <td class="table_total_price">2,829,000원</td>
-                    <td class="table_total_price">500,000원</td>
-                </tr>
-            </table>
-            <div class="price_notice">
-                <span>* 항공권 또는 항공권이 포함된 상품의 경우, 표시되는 상품요금은 세금 및 예상 유류할증료가 포함된 가격이며, 유류할증료는 유가 및 환율 등에 따라<br>&nbsp;&nbsp;&nbsp;변동될 수 있습니다.</span>
-                <p>* 아동/유아 기준은 항공사마다 상이하여, 예약 후 최종 확정됩니다.</p>
-            </div>
-            <div class="corona19_notice">
-                <p>코로나19 바이러스 안심하세요! Safety Precaution</p>
-                <p>노랑풍선은 일정에 포함된 호텔, 식당, 관광지, 전용차량 등에 철저한 방역을 실시하고 있습니다.</p>
-                <p>모두 함께 안전한 여행을 즐길 수 있도록, 개별 방역에 힘써주시기 바랍니다.</p>
-                <p>귀국 전 검역정보 사전입력 제도 안내</p>
-                <p>한국 귀국 전 시스템(Q-CODE)에 검역정보를 입력하고 QR코드를 발급받으시면 신속한 검역서비스를</p>
-                <p>제공받으실 수 있습니다.</p>
-                <p>검역정보사전입력시스템 바로가기 ></p>
-                <p>※인터넷 검색사이트에서 Q-CODE 또는 큐 코드 검색 후 검역정보사전입력 시스템 접속 가능합니다.</p>
-            </div>
-            <div class="detail_explanation">
-                <h4 class="detail_title"><i class="include_i"></i>포함내역</h4>
-                <p><span class="detail_subtitle">[교통]</span><span>왕복항공권 (이코노미), 전용차량비용 (45인승버스)</span></p>
-                <p><span class="detail_subtitle">[숙박시설]</span><span>1급호텔(4성급) 이용 (2인 1실 기준)</span></p>
-                <p><span class="detail_subtitle">[숙박]</span><span>일정표 상 표기된 숙박비용</span></p>
-                <p><span class="detail_subtitle">[식사]</span><span>일정표 상 표기된 식사비용</span></p>
-                <p>(10회 특식 포함 : 라자냐, 티라미슈, 스파게티, 티본스테이크, 와인, 삼겹살정식, 피자, 카프레제, 에스프레소, 젤라또)</span></p>
-                <p><span class="detail_subtitle">[유류할증료]</span><span>발권일에 따라 변동될 수 있습니다.</span></p>
-                <p><span class="detail_subtitle">[입장료]</span><span>일정내 표기된 전 관광지 입장요금</span></p>
-                <p><span class="detail_subtitle">[여행자보험]</span><span>1억원 여행자 보험</span></p>
-
-                <h4 class="detail_title"><i class="exclude_i"></i>불포함내역</h4>
-                <p><span class="detail_subtitle">[가이드/기사경비]</span><span>90유로 (1인기준) 현지 지불해야 합니다.</span></p>
-                <p><span class="detail_subtitle">[각종 비용]</span><span>선택관광 비용 및 개인 물값, 각종개인 TIP, 개인경비</span></p>
-                <p><span class="detail_subtitle">[환율추가금]</span><span>(참고/전달사항 참조)</span></p>
-
-                <h4 class="detail_title"><i class="reference_i"></i>참고/전달사항</h4>
-                <h5>[참고사항]</h5>
-                <p>- 항공 : 아시아나 항공 (OZ)</p>
-                <p>- 마일리지 : 왕복 기준 약 8,000마일 적립가능</p>
-                <p>- 패키지 상품으로 출발하는 항공권은 단체항공권으로 출발시간기준 48시간전부터 좌석지정 및 체크인이 가능합니다.</p>
-                <p>- 사전체크인은 여권정보 등 개인정보가 필요하기 때문에 당사에서 대행은 불가합니다.</p>
-                <p>- 발권 후 배정되어 있는 좌석은 항공사에서 임의로 지정한 것이며, 항공좌석 만석등의 경우 사전좌석지정 불가할 수 있습니다.</p>
-                <p>&nbsp;&nbsp;&nbsp;따라서 항공기 만석인 경우 일행과 떨어진 좌석을 받을 수 있음을 양해 바랍니다.</p>
-                <p>- 기내식 사전 신청 : 키즈밀, 당뇨식, 채식 등등</p>
-                <p>- 최소 출발 3일전 신청시에만 가능하며, 항공사별 / 지역별 메뉴가 다를수 있으므로 참고부탁드립니다.</p>
-                <p>- 여행자보험 : KB 여행자 보험 가입</p>
-                <p>- 자세한 보장 내용은 아래 보험 자세히 보기를 참고 부탁드립니다. (http://ybt.gl/7641tisk)</p>
-
-                <h5>[전달사항]</h5>
-                <p>- 본 상품은 인솔자가 동행하지 않습니다. 현지 로마공항 가이드 미팅으로 진행됩니다.</p>
-                <p>- 본 상품의 최소출발인원 기준은 20명(최대 40명)이며 미충족시 여행 표준약관 제9조에 따라 여행사는 여행출발 7일전까지 여행계약을 </p>
-                <p>&nbsp;&nbsp;&nbsp;일방적으로 해제하고 소비자에게 통보할 수 있습니다.</p>
-                <p>- 운항 스케줄 및 판매가격은 정부인가 조건입니다. 운항스케줄은 불가피한 사유로 사전 예고없이 변경될 수 있습니다.</p>
-                <p>- 호텔, 식사는 예정입니다. 출발전 변경될 수 있습니다.</p>
-                <p>- 관광지 휴관일 경우 다른 관광지로 대체될 수 있습니다.</p>
-                <p>- 본상품은 단계별로 금액이 상승됩니다.</p>
-                <p>- 본 일정 및 숙박 시설은 현지 사정에 의해 변경될 수 있습니다.</p>
-                <p>- 유럽은 공간이 협소하므로 3인 1실 사용시 불편하실 수 있으므로, 싱글룸 사용을 권장합니다.</p>
-                <p>- 룸조인 요청시 다른고객님과 룸조인 배정해드립니다. 단, 룸조인이 안될시 싱글차지가 발생됩니다(싱글룸비용 아래참조)</p>
-                <p>- 싱글룸 비용 : 전 일정 490,000원</p>
-                <p>- 호텔 : 본 상품의 숙박시설은 현재 미정이나 1급 호텔로 배정 예정이며, 출발 1일전 홈페이지 또는 SMS를 통해 알려드립니다.</p>
-                <p>※ 국제적으로 통용되는 호텔 등급 표기 기준은 없으며 일부 국가에서는 자국 기준에 따라 등급표기를 하고 있습니다. </p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;고객님의 선택의 편의를 위해 등급 기준을 반영한 것이므로 양해 부탁드립니다.</p>
-
-                <h5>[환율추가금]</h5>
-                <p>- 국외여행 표준약관 제12조 (여행요금의 변경) : 국외여행을 실시함에 있어서 이용운송,숙박기관에 지급하여야 할 요금이 계약체결시보다</p> 
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;5% 이상 증감하거나 여행 요금에 적용된 외화환율이 계약체결시보다 2% 이상 증감한 경우</p> 
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;당사 또는 여행자는 그 증감된 금액 범위 내에서 여행요금의 증감을 상대방에게 청구할 수 있습니다.</p>
-                <p>- 본 상품은 2022.03.07 하나은행(구 외환은행) 기준 '1유로당 1,343원 현찰 살때' 최초환율을 기준하고 있으며,</p> 
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;출발일 15일전 동은행 환율조건 1,370원 이상으로 최초 고지시 기획당시 환율의 증감율만큼 추가금액이 발생될수 있습니다.</p>
-            </div>
-            <div class="tour_plan">
-                <ul class="plan_category_wrap">
-                    <li class="plan_category active"><a href="#">여행일정</a></li>
-                    <li class="plan_category"><a href="#">호텔 & 관광지</a></li>
-                    <li class="plan_category"><a href="#">선택관광</a></li>
-                    <li class="plan_category"><a href="#">참고사항</a></li>
-                    <li class="plan_category"><a href="#">해외 안전정보</a></li>
-                    <li class="plan_category"><a href="#">상품평</a></li>
-                </ul>
-                <ul>
-                    <li><a href="#" class="day_title active"><span class="day_number">1일차</span> 2022.11.05(토) - 인천/로마<i class="day_i">내용열고닫기버튼</i></a>
-                        <div class="day_content">
-                            <div>
-                                <div><span>인천 출발</span><span>11:30</span><span>2022.11.05(토)</span></div>
-                                <div class="flight_image"></div>
-                                <div><span>도착</span><span>17:05</span><span>2022.11.05(토)</span></div>
-                            <div>
-                                <p>인천</p>
-                                <p>인천 국제공항 출발</p>
-                                <p>-본 상품은 인솔자가 동행하지 않습니다. 현지 로마공항 가이드 미팅으로 진행됩니다.</p>
-                                <p>중식 (기내식)</p>
-                                <p>석식 (기내식)</p>
-                                <p>로마</p>
-                                <p>로마 도착</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="#" class="day_title"><span class="day_number">2일차</span> 2022.11.06(일) - 로마/시에나/산지미냐노/베니스<i class="day_i">내용열고닫기버튼</i></a></li>
-                    <li><a href="#" class="day_title"><span class="day_number">3일차</span> 2022.11.07(월) - 베니스/파르마<i class="day_i">내용열고닫기버튼</i></a></li>
-                    <li><a href="#" class="day_title"><span class="day_number">4일차</span> 2022.11.08(화) - 파르마/진퀘테레/피사/몬테카티니<i class="day_i">내용열고닫기버튼</i></a></li>
-                    <li><a href="#" class="day_title"><span class="day_number">5일차</span> 2022.11.09(수) - 몬테카티니/스칸디치/피렌체/끼안치아노<i class="day_i">내용열고닫기버튼</i></a></li>
-                    <li><a href="#" class="day_title"><span class="day_number">6일차</span> 2022.11.10(목) - 끼안치아노/오르비에토/아씨시/로마<i class="day_i">내용열고닫기버튼</i></a></li>
-                    <li><a href="#" class="day_title"><span class="day_number">7일차</span> 2022.11.11(금) - 로마/나폴리/폼페이/소렌토<i class="day_i">내용열고닫기버튼</i></a></li>
-                    <li><a href="#" class="day_title"><span class="day_number">8일차</span> 2022.11.12(토) - 로마<i class="day_i">내용열고닫기버튼</i></a></li>
-                    <li><a href="#" class="day_title"><span class="day_number">9일차</span> 2022.11.13(일) - 인천<i class="day_i">내용열고닫기버튼</i></a></li>
-                </ul>
-                
-            </div>
-        </section>
-        <section class="content_right">
-            <div class="reservation">
-                <div class="person_number_wrap">
-                    <h3>인원 선택</h3>
-                    <ul class="person_number">
-                        <li><span class="person">성인</span><span class="person_price">2,829,000원</span></li>
-                        <li><span class="person">아동</span><span class="person_price">2,829,000원</span></li>
-                        <li><span class="person">유아</span><span class="person_price">500,000원</span></li>
+                <h3>여행경비</h3>
+                    <table class="price_table">
+                        <caption class="hide">연령별 금액</caption>
+                        <tr>
+                            <th>구분</th>
+                            <th>성인</th>
+                            <th>아동 (만 2세~만 12세 미만)</th>
+                            <th>유아 (만 2세 미만)</th>
+                        </tr>
+                        <tr>
+                            <td>기본 상품가</td>
+                            <td>2,390,000원</td>
+                            <td>2,390,000원</td>
+                            <td>500,000원</td>
+                        </tr>
+                        <tr>
+                            <td>유류할증료</td>
+                            <td>439,000원</td>
+                            <td>439,000원</td>
+                            <td>0원</td>
+                        </tr>
+                        <tr>
+                            <td>총 상품가</td>
+                            <td class="table_total_price">2,829,000원</td>
+                            <td class="table_total_price">2,829,000원</td>
+                            <td class="table_total_price">500,000원</td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li>* 항공권 또는 항공권이 포함된 상품의 경우, 표시되는 상품요금은 세금 및 예상 유류할증료가 포함된 가격이며, 유류할증료는 유가 및 환율 등에 따라 변동될 수 있습니다.</li>
+                        <li>* 아동/유아 기준은 항공사마다 상이하여, 예약 후 최종 확정됩니다.</li>
                     </ul>
                 </div>
-                <div class="total_price_menu">
-                    <div class="total_price_txt">
-                        <h3>총 금액</h3>
-                        <span class="person_price total">2,829,000원</span>
+                <div>
+                <h3>포인트 적립</h3>
+                    <div class="point_wrap">
+                        <div class="cont_box">적립 예상 포인트 : 28,290 P</div>
+                        <div class="cont_box">예상 적립 일자 : 2022년 11월 20일</div>
                     </div>
-                    <p class="point_save">총 28,290 P 적립예정</p>
-                    <button type="submit" class="reserve_btn">예약하기</button>
-                    <div class="product_etc_wrap">
-                        <div>
-                            <p>유럽 3팀</p>
-                            <p>대표번호 02-2022-7285</p>
+                    <ul >
+                        <li>적립 예상 포인트는 결제금액의 1%를 포인트로 적립해드리며, 프로모션 및 쿠폰 적용, 결제 방법 등에 따라 변동될 수 있습니다.</li>
+                        <li>포인트는 14세 이상 노랑풍선 회원만 적립됩니다.</li>
+                        <li>여행 도착일 7일 이후 자동 적립되며, 비회원의 경우 적립 기준일 이전에 회원 가입하여 별도 적립해야 합니다. (적립 기준일 이후에는 적립되지 않습니다.)</li>
+                        <li>진행되는 프로모션에 따라 적립 기준일이 상이할 수 있습니다.</li>
+                        <li>예약 일행 별로 적용되는 프로모션에 따라 포인트 적립대상에서 제외될 수 있습니다.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>예약자 정보</h3>
+                    <table class="input_table">
+                        <caption class="hide">예약자 정보</caption>
+                        <tr>
+                            <th>이름</th>
+                            <td><input type="text" id="u_name" name="u_name" placeholder="이름 (실명)"></td>
+                            <th>생년월일</th>
+                            <td><input type="text" id="birth" name="birth" placeholder="생년월일 (예 : 19910101)" maxlength="8"></td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td>
+                                <input type="text" placeholder="이메일" id="email_id" name="email_id">
+                                <select name="email_sel" id="email_sel">
+                                    <option value="">직접입력</option>
+                                    <option value="@naver.com">@naver.com</option>
+                                    <option value="@gmail.com">@gmail.com</option>
+                                    <option value="@nate.com">@nate.com</option>
+                                    <option value="@daum.net">@daum.net</option>
+                                </select>
+                            </td>
+                            <th>휴대폰 번호</th>
+                            <td><input type="text" id="mobile" name="mobile" placeholder="휴대폰번호 (숫자만 입력)" maxlength="11"></td>
+                        </tr>
+                    </table>
+                    <span class="age_notice">*만 14세 미만은 예약하실 수 없습니다.</span>
+                </div>
+                <div>
+                    <h3>여행자 정보</h3>
+                    <table class="input_table">
+                        <caption class="hide">여행자 정보</caption>
+                        <tr>
+                            <th>성인 (만 12세 이상)</th>
+                            <td>
+                                <select>
+                                    <option>1명</option>
+                                    <option>2명</option>
+                                    <option>3명</option>
+                                    <option>4명</option>
+                                    <option>5명</option>
+                                    <option>6명</option>
+                                    <option>7명</option>
+                                    <option>8명</option>
+                                    <option>9명</option>
+                                    <option>10명</option>
+                                    <option>11명</option>
+                                    <option>12명</option>
+                                    <option>13명</option>
+                                    <option>14명</option>
+                                    <option>15명</option>
+                                    <option>16명</option>
+                                    <option>17명</option>
+                                    <option>18명</option>
+                                    <option>19명</option>
+                                    <option>20명</option>
+                                    <option>21명</option>
+                                    <option>22명</option>
+                                    <option>23명</option>
+                                    <option>24명</option>
+                                    <option>25명</option>
+                                    <option>26명</option>
+                                    <option>27명</option>
+                                    <option>28명</option>
+                                    <option>29명</option>
+                                    <option>30명</option>
+                                </select>
+                            </td>
+                            <th>아동 (만 2세~만 12세 미만)</th>
+                            <td>
+                                <select>
+                                    <option>1명</option>
+                                    <option>2명</option>
+                                    <option>3명</option>
+                                    <option>4명</option>
+                                    <option>5명</option>
+                                    <option>6명</option>
+                                    <option>7명</option>
+                                    <option>8명</option>
+                                    <option>9명</option>
+                                    <option>10명</option>
+                                    <option>11명</option>
+                                    <option>12명</option>
+                                    <option>13명</option>
+                                    <option>14명</option>
+                                    <option>15명</option>
+                                    <option>16명</option>
+                                    <option>17명</option>
+                                    <option>18명</option>
+                                    <option>19명</option>
+                                    <option>20명</option>
+                                    <option>21명</option>
+                                    <option>22명</option>
+                                    <option>23명</option>
+                                    <option>24명</option>
+                                    <option>25명</option>
+                                    <option>26명</option>
+                                    <option>27명</option>
+                                    <option>28명</option>
+                                    <option>29명</option>
+                                    <option>30명</option>
+                                </select>
+                            </td>
+                            <th>유아 (만 2세 미만)</th>
+                            <td>
+                                <select>
+                                    <option>1명</option>
+                                    <option>2명</option>
+                                    <option>3명</option>
+                                    <option>4명</option>
+                                    <option>5명</option>
+                                    <option>6명</option>
+                                    <option>7명</option>
+                                    <option>8명</option>
+                                    <option>9명</option>
+                                    <option>10명</option>
+                                    <option>11명</option>
+                                    <option>12명</option>
+                                    <option>13명</option>
+                                    <option>14명</option>
+                                    <option>15명</option>
+                                    <option>16명</option>
+                                    <option>17명</option>
+                                    <option>18명</option>
+                                    <option>19명</option>
+                                    <option>20명</option>
+                                    <option>21명</option>
+                                    <option>22명</option>
+                                    <option>23명</option>
+                                    <option>24명</option>
+                                    <option>25명</option>
+                                    <option>26명</option>
+                                    <option>27명</option>
+                                    <option>28명</option>
+                                    <option>29명</option>
+                                    <option>30명</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                <h3>인원 상세 정보</h3>
+                    <table class="person_detail">
+                        <caption class="hide">인원 상세 정보</caption>
+                        <input type="checkbox" id="same"><label for="same">예약자와 동일</label>
+                        <tr>
+                            <td>
+                                <span>성인1</span>
+                                <label for="tour_name1">이름(한글)</label><input type="text" id="tour_name1" name="tour_name1" placeholder="이름 (실명)">
+                            </td>
+                            <td>
+                                <label for="last_name1">이름(영문)</label>
+                                <input type="text" id="last_name1" name="last_name1" placeholder="성">
+                                <input type="text" id="Ename1" name="Ename1" placeholder="이름">
+                            </td>
+                            <td>
+                                <div class="gender_wrap">
+                                    <span>성별</span>                                    
+                                    <div class="gender_group">
+                                        <input type="radio" name="tour_gender" id="tour_male" value="m">
+                                        <label for="male">남</label>
+                                    </div>
+                                    <div class="gender_group">
+                                        <input type="radio" name="tour_gender" id="tour_female" value="f">
+                                        <label for="female">여</label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="tour_birth">생년월일</label>
+                                <input type="text" id="tour_birth" name="tour_birth" placeholder="생년월일 (예 : 19910101)" maxlength="8">
+                            </td>
+                            <td>
+                                <label for="tour_mobile">휴대폰 번호</label>
+                                <input type="text" id="tour_mobile" name="tour_mobile" placeholder="휴대폰번호 (숫자만 입력)" maxlength="11">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h3>요청 사항</h3>
+                    <textarea class="request_txt" name="request" id="request" cols="168" rows="10" maxlength="1000" placeholder="내용을 입력하세요." title="여행상품예약시 요청사항"></textarea>
+                    <div id="test_cnt">(0 / 1000)</div>
+                </div>
+                <div class="form_bottom">
+                    <div class="office_column">
+                        <h3>상담 지사 선택</h3>
+                        <div class="cont_box office_wrap">
+                            <input type="radio" name="office_select" id="head_office" value="head_office"><label for="company_select1">본사</label>
+                            <input type="radio" name="office_select" id="busan_office" value="busan_office"><label for="company_select2">부산 지사 (부산/경남지역 고객)</label>
                         </div>
-                        <div class="product_etc_menu">
-                            <i class="print_i">출력하기</i>
-                            <i class="favorite_i">찜하기</i>
-                            <i class="snslink_i">공유하기</i>
-                        </div>
+                    </div>
+                    <div class="office_column2">
+                    <h3>노랑풍선 할인쿠폰 선택</h3>
+                        <a class="coupon_btn" href="">쿠폰선택</a>
+                        <table class="input_table dc_table">
+                            <caption class="hide">할인쿠폰</caption>
+                                <tr>    
+                                    <th>적용된 쿠폰</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>할인 금액</th>
+                                    <td>-<span class="dc_price">0원</span></td>
+                                </tr>
+                        </table>
+                        <ul>
+                            <li>쿠폰 할인 금액은 최종 결제금액에 따라 변동 될 수 있습니다.</li>
+                            <li>정액 형 쿠폰의 경우 적용일행을 선택해 주셔야 합니다. (미 선택 시 첫번째 일행으로 기본 적용 됩니다.)</li>
+                            <li>예약 완료 후 쿠폰은 변경 할 수 없으며 변경 시 예약을 취소하신 후 다시 예약하셔야 합니다.</li>
+                            <li>예약 후 인원 취소/변경 을 하실 경우 적용된 쿠폰은 자동 취소됩니다.</li>
+                            <li>예약 취소 시 사용된 쿠폰은 복구되지 않습니다.</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+                <div class="cont_box total_box">
+                    <div class="cont_item">
+                        <p class="item_title">상품 금액</p>
+                        <p>성인 3,780,000원 X<span class="tour_adult">1</span>명</p>
+                        <p>아동 3,780,000원 X<span class="tour_kid">0</span>명</p>
+                        <p>유아 6,380,000원 X<span class="tour_toddler">0</span>명</p>
+                    </div>
+                    <div class="cont_item">
+                        <p class="item_title">할인 금액</p>
+                        쿠폰 할인 -<span class="dc_price">0</span>원
+                    </div>
+                    <div class="cont_item">
+                        <p class="item_title">총액</p>
+                        <span class="total_price">3,780,000</span>원
+                    </div>
+                </div>
+                <p>확인하세요!</p>
+                    <ul> 
+                        <li>항공권 또는 항공권이 포함된 상품의 경우, 표시되는 상품요금은 세금 및 예상 유류할증료가 포함된 가격이며, 유류할증료는 유가 및 환율 등에 따라 변동될 수 있습니다.</li>
+                        <li>아동/유아 기준은 항공사마다 상이하여, 예약 후 최종 확정됩니다.</li>
+                    </ul>
+                <button type="submit">예약하기</button>
+            </fieldset>
+        </form>
     </main>
     <hr class="footer_hr">
     <footer>
@@ -1949,7 +2028,16 @@
                 var depth3PopupEl = $(this);
                 depth3PopupEl.stop().slideUp("fast");
             });
+
+            $('#request').on('keyup', function() {
+            $('#test_cnt').html("("+$(this).val().length+" / 1000)");
+ 
+            if($(this).val().length > 1000) {
+                $(this).val($(this).val().substring(0, 1000));
+                $('#test_cnt').html("(1000 / 1000)");
+            }
         });
+    });
     </script>
 </body>
 

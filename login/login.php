@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -53,7 +52,7 @@
             <div>
                 <ul class="sub_menu">
                     <li><a href="../members/find_id.php">아이디/비밀번호 찾기</a></li>
-                    <li><a href="../nonmember_reserve_pkg.php">비회원 예약조회</a></li>
+                    <li><a href="../nonmember/nonmember_reserve_pkg.php">비회원 예약조회</a></li>
                     <li><a href="../members/join_pre.php">간편 회원가입</a></li>
                 </ul>
             </div>
@@ -76,11 +75,9 @@
         </div>
         <p class="copy_right">© Yellow Balloon tour. All Rights Reserved.</p>
     </footer>
-
-    <!-- 폼 스크립트 -->
-    <script>
+    <script type="text/javascript">
         function login_form_check() {
-            var u_id = document.getElementById("uid");
+            var u_id = document.getElementById("u_id");
             var u_pwd = document.getElementById("pwd");
 
             if (u_id.value == "") {
@@ -105,5 +102,4 @@
         }
     </script>
 </body>
-
 </html>

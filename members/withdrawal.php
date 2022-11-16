@@ -1513,7 +1513,7 @@ include "../inc/session.php";
     <main>
         <ul class="breadcrumb">
             <li><a href="index.php"><i class="icon icon_home">메인홈</i></a></li>
-            <li><a href="javascript:void(0);">마이페이지</a></li>
+            <li><a href="my_page.php">마이페이지</a></li>
             <li><a href="javascript:void(0);">회원탈퇴</a></li>
         </ul>
         <div class="content_title green">
@@ -1523,7 +1523,7 @@ include "../inc/session.php";
             <div class="content_left_wrap">
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
                 <ul class="aside_menu">
-                    <li class="aside_title"><h2>마이페이지</h2></li>
+                    <li class="aside_title"><a href="my_page.php"><h2>마이페이지</h2></a></li>
                     <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
                             예약/취소내역
