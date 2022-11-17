@@ -1,0 +1,65 @@
+.compl_container {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+.compl_title {
+    font-size: 28px;
+    text-align: center;
+    margin: 80px auto 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.compl_title i {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background: url(../images/join_complete.png) no-repeat; 
+}
+
+.compl_subtitle{
+    font-size: 20px;
+    text-align: center;
+    margin: 15px auto;
+    font-weight: bold;
+}
+
+.compl_info {
+    border: 1px solid #666;
+    padding: 10px 20px;
+}
+
+.info_title {
+    color: #fc2f2f;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 28px;
+}
+
+.btn_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+#my_page_btn,
+#home_btn {
+    width: 205px;
+    height: 45px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 13px;
+}
+
+#my_page_btn {
+    background: #ffc72c;
+}
+
+#home_btn {
+    background: #e2e2e2;
+}

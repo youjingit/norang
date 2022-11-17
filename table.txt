@@ -24,7 +24,7 @@ insert into members(
     privacy_period,
     info_collect_apply, marketing_apply, email_apply, sms_apply, reg_date
 ) values(
-    'admin@abc.com', '1234bbbb@@@@', '관리자',
+    'admin@abc.com', '1234bb@@', '관리자',
     '01011112222', '19910403', 'f',
     'until_withdraw', 'y', 'y', 'y', 'y',
     '2022-11-09'
@@ -1043,3 +1043,36 @@ insert into notice(
     '2022.09.30'
 );
 
+create table product(
+    idx int auto_increment primary key,
+    p_id char(7) not null,
+    p_name varchar(50) not null,
+    adult_p varchar(15) not null,
+    kid_p varchar(15) not null,
+    todd_p varchar(15) not null
+);
+
+create table order(
+    idx int auto_increment primary key,
+    order_id char(7) not null,
+    p_id char(7) not null,
+    departure date not null,
+    arrival date not null,
+    departure_vehicle varchar(20) not null,
+    arrival_vehicle varchar(20) not null,
+    u_id varchar(50) not null,
+    u_name varchar(20) not null,
+    birth date not null,
+    email varchar(50) not null,
+    mobile varchar(15) not null,
+    adult_num int not null,
+    kid_num int not null,
+    todd_num int not null,
+    adult_p varchar(15) not null,
+    kid_p varchar(15) not null,
+    todd_p varchar(15) not null,
+    tourist_info text not null,
+    opt_apply char(1),
+    request varchar(1000), 
+    office varchar(5)
+);

@@ -20,7 +20,6 @@ $array = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +32,6 @@ $array = mysqli_fetch_array($result);
     <link rel="stylesheet" type="text/css" href="../css/index/footer.css">
     <link rel="stylesheet" type="text/css" href="../css/my_page.css">
 </head>
-
 <body>
     <header>
         <nav class="gnb">

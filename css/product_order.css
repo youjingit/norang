@@ -20,6 +20,11 @@ main {
 
 main h3 {
     color: #1519a4;
+    margin: 20px 0 10px 0; 
+}
+
+main ul {
+    margin-top: 10px;
 }
 
 main li {
@@ -28,9 +33,14 @@ main li {
     line-height: 20px;
 }
 
+main input:focus {
+    border: 1px solid #ffc72c;
+}
+
 .product_title {
     font-size: 18px;
     font-weight: bold;
+    margin-top: 0px;
     margin-bottom: 10px;
     color: #000;
 }
@@ -166,6 +176,10 @@ main li {
     justify-content: space-between;
 }
 
+#request:focus {
+    outline: none;
+}
+
 .office_column {
     display: flex;
     flex-direction: column ;
@@ -193,7 +207,7 @@ main li {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -13px;
+    top: 14px;
     right: 0px;
 }
 
@@ -204,6 +218,8 @@ main li {
 .total_box {
     display: flex;
     justify-content: space-around;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .cont_item:not(:last-child){
@@ -217,4 +233,51 @@ main li {
 .item_title {
     font-size: 18px;
     font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cont_div1 {
+    padding-right: 90px;
+    padding-left: 50px;
+}
+
+.cont_div1 div:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.cont_div2 {
+    padding-right: 150px;
+    padding-left: 60px;
+}
+
+.cont_div3 {   
+    padding-right: 90px;
+    padding-left: 80px;
+}
+
+.item_person,
+.item_price {
+    margin-right: 25px;
+}
+
+.item_num {
+    margin-left: 15px;
+}
+
+.total_price {
+    font-size: 26px;
+    font-weight: bold;
+    color : #f25b5b;
+}
+
+#submit_btn {
+    width: 200px;
+    height: 45px;
+    background: #ffc72c;
+    margin: 25px auto;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

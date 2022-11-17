@@ -21,13 +21,7 @@
                     <h2 class="screen_out">사용자메뉴</h2>
                     <ul class="depth1_top_menu">
                         <li><a href="../login/login.php">로그인</a></li>
-                        <li><a href="join_pre.php">회원가입</a></li>
-                        <li><a href="#">고객센터</a></li>
-                        <li><a href="#">EN</a></li>
                     </ul>
-                </div>
-            </div>
-        </div>
     </header>
     <hr>
     <main>
@@ -117,6 +111,7 @@
                     </ul>
                     <span id="err_privacy_year" class="err_txt"></span>
                 </div>
+
                 <h3 class="hide">회원가입 약관동의</h3>
                 <div class="terms_apply">
                     <div>
