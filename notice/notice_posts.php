@@ -1,6 +1,7 @@
 <?php
 include "../inc/session.php";
 $n_idx = $_GET["n_idx"];
+$number = $_GET["number"];
 
 // DB 연결
 include "../inc/dbcon.php";
@@ -12,16 +13,6 @@ exit; */
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);
-
-$total = mysqli_num_rows($result);
-
-// paging : 한 페이지 당 보여질 목록 수
-$list_num = 20;
-
-// paging : 현재 페이지
-$page = isset($_GET["page"])? $_GET["page"] : 1;
-
-$i = $total - (($page - 1) * $list_num);
 
 // DB에서 데이터 가져오기
 $array = mysqli_fetch_array($result);
@@ -1699,7 +1690,7 @@ $array = mysqli_fetch_array($result);
                         <i class="fix"></i>
                     <?php
                     } else {
-                        echo $i;
+                        echo $number;
                     }
                     ?>
                     <?php 

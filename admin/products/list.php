@@ -6,7 +6,7 @@ include "../inc/admin_check.php";
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "select * from members;";
+$sql = "select * from products;";
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);
@@ -15,7 +15,7 @@ $result = mysqli_query($dbcon, $sql);
 $total = mysqli_num_rows($result);
 
 // paging : 한 페이지 당 보여질 목록 수
-$list_num = 5;
+$list_num = 10;
 
 // paging : 한 블럭 당 페이지 수
 $page_num = 3;
@@ -54,7 +54,7 @@ if($e_pageNum > $total_page){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원관리</title>
+    <title>상품관리</title>
     <style>
         body{font-size:20px}
         a{text-decoration:none;margin:0 5px}
@@ -67,37 +67,36 @@ if($e_pageNum > $total_page){
             font-size:16px;
             text-align:center
         }
-        .mem_list_set, .pager{
+        .product_list_set, .pager{
             width:100%;
         }
-        .mem_list_title{
+        .product_list_title{
             border-top:2px solid #999;
             border-bottom:1px solid #999
         }
-        .mem_list_content{
+        .product_list_content{
             border-bottom:1px solid #999;
         }
         .no{width:40px}
-        .u_name{width:60px}
-        .u_id{width:100px}
-        .mobile{width:120px}
-        .birth{width:100px}
-        .gender{width:40px}
-        .privacy_period{width:40px}
-        .info_collect_apply{width:40px}
-        .marketing_apply{width:40px}
-        .email_apply{width:40px}
-        .sms_apply{width:40px}
-        .reg_date{width:120px}
+        .p_id{width:60px}
+        .p_name{width:200px}
+        .p_explain{width:250px}
+        .departure_vehicle{width:120px}
+        .arrival_vehicle{width:100px}
+        .departure_date1{width:40px}
+        .departure_date2{width:40px}
+        .arrival_date1{width:40px}
+        .arrival_date2{width:40px}
+        .reg_date{width:40px}
         .modify{width:120px}
 
         table a:hover{color:rgb(255, 128, 0)}
     </style>
     <script>
-        function mem_del(g_no){
+        function product_del(g_no){
             var rtn_val = confirm("정말 삭제하시겠습니까?");
             if(rtn_val == true){
-                location.href = "member_delete.php?g_idx=" + g_no;
+                location.href = "delete.php?n_idx=" + g_no;
             };
         };
     </script>
@@ -106,21 +105,19 @@ if($e_pageNum > $total_page){
     <?php include "../inc/sub_header.php"; ?>
     
     <!-- 콘텐트 -->
-    <p>전체 회원수 <?php echo $total; ?>명</p>
-    <table class="mem_list_set">
-        <tr class="mem_list_title">
+    <p>전체 상품수 <?php echo $total; ?>명<span><a href="write.php">[글쓰기]</a></span></p>
+    <table class="product_list_set">
+        <tr class="product_list_title">
             <th class="no">번호</th>
-            <th class="u_id">아이디</th>
-            <th class="u_name">이름</th>
-            <th class="mobile">휴대폰번호</th>
-            <th class="birth">생년월일</th>
-            <th class="gender">성별</th>
-            <th class="privacy_period">개인정보 유효기간</th>
-            <th class="info_collect_apply">개인정보 수집동의</th>
-            <th class="marketing_apply">마케팅 수신동의</th>
-            <th class="email_apply">이메일 수신동의</th>
-            <th class="sms_apply">sms 수신동의</th>
-            <th class="reg_date">가입일</th>
+            <th class="p_name">상품이름</th>
+            <th class="p_explain">상품설명</th>
+            <th class="departure_vehicle">출발교통</th>
+            <th class="arrival_vehicle">도착교통</th>
+            <th class="departure_date1">출발날짜</th>
+            <th class="departure_date2">현지도착시간</th>
+            <th class="arrival_date1">현지출발날짜</th>
+            <th class="arrival_date2">도착시간</th>
+            <th class="reg_date">등록일</th>
             <td class="modify">관리</td>
         </tr>
         <?php
@@ -129,7 +126,7 @@ if($e_pageNum > $total_page){
 
             // paging : 시작번호부터 페이지 당 보여질 목록수 만큼 데이터 구하는 쿼리 작성
             // limit 몇번부터, 몇 개
-            $sql = "select * from members limit $start, $list_num;";
+            $sql = "select * from products limit $start, $list_num;";
             // echo $sql;
             /* exit; */
 
@@ -141,28 +138,16 @@ if($e_pageNum > $total_page){
             $i = $start + 1;
             while($array = mysqli_fetch_array($result)){
         ?>
-        <tr class="mem_list_content">
+        <tr class="product_list_content">
             <td><?php echo $i; ?></td>
-            <td><?php echo $array["u_id"]; ?></td>
-            <td><?php echo $array["u_name"]; ?></td>
-            <?php
-            // $mobile = "00011112222";
-            /* $mobile = strval($array["mobile"]);
-            $mobile1 = substr($mobile, 0, 3);
-            $mobile2 = substr($mobile, 3, -4);
-            $mobile3 = substr($mobile, -4);
-            $mobile = $mobile1."-".$mobile2."-".$mobile3;
-            echo "<td>".$mobile."</td>";  */
-            ?>
-            <td><?php echo $array["mobile"]; ?></td>
-            <td><?php echo $array["birth"]; ?></td>
-            <td><?php echo $array["gender"]; ?></td>
-            <td><?php echo $array["privacy_period"]; ?></td>
-            <td><?php echo $array["info_collect_apply"]; ?></td>
-            <td><?php echo $array["marketing_apply"]; ?></td>
-            <td><?php echo $array["email_apply"]; ?></td>
-            <td><?php echo $array["sms_apply"]; ?></td>
-
+            <td><?php echo $array["p_name"]; ?></td>
+            <td><?php echo $array["p_explain"]; ?></td>
+            <td><?php echo $array["departure_vehicle"]; ?></td>
+            <td><?php echo $array["arrival_vehicle"]; ?></td>
+            <td><?php echo $array["departure_date1"]; ?></td>
+            <td><?php echo $array["departure_date2"]; ?></td>
+            <td><?php echo $array["arrival_date1"]; ?></td>
+            <td><?php echo $array["arrival_date2"]; ?></td>
             <?php
                 /* $reg_date = substr($array["reg_date"], 0, 10);
                 echo "
@@ -171,8 +156,9 @@ if($e_pageNum > $total_page){
             ?>
             <td><?php echo $array["reg_date"]; ?></td>
             <td>
-                <a href="member_info.php?g_idx=<?php echo $array["idx"]; ?>">[수정]</a>
-                <a href="#" onclick="mem_del(<?php echo $array['idx']; ?>)">[삭제]</a>
+                <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">[보기]</a>
+                <a href="modify.php?n_idx=<?php echo $array["idx"]; ?>">[수정]</a>
+                <a href="#" onclick="product_del(<?php echo $array['idx']; ?>)">[삭제]</a>
             </td>
         </tr>
         <?php

@@ -1,3 +1,14 @@
+<?php
+include "../inc/session.php";
+
+// DB 연결
+include "../inc/dbcon.php";
+
+$sql = "select * from products;";
+
+$result = mysqli_query($dbcon, $sql);
+
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/index/header.css">
     <link rel="stylesheet" type="text/css" href="../css/index/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/product_order.css">
+    <link rel="stylesheet" type="text/css" href="../css/west_europe.css">
 </head>
 <body>
     <header>
@@ -1505,340 +1516,741 @@
         </nav>
     </header>
     <main>
+        <ul class="breadcrumb">
+            <li><a class="home_icon" href="index.php">메인홈</a></li>
+
+            <li class="pagenav"><a href="">패키지여행</a></li>
+
+            <li class="pagenav"><a href="">해외패키지</a></li>
+
+            <li class="pagenav"><a href="">유럽</a></li>
+
+            <li class="pagenav"><a href="west_europe.html">서유럽</a></li>
+        </ul>
         <div class="main_title">
-        <h2>예약하기</h2>
+            <h2>서유럽</h2>
         </div>
-        <form id="reserve_form" action=".php" method="post" onsubmit="return reserve_form_check()">
-            <fieldset>
-                <legend class="hide">상품예약</legend>
-                <div class="product_title_wrap">
-                    <h3 class="product_title">[돌체 이탈리아 9일] 슬로우 라이프_오르비에토/토스카나+나/폼/소+10대 맛체험[OZ/1급호텔]</h3>
-                    <p>출발일 : (한국 출발) 2022년 11월 05일(토) 11:30 (현지 도착) 2022년 11월 05일(토) 17:05  OZ561 <i class="vehicle_icon asiana"></i>아시아나항공</p>
-                    <p>도착일 : (현지 출발) 2022년 11월 12일(토) 18:40 (한국 도착) 2022년 11월 13일(일) 14:10  OZ562 <i class="vehicle_icon asiana"></i>아시아나항공</p>
-                </div>
-                <div>
-                <h3>약관동의</h3>
-                    <div class="cont_box term_wrap">
-                        <span class="term_title">필수 약관 동의</span> 
-                        <input type="checkbox" name="term" id="term1"><label for="term1">특별 약관</label>
-                        <a href="">자세히 보기</a>
-                        <input type="checkbox" name="term" id="term2"><label for="term2">개인정보 제3자 제공</label>
-                        <a href="">자세히 보기</a>
-                        <input type="checkbox" name="term" id="term3"><label for="term3">개인정보 수집 및 이용동의</label>
-                        <a href="">자세히 보기</a>
-                        <input type="checkbox" name="term" id="term4"><label for="term4">고유식별정보 수집 및 이용동의</label>
-                        <a href="">자세히 보기</a>
-                    </div>
-                    <div class="cont_box">
-                        <span class="term_title">선택 약관 동의</span>
-                        <input type="checkbox" id="term_opt"><label for="term_opt">개인정보 수집 및 이용동의</label>
-                        <a href="">자세히 보기</a>
-                    </div>
-                </div>
-                <div>
-                <h3>여행경비</h3>
-                    <table class="price_table">
-                        <caption class="hide">연령별 금액</caption>
-                        <tr>
-                            <th>구분</th>
-                            <th>성인</th>
-                            <th>아동 (만 2세~만 12세 미만)</th>
-                            <th>유아 (만 2세 미만)</th>
-                        </tr>
-                        <tr>
-                            <td>기본 상품가</td>
-                            <td>2,390,000원</td>
-                            <td>2,390,000원</td>
-                            <td>500,000원</td>
-                        </tr>
-                        <tr>
-                            <td>유류할증료</td>
-                            <td>439,000원</td>
-                            <td>439,000원</td>
-                            <td>0원</td>
-                        </tr>
-                        <tr>
-                            <td>총 상품가</td>
-                            <td class="table_total_price">2,829,000원</td>
-                            <td class="table_total_price">2,829,000원</td>
-                            <td class="table_total_price">500,000원</td>
-                        </tr>
-                    </table>
-                    <ul>
-                        <li>* 항공권 또는 항공권이 포함된 상품의 경우, 표시되는 상품요금은 세금 및 예상 유류할증료가 포함된 가격이며, 유류할증료는 유가 및 환율 등에 따라 변동될 수 있습니다.</li>
-                        <li>* 아동/유아 기준은 항공사마다 상이하여, 예약 후 최종 확정됩니다.</li>
+        <section>
+            <div class="search_query">
+                <h3 class="hide">검색조건</h3>
+                <div class="left_cont">
+                    <span class="total_number">'6'개</span>
+                    <ul class="filter_selected">
+                        <li>'3개국 일주'
+                            <a href="#">X</a>
+                        </li>
+
+                        <li>'오전 출발'
+                            <a href="#">X</a>
+                        </li>
                     </ul>
                 </div>
-                <div>
-                <h3>포인트 적립</h3>
-                    <div class="point_wrap">
-                        <div class="cont_box">적립 예상 포인트 : 28,290 P</div>
-                        <div class="cont_box">예상 적립 일자 : 2022년 11월 20일</div>
-                    </div>
-                    <ul >
-                        <li>* 적립 예상 포인트는 결제금액의 1%를 포인트로 적립해드리며, 프로모션 및 쿠폰 적용, 결제 방법 등에 따라 변동될 수 있습니다.</li>
-                        <li>* 포인트는 14세 이상 노랑풍선 회원만 적립됩니다.</li>
-                        <li>* 여행 도착일 7일 이후 자동 적립되며, 비회원의 경우 적립 기준일 이전에 회원 가입하여 별도 적립해야 합니다. (적립 기준일 이후에는 적립되지 않습니다.)</li>
-                        <li>* 진행되는 프로모션에 따라 적립 기준일이 상이할 수 있습니다.</li>
-                        <li>* 예약 일행 별로 적용되는 프로모션에 따라 포인트 적립대상에서 제외될 수 있습니다.</li>
-                    </ul>
+
+                <div class="right_cont">
+                    <a href="#">전체삭제</a>
                 </div>
-                <div>
-                    <h3>예약자 정보</h3>
-                    <table class="input_table">
-                        <caption class="hide">예약자 정보</caption>
-                        <tr>
-                            <th>이름</th>
-                            <td><input type="text" id="u_name" name="u_name" placeholder="이름 (실명)"></td>
-                            <th>생년월일</th>
-                            <td><input type="text" id="birth" name="birth" placeholder="생년월일 (예 : 19910101)" maxlength="8" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></td>
-                        </tr>
-                        <tr>
-                            <th>이메일</th>
-                            <td>
-                                <input type="text" placeholder="이메일" id="email" name="email">
-                                <select name="email_sel" id="email_sel">
-                                    <option value="">직접입력</option>
-                                    <option value="@naver.com">@naver.com</option>
-                                    <option value="@gmail.com">@gmail.com</option>
-                                    <option value="@nate.com">@nate.com</option>
-                                    <option value="@daum.net">@daum.net</option>
-                                </select>
-                            </td>
-                            <th>휴대폰 번호</th>
-                            <td><input type="text" id="mobile" name="mobile" placeholder="휴대폰번호 (숫자만 입력)" maxlength="11" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></td>
-                        </tr>
-                    </table>
-                    <span class="age_notice">*만 14세 미만은 예약하실 수 없습니다.</span>
-                </div>
-                <div>
-                    <h3>여행자 정보</h3>
-                    <table class="input_table">
-                        <caption class="hide">여행자 정보</caption>
-                        <tr>
-                            <th>성인 (만 12세 이상)</th>
-                            <td>
-                                <select name="adult_num">
-                                    <option value="1">1명</option>
-                                    <option value="2">2명</option>
-                                    <option value="3">3명</option>
-                                    <option value="4">4명</option>
-                                    <option value="5">5명</option>
-                                    <option value="6">6명</option>
-                                    <option value="7">7명</option>
-                                    <option value="8">8명</option>
-                                    <option value="9">9명</option>
-                                    <option value="10">10명</option>
-                                    <option value="11">11명</option>
-                                    <option value="12">12명</option>
-                                    <option value="13">13명</option>
-                                    <option value="14">14명</option>
-                                    <option value="15">15명</option>
-                                    <option value="16">16명</option>
-                                    <option value="17">17명</option>
-                                    <option value="18">18명</option>
-                                    <option value="19">19명</option>
-                                    <option value="20">20명</option>
-                                    <option value="21">21명</option>
-                                    <option value="22">22명</option>
-                                    <option value="23">23명</option>
-                                    <option value="24">24명</option>
-                                    <option value="25">25명</option>
-                                    <option value="26">26명</option>
-                                    <option value="27">27명</option>
-                                    <option value="28">28명</option>
-                                    <option value="29">29명</option>
-                                    <option value="30">30명</option>
-                                </select>
-                            </td>
-                            <th>아동 (만 2세~만 12세 미만)</th>
-                            <td>
-                                <select name="kid_num">
-                                    <option value="0">0명</option>
-                                    <option value="1">1명</option>
-                                    <option value="2">2명</option>
-                                    <option value="3">3명</option>
-                                    <option value="4">4명</option>
-                                    <option value="5">5명</option>
-                                    <option value="6">6명</option>
-                                    <option value="7">7명</option>
-                                    <option value="8">8명</option>
-                                    <option value="9">9명</option>
-                                    <option value="10">10명</option>
-                                    <option value="11">11명</option>
-                                    <option value="12">12명</option>
-                                    <option value="13">13명</option>
-                                    <option value="14">14명</option>
-                                    <option value="15">15명</option>
-                                    <option value="16">16명</option>
-                                    <option value="17">17명</option>
-                                    <option value="18">18명</option>
-                                    <option value="19">19명</option>
-                                    <option value="20">20명</option>
-                                    <option value="21">21명</option>
-                                    <option value="22">22명</option>
-                                    <option value="23">23명</option>
-                                    <option value="24">24명</option>
-                                    <option value="25">25명</option>
-                                    <option value="26">26명</option>
-                                    <option value="27">27명</option>
-                                    <option value="28">28명</option>
-                                    <option value="29">29명</option>
-                                    <option value="30">30명</option>
-                                </select>
-                            </td>
-                            <th>유아 (만 2세 미만)</th>
-                            <td>
-                                <select name="todd_num">
-                                    <option value="0">0명</option>
-                                    <option value="1">1명</option>
-                                    <option value="2">2명</option>
-                                    <option value="3">3명</option>
-                                    <option value="4">4명</option>
-                                    <option value="5">5명</option>
-                                    <option value="6">6명</option>
-                                    <option value="7">7명</option>
-                                    <option value="8">8명</option>
-                                    <option value="9">9명</option>
-                                    <option value="10">10명</option>
-                                    <option value="11">11명</option>
-                                    <option value="12">12명</option>
-                                    <option value="13">13명</option>
-                                    <option value="14">14명</option>
-                                    <option value="15">15명</option>
-                                    <option value="16">16명</option>
-                                    <option value="17">17명</option>
-                                    <option value="18">18명</option>
-                                    <option value="19">19명</option>
-                                    <option value="20">20명</option>
-                                    <option value="21">21명</option>
-                                    <option value="22">22명</option>
-                                    <option value="23">23명</option>
-                                    <option value="24">24명</option>
-                                    <option value="25">25명</option>
-                                    <option value="26">26명</option>
-                                    <option value="27">27명</option>
-                                    <option value="28">28명</option>
-                                    <option value="29">29명</option>
-                                    <option value="30">30명</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-                <h3>인원 상세 정보</h3>
-                    <table class="person_detail">
-                        <caption class="hide">인원 상세 정보</caption>
-                        <input type="checkbox" id="same"><label for="same">예약자와 동일</label>
-                        <tr>
-                            <td>
-                                <span>성인1</span>
-                                <label for="tour_name1">이름(한글)</label><input type="text" id="tour_name1" name="tour_name1" placeholder="이름 (실명)">
-                            </td>
-                            <td>
-                                <label for="last_name1">이름(영문)</label>
-                                <input type="text" id="last_name1" name="last_name1" placeholder="성">
-                                <input type="text" id="Ename1" name="Ename1" placeholder="이름">
-                            </td>
-                            <td>
-                                <div class="gender_wrap">
-                                    <span>성별</span>                                    
-                                    <div class="gender_group">
-                                        <input type="radio" name="tour_gender" id="tour_male" value="m">
-                                        <label for="male">남</label>
-                                    </div>
-                                    <div class="gender_group">
-                                        <input type="radio" name="tour_gender" id="tour_female" value="f">
-                                        <label for="female">여</label>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="tour_birth">생년월일</label>
-                                <input type="text" id="tour_birth" name="tour_birth" placeholder="생년월일 (예 : 19910101)" maxlength="8" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                            </td>
-                            <td>
-                                <label for="tour_mobile">휴대폰 번호</label>
-                                <input type="text" id="tour_mobile" name="tour_mobile" placeholder="휴대폰번호 (숫자만 입력)" maxlength="11" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-                    <h3>요청 사항</h3>
-                    <textarea class="request_txt" name="request" id="request" cols="168" rows="10" maxlength="1000" placeholder="내용을 입력하세요." title="여행상품예약시 요청사항"></textarea>
-                    <div id="test_cnt">(0 / 1000)</div>
-                </div>
-                <div class="form_bottom">
-                    <div class="office_column">
-                        <h3>상담 지사 선택</h3>
-                        <div class="cont_box office_wrap">
-                            <input type="radio" name="office" id="head_office" value="head"><label for="company_select1">본사</label>
-                            <input type="radio" name="office" id="busan_office" value="busan"><label for="company_select2">부산 지사 (부산/경남지역 고객)</label>
+            </div>
+        </section>
+        <div class="search_content">
+            <section class="search_section">
+                <div class="filter_menu">
+                    <h3 class="hide">여행상품 검색하기</h3>
+                    <div class="product_search_wrap">
+                        <h4 class="hide">상품 상세 검색</h4>
+                        <input class="product_search" type="text" placeholder="상품 상세 검색">
+                        <div class="product_search_btn_wrap">
+                            <button type="submit" class="product_search_button">
+                                <div class="product_search_icon">검색버튼</div>
+                            </button>
                         </div>
                     </div>
-                    <div class="office_column2">
-                    <h3>노랑풍선 할인쿠폰 선택</h3>
-                        <a class="coupon_btn" href="">쿠폰선택</a>
-                        <table class="input_table dc_table">
-                            <caption class="hide">할인쿠폰</caption>
-                                <tr>    
-                                    <th>적용된 쿠폰</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>할인 금액</th>
-                                    <td>-<span class="dc_price">0원</span></td>
-                                </tr>
-                        </table>
-                        <ul>
-                            <li>* 쿠폰 할인 금액은 최종 결제금액에 따라 변동 될 수 있습니다.</li>
-                            <li>* 정액 형 쿠폰의 경우 적용일행을 선택해 주셔야 합니다. (미 선택 시 첫번째 일행으로 기본 적용 됩니다.)</li>
-                            <li>* 예약 완료 후 쿠폰은 변경 할 수 없으며 변경 시 예약을 취소하신 후 다시 예약하셔야 합니다.</li>
-                            <li>* 예약 후 인원 취소/변경 을 하실 경우 적용된 쿠폰은 자동 취소됩니다.</li>
-                            <li>* 예약 취소 시 사용된 쿠폰은 복구되지 않습니다.</li>
+                    <div>
+                        <h4 class="hide">여행 국가, 기간 선택</h4>
+                        <button class="filter 1">한나라 일주</button>
+                        <button class="filter 2">2개국 일주</button>
+                        <button class="filter 3">3개국 일주</button>
+                        <button class="filter 4">4개국 이상</button>
+                        <button class="filter 5">단기 (8일 이하)</button>
+                        <button class="filter 6">중기 (9~10일)</button>
+                        <button class="filter 7">장기 (11일 이상)</button>
+                        <button class="filter 8">유럽 속 작은나라</button>
+                    </div>
+
+                    <hr class="filter_menu_line">
+                    <div class="departure_date_wrap">
+                        <div class="departure_month">
+                            <div class="toggle">
+                                <h4 class="toggle_title">출발 일정</h4>
+                                <span class="arrow_open">메뉴 열기</span>
+                                <span class="arrow_close show">메뉴 닫기</span>
+                            </div>
+                            <div class="toggle_menu show">
+                                <select>
+                                    <option>출발예정월</option>
+                                    <option value="2022년 09월">2022년 09월</option>
+                                    <option value="2022년 10월">2022년 10월</option>
+                                    <option value="2022년 11월">2022년 11월</option>
+                                    <option value="2022년 12월">2022년 12월</option>
+                                    <option value="2023년 01월">2023년 01월</option>
+                                    <option value="2023년 02월">2023년 02월</option>
+                                    <option value="2023년 03월">2023년 03월</option>
+                                    <option value="2023년 04월">2023년 04월</option>
+                                    <option value="2023년 05월">2023년 05월</option>
+                                    <option value="2023년 06월">2023년 06월</option>
+                                    <option value="2023년 07월">2023년 07월</option>
+                                </select>
+                                <div class="departure_date">
+                                    <input type="button" name="destination" alt="달력">
+                                    <button type="button" name="date" alt="날짜검색">
+                                        <a href="#"><i>출발날짜 찾기</i></a>
+                                    </button>
+                                </div>
+                                <div class="day_of_week">
+                                    <ul>
+                                        <li><a href="#">월</a></li>
+                                        <li><a href="#">화</a></li>
+                                        <li><a href="#">수</a></li>
+                                        <li><a href="#">목</a></li>
+                                        <li><a href="#">금</a></li>
+                                        <li><a href="#">토</a></li>
+                                        <li><a href="#">일</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="filter_menu_line">
+                    <div class="departure_time_wrap">
+                        <div class="toggle">
+                            <h4 class="toggle_title">출발 시간</h4>
+                            <span class="arrow_open show">메뉴 열기</span>
+                            <span class="arrow_close">메뉴 닫기</span>
+                        </div>
+                        <div class="toggle_menu">
+                            <div class="departure_time">
+                                <ul>
+                                    <li><a href="#">오전</a></li>
+                                    <li><a href="#">오후</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="filter_menu_line">
+                    <div class="departure_airport_wrap">
+                        <div class="toggle">
+                            <h4 class="toggle_title">출발지 (공항)</h4>
+                            <span class="arrow_open show">메뉴 열기</span>
+                            <span class="arrow_close">메뉴 닫기</span>
+                        </div>
+                        <div class="toggle_menu">
+                            <div class="departure_airport">
+                                <ul>
+                                    <li><a href="#">인천</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="filter_menu_line">
+                    <div class="departure_period_wrap">
+                        <div class="toggle">
+                            <h4 class="toggle_title">여행 기간</h4>
+                            <span class="arrow_open show">메뉴 열기</span>
+                            <span class="arrow_close">메뉴 닫기</span>
+                        </div>
+                        <div class="toggle_menu">
+                            <div class="departure_period">
+                                <ul>
+                                    <li><a href="#">7일</a></li>
+                                    <li><a href="#">8일</a></li>
+                                    <li><a href="#">9일</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">10일</a></li>
+                                    <li><a href="#">11일</a></li>
+                                    <li><a href="#">12일</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="filter_menu_line">
+                    <div class="cost_wrap">
+                        <div class="toggle">
+                            <h4 class="toggle_title">여행 예산 (1인 기준)</h4>
+                            <span class="arrow_open show">메뉴 열기</span>
+                            <span class="arrow_close">메뉴 닫기</span>
+                        </div>
+                        <div class="toggle_menu">
+                            <div class="cost">
+                                <input type="text" class="min_cost">
+                                ~
+                                <input type="text" class="max_cost">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="filter_menu_line">
+                    <div class="vehicle_wrap">
+                        <div class="toggle">
+                            <h4 class="toggle_title">이용교통</h4>
+                            <span class="arrow_open show">메뉴 열기</span>
+                            <span class="arrow_close">메뉴 닫기</span>
+                        </div>
+                        <div class="toggle_menu">
+                            <div class="vehicle_menu active">
+                                <div class="vehicle_item"><a href="#"><i class="vehicle_icon daehan"></i>대한항공</a></div>
+                                <div class="vehicle_item"><a href="#"><i class="vehicle_icon asiana"></i>아시아나항공</a></div>
+                                <div class="vehicle_item"><a href="#"><i class="vehicle_icon airfrance"></i>에어프랑스</a></div>
+                                <div class="vehicle_item"><a href="#"><i class="vehicle_icon qatar"></i>카타르항공</a></div>
+                                <div class="vehicle_item"><a href="#"><i class="vehicle_icon turky"></i>터키항공</a></div>
+                                <div class="vehicle_item"><a href="#"><i class="vehicle_icon pin"></i>핀에어</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="search_result">
+                <div class="search_result_top">
+                    <h3 class="hide">검색결과 목록</h3>
+                    <div>
+                        <button class="compare_btn" type="button">선택상품 비교</button>
+                    </div>
+                    <div>
+                        <ul class="ranking_filter">
+                            <li><a href="#">인기순</a></li>
+                            <li><a href="#">낮은가격순</a></li>
+                            <li><a href="#">높은가격순</a></li>
+                            <li><a href="#">고객평점순</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="cont_box total_box">
-                    <div class="cont_item cont_div1">
-                        <p class="item_title">상품 금액</p>
-                        <div>
-                            <span class="item_person">성인</span>
-                            <span class="item_price">3,780,000원</span><span>X</span>
-                            <span class="item_num">1</span>명
+
+                <ul class="product_ul">
+                    <?php while($array = mysqli_fetch_array($result)){ ?>
+                    <li class="product_li">
+                        <div class="product_card">
+                            <div>
+                                <a href="#" class="product_image product_img2"></a>
+                            </div>
+                            <div class="product_cont_wrap">
+                                <div class="product_cont">
+                                    <div class="label_wrap">
+                                        <div class="premium_label">프리미엄</div>
+                                        <div class="foreign_pkg_label">해외패키지</div>
+                                    </div>
+                                    <p class="product_title"><?php echo $array["p_name"];?></p>
+                                </div>
+                                <div class="cont1">
+                                    <p class="period">출발기간 : <?php echo substr($array["departure_date1"],0,10);?>~</p>
+                                    <p class="price"><?php echo $array["adult_p"];?>원 ~</p>
+                                </div>
+                                <div class="cont2">
+                                    <button type="button" onclick="location.href='product_info.php?n_idx=<?php echo $array['idx'];?>'">출발일 보기</button>
+                                    <div class="etc">
+                                        <span class="product_number">상품번호 <?php echo $array["idx"];?></span>
+                                        <span class="hide">고객평점</span>
+                                        <span class="score_i">★</span>
+                                        <span class="score">4.7 / 5</span>
+                                        <i class="snslink_i">sns공유하기</i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <span class="item_person">아동</span>
-                            <span class="item_price">3,780,000원</span><span>X</span>
-                            <span class="item_num">0</span>명
+
+                        <!-- .product_details.show로 활성화/비활성화 구분 -->
+                        <!-- .product_details > * .blue,.red,.purple로 색상구분 -->
+                        <!-- .product_cal_day.active 또는 .product_cal_day:hover로 활성화/비활성화 구분 -->
+                        <!--
+                        <div class="product_details">
+                            <div class="product_cal_header">
+                                <a href="#" class="product_cal_header_arrow_left">&lt;</a>
+                                <p>2022년 11월</p>
+                                <a href="#" class="product_cal_header_arrow_left">&gt;</a>
+                            </div>
+                            <div class="product_cal_body">
+                                <ul class="product_cal_list">
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">화</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day active">1</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">수</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">2</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">목</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">3</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">금</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">4</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title blue">토</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day red">5</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title red">일</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day red">6</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">월</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">7</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">화</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">8</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">수</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">9</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">목</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">10</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">금</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">11</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title blue">토</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day red">12</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title red">일</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day red">13</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">월</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">14</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">화</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">15</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">수</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">16</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">목</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">17</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">금</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">18</span>
+                                            <span class="product_cal_text">285만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title blue">토</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day red">19</span>
+                                            <span class="product_cal_text">287만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title red">일</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day red">20</span>
+                                            <span class="product_cal_text">287만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">월</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">21</span>
+                                            <span class="product_cal_text">285만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">화</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">22</span>
+                                            <span class="product_cal_text">285만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">수</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">23</span>
+                                            <span class="product_cal_text">285만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">목</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">24</span>
+                                            <span class="product_cal_text">285만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">금</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">25</span>
+                                            <span class="product_cal_text">285만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title blue">토</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day red">26</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title red">일</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day red">27</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">월</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">28</span>
+                                            <span class="product_cal_text">285만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">화</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">29</span>
+                                            <span class="product_cal_text">285만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">수</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">30</span>
+                                            <span class="product_cal_text">285만</span>
+                                        </a>
+                                    </li>
+                                    <li class="product_cal_item">
+                                        <span class="product_cal_title">목</span>
+                                        <a class="product_cal_link">
+                                            <span class="product_cal_day">31</span>
+                                            <span class="product_cal_text purple">최저가</span>
+                                            <span class="product_cal_text red">282만</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product_cal_filter">
+                                <div class="result_count">총2개</div>
+                                <select class="result_sort">
+                                    <option>출발확정순</option>
+                                    <option>출발시간 빠른순</option>
+                                    <option>출발시간 늦은순</option>
+                                    <option>최저가순</option>
+                                    <option>최고가순</option>
+                                </select>
+                            </div>
+                            <div class="product_cal_result">
+                                <div class="product_cal_result_item">
+                                    <div class="product_cal_result_sub">예약대기<span>(잔여0석)</span></div>
+                                    <div class="product_cal_result_content">
+                                        <div class="product_cal_result_left">
+                                            <div class="product_cal_result_title">[돌체이탈리아9일]슬로우라이프_오르비에토/토스카나+나/폼/소+10대맛체험[OZ/1급호텔]</div>
+                                            <div class="product_cal_result_text">
+                                                <i class="icon icon-calendar"></i>
+                                                2022.11.05(토) 11:30 ~ 2022.11.13(일) 14:10 7박 9일
+                                            </div>
+                                            <div class="product_cal_result_text">
+                                                <i class="icon icon-asiana"></i>
+                                                아시아나항공</div>
+                                        </div>
+                                        <div class="product_cal_result_right">
+                                            <div class="product_cal_result_price"><strong>2,829,000</strong><small>원</small></div>
+                                            <a href="#" class="product_cal_result_btn">상세일정보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_cal_result_item">
+                                    <div class="product_cal_result_sub">예약대기<span>(잔여0석)</span></div>
+                                    <div class="product_cal_result_content">
+                                        <div class="product_cal_result_left">
+                                            <div class="product_cal_result_title">[돌체이탈리아9일]슬로우라이프_오르비에토/토스카나+나/폼/소+10대맛체험[OZ/1급호텔]</div>
+                                            <div class="product_cal_result_text">
+                                                <i class="icon icon-calendar"></i>
+                                                2022.11.05(토) 11:30 ~ 2022.11.13(일) 14:10 7박 9일
+                                            </div>
+                                            <div class="product_cal_result_text">
+                                                <i class="icon icon-asiana"></i>
+                                                아시아나항공</div>
+                                        </div>
+                                        <div class="product_cal_result_right">
+                                            <div class="product_cal_result_price"><strong>2,829,000</strong><small>원</small></div>
+                                            <a href="#" class="product_cal_result_btn">상세일정보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_details_footer">
+                                <button class="product_details_close_btn">
+                                    접기
+                                    <i class="icon icon-arrow-up"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div>
-                            <span class="item_person">유아</span>
-                            <span class="item_price">6,380,000원</span><span>X</span>
-                            <span class="item_num">0</span>명
+                        -->
+                    </li>
+                    <?php } ?>
+                    <!-- <li class="product_li">
+                        <div class="product_card">
+                            <div>
+                                <a href="#" class="product_image product_img1"></a>
+                            </div>
+                            <div class="product_cont_wrap">
+                                <div class="product_cont">
+                                    <div class="foreign_pkg_label">해외패키지</div>
+                                    <p class="product_title">[돌체 이탈리아 9일] 슬로우 라이프_오르비에토/토스카나+나/폼/소+10대 맛체험[OZ]</p>
+                                </div>
+                                <div class="cont1">
+                                    <p class="period">출발기간 : 2022.10.11~2023.03.28</p>
+                                    <p class="price">2,032,000 원 ~</p>
+                                </div>
+                                <div class="cont2">
+                                    <button type="button" onclick="location.href='product_info'">출발일 보기</button>
+                                    <div class="etc">
+                                        <span class="product_number">상품번호 EWP4110</span>
+                                        <span class="hide">고객평점</span>
+                                        <span class="score_i">★</span>
+                                        <span class="score">-</span>
+                                        <i class="snslink_i">sns공유하기</i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cont_item cont_div2">
-                        <p class="item_title">할인 금액</p>
-                        쿠폰 할인 -<span class="dc_price">0</span> 원
-                    </div>
-                    <div class="cont_item cont_div3">
-                        <p class="item_title">총액</p>
-                        <span class="total_price">3,780,000</span> 원
-                    </div>
-                </div>
-                    <ul> 
-                        <p>확인하세요!</p>
-                        <li>*항공권 또는 항공권이 포함된 상품의 경우, 표시되는 상품요금은 세금 및 예상 유류할증료가 포함된 가격이며, 유류할증료는 유가 및 환율 등에 따라 변동될 수 있습니다.</li>
-                        <li>*아동/유아 기준은 항공사마다 상이하여, 예약 후 최종 확정됩니다.</li>
-                    </ul>
-                <button type="submit" id="submit_btn">예약하기</button>
-            </fieldset>
-        </form>
+
+                        
+                    </li>
+                    <li class="product_li">
+                        <div class="product_card">
+                            <div>
+                                <a href="#" class="product_image product_img2"></a>
+                            </div>
+                            <div class="product_cont_wrap">
+                                <div class="product_cont">
+                                    <div class="label_wrap">
+                                        <div class="premium_label">프리미엄</div>
+                                        <div class="foreign_pkg_label">해외패키지</div>
+                                    </div>
+                                    <p class="product_title">★10/25 호텔확정 [스위스 일주 8일/비즈니스석 탑승] 6대 특식+마테호른/융프라우</p>
+                                </div>
+                                <div class="cont1">
+                                    <p class="period">출발기간 : 2022.10.11~2023.10.25</p>
+                                    <p class="price">5,690,000 원 ~</p>
+                                </div>
+                                <div class="cont2">
+                                    <button type="button">출발일 보기</button>
+                                    <div class="etc">
+                                        <span class="product_number">상품번호 EWP4072</span>
+                                        <span class="hide">고객평점</span>
+                                        <span class="score_i">★</span>
+                                        <span class="score">4.7 / 5</span>
+                                        <i class="snslink_i">sns공유하기</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product_li">
+                        <div class="product_card">
+                            <div>
+                                <a href="#" class="product_image product_img3"></a>
+                            </div>
+                            <div class="product_cont_wrap">
+                                <div class="product_cont">
+                                    <div class="label_wrap">
+                                        <div class="premium_label">프리미엄</div>
+                                        <div class="foreign_pkg_label">해외패키지</div>
+                                    </div>
+                                    <p class="product_title">★10/21 출발확정 [프랑스 일주 11일] 예술가들의 발자취를 따라서_노르망디_남프랑스</p>
+                                </div>
+                                <div class="cont1">
+                                    <p class="period">출발기간 : 2022.10.07~2023.10.31</p>
+                                    <p class="price">4,280,000 원 ~</p>
+                                </div>
+                                <div class="cont2">
+                                    <button type="button">출발일 보기</button>
+                                    <div class="etc">
+                                        <span class="product_number">상품번호 EWP4015</span>
+                                        <span class="hide">고객평점</span>
+                                        <span class="score_i">★</span>
+                                        <span class="score">4.5 / 5</span>
+                                        <i class="snslink_i">sns공유하기</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product_li">
+                        <div class="product_card">
+                            <div>
+                                <a href="#" class="product_image product_img4"></a>
+                            </div>
+                            <div class="product_cont_wrap">
+                                <div class="product_cont">
+                                    <div class="label_wrap">
+                                        <div class="foreign_pkg_label">해외패키지</div>
+                                    </div>
+                                    <p class="product_title">[서유럽 4국12일] 영국과 스위스를 더하다[1급호텔]융프라우/리기산+코츠월드/옥스퍼드</p>
+                                </div>
+                                <div class="cont1">
+                                    <p class="period">출발기간 : 2022.10.08~2023.03.29</p>
+                                    <p class="price">3,829,000 원 ~</p>
+                                </div>
+                                <div class="cont2">
+                                    <button type="button">출발일 보기</button>
+                                    <div class="etc">
+                                        <span class="product_number">상품번호 EWP3058</span>
+                                        <span class="hide">고객평점</span>
+                                        <span class="score_i">★</span>
+                                        <span class="score">4.1 / 5</span>
+                                        <i class="snslink_i">sns공유하기</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product_li">
+                        <div class="product_card">
+                            <div>
+                                <a href="#" class="product_image product_img5"></a>
+                            </div>
+                            <div class="product_cont_wrap">
+                                <div class="product_cont">
+                                    <div class="label_wrap">
+                                        <div class="foreign_pkg_label">해외패키지</div>
+                                    </div>
+                                    <p class="product_title">★10/19 출발확정 [프랑스/스위스 9일] 리기 하이킹+융프라우/VIP패스+이젤발트</p>
+                                </div>
+                                <div class="cont1">
+                                    <p class="period">출발기간 : 2022.10.05~2023.03.27</p>
+                                    <p class="price">3,629,000 원 ~</p>
+                                </div>
+                                <div class="cont2">
+                                    <button type="button">출발일 보기</button>
+                                    <div class="etc">
+                                        <span class="product_number">상품번호 EWP2335</span>
+                                        <span class="hide">고객평점</span>
+                                        <span class="score_i">★</span>
+                                        <span class="score">4.3 / 5</span>
+                                        <i class="snslink_i">sns공유하기</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product_li">
+                        <div class="product_card">
+                            <div>
+                                <a href="#" class="product_image product_img6"></a>
+                            </div>
+                            <div class="product_cont_wrap">
+                                <div class="product_cont">
+                                    <div class="label_wrap">
+                                        <div class="foreign_pkg_label">해외패키지</div>
+                                    </div>
+                                    <p class="product_title">★10/22 확정[이탈리아/스위스 8일/9일] 가슴을 뛰게 만드는 여행 휘르스트+나/폼/소</p>
+                                </div>
+                                <div class="cont1">
+                                    <p class="period">출발기간 : 2022.10.03~2023.03.31</p>
+                                    <p class="price">1,999,000 원 ~</p>
+                                </div>
+                                <div class="cont2">
+                                    <button type="button">출발일 보기</button>
+                                    <div class="etc">
+                                        <span class="product_number">상품번호 EWP1337</span>
+                                        <span class="hide">고객평점</span>
+                                        <span class="score_i">★</span>
+                                        <span class="score">4.5 / 5</span>
+                                        <i class="snslink_i">sns공유하기</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+            </section>
+        </div>
     </main>
     <hr class="footer_hr">
     <footer>
@@ -2043,104 +2455,76 @@
                 depth3PopupEl.stop().slideUp("fast");
             });
 
-            //textarea 글자수제한
-            $('#request').on('keyup', function() {
-            $('#test_cnt').html("("+$(this).val().length+" / 1000)");
- 
-            if($(this).val().length > 1000) {
-                $(this).val($(this).val().substring(0, 1000));
-                $('#test_cnt').html("(1000 / 1000)");
-            }
+            //sidemenu 열고 닫기
+            var toggleTitleEls = $('.toggle');
+            var toggleMenuEls = $('.toggle_menu');
+            var closeEls = $(".arrow_close");
+            var openEls = $(".arrow_open");
+            
+            toggleTitleEls.click(function(){
+                var toggleTitleEl = $(this);
+                var isOpen = toggleTitleEl.next().hasClass('show');
+
+                toggleMenuEls.removeClass('show');
+                openEls.addClass("show");
+                closeEls.removeClass("show");
+                
+                if(!isOpen){ 
+                    var openEl = toggleTitleEl.find('.arrow_open');
+                    openEl.removeClass("show");
+
+                    var closeEl = toggleTitleEl.find('.arrow_close');
+                    closeEl.addClass("show");
+
+                    var currentMenuEl = toggleTitleEl.next();
+                    currentMenuEl.addClass('show');
+                } 
+            });
+
+            //sidemenu 항목 선택 시 배경색 바뀜
+            var filterEls = $('.filter');
+
+            filterEls.click(function(){
+                filterEls.removeClass('active');
+                var currentEl = $(this);
+                currentEl.addClass('active');
+            });
+
+            var weekEls = $('.day_of_week li');
+
+            weekEls.click(function(){
+                weekEls.removeClass('active');
+                var currentEl = $(this);
+                currentEl.addClass('active');
+            });
+
+            var timeEls = $('.departure_time li');
+
+            timeEls.click(function(){
+                timeEls.removeClass('active');
+                var currentEl = $(this);
+                currentEl.addClass('active');
+            });
+
+            var airportEls = $('.departure_airport li');
+
+            airportEls.click(function(){
+                airportEls.removeClass('active');
+                var currentEl = $(this);
+                currentEl.addClass('active');
+            });
+
+             var periodEls = $('.departure_period li');
+
+            periodEls.click(function(){
+                periodEls.removeClass('active');
+                var currentEl = $(this);
+                currentEl.addClass('active');
+            });
+
+
+
         });
-    });
-
-        function reserve_form_check(){
-            //예약자 정보
-            var termEls = document.querySelectorAll("[name='term']:checked");
-            var nameEl = document.getElementById("u_name");
-            var birthEl = document.getElementById("birth");
-            var emailEl = document.getElementById("email");
-            var mobileEl = document.getElementById("mobile");
-            //인원 상세 정보
-            var tourName = document.getElementById("tour_name1");
-            var tourLastname = document.getElementById("last_name1");
-            var tourEname = document.getElementById("Ename1");
-            var tourGender = document.querySelector("[name='tour_gender']:checked");
-            var tourBirth = document.getElementById("tour_birth");
-            var tourMobile = document.getElementById("tour_mobile");
-            var tourOffice = document.querySelector("[name='office_select']:checked");
-
-            //예약자 정보
-            if (termEls.length < 4) {
-                alert("필수약관에 모두 동의해주세요");
-                return false;
-            } 
-
-            if (nameEl.value == "") {
-                alert("예약자의 이름을 입력해주세요");
-                nameEl.focus();
-                return false;
-            } 
-
-            if (birthEl.value == "") {
-                alert("예약자의 생년월일을 입력해주세요");
-                birthEl.focus();
-                return false;
-            } 
-
-            if (emailEl.value == "") {
-                alert("예약자의 이메일을 입력해주세요");
-                emailEl.focus();
-                return false;
-            } 
-
-            if (mobileEl.value == "") {
-                alert("예약자의 휴대폰번호을 입력해주세요");
-                mobileEl.focus();
-                return false;
-            } 
-
-            //인원 상세 정보
-            if (tourName.value == "") {
-                alert("여행자의 이름(한글)을 입력해주세요");
-                tourName.focus();
-                return false;
-            } 
-
-            if (tourLastname.value == "") {
-                alert("여행자의 성(영어)을 입력해주세요");
-                tourLastname.focus();
-                return false;
-            } 
-
-            if (Ename1.value == "") {
-                alert("여행자의 이름(한글)을 입력해주세요");
-                Ename1.focus();
-                return false;
-            } 
-
-            if (tourGender == null) {
-                alert("여행자의 성별을 선택해주세요");
-                return false;
-            } 
-
-            if (tourBirth.value == "") {
-                alert("여행자의 생년월일을 입력해주세요");
-                tourBirth.focus();
-                return false;
-            } 
-
-            if (tourMobile.value == "") {
-                alert("여행자의 휴대폰 번호를 입력해주세요");
-                tourMobile.focus();
-                return false;
-            } 
-
-            if (tourOffice == null) {
-                alert("상담지사를 선택해주세요");
-                return false;
-            } 
-        }
     </script>
 </body>
 

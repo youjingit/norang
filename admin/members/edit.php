@@ -3,18 +3,15 @@
 include "../inc/session.php";
 
 // 데이터 가져오기
-// $g_idx = $_GET["g_idx"]; // 관리자가 선택한 사용자 idx를 form action으로 전송
-$g_idx = $_POST["g_idx"]; // 관리자가 선택한 사용자 idx를 hidden 필드로 전송
+$g_idx = $_POST["g_idx"];
 $pwd = $_POST["pwd"];
-$mobile = $_POST["mobile"];
-$email_id = $_POST["email_id"];
-$email_dns = $_POST["email_dns"];
-$email = $email_id."@".$email_dns;
 $birth = $_POST["birth"];
-$ps_code = $_POST["ps_code"];
-$addr_b = $_POST["addr_b"];
-$addr_d = $_POST["addr_d"];
 $gender = $_POST["gender"];
+$privacy_period = $_POST["privacy_period"];
+$info_collect_apply = $_POST["info_collect_apply"];
+$marketing_apply = $_POST["marketing_apply"]== "y" ? "y" : "n";
+$email_apply = $_POST["email_apply"] == "y" ? "y" : "n";
+$sms_apply = $_POST["sms_apply"] == "y" ? "y" : "n";
 
 // 값 확인
 /* echo "<p> 비밀번호 : ".$pwd."</p>";
@@ -35,18 +32,18 @@ include "../inc/dbcon.php";
 // 비밀번호를 입력한 경우
 $sql = "update members set ";
 $sql .= "pwd='$pwd', ";
-$sql .= "mobile='$mobile', ";
-$sql .= "email='$email', ";
 $sql .= "birth='$birth', ";
-$sql .= "ps_code='$ps_code', ";
-$sql .= "addr_b='$addr_b', ";
-$sql .= "addr_d='$addr_d', ";
-$sql .= "gender='$gender' ";
+$sql .= "gender='$gender', ";
+$sql .= "privacy_period='$privacy_period', ";
+$sql .= "info_collect_apply='$info_collect_apply', ";
+$sql .= "marketing_apply='$marketing_apply', ";
+$sql .= "email_apply='$email_apply', ";
+$sql .= "sms_apply='$sms_apply' ";
 $sql .= "where idx=$g_idx;";
 // echo $sql;
 
 // 비밀번호를 입력하지 않은 경우
-$sql_nPwd = "update members set mobile='$mobile', email='$email', birth='$birth', ps_code='$ps_code', addr_b='$addr_b', addr_d='$addr_d', gender='$gender' where idx=$g_idx;";
+$sql_nPwd = "update members set birth='$birth', gender='$gender', privacy_period='$privacy_period', info_collect_apply='$info_collect_apply', marketing_apply='$marketing_apply', email_apply='$email_apply', sms_apply='$sms_apply' where idx=$g_idx;";
 // echo $sql_nPwd;
 
 
@@ -65,7 +62,7 @@ mysqli_close($dbcon);
 echo "
     <script type=\"text/javascript\">
         alert(\"수정되었습니다.\");
-        location.href = \"member_info.php?g_idx=$g_idx\";
+        location.href = \"list.php?g_idx=$g_idx\";
     </script>
     ";
 ?>

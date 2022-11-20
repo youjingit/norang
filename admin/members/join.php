@@ -1,14 +1,17 @@
+<?php
+include "../inc/admin_check.php";
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>노랑풍선 - 회원가입</title>
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/base.css">
-    <link rel="stylesheet" type="text/css" href="../css/common.css">
-    <link rel="stylesheet" type="text/css" href="../css/join.css">
+    <title>노랑풍선 - 회원가입(admin)</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/join.css">
 </head>
 <body>
     <header>
@@ -22,10 +25,13 @@
                     <ul class="depth1_top_menu">
                         <li><a href="../login/login.php">로그인</a></li>
                     </ul>
+                </div>
+            </div>
+        </div>
     </header>
     <hr>
     <main>
-        <h2 class="join_title">간편 회원가입</h2>
+        <h2 class="join_title">간편 회원가입(관리자모드)</h2>
         <form name="join_form" action="insert.php" method="post" onsubmit="return join_form_check()">
             <fieldset>
                 <legend class="hide">회원가입</legend>

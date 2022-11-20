@@ -36,6 +36,7 @@ create table notice(
     n_title varchar(255) not null, 
     cate varchar(10),
     n_content text not null,
+    writer varchar(20) not null,
     w_date datetime not null
 );
 
@@ -176,7 +177,7 @@ insert into notice(
     always, n_title, cate, n_content, w_date
 ) values(
     "", "2008년 신혼여행 봄상품", 'honey', "[허니문] 2008년 신혼여행 봄상품",
-    '2007.11.01'
+    '2007.11.10'
 );
 insert into notice(
     always, n_title, cate, n_content, w_date
@@ -1043,28 +1044,88 @@ insert into notice(
     '2022.09.30'
 );
 
-create table product(
+create table products(
     idx int auto_increment primary key,
-    p_id char(7) not null,
     p_name varchar(50) not null,
+    p_explain varchar(200) not null,
+    departure_vehicle varchar(20) not null,
+    arrival_vehicle varchar(20) not null,
+    departure_date1 varchar(50) not null,
+    departure_date2 varchar(50) not null,
+    arrival_date1 varchar(50) not null,
+    arrival_date2 varchar(50) not null,
+    tour_city varchar(200) not null,
     adult_p varchar(15) not null,
     kid_p varchar(15) not null,
-    todd_p varchar(15) not null
+    todd_p varchar(15) not null,
+    adult_fuel varchar(15) not null,
+    kid_fuel varchar(15) not null,
+    todd_fuel varchar(15) not null,
+    inclusion varchar(2000) not null,
+    exclusion varchar(2000) not null,
+    reference varchar(2000) not null,
+    schedule varchar(2000) not null,
+    reg_date datetime
+);
+
+
+insert into products(
+    p_name,
+    p_explain,
+    departure_vehicle, 
+    arrival_vehicle, 
+    departure_date1, 
+    departure_date2, 
+    arrival_date1, 
+    arrival_date2, 
+    tour_city, 
+    adult_p, 
+    kid_p, 
+    todd_p, 
+    adult_fuel, 
+    kid_fuel, 
+    todd_fuel, 
+    inclusion, 
+    exclusion,
+    reference, 
+    schedule, 
+    reg_date
+) values(
+    "[돌체 이탈리아 9일] 슬로우 라이프_오르비에토/토스카나+나/폼/소+10대 맛체험[OZ]", 
+    "★왕복국적기직항★ 여행자들의 로망, 여행가고 싶은 국가, 한번 더 방문하고 싶은 나라 이탈리아!! 완벽 이태리일주 9일! 국적기 직항으로 다녀 올 수 있는 알찬 패키지여행입니다.", "아시아나항공", 
+    "아시아나항공", 
+    "2022.11.05 (토) 11:30", 
+    "2022.11.05 (토) 17:05", 
+    "2022.11.12 (토) 18:40", 
+    "2022.11.13 (일) 14:10", 
+    "인천 → 로마(1) → 시에나 → 산지미냐노 → 베니스(1) → 파르마(1) → 친퀘테레 → 피사 → 몬테카티니(1) → 피렌체 → 끼안치아노(1) → 오르비에토 → 아씨시 → 로마(1) → 폼페이 → 소렌토 → 나폴리 → 로마(1) → 인천", 
+    "2,390,000", 
+    "2,390,000", 
+    "500,000", 
+    "439,000",
+    "439,000", 
+    "0",           
+    "<h4 class=\"detail_title\"><i class=\"include_i\"></i>포함내역</h4>
+    <p><span class=\"detail_subtitle\">[교통]</span><span>왕복항공권 (이코노미), 전용차량비용 (45인승버스)</span></p><p><span class=\"detail_subtitle\">[숙박시설]</span><span>1급호텔(4성급) 이용 (2인 1실 기준)</span></p><p><span class=\"detail_subtitle\">[숙박]</span><span>일정표 상 표기된 숙박비용</span></p><p><span class=\"detail_subtitle\">[식사]</span><span>일정표 상 표기된 식사비용</span></p><p>(10회 특식 포함 : 라자냐, 티라미슈, 스파게티, 티본스테이크, 와인, 삼겹살정식, 피자, 카프레제, 에스프레소, 젤라또)</span></p><p><span class=\"detail_subtitle\">[유류할증료]</span><span>발권일에 따라 변동될 수 있습니다.</span></p><p><span class=\"detail_subtitle\">[입장료]</span><span>일정내 표기된 전 관광지 입장요금</span></p><p><span class=\"detail_subtitle\">[여행자보험]</span><span>1억원 여행자 보험</span></p>",
+    "<h4 class=\"detail_title\"><i class=\"exclude_i\"></i>불포함내역</h4><p><span class=\"detail_subtitle\">[가이드/기사경비]</span><span>90유로 (1인기준) 현지 지불해야 합니다.</span></p><p><span class=\"detail_subtitle\">[각종 비용]</span><span>선택관광 비용 및 개인 물값, 각종개인 TIP, 개인경비</span></p><p><span class=\"detail_subtitle\">[환율추가금]</span><span>(참고/전달사항 참조)</span></p>", 
+    "[참고사항]\n\n- 항공 : 아시아나 항공 (OZ)\n- 마일리지 : 왕복 기준 약 8,000마일 적립가능\n- 패키지 상품으로 출발하는 항공권은 단체항공권으로 출발시간기준 48시간전부터 좌석지정 및 체크인이 가능합니다.\n- 사전체크인은 여권정보 등 개인정보가 필요하기 때문에 당사에서 대행은 불가합니다.\n- 발권 후 배정되어 있는 좌석은 항공사에서 임의로 지정한 것이며, 항공좌석 만석등의 경우 사전좌석지정 불가할 수 있습니다.\n따라서 항공기 만석인 경우 일행과 떨어진 좌석을 받을 수 있음을 양해 바랍니다.\n- 기내식 사전 신청 : 키즈밀, 당뇨식, 채식 등등\n- 최소 출발 3일전 신청시에만 가능하며, 항공사별 / 지역별 메뉴가 다를수 있으므로 참고부탁드립니다.\n- 여행자보험 : KB 여행자 보험 가입\n- 자세한 보장 내용은 아래 보험 자세히 보기를 참고 부탁드립니다. (http://ybt.gl/7641tisk)\n\n[전달사항]\n\n- 본 상품은 인솔자가 동행하지 않습니다. 현지 로마공항 가이드 미팅으로 진행됩니다.\n- 본 상품의 최소출발인원 기준은 20명(최대 40명)이며 미충족시 여행 표준약관 제9조에 따라 여행사는 여행출발 7일전까지 여행계약을\n일방적으로 해제하고 소비자에게 통보할 수 있습니다.\n- 운항 스케줄 및 판매가격은 정부인가 조건입니다. 운항스케줄은 불가피한 사유로 사전 예고없이 변경될 수 있습니다.\n- 호텔, 식사는 예정입니다. 출발전 변경될 수 있습니다.\n- 관광지 휴관일 경우 다른 관광지로 대체될 수 있습니다.\n- 본상품은 단계별로 금액이 상승됩니다.\n- 본 일정 및 숙박 시설은 현지 사정에 의해 변경될 수 있습니다.\n- 유럽은 공간이 협소하므로 3인 1실 사용시 불편하실 수 있으므로, 싱글룸 사용을 권장합니다.\n- 룸조인 요청시 다른고객님과 룸조인 배정해드립니다. 단, 룸조인이 안될시 싱글차지가 발생됩니다(싱글룸비용 아래참조)\n- 싱글룸 비용 : 전 일정 490,000원\n- 호텔 : 본 상품의 숙박시설은 현재 미정이나 1급 호텔로 배정 예정이며, 출발 1일전 홈페이지 또는 SMS를 통해 알려드립니다.\n※ 국제적으로 통용되는 호텔 등급 표기 기준은 없으며 일부 국가에서는 자국 기준에 따라 등급표기를 하고 있습니다.\n고객님의 선택의 편의를 위해 등급 기준을 반영한 것이므로 양해 부탁드립니다.\n\n[환율추가금]\n\n- 국외여행 표준약관 제12조 (여행요금의 변경) : 국외여행을 실시함에 있어서 이용운송,숙박기관에 지급하여야 할 요금이 계약체결시보다\n5% 이상 증감하거나 여행 요금에 적용된 외화환율이 계약체결시보다 2% 이상 증감한 경우\n당사 또는 여행자는 그 증감된 금액 범위 내에서 여행요금의 증감을 상대방에게 청구할 수 있습니다.\n- 본 상품은 2022.03.07 하나은행(구 외환은행) 기준 '1유로당 1,343원 현찰 살때' 최초환율을 기준하고 있으며,\n출발일 15일전 동은행 환율조건 1,370원 이상으로 최초 고지시 기획당시 환율의 증감율만큼 추가금액이 발생될수 있습니다.",
+    "인천 출발11:302022.11.05(토)\n도착17:052022.11.05(토)\n인천\n인천 국제공항 출발\n-본 상품은 인솔자가 동행하지 않습니다. 현지 로마공항 가이드 미팅으로 진행됩니다.\n중식 (기내식)\n석식 (기내식)\n로마\n로마 도착", 
+    "2022-11-20"
 );
 
 create table order(
     idx int auto_increment primary key,
-    order_id char(7) not null,
-    p_id char(7) not null,
-    departure date not null,
-    arrival date not null,
+    departure_date1 varchar(50) not null,
+    departure_date2 varchar(50) not null,
+    arrival_date1 varchar(50) not null,
+    arrival_date2 varchar(50) not null,
     departure_vehicle varchar(20) not null,
     arrival_vehicle varchar(20) not null,
     u_id varchar(50) not null,
     u_name varchar(20) not null,
     birth date not null,
     email varchar(50) not null,
-    mobile varchar(15) not null,
+    mobile varchar(15) not null, 
     adult_num int not null,
     kid_num int not null,
     todd_num int not null,
@@ -1074,5 +1135,6 @@ create table order(
     tourist_info text not null,
     opt_apply char(1),
     request varchar(1000), 
-    office varchar(5)
+    office varchar(5),
+    reg_date datetime,
 );

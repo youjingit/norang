@@ -40,7 +40,7 @@ $sql .= "marketing_apply='$marketing_apply', ";
 $sql .= "email_apply='$email_apply', ";
 $sql .= "sms_apply='$sms_apply' ";
 $sql .= "where idx=$s_idx;";
-echo $sql;
+//echo $sql;
 //비밀번호를 입력하지 않은 경우
 $sql_nPwd = "update members set birth='$birth', gender='$gender', privacy_period='$privacy_period', info_collect_apply='$info_collect_apply', marketing_apply='$marketing_apply', email_apply='$email_apply', sms_apply='$sms_apply' where idx=$s_idx;";
 

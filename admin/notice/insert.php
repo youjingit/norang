@@ -2,9 +2,13 @@
 // 작성자 입력을 위한 session 가져오기
 include "../inc/session.php";
 
+$table_name = "notice";
 // 이전 페이지에서 값 가져오기
+$always = $_POST["always"] == "y" ? "y" : "n";
+$cate = $_POST["cate"];
 $n_title = $_POST["n_title"];
 $n_content = $_POST["n_content"];
+$writer = $_POST["writer"];
 
 // 작성일자
 $w_date = date("Y-m-d");
@@ -20,10 +24,10 @@ exit; */
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "insert into notice(";
-$sql .= "n_title, n_content, writer, w_date";
+$sql = "insert into $table_name(";
+$sql .= "always, cate, n_title, n_content, writer, w_date";
 $sql .= ") values(";
-$sql .= "'$n_title', '$n_content', '$s_name', '$w_date'";
+$sql .= "'$always', '$cate', '$n_title', '$n_content','$writer', '$w_date'";
 $sql .= ");";
 /* echo $sql;
 exit; */

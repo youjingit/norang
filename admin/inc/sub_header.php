@@ -3,7 +3,7 @@
     <div class="top_menu">
         <span class="pnt_name">관리자님, 안녕하세요. </span>
         <a href="../login/logout.php">[로그아웃]</a>
-        <a href="../members/member_info.php">[내 정보]</a>
+        <a href="../members/member_info.php?g_idx=<?php echo $s_idx;?>">[내 정보]</a>
         <a href="../../index.php">[홈페이지]</a>
     </div>
     <hr>

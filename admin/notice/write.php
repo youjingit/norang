@@ -1,6 +1,7 @@
 <?php 
 include "../inc/session.php"; 
-include "../inc/login_check.php";
+include "../inc/admin_check.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -34,15 +35,33 @@ include "../inc/login_check.php";
     </script>
 </head>
 <body>
-    <?php include "../inc/sub_header.html"; ?>
+    <?php include "../inc/sub_header.php"; ?>
     <form name="notice_form" action="insert.php" method="post" onsubmit="return notice_check()">
         <fieldset>
             <legend>공지사항</legend>
             <p>
-                작성자 <?php echo $s_name; ?>
+                <label for="wirter">작성자<label> 
+                <input type="text" name="writer" id="writer" value="<?php echo $s_name; ?>">
                 <!-- <input type="hidden"> -->
             </p>
-
+            <p>
+                <label for="always">상시 여부</label>
+                <input type="checkbox" name="always" id="always" value="y">
+            </p>
+            <p>
+                <label for="cate">카테고리</label>
+                <select name="cate" id="cate" class="cate">
+                    <option value="all">전체</option>
+                    <option value="notice">공지사항</option>
+                    <option value="honey">허니문</option>
+                    <option value="golf">골프</option>
+                    <option value="cruise">크루즈</option>
+                    <option value="domestic">국내</option>
+                    <option value="busanDaegu">부산/대구</option>
+                    <option value="airport">항공권 소식</option>
+                    <option value="hotel">호텔</option>
+                </select>
+            </p>
             <p>
                 <label for="n_title">제목</label>
                 <input type="text" name="n_title" id="n_title">

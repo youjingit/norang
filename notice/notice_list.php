@@ -1814,7 +1814,7 @@ if($e_pageNum > $total_page){
                                 }
                                 ?>
                             </td>
-                            <td><a href="notice_posts.php?n_idx=<?php echo $array["idx"]; ?>">
+                            <td><a href="notice_posts.php?n_idx=<?php echo $array["idx"]; ?>&number=<?php echo $i; ?>">
                                 <?php 
                                 if($array["cate"] == "all"){
                                     echo "";

@@ -1,11 +1,19 @@
 <?php
 include "../inc/session.php";
+include "../inc/admin_check.php";
 
 // DB 연결
 include "../inc/dbcon.php";
 
+// 카테고리
+$cate = isset($_GET["cate"])? $_GET["cate"] : "";
+
 // 쿼리 작성
-$sql = "select * from notice;";
+if($cate){
+    $sql = "select * from notice where cate='$cate';";
+} else{
+    $sql = "select * from notice;";
+};
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);
@@ -14,10 +22,10 @@ $result = mysqli_query($dbcon, $sql);
 $total = mysqli_num_rows($result);
 
 // paging : 한 페이지 당 보여질 목록 수
-$list_num = 5;
+$list_num = 20;
 
 // paging : 한 블럭 당 페이지 수
-$page_num = 3;
+$page_num = 10;
 
 // paging : 현재 페이지
 $page = isset($_GET["page"])? $_GET["page"] : 1;
@@ -66,7 +74,7 @@ if($e_pageNum > $total_page){
             text-align:center
         }
         .notice_list_set, .pager, .write_area{
-            width:1020px
+            width:1600px
         }
         .notice_list_title{
             border-top:2px solid #999;
@@ -77,10 +85,8 @@ if($e_pageNum > $total_page){
         }
         .no{width:60px}
         .n_title{width:500px}
-        .writer{width:100px}
         .w_date{width:120px}
-        .cnt{width:80px}
-        .modify{width:160px}
+        .modify{width:200px}
         .notice_content_title{text-align:left;padding-left:10px}
 
         a:hover{color:rgb(255, 128, 0)}
@@ -88,6 +94,13 @@ if($e_pageNum > $total_page){
         .write_area{
             display:flex;
             justify-content:space-between
+        }
+        .fix {
+            display: inline-block;
+            width: 50px;
+            height: 20px;
+            background: url(../../images/notice/fix_i.png) no-repeat;
+            text-indent: -9999px;
         }
     </style>
     <script>
@@ -100,7 +113,7 @@ if($e_pageNum > $total_page){
     </script>
 </head>
 <body>
-    <?php include "../inc/sub_header.html"; ?>
+    <?php include "../inc/sub_header.php"; ?>
     <!-- 콘텐트 -->
     <h2>공지사항</h2>
     <p class="write_area">
@@ -111,9 +124,7 @@ if($e_pageNum > $total_page){
         <tr class="notice_list_title">
             <th class="no">번호</th>
             <th class="n_title">제목</th>
-            <th class="writer">작성자</th>
             <th class="w_date">날짜</th>
-            <th class="cnt">조회수</th>
             <th class="modify">관리</th>
         </tr>
         <?php
@@ -122,7 +133,11 @@ if($e_pageNum > $total_page){
 
             // paging : 시작번호부터 페이지 당 보여질 목록수 만큼 데이터 구하는 쿼리 작성
             // limit 몇번부터, 몇 개
-            $sql = "select * from notice order by idx desc limit $start, $list_num;";
+            if($cate){
+                $sql = "select * from notice where cate='$cate' order by always desc, idx desc limit $start, $list_num;";
+            } else{
+                $sql = "select * from notice order by always desc, idx desc limit $start, $list_num;";
+            };
             // echo $sql;
             /* exit; */
 
@@ -134,23 +149,48 @@ if($e_pageNum > $total_page){
             // 전체데이터 - ((현재 페이지 번호 -1) * 페이지 당 목록 수)
             $i = $total - (($page - 1) * $list_num);
             while($array = mysqli_fetch_array($result)){
-        ?>
-        <tr class="notice_list_content">
-            <td><?php echo $i; ?></td>
-            <td class="notice_content_title">
-                <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">
-                <?php echo $array["n_title"]; ?>
-                </a>
-            </td>
-            <td><?php echo $array["writer"]; ?></td>
-            <?php $w_date = substr($array["w_date"], 0, 10); ?>
-            <td><?php echo $w_date; ?></td>
-            <td><?php echo $array["cnt"]; ?></td>
-            <td>
+            ?>
+            <tr class="notice_list_content">
+                <td>
+                    <?php
+                    if($array["always"] == "y"){
+                    ?>
+                        <i class="fix"></i>
+                    <?php
+                    } else {
+                        echo $i;
+                    }
+                    ?>
+                </td>
+                <td class="notice_content_title">
+                    <a href="view.php?n_idx=<?php echo $array["idx"]; ?>&number=<?php echo $i; ?>">
+                    <?php 
+                    if($array["cate"] == "all"){
+                        echo "";
+                    }else if($array["cate"] == "notice"){
+                        echo "[공지사항]";
+                    }else if($array["cate"] == "honey"){
+                        echo "[허니문]";
+                    }else if($array["cate"] == "golf"){
+                        echo "[골프]";
+                    }else if($array["cate"] == "cruise"){
+                        echo "[크루즈]";
+                    }else if($array["cate"] == "domestic"){
+                        echo "[국내]";
+                    }else if($array["cate"] == "busanDaegu"){
+                        echo "[부산/대구]";
+                    }else if($array["cate"] == "airport"){
+                        echo "[항공권 소식]";
+                    }else if($array["cate"] == "hotel"){
+                        echo "[호텔]";
+                    };            
+                    echo $array["n_title"]; ?></a></td>
+                <td><?php echo substr($array["w_date"], 0, 10); ?></td>
+                <td>
                 <a href="modify.php?n_idx=<?php echo $array["idx"]; ?>">[수정]</a>
-                <a href="#" onclick="remove_notice(<?php echo $array["idx"]; ?>)">[삭제]</a>
-            </td>
-        </tr>
+                <a href="#" onclick="remove_notice(<?php echo $array['idx']; ?>)">[삭제]</a>
+                </td>
+            </tr>
         <?php
                 $i--;
             }; 

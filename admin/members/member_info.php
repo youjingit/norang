@@ -1,17 +1,15 @@
 <?php
 include "../inc/session.php";
+include "../inc/admin_check.php";
 
 // 관리자가 선택한 사용자의 데이터 가져오기
 $g_idx = $_GET["g_idx"];
-
-// 로그인 사용자만 접근
-include "../inc/login_check.php";
 
 // DB 연결
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "select * from members where idx=$g_idx;";
+$sql = "select*from members where idx='$g_idx';";
 
 // 쿼리 실행
 $result = mysqli_query($dbcon, $sql);
@@ -29,17 +27,15 @@ $array = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>노랑풍선 [여행을 가볍게]</title>
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/base.css">
-    <link rel="stylesheet" type="text/css" href="../css/common.css">
-    <link rel="stylesheet" type="text/css" href="../css/index/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/index/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/my_page.css">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/my_page.css">
 </head>
 <body>
     <main>
         <div class="content_title green">
-            <h3>개인정보 수정</h3>
+            <h3>개인정보 수정(관리자모드)</h3>
         </div>
         <div class="content_wrap">
             <div class="content_right_wrap">
@@ -90,7 +86,7 @@ $array = mysqli_fetch_array($result);
                                         <?php $birth = str_replace("-", "", $array["birth"]);?>
                                         <label class="form_label">생년월일</label>
                                         <div class="form_group">
-                                            <input type="text" id="birth" name="birth" class="form_control" placeholder="생년월일" value="<?php echo $birth;?>">
+                                            <input type="text" id="birth" name="birth" class="form_control" placeholder="생년월일" value="<?php echo $birth;?>" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                                         </div>
                                     </div>
                                     <div class="form_inline">
@@ -190,5 +186,120 @@ $array = mysqli_fetch_array($result);
             </div>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
+    <script type="text/javascript">
+            // 선택약관 전체동의 
+            var optionEl = document.getElementById("option_ap");
+            optionEl.onclick = function () {
+                var isChecked = optionEl.checked;
+                var optEls = document.querySelectorAll(".opt_ap");
+
+                for (var index = 0; index < optEls.length; index++) {
+                    var optEl = optEls[index];
+                    optEl.checked = isChecked;
+                }
+            }
+            // 선택약관 항목별 자동선택
+            var collectApplyEl = document.getElementById("opt_apply1");
+            var marketApplyEl = document.getElementById("opt_apply2");
+            var emailApplyEl = document.getElementById("email_apply");
+            var smsApplyEl = document.getElementById("sms_apply");
+
+            collectApplyEl.onclick = function(){
+                var isChecked = collectApplyEl.checked;
+                optionEl.checked = isChecked;
+                marketApplyEl.checked = isChecked;
+                emailApplyEl.checked = isChecked;
+                smsApplyEl.checked = isChecked;
+            }
+            marketApplyEl.onclick = function(){
+                var isChecked = marketApplyEl.checked;
+                if(isChecked){
+                    optionEl.checked = true;
+                    collectApplyEl.checked = true;
+                    emailApplyEl.checked = true;
+                    smsApplyEl.checked = true;
+                } else {
+                    optionEl.checked = false;
+                    emailApplyEl.checked = false;
+                    smsApplyEl.checked = false;
+                }
+            }
+            emailApplyEl.onclick = function(){
+                var isChecked = emailApplyEl.checked;
+                var isSmsChecked = smsApplyEl.checked;
+                if(isChecked === true){
+                    collectApplyEl.checked = true;
+                    marketApplyEl.checked = true;
+                    if(isSmsChecked === true){
+                        optionEl.checked = true;
+                    }
+                } else {
+                    if(isSmsChecked === false){
+                        marketApplyEl.checked = false;
+                    }
+                    optionEl.checked = false;
+                }
+            }
+            smsApplyEl.onclick = function(){
+                var isChecked = smsApplyEl.checked;
+                var isEmailChecked = emailApplyEl.checked;
+                if(isChecked === true){
+                    collectApplyEl.checked = true;
+                    marketApplyEl.checked = true;
+                    if(isEmailChecked === true){
+                        optionEl.checked = true;
+                    }
+                } else {
+                    if(!isEmailChecked){
+                        marketApplyEl.checked = false;
+                    }
+                    optionEl.checked = false;
+                }
+            };
+            function edit_form_check(){
+            var u_pwd = document.getElementById("pwd");
+            var u_repwd = document.getElementById("re_pwd");
+
+            if(u_pwd.value){
+                var cnt = 0;
+                var format1 = /[0-9]/;
+                if (format1.test(u_pwd.value)) {
+                    cnt++;
+                }
+
+                var format2 = /[a-zA-Z]/;
+                if (format2.test(u_pwd.value)) {
+                    cnt++;
+                }
+
+                var format3 = /[~?!@#$%<>^&*\()\-=+_\’\:\;\.\,\"\'\[\]\{\}\/\|\`]/gi;
+                if (format3.test(u_pwd.value)) {
+                    cnt++;
+                }
+
+                var txt = document.getElementById("err_pwd");
+                if ((cnt >= 2 && u_pwd.value.length >= 10) || (cnt >= 3 && u_pwd.value.length >= 8)) {
+                    txt.innerHTML = "";
+                } else {
+                    txt.innerHTML =
+                        "<em>-영문,숫자,특수문자 중 2가지 종류이상을 조합으로 10자리이상 입력하세요.<br>-영문,숫자,특수문자 중 3가지 종류이상을 조합으로 8자리이상 입력하세요.</em>";
+                    u_pwd.focus();
+                    return false;
+                }
+                
+                if (u_pwd.value != u_repwd.value) {
+                    var txt = document.getElementById("err_repwd");
+                    txt.innerHTML = "<em>비밀번호를 확인하세요.</em>";
+                    u_repwd.focus();
+                    return false;
+                } else {
+                    var txt = document.getElementById("err_repwd");
+                    txt.innerHTML = "";
+                }
+            }
+        };
+    </script>
 </body>
 </html>

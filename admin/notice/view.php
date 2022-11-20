@@ -1,8 +1,9 @@
 <?php
 include "../inc/session.php";
+include "../inc/admin_check.php";
 
-// 데이터 가져오기
 $n_idx = $_GET["n_idx"];
+$number = $_GET["number"];
 
 // DB 연결
 include "../inc/dbcon.php";
@@ -17,15 +18,6 @@ $result = mysqli_query($dbcon, $sql);
 
 // DB에서 데이터 가져오기
 $array = mysqli_fetch_array($result);
-
-// 조회수 업데이트
-$cnt = $array["cnt"]+1;
-/* echo $cnt;
-exit; */
-$sql = "update notice set cnt = $cnt where idx = $n_idx;";
-/* echo $sql;
-exit; */
-mysqli_query($dbcon, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -46,7 +38,7 @@ mysqli_query($dbcon, $sql);
         }
         .notice_view_content{border-bottom:1px solid #999}
         .notice_view_text{border-bottom:2px solid #999;}
-        .v_title{width:60px;background:#eee}
+        .v_title{width:100px;background:#eee}
         .v_content{width:500px;text-align:left;padding-left:20px}
         /* .v_text{height:200px} */
 
@@ -59,6 +51,13 @@ mysqli_query($dbcon, $sql);
             display:flex;
             flex-direction:row-reverse
         }
+        .fix {
+            display: inline-block;
+            width: 50px;
+            height: 20px;
+            background: url(../../images/notice/fix_i.png) no-repeat;
+            text-indent: -9999px;
+        }
     </style>
     <script>
         function remove_notice(){
@@ -70,13 +69,51 @@ mysqli_query($dbcon, $sql);
     </script>
 </head>
 <body>
-    <?php include "../inc/sub_header.html"; ?>
+    <?php include "../inc/sub_header.php"; ?>
     <!-- 콘텐트 -->
     <h2>공지사항</h2>
     <p class="write_area">
         <span><a href="write.php">[글쓰기]</a></span>
     </p>
     <table class="notice_list_set">
+        <tr>
+            <th class="v_title">번호</th>
+            <td>
+                <?php
+                    if($array["always"] == "y"){
+                ?>
+                    <i class="fix"></i>
+                <?php
+                } else {
+                    echo $number;
+                }
+                ?>
+            </td>
+            <th class="v_title">카테고리</th>
+            <td>
+                <?php 
+                if($array["cate"] == "all"){
+                    echo "";
+                }else if($array["cate"] == "notice"){
+                    echo "[공지사항]";
+                }else if($array["cate"] == "honey"){
+                    echo "[허니문]";
+                }else if($array["cate"] == "golf"){
+                    echo "[골프]";
+                }else if($array["cate"] == "cruise"){
+                    echo "[크루즈]";
+                }else if($array["cate"] == "domestic"){
+                    echo "[국내]";
+                }else if($array["cate"] == "busanDaegu"){
+                    echo "[부산/대구]";
+                }else if($array["cate"] == "airport"){
+                    echo "[항공권 소식]";
+                }else if($array["cate"] == "hotel"){
+                    echo "[호텔]";
+                };            
+                ?>
+            </td>
+        </tr>
         <tr class="notice_list_title">
             <th class="v_title">제목</th>
             <td class="v_content"><?php echo $array["n_title"]; ?></td>
@@ -89,14 +126,10 @@ mysqli_query($dbcon, $sql);
             <th class="v_title">날짜</th>
             <td class="v_content">
             <?php 
-            $n_title = substr($array["n_title"], 0, 10);
-            echo $n_title; 
+            $w_date = substr($array["w_date"], 0, 10);
+            echo $w_date; 
             ?>
             </td>
-        </tr>
-        <tr class="notice_view_content">
-            <th class="v_title">조회수</th>
-            <td class="v_content"><?php echo $cnt; ?></td>
         </tr>
         <tr class="notice_view_text">
             <td colspan="2" class="v_text">

@@ -34,7 +34,7 @@ $num = mysqli_num_rows($result);
     </style>
     <script type="text/javascript">
         function return_id(){
-            opener.document.getElementById("u_id").value = "<?php echo $u_id; ?>";
+            opener.document.getElementById("email_id").value = "<?php echo $u_id; ?>";
             window.close();
         };
     </script>
