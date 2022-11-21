@@ -40,6 +40,9 @@ mysqli_close($dbcon);
         .product_view_content{border-bottom:1px solid #999}
 
         .list{width:1200px;text-align:center}
+        #p_name{
+            width: 1000px;
+        }
     </style>
      <script>
         function product_check(){
@@ -75,19 +78,19 @@ mysqli_close($dbcon);
                 <tr class="product_view_content">
                     <td>
                         <label for="p_explain">상품설명</label>
-                        <textarea name="p_explain" id="p_explain"><?php echo $array["p_explain"]; ?></textarea>
+                        <textarea name="p_explain" id="p_explain" cols="100" rows="3"><?php echo $array["p_explain"]; ?></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="departure_vehicle">출발교통</label>
-                        <input type="text" name="departure_vehicle" id="departure_vehicle" value="<?php echo $array["departure_vehicle"]; ?>">
+                        <textarea name="departure_vehicle" id="departure_vehicle" cols="100" rows="1"><?php echo $array["departure_vehicle"]; ?></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="arrival_vehicle">도착교통</label>
-                        <input type="text" name="arrival_vehicle" id="arrival_vehicle" value="<?php echo $array["arrival_vehicle"]; ?>">
+                        <textarea name="arrival_vehicle" id="arrival_vehicle" cols="100" rows="1"><?php echo $array["arrival_vehicle"]; ?></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
@@ -117,7 +120,7 @@ mysqli_close($dbcon);
                 <tr class="product_view_content">
                     <td>
                         <label for="tour_city">여행도시</label>
-                        <textarea name="tour_city" id="tour_city"><?php echo $array["tour_city"]; ?></textarea>
+                        <textarea name="tour_city" id="tour_city" cols="100" rows="6"><?php echo $array["tour_city"]; ?></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
@@ -159,25 +162,41 @@ mysqli_close($dbcon);
                 <tr class="product_view_content">
                     <td>
                         <label for="inclusion">포함내역</label>
-                        <input type="text" name="inclusion" id="inclusion" value="<?php echo $array["inclusion"]; ?>">
+                        <textarea name="inclusion" id="inclusion" cols="100" rows="10"><?php echo $array["inclusion"]; ?></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="exclusion">불포함내역</label>
-                        <input type="text" name="exclusion" id="exclusion" value="<?php echo $array["exclusion"]; ?>">
+                        <textarea name="exclusion" id="exclusion" cols="100" rows="6"><?php echo $array["exclusion"]; ?></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="reference">참고/전달사항</label>
-                        <input type="text" name="reference" id="reference" value="<?php echo $array["reference"]; ?>">
+                        <textarea name="reference" id="reference" cols="100" rows="40"><?php echo $array["reference"]; ?></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="schedule">여행일정</label>
-                        <textarea name="schedule" id="schedule"><?php echo $array["schedule"]; ?></textarea>
+                        <textarea name="schedule" id="schedule" cols="100" rows="16"><?php echo $array["schedule"]; ?></textarea>
+                    </td>
+                </tr>
+                <tr class="product_view_content">
+                    <td>
+                        <?php if($array["f_name"]){ ?>
+                        <label for="up_file">
+                            첨부파일 [<?php echo $array["f_name"]; ?>]
+                        </label>
+                        <input type="checkbox" name="file_del"> 파일삭제
+                        <?php } else{ ?>
+                        <label for="up_file">
+                            첨부파일 
+                        </label>
+                        <?php }; ?>
+                        <br>
+                        <input type="file" name="up_file" id="up_file">
                     </td>
                 </tr>
             </table>

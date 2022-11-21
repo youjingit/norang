@@ -191,6 +191,14 @@ $array = mysqli_fetch_array($result);
             <?php echo $array["schedule"];?>
             </td>
         </tr>
+        <tr class="notice_view_content">
+            <th class="v_title">첨부파일</th>
+            <td class="v_content">
+                <a href="../data/<?php echo $array["f_name"]; ?>" download="<?php echo $array["f_name"]; ?>">
+                <?php echo $array["f_name"]; ?>
+                </a>
+            </td>
+        </tr>
     </table>
     <p class="list">
         <a href="list.php">[목록]</a>

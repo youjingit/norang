@@ -1521,7 +1521,7 @@
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
                 <ul class="aside_menu">
                     <li class="aside_title"><a href="my_page.php"><h2>마이페이지</h2></a></li>
-                    <li class="aside_item open">
+                    <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
                             예약/취소내역
                             <i class="icon icon_arrow_up" data-open="true"></i>
@@ -1653,7 +1653,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="aside_item">
+                    <li class="aside_item open">
                         <a href="javascript:void(0);" class="aside_link">
                             개인정보
                             <i class="icon icon_arrow_up" data-open="true"></i>
@@ -1661,7 +1661,7 @@
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="my_page_auth.php" class="aside_link">개인정보 수정</a>
+                                <a href="my_page_auth.php" class="aside_link active">개인정보 수정</a>
                             </li>
                             <li class="aside_item">
                                 <a href="my_page_auth.php" class="aside_link">비밀번호 변경</a>

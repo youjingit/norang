@@ -40,7 +40,7 @@ include "../inc/session.php";
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
                             <li><a href="./login/logout.php">로그아웃</a></li>
-                            <li><a href="">마이페이지</a></li>
+                            <li><a href="my_page.php">마이페이지</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
                             <li><a href="#">EN</a></li>
@@ -1673,7 +1673,7 @@ include "../inc/session.php";
                                 <a href="javascript:void(0);" class="aside_link">SNS 연결 설정</a>
                             </li>
                             <li class="aside_item">
-                                <a href="withdrawal.php" class="aside_link">회원탈퇴</a>
+                                <a href="withdrawal.php" class="aside_link active">회원탈퇴</a>
                             </li>
                         </ul>
                     </li>

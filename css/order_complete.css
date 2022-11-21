@@ -1,8 +1,3 @@
-.compl_container {
-    width: 500px;
-    margin: 0 auto;
-  }
-
 .compl_title {
     font-size: 28px;
     text-align: center;
@@ -30,6 +25,8 @@
 .compl_info {
     border: 1px solid #666;
     padding: 10px 20px;
+    width: 800px;
+    margin: 0 auto;
 }
 
 .info_title {

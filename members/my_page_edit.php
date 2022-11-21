@@ -1678,7 +1678,7 @@ $array = mysqli_fetch_array($result);
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">개인정보 수정</a>
+                                <a href="javascript:void(0);" class="aside_link active">개인정보 수정</a>
                             </li>
                             <li class="aside_item">
                                 <a href="javascript:void(0);" class="aside_link">비밀번호 변경</a>

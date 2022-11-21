@@ -1522,7 +1522,7 @@ include "../inc/session.php";
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
                 <ul class="aside_menu">
                     <li class="aside_title"><h2>마이페이지</h2></li>
-                    <li class="aside_item open">
+                    <li class="aside_item">
                         <a href="javascript:void(0);" class="aside_link">
                             예약/취소내역
                             <i class="icon icon_arrow_up" data-open="true"></i>

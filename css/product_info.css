@@ -82,10 +82,29 @@ main p {
     align-items: baseline;
 }
 
+.start_time,
+.end_time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .airport_number {
     color: rgb(25, 162, 241);
     font-weight: bold;
     margin-left: 20px;
+}
+
+.vehicle_icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-indent: -9999px;
+    margin: 4px 5px;
+}
+
+.asiana {
+    background: url(../images/sub_page/OZ.png) no-repeat;
 }
 
 .price_table {
@@ -234,6 +253,17 @@ main p {
     font-size: 18px;
     font-weight: bold;
     color: #f25b5b;
+}
+
+.adult_num,
+.kid_num {
+    height: 30px;
+    margin-left: 105px;
+}
+
+.todd_num {
+    height: 30px;
+    margin-left: 121px;
 }
 
 .total_price_txt {

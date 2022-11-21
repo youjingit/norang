@@ -1,3 +1,22 @@
+<?php
+include "../inc/session.php";
+$n_idx = $_GET["n_idx"];
+
+// DB 연결
+include "../inc/dbcon.php";
+
+// 쿼리 작성
+$sql = "select * from products where idx=$n_idx;";
+/* echo $sql;
+exit; */
+
+// 쿼리 전송
+$result = mysqli_query($dbcon, $sql);
+
+// DB에서 데이터 가져오기
+$array = mysqli_fetch_array($result);
+
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -1508,19 +1527,19 @@
         <div class="main_title">
         <h2>예약하기</h2>
         </div>
-        <form id="reserve_form" action="reserve_action.php" method="post" onsubmit="return reserve_form_check()">
+        <form id="order_form" action="order_action.php?n_idx=<?php echo $array['idx'];?>" method="post" onsubmit="return reserve_form_check()">
             <fieldset>
                 <legend class="hide">상품예약</legend>
                 <div class="product_title_wrap">
-                    <h3 class="product_title">[돌체 이탈리아 9일] 슬로우 라이프_오르비에토/토스카나+나/폼/소+10대 맛체험[OZ/1급호텔]</h3>
-                    <p>출발일 : (한국 출발) 2022년 11월 05일(토) 11:30 (현지 도착) 2022년 11월 05일(토) 17:05  OZ561 <i class="vehicle_icon asiana"></i>아시아나항공</p>
-                    <p>도착일 : (현지 출발) 2022년 11월 12일(토) 18:40 (한국 도착) 2022년 11월 13일(일) 14:10  OZ562 <i class="vehicle_icon asiana"></i>아시아나항공</p>
+                    <h3 class="product_title"><?php echo $array["p_name"];?></h3>
+                    <p>출발일 : (한국 출발) <?php echo $array["departure_date1"];?> (현지 도착) <?php echo $array["departure_date2"];?>&nbsp;&nbsp;<?php echo $array["departure_vehicle"];?></p>
+                    <p>도착일 : (현지 출발) <?php echo $array["arrival_date1"];?> (한국 도착) <?php echo $array["arrival_date2"];?>&nbsp;&nbsp;<?php echo $array["arrival_vehicle"];?></p>
                 </div>
                 <div>
                 <h3>약관동의</h3>
                     <div class="cont_box term_wrap">
                         <span class="term_title">필수 약관 동의</span> 
-                        <input type="checkbox" name="term" id="term1"><label for="term1">특별 약관</label>
+                        <input type="checkbox" name="term" id="term1"><label for="term1">여행 약관</label>
                         <a href="">자세히 보기</a>
                         <input type="checkbox" name="term" id="term2"><label for="term2">개인정보 제3자 제공</label>
                         <a href="">자세히 보기</a>
@@ -1531,7 +1550,7 @@
                     </div>
                     <div class="cont_box">
                         <span class="term_title">선택 약관 동의</span>
-                        <input type="checkbox" id="term_opt"><label for="term_opt">개인정보 수집 및 이용동의</label>
+                        <input type="checkbox" id="opt_apply" name="opt_apply" value="y"><label for="opt_apply">개인정보 수집 및 이용동의</label>
                         <a href="">자세히 보기</a>
                     </div>
                 </div>
@@ -1547,21 +1566,21 @@
                         </tr>
                         <tr>
                             <td>기본 상품가</td>
-                            <td>2,390,000원</td>
-                            <td>2,390,000원</td>
-                            <td>500,000원</td>
+                            <td><?php echo $array["adult_p"];?>원</td>
+                            <td><?php echo $array["kid_p"];?>원</td>
+                            <td><?php echo $array["todd_p"];?></td>
                         </tr>
                         <tr>
                             <td>유류할증료</td>
-                            <td>439,000원</td>
-                            <td>439,000원</td>
-                            <td>0원</td>
+                            <td><?php echo $array["adult_fuel"];?>원</td>
+                            <td><?php echo $array["kid_fuel"];?>원</td>
+                            <td><?php echo $array["todd_fuel"];?>원</td>
                         </tr>
                         <tr>
                             <td>총 상품가</td>
-                            <td class="table_total_price">2,829,000원</td>
-                            <td class="table_total_price">2,829,000원</td>
-                            <td class="table_total_price">500,000원</td>
+                            <td class="table_total_price"><?php echo number_format((int)str_replace(',','',$array["adult_p"]) + (int)str_replace(',','',$array["adult_fuel"]))?>원</td>
+                            <td class="table_total_price"><?php echo number_format((int)str_replace(',','',$array["kid_p"]) + (int)str_replace(',','',$array["kid_fuel"]))?>원</td>
+                            <td class="table_total_price"><?php echo number_format((int)str_replace(',','',$array["todd_p"]) + (int)str_replace(',','',$array["todd_fuel"]))?>원</td>
                         </tr>
                     </table>
                     <ul>
@@ -1596,7 +1615,7 @@
                         <tr>
                             <th>이메일</th>
                             <td>
-                                <input type="text" placeholder="이메일" id="email" name="email">
+                                <input type="text" placeholder="이메일" id="email_id" name="email_id">
                                 <select name="email_sel" id="email_sel">
                                     <option value="">직접입력</option>
                                     <option value="@naver.com">@naver.com</option>
@@ -1808,17 +1827,17 @@
                         <p class="item_title">상품 금액</p>
                         <div>
                             <span class="item_person">성인</span>
-                            <span class="item_price">3,780,000원</span><span>X</span>
+                            <span class="item_price">2,829,000원</span><span>X</span>
                             <span class="item_num">1</span>명
                         </div>
                         <div>
                             <span class="item_person">아동</span>
-                            <span class="item_price">3,780,000원</span><span>X</span>
+                            <span class="item_price">2,829,000원</span><span>X</span>
                             <span class="item_num">0</span>명
                         </div>
                         <div>
                             <span class="item_person">유아</span>
-                            <span class="item_price">6,380,000원</span><span>X</span>
+                            <span class="item_price">500,000원</span><span>X</span>
                             <span class="item_num">0</span>명
                         </div>
                     </div>
@@ -1828,7 +1847,7 @@
                     </div>
                     <div class="cont_item cont_div3">
                         <p class="item_title">총액</p>
-                        <span class="total_price">3,780,000</span> 원
+                        <span class="total_price">2,829,000</span> 원
                     </div>
                 </div>
                     <ul> 
@@ -2054,12 +2073,12 @@
         });
     });
 
-        function reserve_form_check(){
+        function order_form_check(){
             //예약자 정보
             var termEls = document.querySelectorAll("[name='term']:checked");
             var nameEl = document.getElementById("u_name");
             var birthEl = document.getElementById("birth");
-            var emailEl = document.getElementById("email");
+            var emailEl = document.getElementById("email_id");
             var mobileEl = document.getElementById("mobile");
             //인원 상세 정보
             var tourName = document.getElementById("tour_name1");

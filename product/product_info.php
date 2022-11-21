@@ -1580,8 +1580,8 @@ $array = mysqli_fetch_array($result);
             <div class="schedule_summary_wrap">
                 <h4>일정</h4>
                 <div>
-                    <p>출발: <?php echo $array["departure_date1"];?> → <?php echo $array["departure_date2"];?><span class="airport_number">OZ561</span></p> 
-                    <p>도착: <?php echo $array["arrival_date1"];?> → <?php echo $array["arrival_date2"];?><span class="airport_number">OZ562</span></p>
+                    <p class="start_time">출발: <?php echo $array["departure_date1"];?> → <?php echo $array["departure_date2"];?><?php echo $array["departure_vehicle"];?></p> 
+                    <p class="end_time">도착: <?php echo $array["arrival_date1"];?> → <?php echo $array["arrival_date2"];?><?php echo $array["arrival_vehicle"];?></p>
                 </div>
             </div>
             <div class="schedule_summary_wrap">
@@ -1638,48 +1638,15 @@ $array = mysqli_fetch_array($result);
                 <p>※인터넷 검색사이트에서 Q-CODE 또는 큐 코드 검색 후 검역정보사전입력 시스템 접속 가능합니다.</p>
             </div>
             <div class="detail_explanation">
+                <h4 class="detail_title"><i class="include_i"></i>포함내역</h4>
                 <?php echo $array["inclusion"];?>
 
                 <h4 class="detail_title"><i class="exclude_i"></i>불포함내역</h4>
-                <p><span class="detail_subtitle">[가이드/기사경비]</span><span>90유로 (1인기준) 현지 지불해야 합니다.</span></p>
-                <p><span class="detail_subtitle">[각종 비용]</span><span>선택관광 비용 및 개인 물값, 각종개인 TIP, 개인경비</span></p>
-                <p><span class="detail_subtitle">[환율추가금]</span><span>(참고/전달사항 참조)</span></p>
+                <?php echo $array["exclusion"];?>
+                
 
                 <h4 class="detail_title"><i class="reference_i"></i>참고/전달사항</h4>
-                <h5>[참고사항]</h5>
-                <p>- 항공 : 아시아나 항공 (OZ)</p>
-                <p>- 마일리지 : 왕복 기준 약 8,000마일 적립가능</p>
-                <p>- 패키지 상품으로 출발하는 항공권은 단체항공권으로 출발시간기준 48시간전부터 좌석지정 및 체크인이 가능합니다.</p>
-                <p>- 사전체크인은 여권정보 등 개인정보가 필요하기 때문에 당사에서 대행은 불가합니다.</p>
-                <p>- 발권 후 배정되어 있는 좌석은 항공사에서 임의로 지정한 것이며, 항공좌석 만석등의 경우 사전좌석지정 불가할 수 있습니다.</p>
-                <p>&nbsp;&nbsp;&nbsp;따라서 항공기 만석인 경우 일행과 떨어진 좌석을 받을 수 있음을 양해 바랍니다.</p>
-                <p>- 기내식 사전 신청 : 키즈밀, 당뇨식, 채식 등등</p>
-                <p>- 최소 출발 3일전 신청시에만 가능하며, 항공사별 / 지역별 메뉴가 다를수 있으므로 참고부탁드립니다.</p>
-                <p>- 여행자보험 : KB 여행자 보험 가입</p>
-                <p>- 자세한 보장 내용은 아래 보험 자세히 보기를 참고 부탁드립니다. (http://ybt.gl/7641tisk)</p>
-
-                <h5>[전달사항]</h5>
-                <p>- 본 상품은 인솔자가 동행하지 않습니다. 현지 로마공항 가이드 미팅으로 진행됩니다.</p>
-                <p>- 본 상품의 최소출발인원 기준은 20명(최대 40명)이며 미충족시 여행 표준약관 제9조에 따라 여행사는 여행출발 7일전까지 여행계약을 </p>
-                <p>&nbsp;&nbsp;&nbsp;일방적으로 해제하고 소비자에게 통보할 수 있습니다.</p>
-                <p>- 운항 스케줄 및 판매가격은 정부인가 조건입니다. 운항스케줄은 불가피한 사유로 사전 예고없이 변경될 수 있습니다.</p>
-                <p>- 호텔, 식사는 예정입니다. 출발전 변경될 수 있습니다.</p>
-                <p>- 관광지 휴관일 경우 다른 관광지로 대체될 수 있습니다.</p>
-                <p>- 본상품은 단계별로 금액이 상승됩니다.</p>
-                <p>- 본 일정 및 숙박 시설은 현지 사정에 의해 변경될 수 있습니다.</p>
-                <p>- 유럽은 공간이 협소하므로 3인 1실 사용시 불편하실 수 있으므로, 싱글룸 사용을 권장합니다.</p>
-                <p>- 룸조인 요청시 다른고객님과 룸조인 배정해드립니다. 단, 룸조인이 안될시 싱글차지가 발생됩니다(싱글룸비용 아래참조)</p>
-                <p>- 싱글룸 비용 : 전 일정 490,000원</p>
-                <p>- 호텔 : 본 상품의 숙박시설은 현재 미정이나 1급 호텔로 배정 예정이며, 출발 1일전 홈페이지 또는 SMS를 통해 알려드립니다.</p>
-                <p>※ 국제적으로 통용되는 호텔 등급 표기 기준은 없으며 일부 국가에서는 자국 기준에 따라 등급표기를 하고 있습니다. </p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;고객님의 선택의 편의를 위해 등급 기준을 반영한 것이므로 양해 부탁드립니다.</p>
-
-                <h5>[환율추가금]</h5>
-                <p>- 국외여행 표준약관 제12조 (여행요금의 변경) : 국외여행을 실시함에 있어서 이용운송,숙박기관에 지급하여야 할 요금이 계약체결시보다</p> 
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;5% 이상 증감하거나 여행 요금에 적용된 외화환율이 계약체결시보다 2% 이상 증감한 경우</p> 
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;당사 또는 여행자는 그 증감된 금액 범위 내에서 여행요금의 증감을 상대방에게 청구할 수 있습니다.</p>
-                <p>- 본 상품은 2022.03.07 하나은행(구 외환은행) 기준 '1유로당 1,343원 현찰 살때' 최초환율을 기준하고 있으며,</p> 
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;출발일 15일전 동은행 환율조건 1,370원 이상으로 최초 고지시 기획당시 환율의 증감율만큼 추가금액이 발생될수 있습니다.</p>
+                <?php echo $array["reference"];?>
             </div>
             <div class="tour_plan">
                 <ul class="plan_category_wrap">
@@ -1719,9 +1686,111 @@ $array = mysqli_fetch_array($result);
                 <div class="person_number_wrap">
                     <h3>인원 선택</h3>
                     <ul class="person_number">
-                        <li><span class="person">성인</span><span class="person_price">2,829,000원</span></li>
-                        <li><span class="person">아동</span><span class="person_price">2,829,000원</span></li>
-                        <li><span class="person">유아</span><span class="person_price">500,000원</span></li>
+                        <li>
+                            <span class="person">성인</span><span class="person_price"><?php echo number_format((int)str_replace(',','',$array["adult_p"]) + (int)str_replace(',','',$array["adult_fuel"]))?>원</span>
+                            <select name="adult_num" class="adult_num">
+                                <option value="1">1명</option>
+                                <option value="2">2명</option>
+                                <option value="3">3명</option>
+                                <option value="4">4명</option>
+                                <option value="5">5명</option>
+                                <option value="6">6명</option>
+                                <option value="7">7명</option>
+                                <option value="8">8명</option>
+                                <option value="9">9명</option>
+                                <option value="10">10명</option>
+                                <option value="11">11명</option>
+                                <option value="12">12명</option>
+                                <option value="13">13명</option>
+                                <option value="14">14명</option>
+                                <option value="15">15명</option>
+                                <option value="16">16명</option>
+                                <option value="17">17명</option>
+                                <option value="18">18명</option>
+                                <option value="19">19명</option>
+                                <option value="20">20명</option>
+                                <option value="21">21명</option>
+                                <option value="22">22명</option>
+                                <option value="23">23명</option>
+                                <option value="24">24명</option>
+                                <option value="25">25명</option>
+                                <option value="26">26명</option>
+                                <option value="27">27명</option>
+                                <option value="28">28명</option>
+                                <option value="29">29명</option>
+                                <option value="30">30명</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span class="person">아동</span><span class="person_price"><?php echo number_format((int)str_replace(',','',$array["kid_p"]) + (int)str_replace(',','',$array["kid_fuel"]))?>원</span>
+                            <select name="kid_num" class="kid_num">
+                                <option value="1">1명</option>
+                                <option value="2">2명</option>
+                                <option value="3">3명</option>
+                                <option value="4">4명</option>
+                                <option value="5">5명</option>
+                                <option value="6">6명</option>
+                                <option value="7">7명</option>
+                                <option value="8">8명</option>
+                                <option value="9">9명</option>
+                                <option value="10">10명</option>
+                                <option value="11">11명</option>
+                                <option value="12">12명</option>
+                                <option value="13">13명</option>
+                                <option value="14">14명</option>
+                                <option value="15">15명</option>
+                                <option value="16">16명</option>
+                                <option value="17">17명</option>
+                                <option value="18">18명</option>
+                                <option value="19">19명</option>
+                                <option value="20">20명</option>
+                                <option value="21">21명</option>
+                                <option value="22">22명</option>
+                                <option value="23">23명</option>
+                                <option value="24">24명</option>
+                                <option value="25">25명</option>
+                                <option value="26">26명</option>
+                                <option value="27">27명</option>
+                                <option value="28">28명</option>
+                                <option value="29">29명</option>
+                                <option value="30">30명</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span class="person">유아</span><span class="person_price"><?php echo number_format((int)str_replace(',','',$array["todd_p"]) + (int)str_replace(',','',$array["todd_fuel"]))?>원</span>
+                            <select name="todd_num" class="todd_num">
+                                <option value="1">1명</option>
+                                <option value="2">2명</option>
+                                <option value="3">3명</option>
+                                <option value="4">4명</option>
+                                <option value="5">5명</option>
+                                <option value="6">6명</option>
+                                <option value="7">7명</option>
+                                <option value="8">8명</option>
+                                <option value="9">9명</option>
+                                <option value="10">10명</option>
+                                <option value="11">11명</option>
+                                <option value="12">12명</option>
+                                <option value="13">13명</option>
+                                <option value="14">14명</option>
+                                <option value="15">15명</option>
+                                <option value="16">16명</option>
+                                <option value="17">17명</option>
+                                <option value="18">18명</option>
+                                <option value="19">19명</option>
+                                <option value="20">20명</option>
+                                <option value="21">21명</option>
+                                <option value="22">22명</option>
+                                <option value="23">23명</option>
+                                <option value="24">24명</option>
+                                <option value="25">25명</option>
+                                <option value="26">26명</option>
+                                <option value="27">27명</option>
+                                <option value="28">28명</option>
+                                <option value="29">29명</option>
+                                <option value="30">30명</option>
+                            </select>
+                        </li>
                     </ul>
                 </div>
                 <div class="total_price_menu">
@@ -1730,7 +1799,7 @@ $array = mysqli_fetch_array($result);
                         <span class="person_price total">2,829,000원</span>
                     </div>
                     <p class="point_save">총 28,290 P 적립예정</p>
-                    <button type="button" class="reserve_btn" onclick="location.href='product_order.php?'">예약하기</button>
+                    <button type="button" class="reserve_btn" onclick="location.href='product_order.php?n_idx=<?php echo $array['idx'];?>'">예약하기</button>
                     <div class="product_etc_wrap">
                         <div>
                             <p>유럽 3팀</p>

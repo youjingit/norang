@@ -1,3 +1,22 @@
+<?php
+// DB 연결
+include "../inc/dbcon.php";
+
+// 쿼리 작성
+$p_id = $_GET["n_idx"];
+$sql = "select t1.*, t2.* from products t1, orders t2 where t1.idx = t2.p_id";
+
+
+// 쿼리 실행
+$result = mysqli_query($dbcon, $sql);
+
+// DB에서 데이터 가져오기
+// mysqi_fetch_row(쿼리실행문) -- 필드순서
+// mysqi_fetch_array(쿼리실행문) -- 필드이름
+// mysqi_num_rows(쿼리실행문) -- 전체 행 개수
+$array = mysqli_fetch_array($result);
+
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -1510,14 +1529,14 @@
         <p class="compl_subtitle">노랑풍선과 함께 즐거운 여행 되세요!</p>
 
         <div class="compl_info">
-            <p><span class="info_title">상품명:</span><span><?php echo $array[""];?></span></p>
-            <p><span class="info_title">여행기간:</span><span><?php echo $array[""];?></span></p>
-            <p><span class="info_title">출발일:</span><span><?php echo $array[""];?></span></p>
-            <p><span class="info_title">도착일:</span><span><?php echo $array[""];?></span></p>
-            <p><span class="info_title">교통:</span><span><?php echo $array[""];?></span></p>
-            <p><span class="info_title">여행인원:</span>
+            <p><span class="info_title">상품명: </span><span> <?php echo $array["p_name"];?></span></p>
+            <p><span class="info_title">출발일: </span><span> <?php echo $array["departure_date1"];?> → <?php echo $array["departure_date2"];?></span></p>
+            <p><span class="info_title">도착일: </span><span> <?php echo $array["arrival_date1"];?> → <?php echo $array["arrival_date2"];?></span></p>
+            <p><span class="info_title">출발교통: </span><span> <?php echo $array["departure_vehicle"];?></span></p>
+            <p><span class="info_title">도착교통: </span><span> <?php echo $array["arrival_vehicle"];?></span></p>
+            <p><span class="info_title">여행인원: </span>
                <span>성인 : <?php echo $array["adult_num"];?> 아동 : <?php echo $array["kid_num"];?> 유아 : <?php echo $array["todd_num"];?></span></p>
-            <p><span class="info_title">결제승인금액:</span><span><?php echo $array[""];?></span></p>
+            <p><span class="info_title">결제승인금액: </span><span></span></p>
         </div> 
     
         <div class="btn_wrap">

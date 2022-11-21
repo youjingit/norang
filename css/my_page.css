@@ -255,6 +255,11 @@ main {
     color: #666;
 }
 
+.aside_link.active {
+    background: #dadada;
+}
+
+
 /* form */
 .form_container {
     width: 615px;

@@ -24,6 +24,14 @@ $exclusion = $_POST["exclusion"];
 $reference = $_POST["reference"];
 $schedule = $_POST["schedule"];
 
+if($_FILES["up_file"] != NULL){
+    $tmp_name = $_FILES["up_file"]["tmp_name"];
+    $f_name = $_FILES["up_file"]["name"];
+    $up = move_uploaded_file($tmp_name, "../data/$f_name");
+};
+
+$f_type = $_FILES["up_file"]["type"];
+$f_size = $_FILES["up_file"]["size"];
 // 작성일자
 $reg_date = date("Y-m-d");
 
@@ -40,9 +48,9 @@ include "../inc/dbcon.php";
 // 쿼리 작성
 $sql = "insert into $table_name(";
 $sql .= "p_name, p_explain, departure_vehicle, arrival_vehicle, departure_date1, departure_date2, arrival_date1, arrival_date2, tour_city, adult_p, kid_p, todd_p, adult_fuel, kid_fuel, todd_fuel, inclusion, exclusion,
-reference, schedule, reg_date";
+reference, schedule, reg_date, f_name, f_type, f_size";
 $sql .= ") values(";
-$sql .= "'$p_name', '$p_explain', '$departure_vehicle', '$arrival_vehicle', '$departure_date1','$departure_date2','$arrival_date1','$arrival_date2','$tour_city','$adult_p','$kid_p','$todd_p','$adult_fuel','$kid_fuel','$todd_fuel','$inclusion', '$exclusion', '$reference', '$schedule', '$reg_date'";
+$sql .= "'$p_name', '$p_explain', '$departure_vehicle', '$arrival_vehicle', '$departure_date1','$departure_date2','$arrival_date1','$arrival_date2','$tour_city','$adult_p','$kid_p','$todd_p','$adult_fuel','$kid_fuel','$todd_fuel','$inclusion', '$exclusion', '$reference', '$schedule', '$reg_date','$f_name', '$f_type', '$f_size'";
 $sql .= ");";
 /* echo $sql;
 exit; */

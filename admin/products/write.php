@@ -22,6 +22,9 @@ include "../inc/admin_check.php";
         .product_view_content{border-bottom:1px solid #999}
 
         .list{width:1200px;text-align:center}
+        #p_name {
+            width: 1000px;
+        }
     </style>
      <script>
         function product_check(){
@@ -57,19 +60,19 @@ include "../inc/admin_check.php";
                 <tr class="product_view_content">
                     <td>
                         <label for="p_explain">상품설명</label>
-                        <textarea name="p_explain" id="p_explain"></textarea>
+                        <textarea name="p_explain" id="p_explain" cols="100" rows="3"></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="departure_vehicle">출발교통</label>
-                        <input type="text" name="departure_vehicle" id="departure_vehicle">
+                        <textarea name="departure_vehicle" id="departure_vehicle" cols="100" rows="1"></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="arrival_vehicle">도착교통</label>
-                        <input type="text" name="arrival_vehicle" id="arrival_vehicle">
+                        <textarea name="arrival_vehicle" id="arrival_vehicle" cols="100" rows="1"></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
@@ -99,7 +102,7 @@ include "../inc/admin_check.php";
                 <tr class="product_view_content">
                     <td>
                         <label for="tour_city">여행도시</label>
-                        <textarea name="tour_city" id="tour_city"></textarea>
+                        <textarea name="tour_city" id="tour_city" cols="100" rows="6"></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
@@ -141,25 +144,31 @@ include "../inc/admin_check.php";
                 <tr class="product_view_content">
                     <td>
                         <label for="inclusion">포함내역</label>
-                        <textarea name="inclusion" id="inclusion"></textarea>
+                        <textarea name="inclusion" id="inclusion" cols="100" rows="10"></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="exclusion">불포함내역</label>
-                        <textarea name="exclusion" id="exclusion"></textarea>
+                        <textarea name="exclusion" id="exclusion" cols="100" rows="6"></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="reference">참고/전달사항</label>
-                        <textarea name="reference" id="reference"></textarea>
+                        <textarea name="reference" id="reference" cols="100" rows="40"></textarea>
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
                         <label for="schedule">여행일정</label>
-                        <textarea name="schedule" id="schedule"></textarea>
+                        <textarea name="schedule" id="schedule" cols="100" rows="16"></textarea>
+                    </td>
+                </tr>
+                <tr class="product_view_content">
+                    <td>
+                        <label for="up_file">파일첨부</label>
+                        <input type="file" name="up_file" id="up_file">
                     </td>
                 </tr>
             </table>
