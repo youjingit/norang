@@ -47,7 +47,7 @@ include "../inc/admin_check.php";
 </head>
 <body>
     <?php include "../inc/sub_header.php"; ?>
-    <form name="product_form" action="insert.php" method="post" onsubmit="return product_check()">
+    <form name="product_form" action="insert.php" method="post" onsubmit="return product_check()" enctype="multipart/form-data">
         <fieldset>
             <legend>상품등록</legend>
             <table class="product_list_set">

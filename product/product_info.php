@@ -1540,7 +1540,7 @@ $array = mysqli_fetch_array($result);
     <section class="product_header">
         <div class="main_image_slide">
             <ul class="slider">
-                <li><img src="../images/product/main01.jpg" alt="시에나"></li>
+                <li><img src="../data/<?php echo $array["f_name"]; ?>" alt="시에나"></li>
                 <!-- <li><img src="images/product/main02.jpg" alt="로마,콜로세움"></li>
                 <li><img src="../images/product/main03.jpg" alt="피사,피사의사탑"></li>
                 <li><img src="../images/product/main04.jpg" alt="베니스"></li>
@@ -1724,6 +1724,7 @@ $array = mysqli_fetch_array($result);
                         <li>
                             <span class="person">아동</span><span class="person_price"><?php echo number_format((int)str_replace(',','',$array["kid_p"]) + (int)str_replace(',','',$array["kid_fuel"]))?>원</span>
                             <select name="kid_num" class="kid_num">
+                                <option value="0">0명</option>
                                 <option value="1">1명</option>
                                 <option value="2">2명</option>
                                 <option value="3">3명</option>
@@ -1759,6 +1760,7 @@ $array = mysqli_fetch_array($result);
                         <li>
                             <span class="person">유아</span><span class="person_price"><?php echo number_format((int)str_replace(',','',$array["todd_p"]) + (int)str_replace(',','',$array["todd_fuel"]))?>원</span>
                             <select name="todd_num" class="todd_num">
+                                <option value="0">0명</option>
                                 <option value="1">1명</option>
                                 <option value="2">2명</option>
                                 <option value="3">3명</option>

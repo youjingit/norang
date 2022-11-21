@@ -1527,7 +1527,8 @@ $array = mysqli_fetch_array($result);
         <div class="main_title">
         <h2>예약하기</h2>
         </div>
-        <form id="order_form" action="order_action.php?n_idx=<?php echo $array['idx'];?>" method="post" onsubmit="return reserve_form_check()">
+        <form id="order_form" action="order_action.php?n_idx=<?php echo $array['idx'];?>" method="post" onsubmit="return order_form_check()">
+            <input type="hidden" name="tourist_json_array" id="tourist_json_array">
             <fieldset>
                 <legend class="hide">상품예약</legend>
                 <div class="product_title_wrap">
@@ -1637,7 +1638,8 @@ $array = mysqli_fetch_array($result);
                         <tr>
                             <th>성인 (만 12세 이상)</th>
                             <td>
-                                <select name="adult_num">
+                                <select name="adult_num" class="num_select">
+                                    <option value="0">0명</option>
                                     <option value="1">1명</option>
                                     <option value="2">2명</option>
                                     <option value="3">3명</option>
@@ -1672,7 +1674,7 @@ $array = mysqli_fetch_array($result);
                             </td>
                             <th>아동 (만 2세~만 12세 미만)</th>
                             <td>
-                                <select name="kid_num">
+                                <select name="kid_num" class="num_select">
                                     <option value="0">0명</option>
                                     <option value="1">1명</option>
                                     <option value="2">2명</option>
@@ -1708,7 +1710,7 @@ $array = mysqli_fetch_array($result);
                             </td>
                             <th>유아 (만 2세 미만)</th>
                             <td>
-                                <select name="todd_num">
+                                <select name="todd_num" class="num_select">
                                     <option value="0">0명</option>
                                     <option value="1">1명</option>
                                     <option value="2">2명</option>
@@ -1750,40 +1752,7 @@ $array = mysqli_fetch_array($result);
                     <table class="person_detail">
                         <caption class="hide">인원 상세 정보</caption>
                         <input type="checkbox" id="same"><label for="same">예약자와 동일</label>
-                        <tr>
-                            <td>
-                                <span>성인1</span>
-                                <label for="tour_name1">이름(한글)</label><input type="text" id="tour_name1" name="tour_name1" placeholder="이름 (실명)">
-                            </td>
-                            <td>
-                                <label for="last_name1">이름(영문)</label>
-                                <input type="text" id="last_name1" name="last_name1" placeholder="성">
-                                <input type="text" id="Ename1" name="Ename1" placeholder="이름">
-                            </td>
-                            <td>
-                                <div class="gender_wrap">
-                                    <span>성별</span>                                    
-                                    <div class="gender_group">
-                                        <input type="radio" name="tour_gender" id="tour_male" value="m">
-                                        <label for="male">남</label>
-                                    </div>
-                                    <div class="gender_group">
-                                        <input type="radio" name="tour_gender" id="tour_female" value="f">
-                                        <label for="female">여</label>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="tour_birth">생년월일</label>
-                                <input type="text" id="tour_birth" name="tour_birth" placeholder="생년월일 (예 : 19910101)" maxlength="8" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                            </td>
-                            <td>
-                                <label for="tour_mobile">휴대폰 번호</label>
-                                <input type="text" id="tour_mobile" name="tour_mobile" placeholder="휴대폰번호 (숫자만 입력)" maxlength="11" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                            </td>
-                        </tr>
+                        <tbody></tbody>
                     </table>
                 </div>
                 <div>
@@ -1825,20 +1794,25 @@ $array = mysqli_fetch_array($result);
                 <div class="cont_box total_box">
                     <div class="cont_item cont_div1">
                         <p class="item_title">상품 금액</p>
+                        <?php
+                            $adult_total = (int)str_replace(',','',$array["adult_p"]) + (int)str_replace(',','',$array["adult_fuel"]);
+                            $kid_total = (int)str_replace(',','',$array["kid_p"]) + (int)str_replace(',','',$array["kid_fuel"]);
+                            $todd_total = (int)str_replace(',','',$array["todd_p"]) + (int)str_replace(',','',$array["todd_fuel"]);
+                        ?>
                         <div>
                             <span class="item_person">성인</span>
-                            <span class="item_price">2,829,000원</span><span>X</span>
-                            <span class="item_num">1</span>명
+                            <span class="item_price"><?php echo number_format($adult_total)?>원</span><span>X</span>
+                            <span class="item_num" id="adult_cnt" data-price="<?php echo $adult_total ?>">0</span>명
                         </div>
                         <div>
                             <span class="item_person">아동</span>
-                            <span class="item_price">2,829,000원</span><span>X</span>
-                            <span class="item_num">0</span>명
+                            <span class="item_price"><?php echo number_format($kid_total)?>원</span><span>X</span>
+                            <span class="item_num" id="kid_cnt" data-price="<?php echo $kid_total ?>">0</span>명
                         </div>
                         <div>
                             <span class="item_person">유아</span>
-                            <span class="item_price">500,000원</span><span>X</span>
-                            <span class="item_num">0</span>명
+                            <span class="item_price"><?php echo number_format($todd_total)?>원</span><span>X</span>
+                            <span class="item_num" id="todd_cnt" data-price="<?php echo $todd_total ?>">0</span>명
                         </div>
                     </div>
                     <div class="cont_item cont_div2">
@@ -1847,7 +1821,7 @@ $array = mysqli_fetch_array($result);
                     </div>
                     <div class="cont_item cont_div3">
                         <p class="item_title">총액</p>
-                        <span class="total_price">2,829,000</span> 원
+                        <span class="total_price">0</span> 원
                     </div>
                 </div>
                     <ul> 
@@ -2080,14 +2054,7 @@ $array = mysqli_fetch_array($result);
             var birthEl = document.getElementById("birth");
             var emailEl = document.getElementById("email_id");
             var mobileEl = document.getElementById("mobile");
-            //인원 상세 정보
-            var tourName = document.getElementById("tour_name1");
-            var tourLastname = document.getElementById("last_name1");
-            var tourEname = document.getElementById("Ename1");
-            var tourGender = document.querySelector("[name='tour_gender']:checked");
-            var tourBirth = document.getElementById("tour_birth");
-            var tourMobile = document.getElementById("tour_mobile");
-            var tourOffice = document.querySelector("[name='office_select']:checked");
+            var tourOffice = document.querySelector("[name='office']:checked");
 
             //예약자 정보
             if (termEls.length < 4) {
@@ -2119,47 +2086,163 @@ $array = mysqli_fetch_array($result);
                 return false;
             } 
 
-            //인원 상세 정보
-            if (tourName.value == "") {
-                alert("여행자의 이름(한글)을 입력해주세요");
-                tourName.focus();
-                return false;
-            } 
-
-            if (tourLastname.value == "") {
-                alert("여행자의 성(영어)을 입력해주세요");
-                tourLastname.focus();
-                return false;
-            } 
-
-            if (Ename1.value == "") {
-                alert("여행자의 이름(한글)을 입력해주세요");
-                Ename1.focus();
-                return false;
-            } 
-
-            if (tourGender == null) {
-                alert("여행자의 성별을 선택해주세요");
-                return false;
-            } 
-
-            if (tourBirth.value == "") {
-                alert("여행자의 생년월일을 입력해주세요");
-                tourBirth.focus();
-                return false;
-            } 
-
-            if (tourMobile.value == "") {
-                alert("여행자의 휴대폰 번호를 입력해주세요");
-                tourMobile.focus();
-                return false;
-            } 
-
             if (tourOffice == null) {
                 alert("상담지사를 선택해주세요");
                 return false;
             } 
+            
+
+            var isValid = true;
+            var touristJsonArray = [];
+            var trEls = $(".person_detail tbody tr");
+            for(var i=0; i<trEls.length; i++){
+                var trEl = $(trEls[i]);
+                var tourNameEl = trEl.find('[name="tour_name1"]');
+                var lastNameEl = trEl.find('[name="last_name1"]');
+                var eNameEl = trEl.find('[name="Ename1"]');
+                var genderEl = trEl.find(`[name="tour_gender_${i}"]:checked`);
+                var birthEl = trEl.find('[name="tour_birth"]');
+                var mobileEl = trEl.find('[name="tour_mobile"]');
+
+                if (tourNameEl.val() == "") {
+                    alert("여행자의 이름(한글)을 입력해주세요");
+                    tourNameEl.focus();
+                    isValid = false;
+                    break;
+                } 
+
+                if (lastNameEl.val() == "") {
+                    alert("여행자의 성(영어)을 입력해주세요");
+                    lastNameEl.focus();
+                    isValid = false;
+                    break;
+                } 
+
+                if (eNameEl.val() == "") {
+                    alert("여행자의 이름(한글)을 입력해주세요");
+                    eNameEl.focus();
+                    isValid = false;
+                    break;
+                } 
+
+                if (genderEl.length == 0) {
+                    alert("여행자의 성별을 선택해주세요");
+                    isValid = false;
+                    break;
+                } 
+
+                if (birthEl.val() == "") {
+                    alert("여행자의 생년월일을 입력해주세요");
+                    birthEl.focus();
+                    isValid = false;
+                    break;
+                } 
+
+                if (mobileEl.val() == "") {
+                    alert("여행자의 휴대폰 번호를 입력해주세요");
+                    mobileEl.focus();
+                    isValid = false;
+                    break;
+                } 
+
+                touristJsonArray.push({
+                    tourName: tourNameEl.val(),
+                    lastName: lastNameEl.val(),
+                    eName: eNameEl.val(),
+                    gender: genderEl.val(),
+                    birth: birthEl.val(),
+                    mobile: mobileEl.val(),
+                });
+            }
+            var touristJsonArrayEl = document.getElementById("tourist_json_array");
+            touristJsonArrayEl.value = JSON.stringify(touristJsonArray);
+            return isValid;
         }
+
+        function change_price(){
+            //인원수
+            var adultNum = $("[name='adult_num']").val();
+            var kidNum = $("[name='kid_num']").val();
+            var toddNum = $("[name='todd_num']").val();
+
+            //인원수 + data-price 가격
+            var adultCntEl = $("#adult_cnt");
+            var kidCntEl = $("#kid_cnt");
+            var toddCntEl = $("#todd_cnt");
+
+            adultCntEl.html(adultNum);
+            kidCntEl.html(kidNum);
+            toddCntEl.html(toddNum);
+
+            var totalPrice = (parseInt(adultCntEl.attr("data-price")) * parseInt(adultNum)) + (parseInt(kidCntEl.attr("data-price")) * parseInt(kidNum)) + (parseInt(toddCntEl.attr("data-price")) * parseInt(toddNum));
+            var totalPriceEl = $(".total_price");
+            totalPriceEl.html(totalPrice.toLocaleString());
+        }
+
+        function change_tourist(){
+            //인원수
+            var adultNum = $("[name='adult_num']").val();
+            var kidNum = $("[name='kid_num']").val();
+            var toddNum = $("[name='todd_num']").val();
+            var count = parseInt(adultNum) + parseInt(kidNum) + parseInt(toddNum);
+
+            var tbodyEl = $(".person_detail tbody");
+            tbodyEl.empty();
+            
+            for(var i=0; i<count; i++){
+                tbodyEl.append(html_tourist(i));
+            }
+        }
+
+        function html_tourist(i){
+            var innerHtml = `
+            <tr>
+                <td>
+                    <div class="person_top">
+                        <div>
+                            <span>성인1</span>
+                            <label>이름(한글)</label>
+                            <input type="text" name="tour_name1" placeholder="이름 (실명)">
+                        </div>
+                        <div>
+                            <label>이름(영문)</label>
+                            <input type="text" name="last_name1" placeholder="성">
+                            <input type="text" name="Ename1" placeholder="이름">
+                        </div>
+                        <div>
+                            <div class="gender_wrap">
+                                <span>성별</span>                                    
+                                <div class="gender_group">
+                                    <input type="radio" name="tour_gender_${i}" value="m">
+                                    <label for="male">남</label>
+                                </div>
+                                <div class="gender_group">
+                                    <input type="radio" name="tour_gender_${i}" value="f">
+                                    <label for="female">여</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="person_bottom">
+                        <div>
+                            <label>생년월일</label>
+                            <input type="text" name="tour_birth" placeholder="생년월일 (예 : 19910101)" maxlength="8" oninput="this.value = this.value.replace(/[^0-9.]/g, '');">
+                        </div>
+                        <div class="mobile_wrap">
+                            <label>휴대폰 번호</label>
+                            <input type="text" name="tour_mobile" placeholder="휴대폰번호 (숫자만 입력)" maxlength="11" oninput="this.value = this.value.replace(/[^0-9.]/g, '');">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            `;
+            return $(innerHtml);
+        }
+
+        $('.num_select').change(function(){
+            change_tourist();
+            change_price();
+        })
     </script>
 </body>
 

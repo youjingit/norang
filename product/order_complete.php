@@ -1537,6 +1537,7 @@ $array = mysqli_fetch_array($result);
             <p><span class="info_title">여행인원: </span>
                <span>성인 : <?php echo $array["adult_num"];?> 아동 : <?php echo $array["kid_num"];?> 유아 : <?php echo $array["todd_num"];?></span></p>
             <p><span class="info_title">결제승인금액: </span><span></span></p>
+            <p id="tourist"></p>
         </div> 
     
         <div class="btn_wrap">
@@ -1747,6 +1748,25 @@ $array = mysqli_fetch_array($result);
                 var depth3PopupEl = $(this);
                 depth3PopupEl.stop().slideUp("fast");
             });
+
+
+            //==============================================
+            var touristJsonArray = JSON.parse('<?php echo $array["tourist_json_array"];?>');
+            var touristEl = $("#tourist");
+            for(var i=0; i<touristJsonArray.length; i++){
+                var touristJson = touristJsonArray[i];
+                var innerHtml = `
+                <div>
+                    <div>${touristJson.tourName}</div>
+                    <div>${touristJson.lastName}</div>
+                    <div>${touristJson.eName}</div>
+                    <div>${touristJson.gender}</div>
+                    <div>${touristJson.birth}</div>
+                    <div>${touristJson.mobile}</div>
+                </div>
+                `;
+                touristEl.append($(innerHtml));
+            }
         });
     </script>
 </body>

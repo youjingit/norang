@@ -1065,7 +1065,10 @@ create table products(
     exclusion varchar(2000) not null,
     reference varchar(2000) not null,
     schedule varchar(2000) not null,
-    reg_date datetime
+    reg_date datetime,
+    f_name varchar(50),
+    f_type varchar(50),
+    f_size varchar(50)
 );
 
 
@@ -1124,6 +1127,7 @@ insert into products(
 create table orders(
     idx int auto_increment primary key,
     p_id int not null,
+    u_id int,
     opt_apply char(1),
     u_name varchar(20) not null,
     birth date not null,
@@ -1133,6 +1137,7 @@ create table orders(
     kid_num int not null,
     todd_num int not null,
     request varchar(1000), 
+    tourist_json_array text not null,
     office varchar(5),
     reg_date datetime
 );
@@ -1147,4 +1152,3 @@ insert into order(
 
 
 http://localhost/norang/members/my_page.php
-tourist_info text not null,

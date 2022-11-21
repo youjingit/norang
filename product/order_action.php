@@ -4,6 +4,7 @@ include "../inc/session.php";
 
 //데이터 가져오기
 $p_id = $_GET["n_idx"];
+$u_id = $s_id;
 $opt_apply = $_POST["opt_apply"] == "y" ? "y" : "n";
 $u_name = $_POST["u_name"];
 $birth = $_POST["birth"];
@@ -14,8 +15,8 @@ $mobile = $_POST["mobile"];
 $adult_num = $_POST["adult_num"];
 $kid_num = $_POST["kid_num"];
 $todd_num = $_POST["todd_num"];
-//$tourist_info
 $request = $_POST["request"];
+$tourist_json_array = $_POST["tourist_json_array"];
 $office = $_POST["office"] == "y" ? "y" : "n";
 
 $reg_date = date("Y-m-d");
@@ -27,15 +28,15 @@ include "../inc/dbcon.php";
 // // 쿼리 작성
 
 $sql = "insert into orders(";
-$sql .= "p_id, opt_apply, ";
+$sql .= "p_id, u_id, opt_apply, ";
 $sql .= "u_name, birth, email, ";
 $sql .= "mobile, adult_num, kid_num, todd_num, ";
-$sql .= "request, office, reg_date";
+$sql .= "request, tourist_json_array, office, reg_date";
 $sql .= ") values(";
-$sql .= "'$p_id', '$opt_apply', ";
+$sql .= "'$p_id', '$u_id', '$opt_apply', ";
 $sql .= "'$u_name', '$birth', '$email', ";
 $sql .= "'$mobile', '$adult_num', '$kid_num', '$todd_num', ";
-$sql .= "'$request', '$office', '$reg_date');";
+$sql .= "'$request', '$tourist_json_array', '$office', '$reg_date');";
 
 mysqli_query($dbcon, $sql);
 

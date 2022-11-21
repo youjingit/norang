@@ -65,7 +65,7 @@ mysqli_close($dbcon);
 </head>
 <body>
     <?php include "../inc/sub_header.php"; ?>
-    <form name="product_form" action="edit.php?n_idx=<?php echo $n_idx?>" method="post" onsubmit="return product_check()">
+    <form name="product_form" action="edit.php?n_idx=<?php echo $n_idx?>" method="post" onsubmit="return product_check()" enctype="multipart/form-data">
         <fieldset>
             <legend>상품</legend>
             <table class="product_list_set">

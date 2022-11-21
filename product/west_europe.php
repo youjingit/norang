@@ -1734,7 +1734,9 @@ $result = mysqli_query($dbcon, $sql);
                     <li class="product_li">
                         <div class="product_card">
                             <div>
-                                <a href="#" class="product_image product_img2"></a>
+                                <a href="#">
+                                    <img src="../data/<?php echo $array["f_name"]; ?>" class="product_image" alt="시에나">
+                                </a>
                             </div>
                             <div class="product_cont_wrap">
                                 <div class="product_cont">

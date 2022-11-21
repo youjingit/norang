@@ -156,8 +156,17 @@ main input:focus {
     margin-left: 10px;
 }
 
-#last_name1 {
-    width: 100px;
+.person_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.person_bottom {
+    display: flex;
+}
+
+.mobile_wrap {
+    margin-left: 50px;
 }
 
 .gender_wrap {

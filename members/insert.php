@@ -1,9 +1,7 @@
 <?php
 // 이전 페이지에서 값 가져오기
 
-$email_sel = $_POST["email_sel"];
-$email_id = $_POST["email_id"];
-$u_id = $email_id.$email_sel;
+$u_id = $_POST["u_id"];
 $pwd = $_POST["pwd"];
 $u_name = $_POST["u_name"];
 $mobile = $_POST["mobile"];

@@ -19,15 +19,15 @@ $todd_p = $_POST["todd_p"];
 $adult_fuel = $_POST["adult_fuel"];
 $kid_fuel = $_POST["kid_fuel"];
 $todd_fuel = $_POST["todd_fuel"];
-$inclusion = $_POST["inclusion"];
-$exclusion = $_POST["exclusion"];
-$reference = $_POST["reference"];
+$inclusion = str_replace('\"', '\\\"', str_replace('\'', '\\\'', $_POST["inclusion"]));
+$exclusion = str_replace('\"', '\\\"', str_replace('\'', '\\\'', $_POST["exclusion"]));
+$reference = str_replace('\"', '\\\"', str_replace('\'', '\\\'', $_POST["reference"]));
 $schedule = $_POST["schedule"];
 
 if($_FILES["up_file"] != NULL){
     $tmp_name = $_FILES["up_file"]["tmp_name"];
     $f_name = $_FILES["up_file"]["name"];
-    $up = move_uploaded_file($tmp_name, "../data/$f_name");
+    $up = move_uploaded_file($tmp_name, "../../data/$f_name");
 };
 
 $f_type = $_FILES["up_file"]["type"];
