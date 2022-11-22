@@ -52,12 +52,12 @@ $array = mysqli_fetch_array($result);
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
-                            <li><a href="login.php">로그인</a></li>
+                            <li><a href="../login/login.php">로그인</a></li>
                             <li><a href="join_pre.php">회원가입</a></li>
                             <li><a href="#">예약확인</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -1530,7 +1530,7 @@ $array = mysqli_fetch_array($result);
             <li><a href="javascript:void(0);">마이페이지</a></li>
             <li><a href="javascript:void(0);">개인정보 수정</a></li>
         </ul>
-        <div class="content_title green">
+        <div class="content_title blue">
             <h3>개인정보 수정</h3>
         </div>
         <div class="content_wrap">
@@ -1678,16 +1678,16 @@ $array = mysqli_fetch_array($result);
                         </a>
                         <ul class="aside_sub_menu">
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link active">개인정보 수정</a>
+                                <a href="my_page_auth.php" class="aside_link active">개인정보 수정</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">비밀번호 변경</a>
+                                <a href="my_page_auth.php" class="aside_link">비밀번호 변경</a>
                             </li>
                             <li class="aside_item">
                                 <a href="javascript:void(0);" class="aside_link">SNS 연결 설정</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">회원탈퇴</a>
+                                <a href="withdrawal.php"0 class="aside_link">회원탈퇴</a>
                             </li>
                         </ul>
                     </li>

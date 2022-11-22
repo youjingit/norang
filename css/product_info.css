@@ -249,7 +249,7 @@ main p {
     margin: 16px 0;
 }
 
-.person_price {
+.person_p {
     font-size: 18px;
     font-weight: bold;
     color: #f25b5b;
@@ -272,9 +272,11 @@ main p {
     justify-content: space-between;
 }
 
-.person_price.total {
+.price_total {
     font-size: 28px;
+    font-weight: bold;
     margin-left: 20px;
+    color: #f25b5b;
 }
 
 .point_save {

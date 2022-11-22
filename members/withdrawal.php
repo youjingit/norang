@@ -39,11 +39,11 @@ include "../inc/session.php";
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
-                            <li><a href="./login/logout.php">로그아웃</a></li>
+                            <li><a href="../login/logout.php">로그아웃</a></li>
                             <li><a href="my_page.php">마이페이지</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -1516,7 +1516,7 @@ include "../inc/session.php";
             <li><a href="my_page.php">마이페이지</a></li>
             <li><a href="javascript:void(0);">회원탈퇴</a></li>
         </ul>
-        <div class="content_title green">
+        <div class="content_title blue">
             <h3>회원탈퇴</h3>
         </div>
         <div class="content_wrap">

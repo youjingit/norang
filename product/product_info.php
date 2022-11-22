@@ -39,7 +39,7 @@ $array = mysqli_fetch_array($result);
             <div class="container">
                 <div class="depth1">
                     <div class="depth1_left">
-                        <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                        <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                         <div>
                             <h2 class="blind">주요메뉴</h2>
                             <ul class="depth1_menu">
@@ -57,7 +57,7 @@ $array = mysqli_fetch_array($result);
                             <li><a href="#">예약확인</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -1526,7 +1526,7 @@ $array = mysqli_fetch_array($result);
     </header>
     <main>
         <ul class="breadcrumb">
-            <li><a class="home_icon" href="index.php">메인홈</a></li>
+            <li><a class="home_icon" href="../index.php">메인홈</a></li>
 
             <li class="pagenav"><a href="">패키지여행</a></li>
 
@@ -1686,44 +1686,14 @@ $array = mysqli_fetch_array($result);
                 <div class="person_number_wrap">
                     <h3>인원 선택</h3>
                     <ul class="person_number">
+                        <?php
+                            $adult_total = (int)str_replace(',','',$array["adult_p"]) + (int)str_replace(',','',$array["adult_fuel"]);
+                            $kid_total = (int)str_replace(',','',$array["kid_p"]) + (int)str_replace(',','',$array["kid_fuel"]);
+                            $todd_total = (int)str_replace(',','',$array["todd_p"]) + (int)str_replace(',','',$array["todd_fuel"]);
+                        ?>
                         <li>
-                            <span class="person">성인</span><span class="person_price"><?php echo number_format((int)str_replace(',','',$array["adult_p"]) + (int)str_replace(',','',$array["adult_fuel"]))?>원</span>
-                            <select name="adult_num" class="adult_num">
-                                <option value="1">1명</option>
-                                <option value="2">2명</option>
-                                <option value="3">3명</option>
-                                <option value="4">4명</option>
-                                <option value="5">5명</option>
-                                <option value="6">6명</option>
-                                <option value="7">7명</option>
-                                <option value="8">8명</option>
-                                <option value="9">9명</option>
-                                <option value="10">10명</option>
-                                <option value="11">11명</option>
-                                <option value="12">12명</option>
-                                <option value="13">13명</option>
-                                <option value="14">14명</option>
-                                <option value="15">15명</option>
-                                <option value="16">16명</option>
-                                <option value="17">17명</option>
-                                <option value="18">18명</option>
-                                <option value="19">19명</option>
-                                <option value="20">20명</option>
-                                <option value="21">21명</option>
-                                <option value="22">22명</option>
-                                <option value="23">23명</option>
-                                <option value="24">24명</option>
-                                <option value="25">25명</option>
-                                <option value="26">26명</option>
-                                <option value="27">27명</option>
-                                <option value="28">28명</option>
-                                <option value="29">29명</option>
-                                <option value="30">30명</option>
-                            </select>
-                        </li>
-                        <li>
-                            <span class="person">아동</span><span class="person_price"><?php echo number_format((int)str_replace(',','',$array["kid_p"]) + (int)str_replace(',','',$array["kid_fuel"]))?>원</span>
-                            <select name="kid_num" class="kid_num">
+                            <span class="person">성인</span><span class="person_p" id="adult_total" data-price="<?php echo $adult_total ?>"><?php echo number_format($adult_total)?></span>원
+                            <select name="adult_num" class="adult_num num_select">
                                 <option value="0">0명</option>
                                 <option value="1">1명</option>
                                 <option value="2">2명</option>
@@ -1758,8 +1728,44 @@ $array = mysqli_fetch_array($result);
                             </select>
                         </li>
                         <li>
-                            <span class="person">유아</span><span class="person_price"><?php echo number_format((int)str_replace(',','',$array["todd_p"]) + (int)str_replace(',','',$array["todd_fuel"]))?>원</span>
-                            <select name="todd_num" class="todd_num">
+                            <span class="person">아동</span><span class="person_p" id="kid_total" data-price="<?php echo $kid_total ?>"><?php echo number_format($kid_total)?></span>원
+                            <select name="kid_num" class="kid_num num_select">
+                                <option value="0">0명</option>
+                                <option value="1">1명</option>
+                                <option value="2">2명</option>
+                                <option value="3">3명</option>
+                                <option value="4">4명</option>
+                                <option value="5">5명</option>
+                                <option value="6">6명</option>
+                                <option value="7">7명</option>
+                                <option value="8">8명</option>
+                                <option value="9">9명</option>
+                                <option value="10">10명</option>
+                                <option value="11">11명</option>
+                                <option value="12">12명</option>
+                                <option value="13">13명</option>
+                                <option value="14">14명</option>
+                                <option value="15">15명</option>
+                                <option value="16">16명</option>
+                                <option value="17">17명</option>
+                                <option value="18">18명</option>
+                                <option value="19">19명</option>
+                                <option value="20">20명</option>
+                                <option value="21">21명</option>
+                                <option value="22">22명</option>
+                                <option value="23">23명</option>
+                                <option value="24">24명</option>
+                                <option value="25">25명</option>
+                                <option value="26">26명</option>
+                                <option value="27">27명</option>
+                                <option value="28">28명</option>
+                                <option value="29">29명</option>
+                                <option value="30">30명</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span class="person">유아</span><span class="person_p" id="todd_total" data-price="<?php echo $todd_total ?>"><?php echo number_format($todd_total)?></span>원
+                            <select name="todd_num" class="todd_num num_select">
                                 <option value="0">0명</option>
                                 <option value="1">1명</option>
                                 <option value="2">2명</option>
@@ -1798,7 +1804,7 @@ $array = mysqli_fetch_array($result);
                 <div class="total_price_menu">
                     <div class="total_price_txt">
                         <h3>총 금액</h3>
-                        <span class="person_price total">2,829,000원</span>
+                        <span class="price_total"></span>원
                     </div>
                     <p class="point_save">총 28,290 P 적립예정</p>
                     <button type="button" class="reserve_btn" onclick="location.href='product_order.php?n_idx=<?php echo $array['idx'];?>'">예약하기</button>
@@ -2021,6 +2027,28 @@ $array = mysqli_fetch_array($result);
                 depth3PopupEl.stop().slideUp("fast");
             });
         });
+
+        function change_price(){
+            //인원수
+            var adultNum = $("[name='adult_num']").val();
+            var kidNum = $("[name='kid_num']").val();
+            var toddNum = $("[name='todd_num']").val();
+
+            //인원수 + data-price 가격
+            var adultCntEl = $("#adult_total");
+            var kidCntEl = $("#kid_total");
+            var toddCntEl = $("#todd_total");
+
+
+            var totalPrice = (parseInt(adultCntEl.attr("data-price")) * parseInt(adultNum)) + (parseInt(kidCntEl.attr("data-price")) * parseInt(kidNum)) + (parseInt(toddCntEl.attr("data-price")) * parseInt(toddNum));
+            var totalPriceEl = $(".price_total");
+            totalPriceEl.html(totalPrice.toLocaleString());
+        }
+
+        $('.num_select').change(function(){
+            change_price();
+        })
+
     </script>
 </body>
 

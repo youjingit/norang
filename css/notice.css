@@ -61,11 +61,7 @@ main {
 }
 
 .content_title.yellow {
-  background-color: #f9f7cf;
-}
-
-.content_title.green {
-  background-color: #edfcb7;
+  background-color: #f8f4c1;
 }
 
 .content_wrap {
@@ -116,6 +112,8 @@ main {
 }
 
 .aside_title h2 {
+  border-bottom: 5px solid #ffc72c;
+  padding-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
 }
@@ -217,42 +215,42 @@ td {
 
 .cate_notice:hover,
 .cate_notice.active {
-  background: #ffc72c;
+  background: #f8e4ab;
 }
 
 .cate_honey:hover,
 .cate_honey.active {
-  background: #f882af;
+  background: #9fb5fd;
 }
 
 .cate_golf:hover,
 .cate_golf.active {
-  background: #6dece2;
+  background: #b4e6e1;
 }
 
 .cate_cruise:hover,
 .cate_cruise.active {
-  background: #6191da;
+  background: #a9cafc;
 }
 
 .cate_domest:hover,
 .cate_domest.active {
-  background: #f8bb82;
+  background: #ffd5ae;
 }
 
 .cate_busan:hover,
 .cate_busan.active {
-  background: #f56c6c;
+  background: #faa8a8;
 }
 
 .cate_air:hover,
 .cate_air.active {
-  background: #84ef91;
+  background: #b8f5bf;
 }
 
 .cate_hotel:hover,
 .cate_hotel.active {
-  background: #d085e2;
+  background: #efc5f8;
 }
 
 .sumcount {

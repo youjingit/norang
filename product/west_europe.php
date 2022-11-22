@@ -30,7 +30,7 @@ $result = mysqli_query($dbcon, $sql);
             <div class="container">
                 <div class="depth1">
                     <div class="depth1_left">
-                        <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                        <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                         <div>
                             <h2 class="blind">주요메뉴</h2>
                             <ul class="depth1_menu">
@@ -43,12 +43,12 @@ $result = mysqli_query($dbcon, $sql);
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
-                            <li><a href="login.php">로그인</a></li>
-                            <li><a href="join_pre.php">회원가입</a></li>
+                            <li><a href="../login/login.php">로그인</a></li>
+                            <li><a href="../members/join_pre.php">회원가입</a></li>
                             <li><a href="#">예약확인</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -1517,7 +1517,7 @@ $result = mysqli_query($dbcon, $sql);
     </header>
     <main>
         <ul class="breadcrumb">
-            <li><a class="home_icon" href="index.php">메인홈</a></li>
+            <li><a class="home_icon" href="../index.php">메인홈</a></li>
 
             <li class="pagenav"><a href="">패키지여행</a></li>
 
@@ -1525,7 +1525,7 @@ $result = mysqli_query($dbcon, $sql);
 
             <li class="pagenav"><a href="">유럽</a></li>
 
-            <li class="pagenav"><a href="west_europe.html">서유럽</a></li>
+            <li class="pagenav"><a href="#">서유럽</a></li>
         </ul>
         <div class="main_title">
             <h2>서유럽</h2>
@@ -1762,12 +1762,11 @@ $result = mysqli_query($dbcon, $sql);
                                 </div>
                             </div>
                         </div>
-
                         <!-- .product_details.show로 활성화/비활성화 구분 -->
                         <!-- .product_details > * .blue,.red,.purple로 색상구분 -->
                         <!-- .product_cal_day.active 또는 .product_cal_day:hover로 활성화/비활성화 구분 -->
-                        <!--
-                        <div class="product_details">
+                        
+                        <!-- <div class="product_details">
                             <div class="product_cal_header">
                                 <a href="#" class="product_cal_header_arrow_left">&lt;</a>
                                 <p>2022년 11월</p>
@@ -2070,186 +2069,14 @@ $result = mysqli_query($dbcon, $sql);
                                     <i class="icon icon-arrow-up"></i>
                                 </button>
                             </div>
-                        </div>
-                        -->
+                        </div> -->
                     </li>
                     <?php } ?>
-                    <!-- <li class="product_li">
-                        <div class="product_card">
-                            <div>
-                                <a href="#" class="product_image product_img1"></a>
-                            </div>
-                            <div class="product_cont_wrap">
-                                <div class="product_cont">
-                                    <div class="foreign_pkg_label">해외패키지</div>
-                                    <p class="product_title">[돌체 이탈리아 9일] 슬로우 라이프_오르비에토/토스카나+나/폼/소+10대 맛체험[OZ]</p>
-                                </div>
-                                <div class="cont1">
-                                    <p class="period">출발기간 : 2022.10.11~2023.03.28</p>
-                                    <p class="price">2,032,000 원 ~</p>
-                                </div>
-                                <div class="cont2">
-                                    <button type="button" onclick="location.href='product_info'">출발일 보기</button>
-                                    <div class="etc">
-                                        <span class="product_number">상품번호 EWP4110</span>
-                                        <span class="hide">고객평점</span>
-                                        <span class="score_i">★</span>
-                                        <span class="score">-</span>
-                                        <i class="snslink_i">sns공유하기</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                    </li>
-                    <li class="product_li">
-                        <div class="product_card">
-                            <div>
-                                <a href="#" class="product_image product_img2"></a>
-                            </div>
-                            <div class="product_cont_wrap">
-                                <div class="product_cont">
-                                    <div class="label_wrap">
-                                        <div class="premium_label">프리미엄</div>
-                                        <div class="foreign_pkg_label">해외패키지</div>
-                                    </div>
-                                    <p class="product_title">★10/25 호텔확정 [스위스 일주 8일/비즈니스석 탑승] 6대 특식+마테호른/융프라우</p>
-                                </div>
-                                <div class="cont1">
-                                    <p class="period">출발기간 : 2022.10.11~2023.10.25</p>
-                                    <p class="price">5,690,000 원 ~</p>
-                                </div>
-                                <div class="cont2">
-                                    <button type="button">출발일 보기</button>
-                                    <div class="etc">
-                                        <span class="product_number">상품번호 EWP4072</span>
-                                        <span class="hide">고객평점</span>
-                                        <span class="score_i">★</span>
-                                        <span class="score">4.7 / 5</span>
-                                        <i class="snslink_i">sns공유하기</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="product_li">
-                        <div class="product_card">
-                            <div>
-                                <a href="#" class="product_image product_img3"></a>
-                            </div>
-                            <div class="product_cont_wrap">
-                                <div class="product_cont">
-                                    <div class="label_wrap">
-                                        <div class="premium_label">프리미엄</div>
-                                        <div class="foreign_pkg_label">해외패키지</div>
-                                    </div>
-                                    <p class="product_title">★10/21 출발확정 [프랑스 일주 11일] 예술가들의 발자취를 따라서_노르망디_남프랑스</p>
-                                </div>
-                                <div class="cont1">
-                                    <p class="period">출발기간 : 2022.10.07~2023.10.31</p>
-                                    <p class="price">4,280,000 원 ~</p>
-                                </div>
-                                <div class="cont2">
-                                    <button type="button">출발일 보기</button>
-                                    <div class="etc">
-                                        <span class="product_number">상품번호 EWP4015</span>
-                                        <span class="hide">고객평점</span>
-                                        <span class="score_i">★</span>
-                                        <span class="score">4.5 / 5</span>
-                                        <i class="snslink_i">sns공유하기</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="product_li">
-                        <div class="product_card">
-                            <div>
-                                <a href="#" class="product_image product_img4"></a>
-                            </div>
-                            <div class="product_cont_wrap">
-                                <div class="product_cont">
-                                    <div class="label_wrap">
-                                        <div class="foreign_pkg_label">해외패키지</div>
-                                    </div>
-                                    <p class="product_title">[서유럽 4국12일] 영국과 스위스를 더하다[1급호텔]융프라우/리기산+코츠월드/옥스퍼드</p>
-                                </div>
-                                <div class="cont1">
-                                    <p class="period">출발기간 : 2022.10.08~2023.03.29</p>
-                                    <p class="price">3,829,000 원 ~</p>
-                                </div>
-                                <div class="cont2">
-                                    <button type="button">출발일 보기</button>
-                                    <div class="etc">
-                                        <span class="product_number">상품번호 EWP3058</span>
-                                        <span class="hide">고객평점</span>
-                                        <span class="score_i">★</span>
-                                        <span class="score">4.1 / 5</span>
-                                        <i class="snslink_i">sns공유하기</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="product_li">
-                        <div class="product_card">
-                            <div>
-                                <a href="#" class="product_image product_img5"></a>
-                            </div>
-                            <div class="product_cont_wrap">
-                                <div class="product_cont">
-                                    <div class="label_wrap">
-                                        <div class="foreign_pkg_label">해외패키지</div>
-                                    </div>
-                                    <p class="product_title">★10/19 출발확정 [프랑스/스위스 9일] 리기 하이킹+융프라우/VIP패스+이젤발트</p>
-                                </div>
-                                <div class="cont1">
-                                    <p class="period">출발기간 : 2022.10.05~2023.03.27</p>
-                                    <p class="price">3,629,000 원 ~</p>
-                                </div>
-                                <div class="cont2">
-                                    <button type="button">출발일 보기</button>
-                                    <div class="etc">
-                                        <span class="product_number">상품번호 EWP2335</span>
-                                        <span class="hide">고객평점</span>
-                                        <span class="score_i">★</span>
-                                        <span class="score">4.3 / 5</span>
-                                        <i class="snslink_i">sns공유하기</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="product_li">
-                        <div class="product_card">
-                            <div>
-                                <a href="#" class="product_image product_img6"></a>
-                            </div>
-                            <div class="product_cont_wrap">
-                                <div class="product_cont">
-                                    <div class="label_wrap">
-                                        <div class="foreign_pkg_label">해외패키지</div>
-                                    </div>
-                                    <p class="product_title">★10/22 확정[이탈리아/스위스 8일/9일] 가슴을 뛰게 만드는 여행 휘르스트+나/폼/소</p>
-                                </div>
-                                <div class="cont1">
-                                    <p class="period">출발기간 : 2022.10.03~2023.03.31</p>
-                                    <p class="price">1,999,000 원 ~</p>
-                                </div>
-                                <div class="cont2">
-                                    <button type="button">출발일 보기</button>
-                                    <div class="etc">
-                                        <span class="product_number">상품번호 EWP1337</span>
-                                        <span class="hide">고객평점</span>
-                                        <span class="score_i">★</span>
-                                        <span class="score">4.5 / 5</span>
-                                        <i class="snslink_i">sns공유하기</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li> -->
+                    <!-- ★10/25 호텔확정 [스위스 일주 8일/비즈니스석 탑승] 6대 특식+마테호른/융프라우 -->
+                    <!-- ★10/21 출발확정 [프랑스 일주 11일] 예술가들의 발자취를 따라서_노르망디_남프랑스 -->
+                    <!-- [서유럽 4국12일] 영국과 스위스를 더하다[1급호텔]융프라우/리기산+코츠월드/옥스퍼드 -->
+                    <!-- ★10/19 출발확정 [프랑스/스위스 9일] 리기 하이킹+융프라우/VIP패스+이젤발트 -->
+                    <!-- ★10/22 확정[이탈리아/스위스 8일/9일] 가슴을 뛰게 만드는 여행 휘르스트+나/폼/소 -->
                 </ul>
             </section>
         </div>
@@ -2289,7 +2116,7 @@ $result = mysqli_query($dbcon, $sql);
                     <li><i></i>[항공권소식][국내항공][제주항공] 국내선 탑승 게이트 위탁 수하물 요금 시행 안내</li>
                     <li><i></i>[항공권소식][대한항공]인천출발 중국 본토행 기내식 서비스 중단 안내</li>
                 </ul>
-                <a href="#">더보기</a>
+                <a href="../notice/notice_list.php">더보기</a>
             </div>
         </section>
 

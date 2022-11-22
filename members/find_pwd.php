@@ -23,7 +23,7 @@
                         <li><a href="../login/login.php">로그인</a></li>
                         <li><a href="join_pre.php">회원가입</a></li>
                         <li><a href="#">고객센터</a></li>
-                        <li><a href="#">EN</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -77,10 +77,19 @@
                 u_id.focus();
                 return false;
             } else {
+                var regex=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+                if (!regex.test(u_id)){
+                    var txt = document.getElementById("err_id");
+                    txt.innerHTML = "<em>올바른 이메일을 입력하세요.</em>";
+                    email_id.focus();
+                    return false;
+                else {
                 var txt = document.getElementById("err_id");
                 txt.innerHTML = "";
+                }
             }
-        };
+        }};
+
     </script>
 </body>
 

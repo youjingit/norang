@@ -109,7 +109,7 @@ if($e_pageNum > $total_page){
                         <?php }; ?>    
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
+                            
                         </ul>
                     </div>
                 </div>

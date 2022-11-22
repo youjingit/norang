@@ -1125,9 +1125,9 @@ insert into products(
 
 
 create table orders(
-    idx int auto_increment primary key,
+    idx varchar(20) primary key,
     p_id int not null,
-    u_id int,
+    u_id varchar(50),
     opt_apply char(1),
     u_name varchar(20) not null,
     birth date not null,
@@ -1152,3 +1152,34 @@ insert into order(
 
 
 http://localhost/norang/members/my_page.php
+
+
+
+1. 
+첫장 표지에는 프로젝트 이름
+과정명
+내이름
+
+2. 목차
+
+메인
+서브
+회원가입
+로그인
+
+3. 페이퍼 프로토타입
+
+4. 실제디자인
+
+5. 웹페이지로 실행한 화면, 사용한 코드 캡쳐 (동작 뺀거)
+
+6. 인터랙션 , 스크립트 코드
+
+7. 테이블 계획서
+
+마지막에 프로젝트 주소로 이동
+
+
+
+무드보드 : 주조색 보조색 포인트색 폰트
+

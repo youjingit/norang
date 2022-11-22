@@ -38,7 +38,7 @@ $array = mysqli_fetch_array($result);
             <div class="container">
                 <div class="depth1">
                     <div class="depth1_left">
-                        <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                        <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                         <div>
                             <h2 class="blind">주요메뉴</h2>
                             <ul class="depth1_menu">
@@ -51,12 +51,12 @@ $array = mysqli_fetch_array($result);
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
-                            <li><a href="login.php">로그인</a></li>
-                            <li><a href="join_pre.php">회원가입</a></li>
+                            <li><a href="../login/login.php">로그인</a></li>
+                            <li><a href="../members/join_pre.php">회원가입</a></li>
                             <li><a href="#">예약확인</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -1528,6 +1528,7 @@ $array = mysqli_fetch_array($result);
         <h2>예약하기</h2>
         </div>
         <form id="order_form" action="order_action.php?n_idx=<?php echo $array['idx'];?>" method="post" onsubmit="return order_form_check()">
+            <input type="hidden" name="email" id="email">
             <input type="hidden" name="tourist_json_array" id="tourist_json_array">
             <fieldset>
                 <legend class="hide">상품예약</legend>
@@ -2052,7 +2053,11 @@ $array = mysqli_fetch_array($result);
             var termEls = document.querySelectorAll("[name='term']:checked");
             var nameEl = document.getElementById("u_name");
             var birthEl = document.getElementById("birth");
-            var emailEl = document.getElementById("email_id");
+            var email_id = document.getElementById("email_id");
+            var email_sel = document.getElementById("email_sel");
+            var emailEl = document.getElementById("email");
+            var email = email_id.value+email_sel.value;
+            emailEl.value = email;
             var mobileEl = document.getElementById("mobile");
             var tourOffice = document.querySelector("[name='office']:checked");
 
@@ -2074,14 +2079,20 @@ $array = mysqli_fetch_array($result);
                 return false;
             } 
 
-            if (emailEl.value == "") {
+            if (email_id.value == "") {
                 alert("예약자의 이메일을 입력해주세요");
-                emailEl.focus();
+                email_id.focus();
                 return false;
-            } 
+            }  else {
+                var regex=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+                if (!regex.test(email)){
+                    alert("올바른 이메일 형식으로 입력해주세요");
+                    email_id.focus();
+                    return false;
+                }}
 
             if (mobileEl.value == "") {
-                alert("예약자의 휴대폰번호을 입력해주세요");
+                alert("예약자의 휴대폰번호를 입력해주세요");
                 mobileEl.focus();
                 return false;
             } 
@@ -2200,7 +2211,6 @@ $array = mysqli_fetch_array($result);
                 <td>
                     <div class="person_top">
                         <div>
-                            <span>성인1</span>
                             <label>이름(한글)</label>
                             <input type="text" name="tour_name1" placeholder="이름 (실명)">
                         </div>

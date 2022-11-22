@@ -4,7 +4,8 @@ include "../inc/dbcon.php";
 
 // 쿼리 작성
 $p_id = $_GET["n_idx"];
-$sql = "select t1.*, t2.* from products t1, orders t2 where t1.idx = t2.p_id";
+$order_number = $_GET["g_idx"];
+$sql = "select t1.*, t2.* from products t1, orders t2 where t1.idx = '$p_id' AND t2.idx = '$order_number';";
 
 
 // 쿼리 실행
@@ -56,7 +57,7 @@ $array = mysqli_fetch_array($result);
                             <li><a href="#">예약확인</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -1536,7 +1537,6 @@ $array = mysqli_fetch_array($result);
             <p><span class="info_title">도착교통: </span><span> <?php echo $array["arrival_vehicle"];?></span></p>
             <p><span class="info_title">여행인원: </span>
                <span>성인 : <?php echo $array["adult_num"];?> 아동 : <?php echo $array["kid_num"];?> 유아 : <?php echo $array["todd_num"];?></span></p>
-            <p><span class="info_title">결제승인금액: </span><span></span></p>
             <p id="tourist"></p>
         </div> 
     
@@ -1757,12 +1757,13 @@ $array = mysqli_fetch_array($result);
                 var touristJson = touristJsonArray[i];
                 var innerHtml = `
                 <div>
-                    <div>${touristJson.tourName}</div>
-                    <div>${touristJson.lastName}</div>
-                    <div>${touristJson.eName}</div>
-                    <div>${touristJson.gender}</div>
-                    <div>${touristJson.birth}</div>
-                    <div>${touristJson.mobile}</div>
+                    <p class="json_title">여행자 정보</p>
+                    <div><span class="json_subtitle">이름(한글): </span>${touristJson.tourName}</div>
+                    <div><span class="json_subtitle">성(영어): </span>${touristJson.lastName}</div>
+                    <div><span class="json_subtitle">이름(영어): </span>${touristJson.eName}</div>
+                    <div><span class="json_subtitle">성별: </span>${touristJson.gender}</div>
+                    <div><span class="json_subtitle">생년월일: </span>${touristJson.birth}</div>
+                    <div><span class="json_subtitle">휴대폰 번호: </span>${touristJson.mobile}</div>
                 </div>
                 `;
                 touristEl.append($(innerHtml));

@@ -69,12 +69,8 @@ main {
     font-weight: bold;
 }
 
-.content_title.yellow {
-    background-color: #f9f7cf;
-}
-
-.content_title.green {
-    background-color: #edfcb7;
+.content_title.blue {
+    background: rgb(213, 234, 252);
 }
 
 .content_wrap {
@@ -230,6 +226,8 @@ main {
 }
 
 .aside_title h2 {
+    border-bottom: 5px solid #ffc72c;
+    padding-bottom: 10px;
     font-size: 20px;
     font-weight: bold;
 }

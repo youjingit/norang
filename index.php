@@ -3,7 +3,6 @@ include "inc/session.php";
 ?>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,7 +21,6 @@ include "inc/session.php";
     <link rel="stylesheet" type="text/css" href="./css/index/event.css" />
     <link rel="stylesheet" type="text/css" href="./css/index/benefit.css" />
     <link rel="stylesheet" type="text/css" href="./css/index/footer.css" />
-
 </head>
 <body>
     <header>
@@ -48,7 +46,7 @@ include "inc/session.php";
                             <!-- 로그인 전 -->
                             <li><a href="./login/login.php">로그인</a></li>
                             <li><a href="./members/join_pre.php">회원가입</a></li>
-                            <li><a href="nonmember_reserve_pkg.php">예약확인</a></li>
+                            <li><a href="./nonmember/nonmember_reserve_pkg.php">예약확인</a></li>
                         <?php } else if($s_id == "admin@abc.com"){ ?>
                             <!-- 관리자 로그인 -->
                             <li><a href="./login/logout.php">로그아웃</a></li>
@@ -60,7 +58,6 @@ include "inc/session.php";
                         <?php }; ?>    
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
                         </ul>
                     </div>
                 </div>
@@ -150,7 +147,7 @@ include "inc/session.php";
                                                 <span class="dep3_subtitle">지역별</span>
                                                 <div class="dep3_submenu">
                                                     <ul>
-                                                        <li><a href="west_europe.html">서유럽</a></li>
+                                                        <li><a href="./product/west_europe.php">서유럽</a></li>
                                                         <li><a href="#">동유럽</a></li>
                                                         <li><a href="#">발칸</a></li>
                                                         <li><a href="#">스페인/포르투갈/모로코</a></li>

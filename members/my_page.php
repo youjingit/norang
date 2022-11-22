@@ -42,7 +42,7 @@ include "../inc/session.php";
                             <li><a href="">마이페이지</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ include "../inc/session.php";
                                                 <span class="dep3_subtitle">지역별</span>
                                                 <div class="dep3_submenu">
                                                     <ul>
-                                                        <li><a href="west_europe.html">서유럽</a></li>
+                                                        <li><a href="../product/west_europe.php">서유럽</a></li>
                                                         <li><a href="#">동유럽</a></li>
                                                         <li><a href="#">발칸</a></li>
                                                         <li><a href="#">스페인/포르투갈/모로코</a></li>
@@ -1514,7 +1514,7 @@ include "../inc/session.php";
             <li><a href="index.php"><i class="icon icon_home">메인홈</i></a></li>
             <li><a href="javascript:void(0);">마이페이지</a></li>
         </ul>
-        <div class="content_title green">
+        <div class="content_title blue">
             <h2 class="content_title_h2">마이페이지</h2>
         </div>
         <div class="content_wrap">
@@ -1671,7 +1671,7 @@ include "../inc/session.php";
                                 <a href="javascript:void(0);" class="aside_link">SNS 연결 설정</a>
                             </li>
                             <li class="aside_item">
-                                <a href="javascript:void(0);" class="aside_link">회원탈퇴</a>
+                                <a href="withdrawal.php" class="aside_link">회원탈퇴</a>
                             </li>
                         </ul>
                     </li>
@@ -1805,7 +1805,7 @@ include "../inc/session.php";
                     <li><i></i>[항공권소식][국내항공][제주항공] 국내선 탑승 게이트 위탁 수하물 요금 시행 안내</li>
                     <li><i></i>[항공권소식][대한항공]인천출발 중국 본토행 기내식 서비스 중단 안내</li>
                 </ul>
-                <a href="#">더보기</a>
+                <a href="../notice/notice_list.php">더보기</a>
             </div>
         </section>
 

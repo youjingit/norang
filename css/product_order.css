@@ -19,7 +19,7 @@ main {
 }
 
 main h3 {
-    color: #1519a4;
+    color: #2041aa;
     margin: 20px 0 10px 0; 
 }
 
@@ -151,6 +151,11 @@ main input:focus {
     padding: 10px;
 }
 
+.person_detail td {
+    border-bottom: 1px solid #666;
+    padding: 10px;
+}
+
 .person_detail input {
     height: 30px;
     margin-left: 10px;
@@ -166,7 +171,7 @@ main input:focus {
 }
 
 .mobile_wrap {
-    margin-left: 50px;
+    margin-left: 166px;
 }
 
 .gender_wrap {

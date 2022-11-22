@@ -44,7 +44,7 @@ $array = mysqli_fetch_array($result);
                         <li><a href="../login/login.php">로그인</a></li>
                         <li><a href="join_pre.php">회원가입</a></li>
                         <li><a href="#">고객센터</a></li>
-                        <li><a href="#">EN</a></li>
+                        
                     </ul>
                 </div>
             </div>

@@ -51,6 +51,7 @@ if(!$num){ // 일치하는 아이디가 없다면
         echo "
             <script type=\"text/javascript\">
                 alert(\"비밀번호가 일치하지 않습니다.\");
+                location.href = \"login.php\";
             </script>
         ";
     } else{// 비밀번호가 일치한다면

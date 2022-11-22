@@ -40,7 +40,7 @@
                             <li><a href="#">예약확인</a></li>
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            <li><a href="#">EN</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -1509,11 +1509,11 @@
     </header>
     <main>
         <ul class="breadcrumb">
-            <li><a href="index.php"><i class="icon icon_home">메인홈</i></a></li>
+            <li><a href="../index.php"><i class="icon icon_home">메인홈</i></a></li>
             <li><a href="my_page.php">마이페이지</a></li>
             <li><a href="javascript:void(0);">비밀번호 인증</a></li>
         </ul>
-        <div class="content_title green">
+        <div class="content_title blue">
             <h3>비밀번호 인증</h3>
         </div>
         <div class="content_wrap">

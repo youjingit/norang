@@ -6,12 +6,12 @@ $pwd = $_POST["pwd"];
 $u_name = $_POST["u_name"];
 $mobile = $_POST["mobile"];
 $birth = $_POST["birth"];
-$gender = $_POST["gender"];
+$gender = $_POST["gender"] == "y" ? "y" : "n";
 $privacy_period = $_POST["privacy_period"];
-$info_collect_apply = $_POST["info_collect_apply"];
-$marketing_apply = $_POST["marketing_apply"];
-$email_apply = $_POST["email_apply"];
-$sms_apply = $_POST["sms_apply"];
+$info_collect_apply = $_POST["info_collect_apply"] == "y" ? "y" : "n";
+$marketing_apply = $_POST["marketing_apply"] == "y" ? "y" : "n";
+$email_apply = $_POST["email_apply"] == "y" ? "y" : "n";
+$sms_apply = $_POST["sms_apply"] == "y" ? "y" : "n";
 
 
 // 시간 구하기
