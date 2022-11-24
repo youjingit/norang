@@ -44,7 +44,7 @@ mysqli_close($dbcon);
 
 echo "
     <script type=\"text/javascript\">
-        location.href = \"order_complete.php?n_idx=$p_id&g_idx=$order_number\";
+        location.href = \"order_complete.php?g_idx=$order_number\";
     </script>
     ";
 ?>

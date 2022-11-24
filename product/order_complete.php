@@ -4,18 +4,12 @@ include "../inc/session.php";
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$p_id = $_GET["n_idx"];
 $order_number = $_GET["g_idx"];
-$sql = "select t1.*, t2.* from products t1, orders t2 where t1.idx = '$p_id' AND t2.idx = '$order_number';";
-
+$sql = "select t1.*, t2.* from products t1, orders t2 where t1.idx = t2.p_id AND t2.idx = '$order_number';";
 
 // 쿼리 실행
 $result = mysqli_query($dbcon, $sql);
 
-// DB에서 데이터 가져오기
-// mysqi_fetch_row(쿼리실행문) -- 필드순서
-// mysqi_fetch_array(쿼리실행문) -- 필드이름
-// mysqi_num_rows(쿼리실행문) -- 전체 행 개수
 $array = mysqli_fetch_array($result);
 
 ?>
