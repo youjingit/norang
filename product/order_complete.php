@@ -1,4 +1,5 @@
 <?php
+include "../inc/session.php";
 // DB 연결
 include "../inc/dbcon.php";
 
@@ -39,7 +40,7 @@ $array = mysqli_fetch_array($result);
             <div class="container">
                 <div class="depth1">
                     <div class="depth1_left">
-                        <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                        <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                         <div>
                             <h2 class="blind">주요메뉴</h2>
                             <ul class="depth1_menu">
@@ -52,12 +53,22 @@ $array = mysqli_fetch_array($result);
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
-                            <li><a href="login.php">로그인</a></li>
-                            <li><a href="join_pre.php">회원가입</a></li>
-                            <li><a href="#">예약확인</a></li>
+                        <?php if(!$s_idx){ ?>
+                            <!-- 로그인 전 -->
+                            <li><a href="../login/login.php">로그인</a></li>
+                            <li><a href="../members/join_pre.php">회원가입</a></li>
+                            <li><a href="../nonmember/nonmember_reserve_pkg.php">예약확인</a></li>
+                        <?php } else if($s_id == "admin@abc.com"){ ?>
+                            <!-- 관리자 로그인 -->
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <?php } else{ ?>
+                            <!-- 로그인 후 -->   
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../members/my_page.php">마이페이지</a></li>
+                        <?php }; ?>    
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            
                         </ul>
                     </div>
                 </div>
@@ -1530,6 +1541,7 @@ $array = mysqli_fetch_array($result);
         <p class="compl_subtitle">노랑풍선과 함께 즐거운 여행 되세요!</p>
 
         <div class="compl_info">
+            <p><span class="info_title">예약번호: </span><span> <?php echo $order_number;?></span></p>
             <p><span class="info_title">상품명: </span><span> <?php echo $array["p_name"];?></span></p>
             <p><span class="info_title">출발일: </span><span> <?php echo $array["departure_date1"];?> → <?php echo $array["departure_date2"];?></span></p>
             <p><span class="info_title">도착일: </span><span> <?php echo $array["arrival_date1"];?> → <?php echo $array["arrival_date2"];?></span></p>

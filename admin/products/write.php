@@ -77,7 +77,7 @@ include "../inc/admin_check.php";
                 </tr>
                 <tr class="product_view_content">
                     <td>
-                        <label for="departure_date1">출발날짜</label>
+                        <label for="departure_date1">한국출발시간</label>
                         <input type="text" name="departure_date1" id="departure_date1">
                     </td>
                 </tr>
@@ -89,13 +89,13 @@ include "../inc/admin_check.php";
                 </tr>
                 <tr class="product_view_content">
                     <td>
-                        <label for="arrival_date1">현지출발날짜</label>
+                        <label for="arrival_date1">현지출발시간</label>
                         <input type="text" name="arrival_date1" id="arrival_date1">
                     </td>
                 </tr>
                 <tr class="product_view_content">
                     <td>
-                        <label for="arrival_date2">도착시간</label>
+                        <label for="arrival_date2">한국도착시간</label>
                         <input type="text" name="arrival_date2" id="arrival_date2">
                     </td>
                 </tr>

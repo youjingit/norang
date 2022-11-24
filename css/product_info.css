@@ -124,7 +124,7 @@ main p {
 
 .table_total_price {
     font-weight: bold;
-    color: #f25b5b;
+    color: #f34848;
 }
 
 .corona19_notice {
@@ -252,18 +252,14 @@ main p {
 .person_p {
     font-size: 18px;
     font-weight: bold;
-    color: #f25b5b;
+    color: #f34848;
 }
 
 .adult_num,
-.kid_num {
-    height: 30px;
-    margin-left: 105px;
-}
-
+.kid_num,
 .todd_num {
     height: 30px;
-    margin-left: 121px;
+    margin-left: 105px;
 }
 
 .total_price_txt {
@@ -276,7 +272,7 @@ main p {
     font-size: 28px;
     font-weight: bold;
     margin-left: 20px;
-    color: #f25b5b;
+    color: #f34848;
 }
 
 .point_save {

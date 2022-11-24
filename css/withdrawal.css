@@ -83,7 +83,7 @@ main hr {
 }
 
 .point_num {
-    color: #f35757;
+    color: #f34848;
     font-size: 18px;
 }
 
@@ -115,7 +115,7 @@ main hr {
 
 .reason_check h4 {
     display: inline;
-    color: #f35757;
+    color: #f34848;
 }
 
 .wish_wrap h4{
@@ -144,5 +144,5 @@ main hr {
 }
 
 .last_info span {
-    color: #f35757;
+    color: #f34848;
 }

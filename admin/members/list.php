@@ -107,6 +107,7 @@ if($e_pageNum > $total_page){
     
     <!-- 콘텐트 -->
     <p>전체 회원수 <?php echo $total; ?>명</p>
+    <a href="join.php">[추가]</a>
     <table class="mem_list_set">
         <tr class="mem_list_title">
             <th class="no">번호</th>

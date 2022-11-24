@@ -1,4 +1,5 @@
 <?php
+include "../inc/session.php";
 include "../inc/admin_check.php";
 ?>
 <!DOCTYPE html>
@@ -33,6 +34,8 @@ include "../inc/admin_check.php";
     <main>
         <h2 class="join_title">간편 회원가입(관리자모드)</h2>
         <form name="join_form" action="insert.php" method="post" onsubmit="return join_form_check()">
+            <input type="hidden" name="u_id" id="u_id">
+            <input type="hidden" name="u_id_exist" id="u_id_exist" value="t">
             <fieldset>
                 <legend class="hide">회원가입</legend>
                 <section class="input_wrap">
@@ -194,23 +197,42 @@ include "../inc/admin_check.php";
 
 
     <!-- 폼 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script>
          function join_form_check() {
             var u_id = document.getElementById("email_id");
+            var email_sel = document.getElementById("email_sel");
+            var u_idEl = document.getElementById("u_id"); //hidden input
+            var u_id = email_id.value+email_sel.value;
+            u_idEl.value = u_id;
             var u_pwd = document.getElementById("pwd");
             var u_repwd = document.getElementById("re_pwd");
             var u_name = document.getElementById("u_name");
             var u_mobile = document.getElementById("mobile");
             var u_birth = document.getElementById("birth");
+            var u_id_existEl= document.getElementById("u_id_exist"); //hidden input
+
+            if(u_id_existEl.value == 't'){
+                alert('이메일 중복확인을 해주세요');
+                return false;
+            }
 
             if (u_id.value == "") {
                 var txt = document.getElementById("err_id");
                 txt.innerHTML = "<em>이메일을 입력하세요.</em>";
                 u_id.focus();
                 return false;
-            } else {
-                var txt = document.getElementById("err_id");
-                txt.innerHTML = "";
+            }  else {
+                var regex=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+                if (!regex.test(u_id)){
+                    var txt = document.getElementById("err_id");
+                    txt.innerHTML = "<em>올바른 이메일을 입력하세요.</em>";
+                    email_id.focus();
+                    return false;
+                } else {
+                    var txt = document.getElementById("err_id");
+                    txt.innerHTML = "";
+                }
             }
 
             if (u_pwd.value == "") {
@@ -322,8 +344,44 @@ include "../inc/admin_check.php";
         }
 
         function id_search(){
-            window.open("id_search.php", "idsch",  "width=600, height=300");
+            var email_id = document.getElementById("email_id");
+            var email_sel = document.getElementById("email_sel");
+            var u_id = email_id.value+email_sel.value;
+
+            if (u_id == "") {
+                alert('이메일을 입력해주세요');
+                return;
+            } 
+
+            var regex=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+            if (!regex.test(u_id)){
+                alert('올바른 이메일을 입력하세요');
+                return;
+            } 
+            
+            $.ajax({
+                url:'exist_id.php',
+                method: 'get',
+                data: {
+                    u_id: u_id
+                }
+            }).then(function(data){
+                if(data === 't'){
+                    alert(u_id+"은 사용할 수 없는 아이디입니다.");
+                } else {
+                    alert(u_id+"은 사용할 수 있는 아이디입니다.");
+                }
+                $('#u_id_exist').val(data); 
+            })
         }
+
+        $("#email_id").change(function(){
+            $('#u_id_exist').val('t');
+        })
+
+        $("#email_sel").change(function(){
+            $('#u_id_exist').val('t');
+        })
 
         // 개인정보 유효기간 자세히 열고 닫기 
         var closeEl = document.getElementById("arrow_close");

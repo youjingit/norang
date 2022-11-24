@@ -7,7 +7,7 @@ main {
     width: 1200px;
     height: 92px;
     margin: 0 auto;
-    background-color: #fae8fe;
+    background-color: #fad0d9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@ main {
 }
 
 main h3 {
-    color: #2041aa;
+    color: #323c84;
     margin: 20px 0 10px 0; 
 }
 
@@ -120,7 +120,7 @@ main input:focus {
 
 .table_total_price {
     font-weight: bold;
-    color: #f25b5b;
+    color: #f34848;
 }
 
 .input_table {
@@ -142,7 +142,7 @@ main input:focus {
 }
 
 .age_notice {
-    color: red;
+    color: rgb(250, 41, 41);
 }
 
 .person_detail {
@@ -281,7 +281,7 @@ main input:focus {
 .total_price {
     font-size: 26px;
     font-weight: bold;
-    color : #f25b5b;
+    color : #f34848;
 }
 
 #submit_btn {

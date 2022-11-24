@@ -78,7 +78,7 @@
                 return false;
             } else {
                 var regex=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-                if (!regex.test(u_id)){
+                if (!regex.test(u_id.value)){
                     var txt = document.getElementById("err_id");
                     txt.innerHTML = "<em>올바른 이메일을 입력하세요.</em>";
                     email_id.focus();

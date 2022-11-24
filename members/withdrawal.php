@@ -39,11 +39,22 @@ include "../inc/session.php";
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
+                        <?php if(!$s_idx){ ?>
+                            <!-- 로그인 전 -->
+                            <li><a href="../login/login.php">로그인</a></li>
+                            <li><a href="../members/join_pre.php">회원가입</a></li>
+                            <li><a href="../nonmember/nonmember_reserve_pkg.php">예약확인</a></li>
+                        <?php } else if($s_id == "admin@abc.com"){ ?>
+                            <!-- 관리자 로그인 -->
                             <li><a href="../login/logout.php">로그아웃</a></li>
-                            <li><a href="my_page.php">마이페이지</a></li>
+                            <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <?php } else{ ?>
+                            <!-- 로그인 후 -->   
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../members/my_page.php">마이페이지</a></li>
+                        <?php }; ?>    
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            
                         </ul>
                     </div>
                 </div>
@@ -1516,7 +1527,7 @@ include "../inc/session.php";
             <li><a href="my_page.php">마이페이지</a></li>
             <li><a href="javascript:void(0);">회원탈퇴</a></li>
         </ul>
-        <div class="content_title blue">
+        <div class="content_title pink">
             <h3>회원탈퇴</h3>
         </div>
         <div class="content_wrap">
@@ -1745,7 +1756,7 @@ include "../inc/session.php";
                         <div class="wish_wrap">
                             <h4>노랑풍선에 바라는 점 (선택)</h4>
                             <p>기타 사유나 노랑풍선에 전달하실 내용이 있으시면 작성하세요.</p>
-                            <textarea class="wish" name="wish" id="wish_txt" cols="50" rows="16" maxlength="400" placeholder="내용을 입력하세요." title="노랑풍선에 바라는 점"></textarea>
+                            <textarea class="wish" name="wish" id="wish" cols="50" rows="16" maxlength="400" placeholder="내용을 입력하세요." title="노랑풍선에 바라는 점"></textarea>
                             <div id="test_cnt">(0 / 400)</div>
                         </div>
                     </div>
@@ -2000,7 +2011,7 @@ include "../inc/session.php";
         };
         // textarea 글자수 제한
         $(document).ready(function() {
-            $('#wish_txt').on('keyup', function() {
+            $('#wish').on('keyup', function() {
             $('#test_cnt').html("("+$(this).val().length+" / 400)");
  
             if($(this).val().length > 400) {

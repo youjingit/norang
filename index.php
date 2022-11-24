@@ -14,12 +14,7 @@ include "inc/session.php";
     <link rel="stylesheet" type="text/css" href="./css/base.css" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
     <link rel="stylesheet" type="text/css" href="./css/index/header.css" />
-    <link rel="stylesheet" type="text/css" href="./css/index/main_image.css" />
-    <link rel="stylesheet" type="text/css" href="./css/index/recommend.css" />
-    <link rel="stylesheet" type="text/css" href="./css/index/banner.css" />
-    <link rel="stylesheet" type="text/css" href="./css/index/popular.css" />
-    <link rel="stylesheet" type="text/css" href="./css/index/event.css" />
-    <link rel="stylesheet" type="text/css" href="./css/index/benefit.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index/main.css" />
     <link rel="stylesheet" type="text/css" href="./css/index/footer.css" />
 </head>
 <body>
@@ -62,9 +57,7 @@ include "inc/session.php";
                     </div>
                 </div>
             </div>
-
             <hr />
-
             <!-- 2depth -->
             <div class="container">
                 <div class="depth2">

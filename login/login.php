@@ -82,12 +82,20 @@
 
             if (u_id.value == "") {
                 var txt = document.getElementById("err_msg");
-                txt.innerHTML = "<em>아이디를 입력하세요.</em>"
+                txt.innerHTML = "<em>이메일 아이디를 입력하세요.</em>"
                 u_id.focus();
                 return false;
             } else {
-                var txt = document.getElementById("err_msg");
-                txt.innerHTML = "";
+                var regex=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+                if (!regex.test(u_id.value)){
+                    var txt = document.getElementById("err_msg");
+                    txt.innerHTML = "<em>올바른 이메일 아이디를 입력하세요.</em>";
+                    u_id.focus();
+                    return false;
+                } else {
+                    var txt = document.getElementById("err_msg");
+                    txt.innerHTML = "";
+                }
             }
 
             if (u_pwd.value == "") {
@@ -103,3 +111,4 @@
     </script>
 </body>
 </html>
+

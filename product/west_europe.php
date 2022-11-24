@@ -41,7 +41,7 @@ $result = mysqli_query($dbcon, $sql);
                         </div>
                     </div>
                     <div class="depth1_right">
-                        <h2 class="screen_out">사용자메뉴</h2>
+                        <!-- <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
                             <li><a href="../login/login.php">로그인</a></li>
                             <li><a href="../members/join_pre.php">회원가입</a></li>
@@ -49,6 +49,25 @@ $result = mysqli_query($dbcon, $sql);
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
                             
+                        </ul> -->
+                        <h2 class="screen_out">사용자메뉴</h2>
+                        <ul class="depth1_top_menu">
+                        <?php if(!$s_idx){ ?>
+                            <!-- 로그인 전 -->
+                            <li><a href="../login/login.php">로그인</a></li>
+                            <li><a href="../members/join_pre.php">회원가입</a></li>
+                            <li><a href="../nonmember/nonmember_reserve_pkg.php">예약확인</a></li>
+                        <?php } else if($s_id == "admin@abc.com"){ ?>
+                            <!-- 관리자 로그인 -->
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <?php } else{ ?>
+                            <!-- 로그인 후 -->   
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../members/my_page.php">마이페이지</a></li>
+                        <?php }; ?>    
+                            <li><a href="#">단체문의</a></li>
+                            <li><a href="#">고객센터</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1807,7 +1826,7 @@ $result = mysqli_query($dbcon, $sql);
                                         </a>
                                     </li>
                                     <li class="product_cal_item">
-                                        <span class="product_cal_title blue">토</span>
+                                        <span class="product_cal_title pink">토</span>
                                         <a class="product_cal_link">
                                             <span class="product_cal_day red">5</span>
                                             <span class="product_cal_text purple">최저가</span>
@@ -1863,7 +1882,7 @@ $result = mysqli_query($dbcon, $sql);
                                         </a>
                                     </li>
                                     <li class="product_cal_item">
-                                        <span class="product_cal_title blue">토</span>
+                                        <span class="product_cal_title pink">토</span>
                                         <a class="product_cal_link">
                                             <span class="product_cal_day red">12</span>
                                             <span class="product_cal_text purple">최저가</span>
@@ -1918,7 +1937,7 @@ $result = mysqli_query($dbcon, $sql);
                                         </a>
                                     </li>
                                     <li class="product_cal_item">
-                                        <span class="product_cal_title blue">토</span>
+                                        <span class="product_cal_title pink">토</span>
                                         <a class="product_cal_link">
                                             <span class="product_cal_day red">19</span>
                                             <span class="product_cal_text">287만</span>
@@ -1967,7 +1986,7 @@ $result = mysqli_query($dbcon, $sql);
                                         </a>
                                     </li>
                                     <li class="product_cal_item">
-                                        <span class="product_cal_title blue">토</span>
+                                        <span class="product_cal_title pink">토</span>
                                         <a class="product_cal_link">
                                             <span class="product_cal_day red">26</span>
                                             <span class="product_cal_text purple">최저가</span>
@@ -2072,11 +2091,6 @@ $result = mysqli_query($dbcon, $sql);
                         </div> -->
                     </li>
                     <?php } ?>
-                    <!-- ★10/25 호텔확정 [스위스 일주 8일/비즈니스석 탑승] 6대 특식+마테호른/융프라우 -->
-                    <!-- ★10/21 출발확정 [프랑스 일주 11일] 예술가들의 발자취를 따라서_노르망디_남프랑스 -->
-                    <!-- [서유럽 4국12일] 영국과 스위스를 더하다[1급호텔]융프라우/리기산+코츠월드/옥스퍼드 -->
-                    <!-- ★10/19 출발확정 [프랑스/스위스 9일] 리기 하이킹+융프라우/VIP패스+이젤발트 -->
-                    <!-- ★10/22 확정[이탈리아/스위스 8일/9일] 가슴을 뛰게 만드는 여행 휘르스트+나/폼/소 -->
                 </ul>
             </section>
         </div>

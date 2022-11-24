@@ -1,7 +1,9 @@
 <?php
 // DB 연결
-include "../inc/dbcon.php";
+include "../inc/session.php";
 include "../inc/admin_check.php";
+
+include "../inc/dbcon.php";
 
 // 쿼리 작성
 $u_id = $_GET["id"];

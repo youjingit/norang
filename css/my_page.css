@@ -50,7 +50,7 @@ main {
 /* content */
 .mypage_menu_wrap h3,
 .mypage_product_wrap h3 {
-    color: #3e30c4;
+    color: #232e86;
     font-weight: bold;
 }
 .content_title_h2 {
@@ -69,8 +69,8 @@ main {
     font-weight: bold;
 }
 
-.content_title.blue {
-    background: rgb(213, 234, 252);
+.content_title.pink {
+    background: #fad0d9;
 }
 
 .content_wrap {
@@ -100,7 +100,7 @@ main {
 }
 
 .grade_name {
-    color: #2672e4;
+    color: #232e86;
 }
 
 .mypage_main_wrap {
@@ -118,7 +118,7 @@ main {
 }
 
 .item_cnt {
-    color: #374fcd;
+    color: #232e86;
     margin: 10px 0;
 }
 
@@ -294,7 +294,7 @@ main {
     min-width: 140px;
     text-align: right;
     white-space: nowrap;
-    color: #212529;
+    color: #000000;
 }
 
 .form_group {
@@ -325,7 +325,7 @@ main {
 }
 
 .form_gray_btn {
-    background: #b6b6b6;
+    background: rgb(248, 241, 241);;
 }
 
 .form_yellow_btn {
@@ -338,7 +338,7 @@ main {
 
 .err_txt {
     font-size: 12px;
-    color: red;
+    color: rgb(250, 41, 41);
 }
 
 /* card */

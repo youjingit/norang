@@ -30,7 +30,7 @@
 }
 
 .info_title {
-    color: #ff6c6c;
+    color: #f34848;
     font-size: 16px;
     font-weight: bold;
     line-height: 28px;
@@ -44,7 +44,7 @@
 
 .json_subtitle {
     font-weight: bold;
-    color: rgb(69, 69, 241);
+    color: #323c84;
 }
 
 .btn_wrap {

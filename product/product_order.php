@@ -49,14 +49,24 @@ $array = mysqli_fetch_array($result);
                         </div>
                     </div>
                     <div class="depth1_right">
-                        <h2 class="screen_out">사용자메뉴</h2>
+                    <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
+                        <?php if(!$s_idx){ ?>
+                            <!-- 로그인 전 -->
                             <li><a href="../login/login.php">로그인</a></li>
                             <li><a href="../members/join_pre.php">회원가입</a></li>
-                            <li><a href="#">예약확인</a></li>
+                            <li><a href="../nonmember/nonmember_reserve_pkg.php">예약확인</a></li>
+                        <?php } else if($s_id == "admin@abc.com"){ ?>
+                            <!-- 관리자 로그인 -->
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <?php } else{ ?>
+                            <!-- 로그인 후 -->   
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../members/my_page.php">마이페이지</a></li>
+                        <?php }; ?>    
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            
                         </ul>
                     </div>
                 </div>
@@ -2108,9 +2118,9 @@ $array = mysqli_fetch_array($result);
             var trEls = $(".person_detail tbody tr");
             for(var i=0; i<trEls.length; i++){
                 var trEl = $(trEls[i]);
-                var tourNameEl = trEl.find('[name="tour_name1"]');
-                var lastNameEl = trEl.find('[name="last_name1"]');
-                var eNameEl = trEl.find('[name="Ename1"]');
+                var tourNameEl = trEl.find('[name="tour_name"]');
+                var lastNameEl = trEl.find('[name="last_name"]');
+                var eNameEl = trEl.find('[name="Ename"]');
                 var genderEl = trEl.find(`[name="tour_gender_${i}"]:checked`);
                 var birthEl = trEl.find('[name="tour_birth"]');
                 var mobileEl = trEl.find('[name="tour_mobile"]');
@@ -2212,23 +2222,23 @@ $array = mysqli_fetch_array($result);
                     <div class="person_top">
                         <div>
                             <label>이름(한글)</label>
-                            <input type="text" name="tour_name1" placeholder="이름 (실명)">
+                            <input type="text" name="tour_name" placeholder="이름 (실명)">
                         </div>
                         <div>
                             <label>이름(영문)</label>
-                            <input type="text" name="last_name1" placeholder="성">
-                            <input type="text" name="Ename1" placeholder="이름">
+                            <input type="text" name="last_name" placeholder="성" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'');">
+                            <input type="text" name="Ename" placeholder="이름" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'');">
                         </div>
                         <div>
                             <div class="gender_wrap">
                                 <span>성별</span>                                    
                                 <div class="gender_group">
                                     <input type="radio" name="tour_gender_${i}" value="m">
-                                    <label for="male">남</label>
+                                    <label>남</label>
                                 </div>
                                 <div class="gender_group">
                                     <input type="radio" name="tour_gender_${i}" value="f">
-                                    <label for="female">여</label>
+                                    <label>여</label>
                                 </div>
                             </div>
                         </div>
@@ -2253,6 +2263,7 @@ $array = mysqli_fetch_array($result);
             change_tourist();
             change_price();
         })
+        
     </script>
 </body>
 

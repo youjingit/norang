@@ -1,3 +1,23 @@
+<?php
+// 세션으로 데이터 가져오기
+/* session_start();
+$s_idx =  isset($_SESSION["s_idx"])?  $_SESSION["s_idx"] : ""; */
+include "../inc/session.php";
+
+// DB 연결
+include "../inc/dbcon.php";
+
+// 쿼리 작성
+$sql = "select * from members where idx=$s_idx;";
+// 쿼리 실행
+$result = mysqli_query($dbcon, $sql);
+
+// DB에서 데이터 가져오기
+// mysqli_fetch_row(쿼리실행문) -- 필드순서
+// mysqli_fetch_array(쿼리실행문) -- 필드이름
+// mysqli_num_rows(쿼리실행문) -- 전체 행 개수
+$array = mysqli_fetch_array($result);
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -35,12 +55,22 @@
                     <div class="depth1_right">
                         <h2 class="screen_out">사용자메뉴</h2>
                         <ul class="depth1_top_menu">
+                        <?php if(!$s_idx){ ?>
+                            <!-- 로그인 전 -->
                             <li><a href="../login/login.php">로그인</a></li>
-                            <li><a href="join_pre.php">회원가입</a></li>
-                            <li><a href="#">예약확인</a></li>
+                            <li><a href="../members/join_pre.php">회원가입</a></li>
+                            <li><a href="../nonmember/nonmember_reserve_pkg.php">예약확인</a></li>
+                        <?php } else if($s_id == "admin@abc.com"){ ?>
+                            <!-- 관리자 로그인 -->
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <?php } else{ ?>
+                            <!-- 로그인 후 -->   
+                            <li><a href="../login/logout.php">로그아웃</a></li>
+                            <li><a href="../members/my_page.php">마이페이지</a></li>
+                        <?php }; ?>    
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
-                            
                         </ul>
                     </div>
                 </div>
@@ -1513,7 +1543,7 @@
             <li><a href="my_page.php">마이페이지</a></li>
             <li><a href="javascript:void(0);">비밀번호 인증</a></li>
         </ul>
-        <div class="content_title blue">
+        <div class="content_title pink">
             <h3>비밀번호 인증</h3>
         </div>
         <div class="content_wrap">
