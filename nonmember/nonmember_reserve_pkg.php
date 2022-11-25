@@ -1,32 +1,44 @@
+<?php
+include "../inc/session.php";
+?>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>노랑풍선 - 비회원예약조회</title>
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./css/base.css">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/form.css">
-
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
 </head>
-
 <body>
     <header>
         <div class="container">
             <div class="depth1">
                 <div class="depth1_left">
-                    <h1 class="logo"><a href="index.php">노랑풍선</a></h1>
+                    <h1 class="logo"><a href="../index.php">노랑풍선</a></h1>
                 </div>
                 <div class="depth1_right">
-                    <h2 class="screen_out">사용자메뉴</h2>
+                <h2 class="screen_out">사용자메뉴</h2>
                     <ul class="depth1_top_menu">
-                        <li><a href="./login/login.php">로그인</a></li>
-                        <li><a href="./members/join_pre.php">회원가입</a></li>
+                    <?php if(!$s_idx){ ?>
+                        <!-- 로그인 전 -->
+                        <li><a href="../login/login.php">로그인</a></li>
+                        <li><a href="../members/join_pre.php">회원가입</a></li>
+                        <li><a href="#">예약확인</a></li>
+                    <?php } else if($s_id == "admin@abc.com"){ ?>
+                        <!-- 관리자 로그인 -->
+                        <li><a href="../login/logout.php">로그아웃</a></li>
+                        <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <?php } else{ ?>
+                        <!-- 로그인 후 -->   
+                        <li><a href="../login/logout.php">로그아웃</a></li>
+                        <li><a href="../members/my_page.php">마이페이지</a></li>
+                    <?php }; ?>    
+                        <li><a href="#">단체문의</a></li>
                         <li><a href="#">고객센터</a></li>
-                        
                     </ul>
                 </div>
             </div>
@@ -38,7 +50,7 @@
 
         <div class="form_tab">
             <h3 class="form_tab_title active"><a href="#">패키지여행</a></h3>
-            <h3 class="form_tab_title"><a href="nonmember_reserve_free.html">자유여행</a></h3>
+            <h3 class="form_tab_title"><a href="nonmember_reserve_free.php">자유여행</a></h3>
         </div>
         <form class="form">
             <fieldset>
@@ -53,7 +65,7 @@
             </fieldset>
         </form>
         <hr>
-        <button type="button" class="join_button" onclick="location.href='./members/join_pre.php'">회원가입</button>
+        <button type="button" class="join_button" onclick="location.href='../members/join_pre.php'">회원가입</button>
 
     </main>
     <footer>

@@ -41,7 +41,7 @@ include "../inc/session.php";
                         <?php if(!$s_idx){ ?>
                             <!-- 로그인 전 -->
                             <li><a href="../login/login.php">로그인</a></li>
-                            <li><a href="../members/join_pre.php">회원가입</a></li>
+                            <li><a href="join_pre.php">회원가입</a></li>
                             <li><a href="../nonmember/nonmember_reserve_pkg.php">예약확인</a></li>
                         <?php } else if($s_id == "admin@abc.com"){ ?>
                             <!-- 관리자 로그인 -->
@@ -50,7 +50,7 @@ include "../inc/session.php";
                         <?php } else{ ?>
                             <!-- 로그인 후 -->   
                             <li><a href="../login/logout.php">로그아웃</a></li>
-                            <li><a href="../members/my_page.php">마이페이지</a></li>
+                            <li><a href="javascript:void(0);">마이페이지</a></li>
                         <?php }; ?>    
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
@@ -1522,7 +1522,7 @@ include "../inc/session.php";
     </header>
     <main>
         <ul class="breadcrumb">
-            <li><a href="index.php"><i class="icon icon_home">메인홈</i></a></li>
+            <li><a href="../index.php"><i class="icon icon_home">메인홈</i></a></li>
             <li><a href="javascript:void(0);">마이페이지</a></li>
         </ul>
         <div class="content_title pink">

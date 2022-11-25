@@ -58,7 +58,7 @@ $array = mysqli_fetch_array($result);
                         <?php if(!$s_idx){ ?>
                             <!-- 로그인 전 -->
                             <li><a href="../login/login.php">로그인</a></li>
-                            <li><a href="../members/join_pre.php">회원가입</a></li>
+                            <li><a href="join_pre.php">회원가입</a></li>
                             <li><a href="../nonmember/nonmember_reserve_pkg.php">예약확인</a></li>
                         <?php } else if($s_id == "admin@abc.com"){ ?>
                             <!-- 관리자 로그인 -->
@@ -67,7 +67,7 @@ $array = mysqli_fetch_array($result);
                         <?php } else{ ?>
                             <!-- 로그인 후 -->   
                             <li><a href="../login/logout.php">로그아웃</a></li>
-                            <li><a href="../members/my_page.php">마이페이지</a></li>
+                            <li><a href="my_page.php">마이페이지</a></li>
                         <?php }; ?>    
                             <li><a href="#">단체문의</a></li>
                             <li><a href="#">고객센터</a></li>
@@ -160,7 +160,7 @@ $array = mysqli_fetch_array($result);
                                                 <span class="dep3_subtitle">지역별</span>
                                                 <div class="dep3_submenu">
                                                     <ul>
-                                                        <li><a href="west_europe.html">서유럽</a></li>
+                                                        <li><a href="../product/west_europe.php">서유럽</a></li>
                                                         <li><a href="#">동유럽</a></li>
                                                         <li><a href="#">발칸</a></li>
                                                         <li><a href="#">스페인/포르투갈/모로코</a></li>
@@ -1768,7 +1768,7 @@ $array = mysqli_fetch_array($result);
                     <li><i></i>[항공권소식][국내항공][제주항공] 국내선 탑승 게이트 위탁 수하물 요금 시행 안내</li>
                     <li><i></i>[항공권소식][대한항공]인천출발 중국 본토행 기내식 서비스 중단 안내</li>
                 </ul>
-                <a href="#">더보기</a>
+                <a href="../notice/notice_list.php">더보기</a>
             </div>
         </section>
 

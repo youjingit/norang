@@ -199,7 +199,7 @@ if($e_pageNum > $total_page){
                                                 <span class="dep3_subtitle">지역별</span>
                                                 <div class="dep3_submenu">
                                                     <ul>
-                                                        <li><a href="west_europe.html">서유럽</a></li>
+                                                        <li><a href="../product/west_europe.php">서유럽</a></li>
                                                         <li><a href="#">동유럽</a></li>
                                                         <li><a href="#">발칸</a></li>
                                                         <li><a href="#">스페인/포르투갈/모로코</a></li>

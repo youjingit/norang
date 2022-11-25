@@ -8,7 +8,7 @@ $always = $_POST["always"] == "y" ? "y" : "n";
 $cate = $_POST["cate"];
 $n_title = $_POST["n_title"];
 $n_content = $_POST["n_content"];
-
+$writer = $_POST["writer"];
 // 작성일자
 $w_date = date("Y-m-d");
 
@@ -24,9 +24,9 @@ include "../inc/dbcon.php";
 
 // 쿼리 작성
 $sql = "insert into $table_name(";
-$sql .= "always, cate, n_title, n_content, w_date";
+$sql .= "always, cate, n_title, n_content, writer, w_date";
 $sql .= ") values(";
-$sql .= "'$always', '$cate', '$n_title', '$n_content', '$w_date'";
+$sql .= "'$always', '$cate', '$n_title', '$n_content', '$writer', '$w_date'";
 $sql .= ");";
 
 // 데이터베이스에 쿼리 전송

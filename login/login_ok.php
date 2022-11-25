@@ -12,7 +12,7 @@ include "../inc/dbcon.php";
 
 // 쿼리 작성
 // select u_id, pwd from members where u_id='$u_id';
-$sql = "select idx, u_id, pwd, u_name from members where u_id='$u_id' and withdrawal!='y';";
+$sql = "select idx, u_id, pwd, u_name from members where u_id='$u_id' and withdrawal='n';";
 // echo $sql;
 
 // 쿼리 전송

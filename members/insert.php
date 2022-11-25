@@ -12,7 +12,7 @@ $info_collect_apply = $_POST["info_collect_apply"] == "y" ? "y" : "n";
 $marketing_apply = $_POST["marketing_apply"] == "y" ? "y" : "n";
 $email_apply = $_POST["email_apply"] == "y" ? "y" : "n";
 $sms_apply = $_POST["sms_apply"] == "y" ? "y" : "n";
-
+$withdrawal = 'n';
 
 // 시간 구하기
 $reg_date = date("Y-m-d");
@@ -39,14 +39,12 @@ $sql = "insert into members(";
 $sql .= "u_id, pwd, u_name, ";
 $sql .= "mobile, birth, gender, ";
 $sql .= "privacy_period, ";
-$sql .= "info_collect_apply, marketing_apply, email_apply, sms_apply, reg_date";
+$sql .= "info_collect_apply, marketing_apply, email_apply, sms_apply, reg_date, withdrawal";
 $sql .= ") values(";
 $sql .= "'$u_id', '$pwd', '$u_name',";
 $sql .= "'$mobile', '$birth', '$gender',";
 $sql .= "'$privacy_period',";
-$sql .= "'$info_collect_apply', '$marketing_apply', '$email_apply', '$sms_apply', '$reg_date');";
-
-// echo $sql;
+$sql .= "'$info_collect_apply', '$marketing_apply', '$email_apply', '$sms_apply', '$reg_date', '$withdrawal');";
 
 // 데이터베이스에 쿼리 전송
 // mysqli_query("DB 연결객체", "전송할 쿼리");

@@ -38,7 +38,11 @@ include "../inc/admin_check.php";
         <fieldset>
             <legend>공지사항</legend>
             <p>
-                작성자 <?php echo $s_name; ?>
+            <p>
+                <label for="writer">작성자<label> 
+                <input type="text" name="writer" id="writer" value="<?php echo $s_name; ?>">
+                <!-- <input type="hidden"> -->
+            </p>
             </p>
             <p>
                 <label for="always">상시 여부</label>

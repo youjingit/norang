@@ -40,7 +40,7 @@ include "../inc/admin_check.php";
         <fieldset>
             <legend>공지사항</legend>
             <p>
-                <label for="wirter">작성자<label> 
+                <label for="writer">작성자<label> 
                 <input type="text" name="writer" id="writer" value="<?php echo $s_name; ?>">
                 <!-- <input type="hidden"> -->
             </p>

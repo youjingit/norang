@@ -80,14 +80,14 @@ if($e_pageNum > $total_page){
         .no{width:40px}
         .u_name{width:60px}
         .u_id{width:100px}
-        .mobile{width:120px}
+        .mobile{width:80px}
         .birth{width:100px}
         .gender{width:40px}
-        .privacy_period{width:40px}
-        .info_collect_apply{width:40px}
-        .marketing_apply{width:40px}
-        .email_apply{width:40px}
-        .sms_apply{width:40px}
+        .privacy_period{width:90px}
+        .info_collect_apply{width:90px}
+        .marketing_apply{width:90px}
+        .email_apply{width:90px}
+        .sms_apply{width:90px}
         .reg_date{width:120px}
         .modify{width:120px}
 
@@ -121,6 +121,9 @@ if($e_pageNum > $total_page){
             <th class="marketing_apply">마케팅 수신동의</th>
             <th class="email_apply">이메일 수신동의</th>
             <th class="sms_apply">sms 수신동의</th>
+            <th class="withdrawal">탈퇴여부</th>
+            <th class="withdraw_reason">탈퇴사유</th>
+            <th class="withdraw_wish">바라는 점</th>
             <th class="reg_date">가입일</th>
             <td class="modify">관리</td>
         </tr>
@@ -163,7 +166,9 @@ if($e_pageNum > $total_page){
             <td><?php echo $array["marketing_apply"]; ?></td>
             <td><?php echo $array["email_apply"]; ?></td>
             <td><?php echo $array["sms_apply"]; ?></td>
-
+            <td><?php echo $array["withdrawal"]; ?></td>
+            <td><?php echo $array["withdraw_reason"]; ?></td>
+            <td><?php echo $array["withdraw_wish"]; ?></td>
             <?php
                 /* $reg_date = substr($array["reg_date"], 0, 10);
                 echo "

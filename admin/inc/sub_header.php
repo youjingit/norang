@@ -1,3 +1,6 @@
+<?php
+include "../inc/session.php";
+?>
 <h1>* 관리자 페이지 *</h1>
     <hr>
     <div class="top_menu">
@@ -11,7 +14,7 @@
         <a href="../index.php">[홈으로]</a>
         <a href="../members/list.php">[회원관리]</a>
         <a href="../notice/list.php">[공지사항]</a>
-        <a href="../event/list.php">[이벤트]</a>
+        <a href="#">[예약내역]</a>
         <a href="../products/list.php">[상품관리]</a>
     </div>
     <hr>

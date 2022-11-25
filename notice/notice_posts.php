@@ -167,7 +167,7 @@ $array = mysqli_fetch_array($result);
                                                 <span class="dep3_subtitle">지역별</span>
                                                 <div class="dep3_submenu">
                                                     <ul>
-                                                        <li><a href="west_europe.html">서유럽</a></li>
+                                                        <li><a href="../product/west_europe.php">서유럽</a></li>
                                                         <li><a href="#">동유럽</a></li>
                                                         <li><a href="#">발칸</a></li>
                                                         <li><a href="#">스페인/포르투갈/모로코</a></li>
@@ -1546,7 +1546,7 @@ $array = mysqli_fetch_array($result);
     </header>
     <main>
         <ul class="breadcrumb">
-            <li><a class="home_icon" href="index.php">메인홈</a></li>
+            <li><a class="home_icon" href="../index.php">메인홈</a></li>
             <li class="pagenav"><a href="">고객센터</a></li>
             <li class="pagenav"><a href="notice_list.php">공지사항</a></li>
         </ul>
@@ -1564,7 +1564,7 @@ $array = mysqli_fetch_array($result);
                 <ul class="aside_menu">
                     <li class="aside_title"><h2>고객센터</h2></li>
                     <li class="aside_item open">
-                        <a href="javascript:void(0);" class="aside_link">
+                        <a href="notice_list.php;" class="aside_link">
                             공지사항
                         </a>
                     </li>
@@ -1794,7 +1794,7 @@ $array = mysqli_fetch_array($result);
                     <li><i></i>[항공권소식][국내항공][제주항공] 국내선 탑승 게이트 위탁 수하물 요금 시행 안내</li>
                     <li><i></i>[항공권소식][대한항공]인천출발 중국 본토행 기내식 서비스 중단 안내</li>
                 </ul>
-                <a href="#">더보기</a>
+                <a href="notice_list.php">더보기</a>
             </div>
         </section>
 
