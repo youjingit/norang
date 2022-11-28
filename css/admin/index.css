@@ -1,0 +1,86 @@
+.side-menu {
+    width: 45px;
+    z-index: 10;
+    background: #ffc72c;
+    bottom: 50px;
+    height: 100%;
+    margin-bottom: -70px;
+    margin-top: 0px;
+    padding-bottom: 70px;
+    position: fixed;
+}
+
+.sidebar-inner {
+    height: 100%;
+    padding-top: 30px;
+}
+
+#sidebar-menu {
+    position: relative;
+}
+
+.waves-effect i {
+    display: block;
+    width: 22px;
+    height: 15px;
+    background: url(../../images/menu_icon.png) no-repeat;
+    margin-left: 10px;
+}
+
+/* 사이드 메뉴 */
+.left_sub_menu {
+    position: fixed;
+    width: 200px;
+    z-index: 10;
+    left: 45px;
+    background: rgb(230, 230, 230);
+    border-right: 1px solid rgba(0, 0, 0, 0.07);
+    bottom: 50px;
+    height: 100%;
+    margin-bottom: -70px;
+    margin-top: 0px;
+    padding: 0px 10px;
+    color: black;
+}
+
+.sub_menu {
+    margin-top: 50px;
+}
+
+.left_sub_menu>.sub_menu li:hover {
+    background-color: #c0c0c0;
+}
+
+.left_sub_menu>.sub_menu li {
+    color: #333;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 20px 0px 8px 14px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.sub_menu>h2 {
+    padding-bottom: 4px;
+    border-bottom: 3px solid #797979;
+    margin-top: 30px;
+    font-size: 21px;
+    font-weight: bold;
+    color: #666;
+    line-height: 35px;
+}
+
+.sub_menu>.menu_list li {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 0px solid #e1e1e1;
+    padding-top: 8px;
+}
+
+.has_sub {
+    width: 100%;
+}
+
+.hide_sidemenu {
+    display: none;
+}

@@ -131,6 +131,8 @@
     border-radius: 16px;
     margin: 0 auto;
     background: #fff;
+    display: flex;
+    flex-direction: column;
   }
   
   .main_search_top {

@@ -253,6 +253,11 @@
   background: url(../../images/gnb/menu2_8.png) no-repeat;
 }
 
+/* 검색창 */
+fieldset {
+  display: flex;
+}
+
 .depth2_search_right {
   display: flex;
 }
@@ -267,9 +272,6 @@
 .search_button {
   border: 0;
   padding: 0;
-}
-
-.search_icon {
   width: 42px;
   height: 41px;
   background: url(../../images/search_icon.jpg) no-repeat;
@@ -373,7 +375,7 @@
   display: flex;
 }
 
-.dep3_submenu ul {
+.dep3_li ul {
   width: 100%;
 }
 

@@ -113,12 +113,14 @@ include "inc/session.php";
 
                     <!-- 검색하기 -->
                     <h2 class="screen_out">검색하기</h2>
-                    <div class="depth2_search_right">
-                        <input type="text" name="search" id="search" placeholder="SBS 연애는 직진 러브스토리 in 다낭" />
-                        <button type="submit" class="search_button">
-                            <div class="search_icon">검색버튼</div>
-                        </button>
-                    </div>
+                    <form class="depth2_search_right" name="" action="" method="">
+                        <fieldset>
+                            <legend class="hide">검색하기</legend>
+                                <label for="search" class="hide">검색</label>
+                                <input type="text" name="search" id="search" placeholder="SBS 연애는 직진 러브스토리 in 다낭" />
+                                <button type="submit" class="search_button"></button>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
 
@@ -138,42 +140,34 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="./product/west_europe.php">서유럽</a></li>
-                                                        <li><a href="#">동유럽</a></li>
-                                                        <li><a href="#">발칸</a></li>
-                                                        <li><a href="#">스페인/포르투갈/모로코</a></li>
-                                                        <li>
-                                                            <a href="#">튀르키예(터키)/그리스/두바이</a>
-                                                        </li>
-                                                        <li><a href="#">북유럽/러시아/발틱</a></li>
-                                                        <li><a href="#">이집트/이스라엘/사우디</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="./product/west_europe.php">서유럽</a></li>
+                                                    <li><a href="#">동유럽</a></li>
+                                                    <li><a href="#">발칸</a></li>
+                                                    <li><a href="#">스페인/포르투갈/모로코</a></li>
+                                                    <li>
+                                                        <a href="#">튀르키예(터키)/그리스/두바이</a>
+                                                    </li>
+                                                    <li><a href="#">북유럽/러시아/발틱</a></li>
+                                                    <li><a href="#">이집트/이스라엘/사우디</a></li>
+                                                </ul>
                                             </li>
-
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">비즈니스 항공</a></li>
-                                                        <li><a href="#">대한항공 튀르키예 전세기</a></li>
-                                                        <li><a href="#">시즌투어</a></li>
-                                                        <li><a href="#">예약과 동시에 출발확정</a></li>
-                                                        <li><a href="#">2022 카타르 월드컵</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">비즈니스 항공</a></li>
+                                                    <li><a href="#">대한항공 튀르키예 전세기</a></li>
+                                                    <li><a href="#">시즌투어</a></li>
+                                                    <li><a href="#">예약과 동시에 출발확정</a></li>
+                                                    <li><a href="#">2022 카타르 월드컵</a></li>
+                                                </ul>
                                             </li>
-
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">유럽여행 최대 2% 추가할인</a></li>
-                                                        <li><a href="#">유럽 싱글차지 할인이벤트</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">유럽여행 최대 2% 추가할인</a></li>
+                                                    <li><a href="#">유럽 싱글차지 할인이벤트</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -190,39 +184,33 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">괌</a></li>
-                                                        <li><a href="#">사이판</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">괌</a></li>
+                                                    <li><a href="#">사이판</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">워터파크</a></li>
-                                                        <li><a href="#">시내중심</a></li>
-                                                        <li><a href="#">가족패키지</a></li>
-                                                        <li><a href="#">친구&커플</a></li>
-                                                        <li><a href="#">골프&스포츠</a></li>
-                                                        <li><a href="#">허니문</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">워터파크</a></li>
+                                                    <li><a href="#">시내중심</a></li>
+                                                    <li><a href="#">가족패키지</a></li>
+                                                    <li><a href="#">친구&커플</a></li>
+                                                    <li><a href="#">골프&스포츠</a></li>
+                                                    <li><a href="#">허니문</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">ENJOY YOUR SAIPAN 패밀리</a></li>
-                                                        <li><a href="#">ENJOY YOUR SAIPAN 프렌즈</a></li>
-                                                        <li><a href="#">ENJOY YOUR SAIPAN 스포츠</a></li>
-                                                        <li><a href="#">ENJOY YOUR SAIPAN 허니문</a></li>
-                                                        <li>
-                                                            <a href="#">DFS 괌&사이판, 고정환율 프로모션</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">ENJOY YOUR SAIPAN 패밀리</a></li>
+                                                    <li><a href="#">ENJOY YOUR SAIPAN 프렌즈</a></li>
+                                                    <li><a href="#">ENJOY YOUR SAIPAN 스포츠</a></li>
+                                                    <li><a href="#">ENJOY YOUR SAIPAN 허니문</a></li>
+                                                    <li>
+                                                        <a href="#">DFS 괌&사이판, 고정환율 프로모션</a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -239,38 +227,32 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">미서부</a></li>
-                                                        <li><a href="#">캐나다</a></li>
-                                                        <li><a href="#">미주 연계</a></li>
-                                                        <li><a href="#">칸쿤</a></li>
-                                                        <li><a href="#">미동부</a></li>
-                                                        <li><a href="#">중남미</a></li>
-                                                        <li><a href="#">하와이</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">미서부</a></li>
+                                                    <li><a href="#">캐나다</a></li>
+                                                    <li><a href="#">미주 연계</a></li>
+                                                    <li><a href="#">칸쿤</a></li>
+                                                    <li><a href="#">미동부</a></li>
+                                                    <li><a href="#">중남미</a></li>
+                                                    <li><a href="#">하와이</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#">[노랑풍선 창립기념] 미주 특가상품</a>
-                                                        </li>
-                                                        <li><a href="#">가을엔 미동부/캐나다</a></li>
-                                                        <li><a href="#">오션뷰 하와이</a></li>
-                                                        <li><a href="#">이달의 BEST 여행</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">[노랑풍선 창립기념] 미주 특가상품</a>
+                                                    </li>
+                                                    <li><a href="#">가을엔 미동부/캐나다</a></li>
+                                                    <li><a href="#">오션뷰 하와이</a></li>
+                                                    <li><a href="#">이달의 BEST 여행</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -287,51 +269,45 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">방콕/파타야</a></li>
-                                                        <li><a href="#">치앙마이/치앙라이</a></li>
-                                                        <li><a href="#">브루나이</a></li>
-                                                        <li><a href="#">발리/족자카르타</a></li>
-                                                        <li><a href="#">나트랑/달랏/푸꾸옥</a></li>
-                                                        <li><a href="#">라오스</a></li>
-                                                        <li><a href="#">세부</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">방콕/파타야</a></li>
+                                                    <li><a href="#">치앙마이/치앙라이</a></li>
+                                                    <li><a href="#">브루나이</a></li>
+                                                    <li><a href="#">발리/족자카르타</a></li>
+                                                    <li><a href="#">나트랑/달랏/푸꾸옥</a></li>
+                                                    <li><a href="#">라오스</a></li>
+                                                    <li><a href="#">세부</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">푸켓</a></li>
-                                                        <li><a href="#">싱가포르</a></li>
-                                                        <li><a href="#">코타키나블루</a></li>
-                                                        <li><a href="#">하노이/하롱베이/호치민</a></li>
-                                                        <li><a href="#">다낭/호이안/후에</a></li>
-                                                        <li><a href="#">보라카이</a></li>
-                                                        <li><a href="#">보홀/마닐라</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">푸켓</a></li>
+                                                    <li><a href="#">싱가포르</a></li>
+                                                    <li><a href="#">코타키나블루</a></li>
+                                                    <li><a href="#">하노이/하롱베이/호치민</a></li>
+                                                    <li><a href="#">다낭/호이안/후에</a></li>
+                                                    <li><a href="#">보라카이</a></li>
+                                                    <li><a href="#">보홀/마닐라</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#">창립 21주년 기념, 동남아 5만원 할인!</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">아시아나 A380타고 떠나는 방콕여행</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">코타키나발루 이달의 추천 Top3 !</a>
-                                                        </li>
-                                                        <li><a href="#">품격있게 즐기는 푸꾸옥</a></li>
-                                                        <li>
-                                                            <a href="#">제대로 즐기자! 세부 제이파크리조트</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">창립 21주년 기념, 동남아 5만원 할인!</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">아시아나 A380타고 떠나는 방콕여행</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">코타키나발루 이달의 추천 Top3 !</a>
+                                                    </li>
+                                                    <li><a href="#">품격있게 즐기는 푸꾸옥</a></li>
+                                                    <li>
+                                                        <a href="#">제대로 즐기자! 세부 제이파크리조트</a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -348,27 +324,23 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">대만</a></li>
-                                                        <li><a href="#">대만/홍콩</a></li>
-                                                        <li><a href="#">홍콩</a></li>
-                                                        <li><a href="#">홍콩/마카오</a></li>
-                                                        <li><a href="#">홍콩/마카오/심천</a></li>
-                                                        <li><a href="#">마카오</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">대만</a></li>
+                                                    <li><a href="#">대만/홍콩</a></li>
+                                                    <li><a href="#">홍콩</a></li>
+                                                    <li><a href="#">홍콩/마카오</a></li>
+                                                    <li><a href="#">홍콩/마카오/심천</a></li>
+                                                    <li><a href="#">마카오</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">미식(美食)여행</a></li>
-                                                        <li><a href="#">호캉스투어</a></li>
-                                                        <li><a href="#">힐링온천</a></li>
-                                                        <li><a href="#">레저파크</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">미식(美食)여행</a></li>
+                                                    <li><a href="#">호캉스투어</a></li>
+                                                    <li><a href="#">힐링온천</a></li>
+                                                    <li><a href="#">레저파크</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -385,20 +357,16 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">호주/뉴질랜드</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">호주/뉴질랜드</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">2~4명 단독 출발 확정</a></li>
-                                                        <li><a href="#">관광 + 자유</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">2~4명 단독 출발 확정</a></li>
+                                                    <li><a href="#">관광 + 자유</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -415,48 +383,42 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">북해도</a></li>
-                                                        <li><a href="#">동경</a></li>
-                                                        <li><a href="#">도야마</a></li>
-                                                        <li><a href="#">오사카</a></li>
-                                                        <li><a href="#">요나고</a></li>
-                                                        <li><a href="#">큐슈</a></li>
-                                                        <li><a href="#">오키나와</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">북해도</a></li>
+                                                    <li><a href="#">동경</a></li>
+                                                    <li><a href="#">도야마</a></li>
+                                                    <li><a href="#">오사카</a></li>
+                                                    <li><a href="#">요나고</a></li>
+                                                    <li><a href="#">큐슈</a></li>
+                                                    <li><a href="#">오키나와</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">출발확정 상품 모음</a></li>
-                                                        <li><a href="#">단풍맞이 도야마/알펜루트</a></li>
-                                                        <li><a href="#">황금연휴에 떠나는 오사카</a></li>
-                                                        <li><a href="#">황금연휴에 떠나는 큐슈</a></li>
-                                                        <li>
-                                                            <a href="#">온전한 휴식! 일본 온천 '료칸'</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">출발확정 상품 모음</a></li>
+                                                    <li><a href="#">단풍맞이 도야마/알펜루트</a></li>
+                                                    <li><a href="#">황금연휴에 떠나는 오사카</a></li>
+                                                    <li><a href="#">황금연휴에 떠나는 큐슈</a></li>
+                                                    <li>
+                                                        <a href="#">온전한 휴식! 일본 온천 '료칸'</a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">황금연휴 출발확정 모음</a></li>
-                                                        <li>
-                                                            <a href="#">티웨이와 함께하는 일본 핫스팟</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">MZ 취향저격 '특급호텔 호캉스'</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">비긴어게인, 제주항공 타고 떠나자</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">황금연휴 출발확정 모음</a></li>
+                                                    <li>
+                                                        <a href="#">티웨이와 함께하는 일본 핫스팟</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">MZ 취향저격 '특급호텔 호캉스'</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">비긴어게인, 제주항공 타고 떠나자</a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -473,38 +435,32 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">북경</a></li>
-                                                        <li><a href="#">청도/대련</a></li>
-                                                        <li><a href="#">장가계</a></li>
-                                                        <li><a href="#">서안/정주</a></li>
-                                                        <li><a href="#">하문</a></li>
-                                                        <li><a href="#">상해/남경</a></li>
-                                                        <li><a href="#">태항산/황산</a></li>
-                                                        <li><a href="#">계림</a></li>
-                                                        <li><a href="#">백두산/장춘</a></li>
-                                                        <li><a href="#">성도/중경</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">북경</a></li>
+                                                    <li><a href="#">청도/대련</a></li>
+                                                    <li><a href="#">장가계</a></li>
+                                                    <li><a href="#">서안/정주</a></li>
+                                                    <li><a href="#">하문</a></li>
+                                                    <li><a href="#">상해/남경</a></li>
+                                                    <li><a href="#">태항산/황산</a></li>
+                                                    <li><a href="#">계림</a></li>
+                                                    <li><a href="#">백두산/장춘</a></li>
+                                                    <li><a href="#">성도/중경</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#">미리 예약하는 2023년 중국의 봄</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">미리 예약하는 2023년 중국의 봄</a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -521,33 +477,27 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">몽골</a></li>
-                                                        <li><a href="#">중앙아시아</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">몽골</a></li>
+                                                    <li><a href="#">중앙아시아</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">연휴출발</a></li>
-                                                        <li><a href="#">청춘여행</a></li>
-                                                        <li><a href="#">트레킹&글램핑</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">연휴출발</a></li>
+                                                    <li><a href="#">청춘여행</a></li>
+                                                    <li><a href="#">트레킹&글램핑</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#">유네스코 세계문화유산 in 중앙아시아</a>
-                                                        </li>
-                                                        <li><a href="#">격리없이 떠나는 몽골</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">유네스코 세계문화유산 in 중앙아시아</a>
+                                                    </li>
+                                                    <li><a href="#">격리없이 떠나는 몽골</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -564,30 +514,26 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">괌/사이판</a></li>
-                                                        <li><a href="#">베트남</a></li>
-                                                        <li><a href="#">싱가포르</a></li>
-                                                        <li><a href="#">태국</a></li>
-                                                        <li><a href="#">제주도</a></li>
-                                                        <li><a href="#">필리핀</a></li>
-                                                        <li><a href="#">몽골</a></li>
-                                                        <li><a href="#">일본</a></li>
-                                                        <li><a href="#">미주/대양주</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">괌/사이판</a></li>
+                                                    <li><a href="#">베트남</a></li>
+                                                    <li><a href="#">싱가포르</a></li>
+                                                    <li><a href="#">태국</a></li>
+                                                    <li><a href="#">제주도</a></li>
+                                                    <li><a href="#">필리핀</a></li>
+                                                    <li><a href="#">몽골</a></li>
+                                                    <li><a href="#">일본</a></li>
+                                                    <li><a href="#">미주/대양주</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">항공권 + 여행자보험</a></li>
-                                                        <li><a href="#">세미패키지</a></li>
-                                                        <li><a href="#">NO팁/NO옵션</a></li>
-                                                        <li><a href="#">골프 + 관광</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">항공권 + 여행자보험</a></li>
+                                                    <li><a href="#">세미패키지</a></li>
+                                                    <li><a href="#">NO팁/NO옵션</a></li>
+                                                    <li><a href="#">골프 + 관광</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
@@ -612,33 +558,27 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">제주시</a></li>
-                                                        <li><a href="#">중문</a></li>
-                                                        <li><a href="#">서귀포</a></li>
-                                                        <li><a href="#">애월</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">제주시</a></li>
+                                                    <li><a href="#">중문</a></li>
+                                                    <li><a href="#">서귀포</a></li>
+                                                    <li><a href="#">애월</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">버스패키지</a></li>
-                                                        <li><a href="#">렌터카 자유여행</a></li>
-                                                        <li><a href="#">에어텔</a></li>
-                                                        <li><a href="#">카텔</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">버스패키지</a></li>
+                                                    <li><a href="#">렌터카 자유여행</a></li>
+                                                    <li><a href="#">에어텔</a></li>
+                                                    <li><a href="#">카텔</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">제주에 내륙 더하기</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">제주에 내륙 더하기</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -655,36 +595,30 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">내륙</a></li>
-                                                        <li><a href="#">울릉도</a></li>
-                                                        <li><a href="#">홍도/흑산도</a></li>
-                                                        <li><a href="#">백령도/대청도</a></li>
-                                                        <li><a href="#">부산</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">내륙</a></li>
+                                                    <li><a href="#">울릉도</a></li>
+                                                    <li><a href="#">홍도/흑산도</a></li>
+                                                    <li><a href="#">백령도/대청도</a></li>
+                                                    <li><a href="#">부산</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">다구간</a></li>
-                                                        <li><a href="#">결합상품선박</a></li>
-                                                        <li><a href="#">결합상품내륙</a></li>
-                                                        <li><a href="#">버스여행내륙</a></li>
-                                                        <li><a href="#">기차여행시티투어버스</a></li>
-                                                        <li><a href="#">투어</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">다구간</a></li>
+                                                    <li><a href="#">결합상품선박</a></li>
+                                                    <li><a href="#">결합상품내륙</a></li>
+                                                    <li><a href="#">버스여행내륙</a></li>
+                                                    <li><a href="#">기차여행시티투어버스</a></li>
+                                                    <li><a href="#">투어</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">내륙에 제주 더하기</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">내륙에 제주 더하기</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -703,32 +637,26 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">프랑스</a></li>
-                                                        <li><a href="#">스위스</a></li>
-                                                        <li><a href="#">스페인/포르투갈</a></li>
-                                                        <li><a href="#">이탈리아</a></li>
-                                                        <li><a href="#">영국</a></li>
-                                                        <li><a href="#">동유럽/발칸</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">프랑스</a></li>
+                                                    <li><a href="#">스위스</a></li>
+                                                    <li><a href="#">스페인/포르투갈</a></li>
+                                                    <li><a href="#">이탈리아</a></li>
+                                                    <li><a href="#">영국</a></li>
+                                                    <li><a href="#">동유럽/발칸</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -768,23 +696,19 @@ include "inc/session.php";
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">커플여행</a></li>
-                                                        <li><a href="#">가족여행</a></li>
-                                                        <li><a href="#">워터파크</a></li>
-                                                        <li><a href="#">항공권/숙소</a></li>
-                                                        <li><a href="#">특별한 리조트 혜택</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">커플여행</a></li>
+                                                    <li><a href="#">가족여행</a></li>
+                                                    <li><a href="#">워터파크</a></li>
+                                                    <li><a href="#">항공권/숙소</a></li>
+                                                    <li><a href="#">특별한 리조트 혜택</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -801,29 +725,23 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">동경</a></li>
-                                                        <li><a href="#">큐슈</a></li>
-                                                        <li><a href="#">오사카</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">동경</a></li>
+                                                    <li><a href="#">큐슈</a></li>
+                                                    <li><a href="#">오사카</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -840,27 +758,21 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">몽골</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">몽골</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -877,27 +789,21 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">호주</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">호주</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -914,27 +820,21 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">미주</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">미주</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -953,30 +853,24 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">서유럽</a></li>
-                                                        <li><a href="#">스페인/포르투갈</a></li>
-                                                        <li><a href="#">동유럽/발칸</a></li>
-                                                        <li><a href="#">그리스/산토리니</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">서유럽</a></li>
+                                                    <li><a href="#">스페인/포르투갈</a></li>
+                                                    <li><a href="#">동유럽/발칸</a></li>
+                                                    <li><a href="#">그리스/산토리니</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -993,32 +887,26 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">발리</a></li>
-                                                        <li><a href="#">코사무이</a></li>
-                                                        <li><a href="#">푸켓</a></li>
-                                                        <li><a href="#">카오락</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">발리</a></li>
+                                                    <li><a href="#">코사무이</a></li>
+                                                    <li><a href="#">푸켓</a></li>
+                                                    <li><a href="#">카오락</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">All about 발리 풀빌라</a></li>
-                                                        <li><a href="#">발리 우붓 풀빌라</a></li>
-                                                        <li><a href="#">푸켓&카오락 힐링 허니문</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">All about 발리 풀빌라</a></li>
+                                                    <li><a href="#">발리 우붓 풀빌라</a></li>
+                                                    <li><a href="#">푸켓&카오락 힐링 허니문</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1035,27 +923,21 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">몰디브</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">몰디브</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1073,34 +955,25 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-
-                                                    <ul>
-                                                        <li><a href="#">하와이</a></li>
-                                                        <li><a href="#">캐나다</a></li>
-                                                        <li><a href="#">칸쿤</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">하와이</a></li>
+                                                    <li><a href="#">캐나다</a></li>
+                                                    <li><a href="#">칸쿤</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#">칸쿤 허니문 투어&스냅 이벤트</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">칸쿤 허니문 투어&스냅 이벤트</a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1117,28 +990,22 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">괌</a></li>
-                                                        <li><a href="#">사이판</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">괌</a></li>
+                                                    <li><a href="#">사이판</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1155,28 +1022,22 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">모리셔스</a></li>
-                                                        <li><a href="#">타히티/세이셸</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">모리셔스</a></li>
+                                                    <li><a href="#">타히티/세이셸</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1195,30 +1056,24 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">태국</a></li>
-                                                        <li><a href="#">베트남/라오스</a></li>
-                                                        <li><a href="#">필리핀</a></li>
-                                                        <li><a href="#">말레이시아</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">태국</a></li>
+                                                    <li><a href="#">베트남/라오스</a></li>
+                                                    <li><a href="#">필리핀</a></li>
+                                                    <li><a href="#">말레이시아</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1235,28 +1090,22 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">일본</a></li>
-                                                        <li><a href="#">괌/사이판</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">일본</a></li>
+                                                    <li><a href="#">괌/사이판</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1275,28 +1124,22 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">하와이</a></li>
-                                                        <li><a href="#">칸쿤</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">하와이</a></li>
+                                                    <li><a href="#">칸쿤</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1313,28 +1156,22 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">서유럽</a></li>
-                                                        <li><a href="#">터키/그리스/두바이</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">서유럽</a></li>
+                                                    <li><a href="#">터키/그리스/두바이</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1351,33 +1188,27 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">태국</a></li>
-                                                        <li><a href="#">싱가포르</a></li>
-                                                        <li><a href="#">인도네시아</a></li>
-                                                        <li><a href="#">말레이시아</a></li>
-                                                        <li><a href="#">베트남</a></li>
-                                                        <li><a href="#">필리핀</a></li>
-                                                        <li><a href="#">몰디브</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">태국</a></li>
+                                                    <li><a href="#">싱가포르</a></li>
+                                                    <li><a href="#">인도네시아</a></li>
+                                                    <li><a href="#">말레이시아</a></li>
+                                                    <li><a href="#">베트남</a></li>
+                                                    <li><a href="#">필리핀</a></li>
+                                                    <li><a href="#">몰디브</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1394,27 +1225,21 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">국내</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">국내</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1431,29 +1256,23 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="#">홍콩</a></li>
-                                                        <li><a href="#">마카오</a></li>
-                                                        <li><a href="#">대만</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="#">홍콩</a></li>
+                                                    <li><a href="#">마카오</a></li>
+                                                    <li><a href="#">대만</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1470,32 +1289,26 @@ include "inc/session.php";
                                         <ul>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">지역별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li><a href="">북경</a></li>
-                                                        <li><a href="">상해/황산</a></li>
-                                                        <li><a href="">청도</a></li>
-                                                        <li><a href="">장가계</a></li>
-                                                        <li><a href="">계림/서안</a></li>
-                                                        <li><a href="">태항산/하문/백두산</a></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li><a href="">북경</a></li>
+                                                    <li><a href="">상해/황산</a></li>
+                                                    <li><a href="">청도</a></li>
+                                                    <li><a href="">장가계</a></li>
+                                                    <li><a href="">계림/서안</a></li>
+                                                    <li><a href="">태항산/하문/백두산</a></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">테마별</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                             <li class="dep3_li">
                                                 <span class="dep3_subtitle">프로모션</span>
-                                                <div class="dep3_submenu">
-                                                    <ul>
-                                                        <li></li>
-                                                    </ul>
-                                                </div>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -1599,9 +1412,9 @@ include "inc/session.php";
                 </div>
             </div>
             <!-- 검색하기 -->
-            <div class="main_search_wrap">
-                <div class="main_search">
-                    <h2 class="hide">여행지 & 항공권 검색하기</h2>
+            <form class="main_search_wrap" name="" action="" method="">
+                <fieldset class="main_search">
+                    <legend class="hide">여행지 & 항공권 검색하기</legend>
                     <div class="main_search_top">
                         <div class="main_search_title">
                             <p>어디로 떠나고 싶으세요?</p>
@@ -1618,15 +1431,15 @@ include "inc/session.php";
                             </a>
                         </ul>
                     </div>
-                    <form class="main_search_form">
+                    <div class="main_search_form">
                         <div class="destination">
-                            <input type="text" alt="여행지입력" placeholder="여행지입력" />
+                            <label for="location" class="hide">지역검색</label>
+                            <input type="text" alt="여행지입력" placeholder="여행지입력" name="destination" id="destination"/>
                             <button type="button" alt="지역검색">
                                 지역검색
                                 <i></i>
                             </button>
                         </div>
-
                         <div class="departure_date_wrap">
                             <div class="departure_month">
                                 <select>
@@ -1645,7 +1458,8 @@ include "inc/session.php";
                                 </select>
                             </div>
                             <div class="departure_date">
-                                <input type="text" name="destination" alt="달력" />
+                                <label for="date_sh" class="hide">날짜검색</label>
+                                <input type="text" name="date_sh" id="date_sh" alt="달력" />
                                 <div class="departure_date_button">
                                     <button type="button" name="date" alt="날짜검색">
                                         <a href="#"><i>출발날짜 찾기</i></a>
@@ -1653,18 +1467,16 @@ include "inc/session.php";
                                 </div>
                             </div>
                         </div>
-
                         <button class="main_search_button" type="submit" name="submit" alt="검색하기">
                             검색하기
                         </button>
-                    </form>
-
+                    </div>
                     <div class="recent_word">
                         <span class="recent_title">최근검색</span>
                         <span class="recent_history">최근검색이 없습니다.</span>
                     </div>
-                </div>
-            </div>
+                </fieldset>
+            </form>
         </section>
 
         <!-- 추천여행 -->
