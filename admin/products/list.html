@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 include "../inc/session.php";
 include "../inc/admin_check.php";
 
@@ -47,7 +47,7 @@ if($e_pageNum > $total_page){
     $e_pageNum = $total_page;
 };
 
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -55,14 +55,22 @@ if($e_pageNum > $total_page){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품관리</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
     <style>
-        body{font-size:20px}
-        a{text-decoration:none;margin:0 5px}
-
-        table, td{
-            border-collapse:collapse
+        table{
+            margin-left: 50px;
         }
-        th, td, .pager{
+        table, td{
+            border-collapse:collapse;
+            border: 1px solid #666;
+            font-size: 16px;
+        }
+        td{
+            border: none;
+            padding: 10px 0;
+            text-align:center
+        }
+        .pager{
             padding:10px;
             font-size:16px;
             text-align:center
@@ -79,14 +87,14 @@ if($e_pageNum > $total_page){
         }
         .no{width:40px}
         .p_id{width:60px}
-        .p_name{width:200px}
-        .p_explain{width:250px}
-        .departure_vehicle{width:120px}
+        .p_name{width:150px}
+        .p_explain{width:200px}
+        .departure_vehicle{width:100px}
         .arrival_vehicle{width:100px}
-        .departure_date1{width:40px}
-        .departure_date2{width:40px}
-        .arrival_date1{width:40px}
-        .arrival_date2{width:40px}
+        .departure_date1{width:60px}
+        .departure_date2{width:60px}
+        .arrival_date1{width:60px}
+        .arrival_date2{width:60px}
         .reg_date{width:40px}
         .modify{width:120px}
 
@@ -113,10 +121,10 @@ if($e_pageNum > $total_page){
             <th class="p_explain">상품설명</th>
             <th class="departure_vehicle">출발교통</th>
             <th class="arrival_vehicle">도착교통</th>
-            <th class="departure_date1">출발날짜</th>
+            <th class="departure_date1">한국출발날짜</th>
             <th class="departure_date2">현지도착시간</th>
             <th class="arrival_date1">현지출발날짜</th>
-            <th class="arrival_date2">도착시간</th>
+            <th class="arrival_date2">한국도착시간</th>
             <th class="reg_date">등록일</th>
             <td class="modify">관리</td>
         </tr>

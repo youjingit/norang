@@ -1,4 +1,9 @@
-.side-menu {
+.sidebar {
+    position: absolute; 
+    top:0;
+}
+
+.sidebar_menu {
     width: 45px;
     z-index: 10;
     background: #ffc72c;
@@ -15,11 +20,11 @@
     padding-top: 30px;
 }
 
-#sidebar-menu {
+#sidebar_btn {
     position: relative;
 }
 
-.waves-effect i {
+.toggle_i i {
     display: block;
     width: 22px;
     height: 15px;
@@ -28,7 +33,7 @@
 }
 
 /* 사이드 메뉴 */
-.left_sub_menu {
+.sub_menu_wrap {
     position: fixed;
     width: 200px;
     z-index: 10;
@@ -47,11 +52,11 @@
     margin-top: 50px;
 }
 
-.left_sub_menu>.sub_menu li:hover {
+.sub_menu_wrap>.sub_menu li:hover {
     background-color: #c0c0c0;
 }
 
-.left_sub_menu>.sub_menu li {
+.sub_menu_wrap>.sub_menu li {
     color: #333;
     font-size: 17px;
     font-weight: bold;
@@ -77,7 +82,7 @@
     padding-top: 8px;
 }
 
-.has_sub {
+.toggle_btn {
     width: 100%;
 }
 

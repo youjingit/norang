@@ -26,18 +26,18 @@ if($s_id != "admin@abc.com"){
 </head>
 <body>
     <h1 class="hide">관리자 페이지</h1>
-    <div id="wrapper">
-        <div class="topbar" style="position: absolute; top:0;">
-            <div class="left side-menu">
+    <div id="sidebar_wrap">
+        <div class="sidebar">
+            <div class="sidebar_menu">
                 <div class="sidebar-inner">
-                    <div id="sidebar-menu">
+                    <div id="sidebar_btn">
                         <ul>
-                            <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i></i></a></li>
+                            <li class="toggle_btn"><a href="javascript:void(0);" class="toggle_i"><i></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="left_sub_menu">
+            <div class="sub_menu_wrap">
                 <div class="sub_menu">
                     <h2>관리자님,<br>안녕하세요!</h2>
                     <ul class="menu_list">
@@ -55,19 +55,18 @@ if($s_id != "admin@abc.com"){
                     </ul>
                 </div>
             </div>
-            <div class="overlay"></div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script>
         $(function () {
-            $(".left_sub_menu").hide();
-            $(".has_sub").click(function () {
-                $(".left_sub_menu").fadeToggle(300);
+            $(".sub_menu_wrap").hide();
+            $(".toggle_btn").click(function () {
+                $(".sub_menu_wrap").fadeToggle(300);
             });
 
-            $('.left_sub_menu').mouseleave(function () {
-                $('.left_sub_menu').fadeOut();
+            $('.sub_menu_wrap').mouseleave(function () {
+                $('.sub_menu_wrap').fadeOut();
                 $('.hide_sidemenu').fadeIn();
             });
         });

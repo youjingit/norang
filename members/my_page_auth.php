@@ -133,12 +133,14 @@ $array = mysqli_fetch_array($result);
 
                     <!-- 검색하기 -->
                     <h2 class="screen_out">검색하기</h2>
-                    <div class="depth2_search_right">
-                        <input type="text" name="search" id="search" placeholder="SBS 연애는 직진 러브스토리 in 다낭" />
-                        <button type="submit" class="search_button">
-                            <div class="search_icon">검색버튼</div>
-                        </button>
-                    </div>
+                    <form class="depth2_search_right" name="" action="" method="">
+                        <fieldset>
+                            <legend class="hide">검색하기</legend>
+                                <label for="search" class="hide">검색</label>
+                                <input type="text" name="search" id="search" placeholder="SBS 연애는 직진 러브스토리 in 다낭" />
+                                <button type="submit" class="search_button">검색</button>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
 

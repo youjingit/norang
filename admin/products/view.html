@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 include "../inc/session.php";
 include "../inc/admin_check.php";
 
@@ -27,7 +27,7 @@ $i = $total - (($page - 1) * $list_num);
 
 // DB에서 데이터 가져오기
 $array = mysqli_fetch_array($result);
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -35,26 +35,9 @@ $array = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품보기</title>
-    <style>
-        body{font-size:20px}
-        a{text-decoration:none;margin:0 5px}
-        table, td{border-collapse:collapse}
-        th, td{padding:10px}
-        .product_list_set{width:860px}
-        .product_list_title{
-            border-top:2px solid #999;
-            border-bottom:1px solid #999
-        }
-        .product_view_content{border-bottom:1px solid #999}
-        .product_view_text{border-bottom:2px solid #999;}
-        .v_title{width:60px;background:#eee}
-        .v_content{width:500px;text-align:left;padding-left:20px}
-        /* .v_text{height:200px} */
-
-        .list{width:1200px;text-align:center}
-
-        a:hover{color:rgb(255, 128, 0)}
-    </style>
+    <link rel="stylesheet" type="text/css" href="../../css/admin/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/admin/view.css">
     <script>
         function remove_product(){
             var ck = confirm("정말 삭제하시겠습니까?");
@@ -102,7 +85,7 @@ $array = mysqli_fetch_array($result);
             </td>
         </tr>
         <tr class="product_view_content">
-            <th class="v_title">출발시간</th>
+            <th class="v_title">한국출발시간</th>
             <td class="v_content">
             <?php echo $array["departure_date1"];?>
             </td>
@@ -114,13 +97,13 @@ $array = mysqli_fetch_array($result);
             </td>
         </tr>
         <tr class="product_view_content">
-            <th class="v_title">현지에서 출발시간</th>
+            <th class="v_title">현지출발시간</th>
             <td class="v_content">
             <?php echo $array["arrival_date1"];?>
             </td>
         </tr>
         <tr class="product_view_content">
-            <th class="v_title">도착당일 도착시간</th>
+            <th class="v_title">한국도착시간</th>
             <td class="v_content">
             <?php echo $array["arrival_date2"];?>
             </td>
@@ -200,10 +183,10 @@ $array = mysqli_fetch_array($result);
             </td>
         </tr>
     </table>
-    <p class="list">
-        <a href="list.php">[목록]</a>
-        <a href="modify.php?n_idx=<?php echo $n_idx; ?>">[수정]</a>
-        <a href="#" onclick="remove_product()">[삭제]</a>
+    <p class="button_wrap">
+        <button href="list.php" class="btn_1">목록</button>
+        <button href="modify.php?n_idx=<?php echo $n_idx; ?>" class="btn_2">수정</button>
+        <button href="#" onclick="remove_product()" class="btn_2">삭제</button>
     </p>
 </body>
 </html>

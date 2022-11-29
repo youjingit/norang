@@ -118,7 +118,7 @@ include "inc/session.php";
                             <legend class="hide">검색하기</legend>
                                 <label for="search" class="hide">검색</label>
                                 <input type="text" name="search" id="search" placeholder="SBS 연애는 직진 러브스토리 in 다낭" />
-                                <button type="submit" class="search_button"></button>
+                                <button type="submit" class="search_button">검색</button>
                         </fieldset>
                     </form>
                 </div>

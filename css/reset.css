@@ -40,8 +40,6 @@ select {
 }
 
 button {
-  border: 0;
-  background: inherit;
   cursor: pointer;
 }
 
@@ -51,7 +49,7 @@ address {
 }
 
 fieldset {
-  border: none;
+  border: 0 none;
   margin: 0;
   padding: 0;
 }

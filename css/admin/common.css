@@ -1,0 +1,55 @@
+table, td{
+    border-collapse:collapse;
+    border: 1px solid #666;
+    margin: 0 auto;
+}
+
+th, td{
+    padding:10px;
+    text-align: center;
+}
+
+form{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.button_wrap {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn_1{
+    border: 1px solid #d8d2d2;
+    background: #d8d2d2;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 60px;
+}
+
+.btn_2{
+    border: 1px solid #ffc72c;
+    background: #ffc72c;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 60px;
+}
+

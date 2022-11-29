@@ -1,0 +1,13 @@
+h2 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+table {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+td {
+    width: 85%;
+}
