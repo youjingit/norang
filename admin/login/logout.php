@@ -10,7 +10,8 @@ unset($_SESSION["s_id"]);
 // 페이지 이동
 echo "
     <script type=\"text/javascript\">
-        location.href=\"../index.php\";
+        alert('로그아웃 되었습니다.');
+        location.href=\"../login/login.php\";
     </script>
 ";
 ?>

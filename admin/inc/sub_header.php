@@ -12,20 +12,20 @@ include "../inc/session.php";
                 </div>
             </div>
         </div>
-        <div class="sub_menu_wrap">
+        <div class="sub_menu_wrap" style="display:none;">
             <div class="sub_menu">
                 <h2>관리자님,<br>안녕하세요!</h2>
                 <ul class="menu_list">
-                    <li><a href="login/logout.php">로그아웃</a></li>
-                    <li><a href="members/member_info.php?g_idx=<?php echo $s_idx?>">내 정보</a></li>
-                    <li><a href="../index.php">메인홈페이지</a></li>
-                    <li><a href="./">관리자홈으로</a></li>
+                    <li><a href="/norang/admin/login/logout.php">로그아웃</a></li>
+                    <li><a href="/norang/admin/members/member_info.php?g_idx=<?php echo $s_idx?>">내 정보</a></li>
+                    <li><a href="/norang/index.php">메인홈페이지</a></li>
+                    <li><a href="/norang/admin/index.php">관리자홈으로</a></li>
                 </ul>
                 <hr>
                 <ul class="menu_list">
-                    <li><a href="notice/list.php">공지사항</a></li>
-                    <li><a href="members/list.php">회원관리</a></li>
-                    <li><a href="products/list.php">상품관리</a></li>
+                    <li><a href="/norang/admin/notice/list.php">공지사항</a></li>
+                    <li><a href="/norang/admin/members/list.php">회원관리</a></li>
+                    <li><a href="/norang/admin/products/list.php">상품관리</a></li>
                     <li><a href="">예약내역</a></li>
                 </ul>
             </div>

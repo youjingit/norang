@@ -27,8 +27,8 @@ mysqli_close($dbcon);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
-    <link rel="stylesheet" type="text/css" href="../css/admin/index.css">
-    <link rel="stylesheet" type="text/css" href="../../css/admin/common.css">
+    <link rel="stylesheet" type="text/css" href="/norang/css/admin/index.css">
+    <link rel="stylesheet" type="text/css" href="/norang/css/admin/common.css">
     <style>
         td {
         display: flex;

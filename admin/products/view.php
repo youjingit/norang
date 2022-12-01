@@ -35,8 +35,8 @@ $array = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품보기</title>
-    <link rel="stylesheet" type="text/css" href="../css/admin/index.css">
-    <link rel="stylesheet" type="text/css" href="../../css/admin/common.css">
+    <link rel="stylesheet" type="text/css" href="/norangcss/admin/index.css">
+    <link rel="stylesheet" type="text/css" href="/norang/css/admin/common.css">
     <script>
         function remove_product(){
             var ck = confirm("정말 삭제하시겠습니까?");
