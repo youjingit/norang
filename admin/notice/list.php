@@ -62,45 +62,12 @@ if($e_pageNum > $total_page){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
+    <link rel="stylesheet" type="text/css" href="../css/admin/index.css">
+    <link rel="stylesheet" type="text/css" href="../../css/admin/list.css">
     <style>
-        body{font-size:20px}
-        a{text-decoration:none;margin:0 5px}
-
-        table, td{
-            border-collapse:collapse
-        }
-        th, td, .pager{
-            padding:10px;
-            text-align:center
-        }
-        .notice_list_set, .pager, .write_area{
-            width:1600px
-        }
-        .notice_list_title{
-            border-top:2px solid #999;
-            border-bottom:1px solid #999
-        }
-        .notice_list_content{
-            border-bottom:1px solid #999;
-        }
-        .no{width:60px}
-        .n_title{width:500px}
-        .w_date{width:120px}
-        .modify{width:200px}
-        .notice_content_title{text-align:left;padding-left:10px}
-
-        a:hover{color:rgb(255, 128, 0)}
-
-        .write_area{
-            display:flex;
-            justify-content:space-between
-        }
-        .fix {
-            display: inline-block;
-            width: 50px;
-            height: 20px;
-            background: url(../../images/notice/fix_i.png) no-repeat;
-            text-indent: -9999px;
+        table {
+            width: 1200px;
+            margin: 0 auto;
         }
     </style>
     <script>
@@ -114,12 +81,8 @@ if($e_pageNum > $total_page){
 </head>
 <body>
     <?php include "../inc/sub_header.php"; ?>
-    <!-- 콘텐트 -->
     <h2>공지사항</h2>
-    <p class="write_area">
-        <span>전체 <?php echo $total; ?>개</span>
-        <span><a href="write.php">[글쓰기]</a></span>
-    </p>
+    <p class="notice_write_area">전체<?php echo $total; ?>개 <a class="mini_btn" href="write.php">글쓰기</a></p>
     <table class="notice_list_set">
         <tr class="notice_list_title">
             <th class="no">번호</th>
@@ -187,8 +150,8 @@ if($e_pageNum > $total_page){
                     echo $array["n_title"]; ?></a></td>
                 <td><?php echo substr($array["w_date"], 0, 10); ?></td>
                 <td>
-                <a href="modify.php?n_idx=<?php echo $array["idx"]; ?>">[수정]</a>
-                <a href="#" onclick="remove_notice(<?php echo $array['idx']; ?>)">[삭제]</a>
+                <a class="mini_btn" href="modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
+                <a class="mini_btn" href="#" onclick="remove_notice(<?php echo $array['idx']; ?>)">삭제</a>
                 </td>
             </tr>
         <?php
@@ -222,5 +185,19 @@ if($e_pageNum > $total_page){
     <a href="list.php?page=<?php echo ($page + 1); ?>">다음</a>
     <?php }; ?>
     </p>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+            $(".sub_menu_wrap").hide();
+            $(".toggle_btn").click(function () {
+                $(".sub_menu_wrap").fadeToggle(300);
+            });
+
+            $('.sub_menu_wrap').mouseleave(function () {
+                $('.sub_menu_wrap').fadeOut();
+                $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
 </body>
 </html>

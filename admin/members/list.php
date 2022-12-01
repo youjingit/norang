@@ -55,43 +55,28 @@ if($e_pageNum > $total_page){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원관리</title>
+    <link rel="stylesheet" type="text/css" href="../css/admin/index.css">
+    <link rel="stylesheet" type="text/css" href="../../css/admin/list.css">
     <style>
-        body{font-size:20px}
-        a{text-decoration:none;margin:0 5px}
-
-        table, td{
-            border-collapse:collapse
+        .no{width:50px}
+        .u_name{width:120px}
+        .u_id{width:240px}
+        .mobile{width:150px}
+        .birth{width:150px}
+        .gender{width:50px}
+        .privacy_period{width:80px}
+        .info_collect_apply{width:80px}
+        .marketing_apply{width:80px}
+        .email_apply{width:80px}
+        .sms_apply{width:80px}
+        .withdraw_reason {
+            width: 150px;
         }
-        th, td, .pager{
-            padding:10px;
-            font-size:16px;
-            text-align:center
+        .withdraw_wish {
+            width: 200px;
         }
-        .mem_list_set, .pager{
-            width:100%;
-        }
-        .mem_list_title{
-            border-top:2px solid #999;
-            border-bottom:1px solid #999
-        }
-        .mem_list_content{
-            border-bottom:1px solid #999;
-        }
-        .no{width:40px}
-        .u_name{width:60px}
-        .u_id{width:100px}
-        .mobile{width:80px}
-        .birth{width:100px}
-        .gender{width:40px}
-        .privacy_period{width:90px}
-        .info_collect_apply{width:90px}
-        .marketing_apply{width:90px}
-        .email_apply{width:90px}
-        .sms_apply{width:90px}
         .reg_date{width:120px}
-        .modify{width:120px}
-
-        table a:hover{color:rgb(255, 128, 0)}
+        .modify{width:180px}
     </style>
     <script>
         function mem_del(g_no){
@@ -104,10 +89,9 @@ if($e_pageNum > $total_page){
 </head>
 <body>
     <?php include "../inc/sub_header.php"; ?>
+    <h2>회원관리</h2>
+    <p class="write_area">전체 회원수 <?php echo $total; ?>명 <a class="mini_btn" href="join.php">추가</a></p>
     
-    <!-- 콘텐트 -->
-    <p>전체 회원수 <?php echo $total; ?>명</p>
-    <a href="join.php">[추가]</a>
     <table class="mem_list_set">
         <tr class="mem_list_title">
             <th class="no">번호</th>
@@ -116,16 +100,16 @@ if($e_pageNum > $total_page){
             <th class="mobile">휴대폰번호</th>
             <th class="birth">생년월일</th>
             <th class="gender">성별</th>
-            <th class="privacy_period">개인정보 유효기간</th>
-            <th class="info_collect_apply">개인정보 수집동의</th>
-            <th class="marketing_apply">마케팅 수신동의</th>
-            <th class="email_apply">이메일 수신동의</th>
-            <th class="sms_apply">sms 수신동의</th>
+            <th class="privacy_period">개인정보<br>유효기간</th>
+            <th class="info_collect_apply">개인정보<br>수집동의</th>
+            <th class="marketing_apply">마케팅<br>수신동의</th>
+            <th class="email_apply">이메일<br>수신동의</th>
+            <th class="sms_apply">sms<br>수신동의</th>
             <th class="withdrawal">탈퇴여부</th>
             <th class="withdraw_reason">탈퇴사유</th>
             <th class="withdraw_wish">바라는 점</th>
             <th class="reg_date">가입일</th>
-            <td class="modify">관리</td>
+            <th class="modify">관리</th>
         </tr>
         <?php
             // paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
@@ -177,8 +161,8 @@ if($e_pageNum > $total_page){
             ?>
             <td><?php echo $array["reg_date"]; ?></td>
             <td>
-                <a href="member_info.php?g_idx=<?php echo $array["idx"]; ?>">[수정]</a>
-                <a href="#" onclick="mem_del(<?php echo $array['idx']; ?>)">[삭제]</a>
+                <a class="mini_btn" href="member_info.php?g_idx=<?php echo $array["idx"]; ?>">수정</a>
+                <a class="mini_btn" href="#" onclick="mem_del(<?php echo $array['idx']; ?>)">삭제</a>
             </td>
         </tr>
         <?php
@@ -212,5 +196,19 @@ if($e_pageNum > $total_page){
     <a href="list.php?page=<?php echo ($page + 1); ?>">다음</a>
     <?php }; ?>
     </p>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+            $(".sub_menu_wrap").hide();
+            $(".toggle_btn").click(function () {
+                $(".sub_menu_wrap").fadeToggle(300);
+            });
+
+            $('.sub_menu_wrap').mouseleave(function () {
+                $('.sub_menu_wrap').fadeOut();
+                $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
 </body>
 </html>

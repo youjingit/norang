@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 include "../inc/session.php";
 include "../inc/admin_check.php";
 
@@ -47,7 +47,7 @@ if($e_pageNum > $total_page){
     $e_pageNum = $total_page;
 };
 
-?> -->
+?> 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -55,51 +55,8 @@ if($e_pageNum > $total_page){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품관리</title>
-    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
-    <style>
-        table {
-            margin-left: 50px;
-        }
-        table, td{
-            border-collapse:collapse;
-            border: 1px solid #666;
-            font-size: 16px;
-        }
-        td{
-            border: none;
-            padding: 10px 0;
-            text-align:center
-        }
-        .pager{
-            padding:10px;
-            font-size:16px;
-            text-align:center
-        }
-        .product_list_set, .pager{
-            /* width:100%; */
-        }
-        .product_list_title{
-            border-top:2px solid #999;
-            border-bottom:1px solid #999
-        }
-        .product_list_content{
-            border-bottom:1px solid #999;
-        }
-        .no{width:40px}
-        .p_id{width:60px}
-        .p_name{width:300px}
-        .p_explain{width:400px}
-        .departure_vehicle{width:160px}
-        .arrival_vehicle{width:160px}
-        .departure_date1{width:130px}
-        .departure_date2{width:130px}
-        .arrival_date1{width:130px}
-        .arrival_date2{width:130px}
-        .reg_date{width:100px}
-        .modify{width:200px}
-
-        table a:hover{color:rgb(255, 128, 0)}
-    </style>
+    <link rel="stylesheet" type="text/css" href="../css/admin/index.css">
+    <link rel="stylesheet" type="text/css" href="../../css/admin/list.css">
     <script>
         function product_del(g_no){
             var rtn_val = confirm("정말 삭제하시겠습니까?");
@@ -110,10 +67,12 @@ if($e_pageNum > $total_page){
     </script>
 </head>
 <body>
-    <?php include "../inc/sub_header.php"; ?>
-    
+    <?php 
+    include ("../inc/sub_header.php"); 
+    ?>
+    <h2>상품 리스트</h2>
     <!-- 콘텐트 -->
-    <p>전체 상품수 <?php echo $total; ?>명<span><a href="write.php">[글쓰기]</a></span></p>
+    <p class="write_area">전체 상품수 <?php echo $total; ?>개<span><a class="mini_btn" href="write.php">글쓰기</a></span></p>
     <table class="product_list_set">
         <tr class="product_list_title">
             <th class="no">번호</th>
@@ -126,7 +85,7 @@ if($e_pageNum > $total_page){
             <th class="arrival_date1">현지출발날짜</th>
             <th class="arrival_date2">한국도착시간</th>
             <th class="reg_date">등록일</th>
-            <td class="modify">관리</td>
+            <th class="modify">관리</th>
         </tr>
         <?php
             // paging : 해당 페이지의 글 시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 목록 수
@@ -156,17 +115,17 @@ if($e_pageNum > $total_page){
             <td><?php echo $array["departure_date2"]; ?></td>
             <td><?php echo $array["arrival_date1"]; ?></td>
             <td><?php echo $array["arrival_date2"]; ?></td>
-            <?php
+            <!-- <?php
                 /* $reg_date = substr($array["reg_date"], 0, 10);
                 echo "
                 <td>$reg_date; </td>
                 "; */
-            ?>
+            ?> -->
             <td><?php echo $array["reg_date"]; ?></td>
             <td>
-                <a href="view.php?n_idx=<?php echo $array["idx"]; ?>">[보기]</a>
-                <a href="modify.php?n_idx=<?php echo $array["idx"]; ?>">[수정]</a>
-                <a href="#" onclick="product_del(<?php echo $array['idx']; ?>)">[삭제]</a>
+                <a class="mini_btn" href="view.php?n_idx=<?php echo $array["idx"]; ?>">보기</a>
+                <a class="mini_btn" href="modify.php?n_idx=<?php echo $array["idx"]; ?>">수정</a>
+                <a class="mini_btn" href="#" onclick="product_del(<?php echo $array['idx']; ?>)">삭제</a>
             </td>
         </tr>
         <?php
@@ -200,5 +159,19 @@ if($e_pageNum > $total_page){
     <a href="list.php?page=<?php echo ($page + 1); ?>">다음</a>
     <?php }; ?>
     </p>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+            $(".sub_menu_wrap").hide();
+            $(".toggle_btn").click(function () {
+                $(".sub_menu_wrap").fadeToggle(300);
+            });
+
+            $('.sub_menu_wrap').mouseleave(function () {
+                $('.sub_menu_wrap').fadeOut();
+                $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
 </body>
 </html>

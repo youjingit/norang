@@ -1,7 +1,66 @@
-table, td{
+* {
+    box-sizing: border-box;
+}
+  
+body,
+h3,
+p,
+div,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "한컴 고딕", "나눔 고딕", "맑은 고딕", "돋움";
+    font-size: 14px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+hr {
+    margin: 0;
+}
+
+input,
+select {
+    outline: none;  
+}
+
+button {
+    cursor: pointer;
+    border: 0 none;
+}
+
+address {
+    font-style: normal;
+    display: inline;
+}
+
+fieldset {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+table {
+    width: 1200px;
     border-collapse:collapse;
-    border: 1px solid #666;
+    border-top: 2px solid #666;
+    border-bottom: 2px solid #666;
     margin: 0 auto;
+}
+
+th {
+    background:#eee;
 }
 
 th, td{
@@ -14,7 +73,13 @@ form{
     margin: 0 auto;
 }
 
-legend {
+h2 {
+    margin: 0;
+    padding:20px 0;
+    text-align: center;
+}
+
+legend{
     font-size: 20px;
     font-weight: bold;
     text-align: center;

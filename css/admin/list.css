@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+  
+body,
+h1,
+h3,
+div,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin: 0;
+    padding:20px 0;
+    text-align: center;
+}
+
+body {
+    font-family: "한컴 고딕", "나눔 고딕", "맑은 고딕", "돋움";
+    font-size: 14px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+
+hr {
+    margin: 0;
+}
+
+input,
+select {
+    outline: none;  
+}
+
+button {
+    cursor: pointer;
+    border: 0 none;
+}
+
+address {
+    font-style: normal;
+    display: inline;
+}
+
+fieldset {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+table {
+    width: auto;
+    margin-left: 50px;
+    border-collapse:collapse;
+    border-top: 2px solid #666;
+    border-bottom: 2px solid #666;
+}
+
+th {
+    background:#eee;
+}
+
+th, td{
+    padding:10px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.fix {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    background: url(../../images/notice/fix_i.png) no-repeat;
+    text-indent: -9999px;
+}
+
+.mini_btn {
+    display: inline-block;
+    border: 1px solid #d8d2d2;
+    border-radius: 10px;
+    background: #d8d2d2;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.write_area {
+    position: absolute;
+    top: 11px;
+    left: 56px;
+}
+
+.notice_write_area {
+    position: absolute;
+    top: 23px;
+    left: 355px;
+}
+
+.pager{
+    padding:10px;
+    font-size:16px;
+    text-align:center;
+    margin: 10px 0;
+}
+
+.product_list_title{
+    border-top:2px solid #999;
+    border-bottom:1px solid #999
+}
+
+.product_list_content{
+    border-bottom:1px solid #999;
+}
+.no{width:60px}
+.p_id{width:60px}
+.p_name{width:300px}
+.p_explain{width:400px}
+.departure_vehicle{width:160px}
+.arrival_vehicle{width:160px}
+.departure_date1{width:150px}
+.departure_date2{width:150px}
+.arrival_date1{width:150px}
+.arrival_date2{width:150px}
+.reg_date{width:100px}
+.modify{width:200px}

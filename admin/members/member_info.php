@@ -31,6 +31,11 @@ $array = mysqli_fetch_array($result);
     <link rel="stylesheet" type="text/css" href="../../css/base.css">
     <link rel="stylesheet" type="text/css" href="../../css/common.css">
     <link rel="stylesheet" type="text/css" href="../../css/my_page.css">
+    <style>
+        .content_wrap {
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
     <main>

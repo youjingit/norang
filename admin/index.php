@@ -19,13 +19,11 @@ if($s_id != "admin@abc.com"){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 페이지</title>    
+    <link rel="stylesheet" type="text/css" href="../css/admin/common.css">
     <link rel="stylesheet" type="text/css" href="../css/admin/index.css">
-    <link rel="stylesheet" type="text/css" href="../css/base.css">
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-
 </head>
 <body>
-    <h1 class="hide">관리자 페이지</h1>
+    <h1>관리자 페이지</h1>
     <div id="sidebar_wrap">
         <div class="sidebar">
             <div class="sidebar_menu">

@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 include "../inc/session.php";
 include "../inc/admin_check.php";
 
@@ -27,7 +27,7 @@ $i = $total - (($page - 1) * $list_num);
 
 // DB에서 데이터 가져오기
 $array = mysqli_fetch_array($result);
-?> -->
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -35,9 +35,8 @@ $array = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품보기</title>
+    <link rel="stylesheet" type="text/css" href="../css/admin/index.css">
     <link rel="stylesheet" type="text/css" href="../../css/admin/common.css">
-    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../../css/admin/view.css">
     <script>
         function remove_product(){
             var ck = confirm("정말 삭제하시겠습니까?");
@@ -46,6 +45,15 @@ $array = mysqli_fetch_array($result);
             };
         };
     </script>
+    <style>
+        th {
+            width: 150px;
+        }
+
+        td {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <?php include "../inc/sub_header.php"; ?>
@@ -184,9 +192,23 @@ $array = mysqli_fetch_array($result);
         </tr>
     </table>
     <p class="button_wrap">
-        <button href="list.php" class="btn_1">목록</button>
-        <button href="modify.php?n_idx=<?php echo $n_idx; ?>" class="btn_2">수정</button>
-        <button href="#" onclick="remove_product()" class="btn_2">삭제</button>
+        <button onclick="location.href='list.php'" class="btn_1">목록</button>
+        <button onclick="location.href='modify.php?n_idx=<?php echo $n_idx; ?>'" class="btn_2">수정</button>
+        <button onclick="remove_product()" class="btn_2">삭제</button>
     </p>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+            $(".sub_menu_wrap").hide();
+            $(".toggle_btn").click(function () {
+                $(".sub_menu_wrap").fadeToggle(300);
+            });
+
+            $('.sub_menu_wrap').mouseleave(function () {
+                $('.sub_menu_wrap').fadeOut();
+                $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
 </body>
 </html>

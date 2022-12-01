@@ -26,31 +26,24 @@ $array = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
+    <link rel="stylesheet" type="text/css" href="../css/admin/index.css">
+    <link rel="stylesheet" type="text/css" href="../../css/admin/common.css">
     <style>
-        body{font-size:20px}
-        a{text-decoration:none;margin:0 5px}
-        table, td{border-collapse:collapse}
-        th, td{padding:10px}
-        .notice_list_set{width:860px}
         .notice_list_title{
             border-top:2px solid #999;
             border-bottom:1px solid #999
         }
-        .notice_view_content{border-bottom:1px solid #999}
-        .notice_view_text{border-bottom:2px solid #999;}
-        .v_title{width:100px;background:#eee}
-        .v_content{width:500px;text-align:left;padding-left:20px}
+        .notice_view_content{border-bottom:1px solid #666}
+        .notice_view_text{border-bottom:2px solid #666;}
+        .v_title{width:100px; background:#eee}
+        .v_content{text-align:left;padding-left:20px}
         /* .v_text{height:200px} */
 
-        .list{width:860px;text-align:center}
-
-        a:hover{color:rgb(255, 128, 0)}
-
-        .write_area{
-            width:860px;
-            display:flex;
-            flex-direction:row-reverse
+        .list {
+            display: flex;
+            justify-content: center;
         }
+
         .fix {
             display: inline-block;
             width: 50px;
@@ -72,9 +65,6 @@ $array = mysqli_fetch_array($result);
     <?php include "../inc/sub_header.php"; ?>
     <!-- 콘텐트 -->
     <h2>공지사항</h2>
-    <p class="write_area">
-        <span><a href="write.php">[글쓰기]</a></span>
-    </p>
     <table class="notice_list_set">
         <tr>
             <th class="v_title">번호</th>
@@ -143,10 +133,25 @@ $array = mysqli_fetch_array($result);
             </td>
         </tr>
     </table>
-    <p class="list">
-        <a href="list.php">[목록]</a>
-        <a href="modify.php?n_idx=<?php echo $n_idx; ?>">[수정]</a>
-        <a href="#" onclick="remove_notice()">[삭제]</a>
+    <p class="button_wrap">
+        <button onclick="location.href='write.php'" class="btn_1">글쓰기</button>
+        <button onclick="location.href='list.php'" class="btn_1">목록</button>
+        <button onclick="location.href='modify.php?n_idx=<?php echo $n_idx; ?>'" class="btn_2">수정</button>
+        <button onclick="remove_product()" class="btn_2">삭제</button>
     </p>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+            $(".sub_menu_wrap").hide();
+            $(".toggle_btn").click(function () {
+                $(".sub_menu_wrap").fadeToggle(300);
+            });
+
+            $('.sub_menu_wrap').mouseleave(function () {
+                $('.sub_menu_wrap').fadeOut();
+                $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
 </body>
 </html>

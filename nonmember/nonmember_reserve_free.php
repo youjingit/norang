@@ -56,9 +56,9 @@ include "../inc/session.php";
                 <legend class="hide">비회원 자유여행 예약조회</legend>
                 <div class="form_section">
                     <div class="input_wrap">
-                        <input class="input" type="text" placeholder="이름(실명)">
-                        <input class="input" type="text" placeholder="패키지여행 예약번호">
-                        <input class="input" type="text" placeholder="휴대폰 번호(숫자만 입력)">
+                        <input class="input" type="text" name="u_name" placeholder="이름(실명)">
+                        <input class="input" type="text" name="order_number" placeholder="패키지여행 예약번호">
+                        <input class="input" type="text" name="mobile" placeholder="휴대폰 번호(숫자만 입력)">
                     </div>
                     <button class="input_button" type="submit">예약조회</button>
                 </div>

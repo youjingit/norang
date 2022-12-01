@@ -1,3 +1,7 @@
+h1 {
+    margin-left: 100px;
+}
+
 .sidebar {
     position: absolute; 
     top:0;
