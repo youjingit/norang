@@ -47,18 +47,20 @@ include "../inc/session.php";
     <hr>
     <main class="form_main">
         <h2 class="form_title">비회원 예약조회</h2>
-
         <div class="form_tab">
             <h3 class="form_tab_title active"><a href="#">패키지여행</a></h3>
             <h3 class="form_tab_title"><a href="nonmember_reserve_free.php">자유여행</a></h3>
         </div>
-        <form class="form">
+        <form class="form" name="_form" action="nonmember_reserve_pkg_result.php" method="post" onsubmit="return reserve_form_check();">
             <fieldset>
                 <legend class="hide">비회원 패키지여행 예약조회</legend>
                 <div class="form_section">
                     <div class="input_wrap">
-                        <input class="input" type="text" placeholder="이름(실명)">
-                        <input class="input" type="text" placeholder="패키지여행 예약번호">
+                        <input class="input" type="text" id="u_name" name="u_name" placeholder="이름(실명)">
+                        <span id="err_u_name" class="err_txt"></span>
+                        <br />
+                        <input class="input" type="text" id="orders_idx" name="orders_idx" placeholder="패키지여행 예약번호">
+                        <span id="err_orders_idx" class="err_txt"></span>
                     </div>
                     <button class="input_button" type="submit">예약조회</button>
                 </div>
@@ -66,7 +68,6 @@ include "../inc/session.php";
         </form>
         <hr>
         <button type="button" class="join_button" onclick="location.href='../members/join_pre.php'">회원가입</button>
-
     </main>
     <footer>
         <div class="footer_text">
@@ -76,6 +77,32 @@ include "../inc/session.php";
         </div>
         <p class="copyright">© Yellow Balloon tour. All Rights Reserved.</p>
     </footer>
+    <script type= text/javascript>
+        function reserve_form_check() {
+            var u_name = document.getElementById("u_name");
+            var orders_idx = document.getElementById("orders_idx");
+
+            if (u_name.value == "") {
+                var txt = document.getElementById("err_u_name");
+                txt.innerHTML = "<em>이름을 입력하세요.</em>";
+                u_name.focus();
+                return false;
+            } else {
+                var txt = document.getElementById("err_u_name");
+                txt.innerHTML = "";
+            }      
+
+            if (orders_idx.value == "") {
+                var txt = document.getElementById("err_orders_idx");
+                txt.innerHTML = "<em>예약번호를 입력하세요.</em>";
+                orders_idx.focus();
+                return false;
+            } else {
+                var txt = document.getElementById("err_orders_idx");
+                txt.innerHTML = "";
+            }
+        };
+    </script>
 </body>
 
 </html>

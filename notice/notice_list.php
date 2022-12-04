@@ -1754,17 +1754,10 @@ if($e_pageNum > $total_page){
                         </tr>
                     </table>
                 </div>
-                <?php if($s_id == "admin@abc.com"){ ?>
-                <p class="write_area">
-                    <span>전체 <?php echo $total; ?>개</span>
-                    <span><a href="write.php">[글쓰기]</a></span>
-                </p>
-                <?php } else{ ?>
                 <p class="write_area">
                     <span>전체 <?php echo $total; ?>개</span>
                     <span></span>
                 </p>
-                <?php }; ?>
                 <table class="notice_board">
                     <caption class="hide">공지사항 목록</caption>
                     <colgroup>

@@ -1555,11 +1555,6 @@ $array = mysqli_fetch_array($result);
         <div class="content_title yellow">
             <h3>공지사항</h3>
         </div>
-        <?php if($s_id == "admin@abc.com"){ ?>
-            <p class="write_area">
-            <span><a href="write.php">[글쓰기]</a></span>
-        </p>
-        <?php }; ?>
         <div class="content_wrap">
             <div class="content_left_wrap">
                 <!-- aside_item.open 으로 배경색 및 하위 메뉴 활성화 -->
@@ -1752,12 +1747,6 @@ $array = mysqli_fetch_array($result);
                 <div class="button_wrap">
                     <button type="button" class="list_return" onclick="location.href='notice_list.php'">목록보기</button>
                 </div>
-                <p class="list">
-                    <?php if($s_id == "admin@abc.com"){ ?>
-                    <a href="modify.php?n_idx=<?php echo $n_idx; ?>">[수정]</a>
-                    <a href="#" onclick="remove_notice()">[삭제]</a>
-                    <?php }; ?>
-                </p>
             </section>
         </div>
     </main>
