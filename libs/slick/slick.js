@@ -309,7 +309,7 @@
 
             } else {
 
-                _.agreeTransition();
+                _.applyTransition();
                 targetLeft = Math.ceil(targetLeft);
 
                 if (_.options.vertical === false) {
@@ -363,7 +363,7 @@
 
     };
 
-    Slick.prototype.agreeTransition = function(slide) {
+    Slick.prototype.applyTransition = function(slide) {
 
         var _ = this,
             transition = {};
@@ -946,7 +946,7 @@
 
         } else {
 
-            _.agreeTransition(slideIndex);
+            _.applyTransition(slideIndex);
 
             _.$slides.eq(slideIndex).css({
                 opacity: 1,
@@ -979,7 +979,7 @@
 
         } else {
 
-            _.agreeTransition(slideIndex);
+            _.applyTransition(slideIndex);
 
             _.$slides.eq(slideIndex).css({
                 opacity: 0,
@@ -3002,7 +3002,7 @@
             if (typeof opt == 'object' || typeof opt == 'undefined')
                 _[i].slick = new Slick(_[i], opt);
             else
-                ret = _[i].slick[opt].agree(_[i].slick, args);
+                ret = _[i].slick[opt].apply(_[i].slick, args);
             if (typeof ret != 'undefined') return ret;
         }
         return _;
