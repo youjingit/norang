@@ -7,10 +7,10 @@ $pwd = $_POST["pwd"];
 $birth = $_POST["birth"];
 $gender = $_POST["gender"];
 $privacy_period = $_POST["privacy_period"];
-$info_collect_apply = $_POST["info_collect_apply"];
-$marketing_apply = $_POST["marketing_apply"];
-$email_apply = $_POST["email_apply"];
-$sms_apply = $_POST["sms_apply"];
+$info_collect_agree = $_POST["info_collect_agree"];
+$marketing_agree = $_POST["marketing_agree"];
+$email_agree = $_POST["email_agree"];
+$sms_agree = $_POST["sms_agree"];
 
 
 // 값 확인
@@ -18,10 +18,10 @@ $sms_apply = $_POST["sms_apply"];
 // echo "<p> 생일 : ".$birth."</p>";
 // echo "<p> 성별 : ".$gender."</p>";
 // echo "<p> 개인정보 : ".$privacy_period."</p>";
-// echo "<p> 수집동의 : ".$info_collect_apply."</p>";
-// echo "<p> 마케팅 : ".$marketing_apply."</p>";
-// echo "<p> 이메일수신 : ".$email_apply."</p>";
-// echo "<p> sms동의 : ".$sms_apply."</p>"; 
+// echo "<p> 수집동의 : ".$info_collect_agree."</p>";
+// echo "<p> 마케팅 : ".$marketing_agree."</p>";
+// echo "<p> 이메일수신 : ".$email_agree."</p>";
+// echo "<p> sms동의 : ".$sms_agree."</p>"; 
 
 // // DB 접속
 include "../inc/dbcon.php";
@@ -35,14 +35,14 @@ $sql .= "pwd='$pwd', ";
 $sql .= "birth='$birth', ";
 $sql .= "gender='$gender', ";
 $sql .= "privacy_period='$privacy_period', ";
-$sql .= "info_collect_apply='$info_collect_apply', ";
-$sql .= "marketing_apply='$marketing_apply', ";
-$sql .= "email_apply='$email_apply', ";
-$sql .= "sms_apply='$sms_apply' ";
+$sql .= "info_collect_agree='$info_collect_agree', ";
+$sql .= "marketing_agree='$marketing_agree', ";
+$sql .= "email_agree='$email_agree', ";
+$sql .= "sms_agree='$sms_agree' ";
 $sql .= "where idx=$s_idx;";
 //echo $sql;
 //비밀번호를 입력하지 않은 경우
-$sql_nPwd = "update members set birth='$birth', gender='$gender', privacy_period='$privacy_period', info_collect_apply='$info_collect_apply', marketing_apply='$marketing_apply', email_apply='$email_apply', sms_apply='$sms_apply' where idx=$s_idx;";
+$sql_nPwd = "update members set birth='$birth', gender='$gender', privacy_period='$privacy_period', info_collect_agree='$info_collect_agree', marketing_agree='$marketing_agree', email_agree='$email_agree', sms_agree='$sms_agree' where idx=$s_idx;";
 
 // 쿼리 전송
 // mysqli_query(DB 연결객체, 전송할 쿼리)

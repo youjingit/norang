@@ -140,7 +140,7 @@ select {
   margin-right: 7px;
 }
 
-.terms_apply li {
+.terms_agree li {
   margin: 5px 0;
 }
 
@@ -148,7 +148,7 @@ select {
   text-decoration: underline;
 }
 
-.apply {
+.agree {
   border: 1px solid #666;
   border-bottom: 0;
   padding: 10px 14px;
@@ -172,7 +172,7 @@ select {
   font-weight: bold;
 }
 
-.apply2_li {
+.agree2_li {
   display: flex;
   margin-left: 20px;
 }

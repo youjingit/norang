@@ -65,10 +65,10 @@ if($e_pageNum > $total_page){
         .birth{width:150px}
         .gender{width:50px}
         .privacy_period{width:80px}
-        .info_collect_apply{width:80px}
-        .marketing_apply{width:80px}
-        .email_apply{width:80px}
-        .sms_apply{width:80px}
+        .info_collect_agree{width:80px}
+        .marketing_agree{width:80px}
+        .email_agree{width:80px}
+        .sms_agree{width:80px}
         .withdraw_reason {
             width: 150px;
         }
@@ -102,10 +102,10 @@ if($e_pageNum > $total_page){
                     <th class="birth">생년월일</th>
                     <th class="gender">성별</th>
                     <th class="privacy_period">개인정보<br>유효기간</th>
-                    <th class="info_collect_apply">개인정보<br>수집동의</th>
-                    <th class="marketing_apply">마케팅<br>수신동의</th>
-                    <th class="email_apply">이메일<br>수신동의</th>
-                    <th class="sms_apply">sms<br>수신동의</th>
+                    <th class="info_collect_agree">개인정보<br>수집동의</th>
+                    <th class="marketing_agree">마케팅<br>수신동의</th>
+                    <th class="email_agree">이메일<br>수신동의</th>
+                    <th class="sms_agree">sms<br>수신동의</th>
                     <th class="withdrawal">탈퇴여부</th>
                     <th class="withdraw_reason">탈퇴사유</th>
                     <th class="withdraw_wish">바라는 점</th>
@@ -147,10 +147,10 @@ if($e_pageNum > $total_page){
                     <td><?php echo $array["birth"]; ?></td>
                     <td><?php echo $array["gender"]; ?></td>
                     <td><?php echo $array["privacy_period"]; ?></td>
-                    <td><?php echo $array["info_collect_apply"]; ?></td>
-                    <td><?php echo $array["marketing_apply"]; ?></td>
-                    <td><?php echo $array["email_apply"]; ?></td>
-                    <td><?php echo $array["sms_apply"]; ?></td>
+                    <td><?php echo $array["info_collect_agree"]; ?></td>
+                    <td><?php echo $array["marketing_agree"]; ?></td>
+                    <td><?php echo $array["email_agree"]; ?></td>
+                    <td><?php echo $array["sms_agree"]; ?></td>
                     <td><?php echo $array["withdrawal"]; ?></td>
                     <td><?php echo $array["withdraw_reason"]; ?></td>
                     <td><?php echo $array["withdraw_wish"]; ?></td>

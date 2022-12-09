@@ -1817,7 +1817,7 @@ $array = mysqli_fetch_array($result);
                                     <div class="card_section">
                                         <div class="form_group_between">
                                             <div class="form_check">
-                                                <input type="checkbox" class="form_check_input opt_ap" name="info_collect_apply" id="opt_apply1" value="y"<?php if($array["info_collect_apply"] == "y") echo " checked";?>>
+                                                <input type="checkbox" class="form_check_input opt_ap" name="info_collect_agree" id="opt_agree1" value="y"<?php if($array["info_collect_agree"] == "y") echo " checked";?>>
                                                 <label class="form_check_label">개인정보 수집 및 이용 동의</label>
                                             </div>
                                             <a href="javascript:void(0);" class="form_link">전체보기</a>
@@ -1825,17 +1825,17 @@ $array = mysqli_fetch_array($result);
                                     </div>
                                     <div class="card_section">
                                         <div class="form_check">
-                                            <input type="checkbox" class="form_check_input opt_ap" name="marketing_apply" id="opt_apply2" value="y"<?php if($array["marketing_apply"] == "y") echo " checked";?>>
+                                            <input type="checkbox" class="form_check_input opt_ap" name="marketing_agree" id="opt_agree2" value="y"<?php if($array["marketing_agree"] == "y") echo " checked";?>>
                                             <label class="form_check_label">마케팅 정보 수신 동의</label>
                                         </div>
                                         <div class="card_inner_section">
                                             <div class="form_group">
                                                 <div class="form_check">
-                                                    <input type="checkbox" class="form_check_input opt_ap" name="email_apply" id="email_apply" value="y"<?php if($array["email_apply"] == "y") echo " checked";?>>
+                                                    <input type="checkbox" class="form_check_input opt_ap" name="email_agree" id="email_agree" value="y"<?php if($array["email_agree"] == "y") echo " checked";?>>
                                                     <label class="form_check_label">이메일</label>
                                                 </div>
                                                 <div class="form_check">
-                                                    <input type="checkbox" class="form_check_input opt_ap" name="sms_apply" id="sms_apply" value="y"<?php if($array["sms_apply"] == "y") echo " checked";?>>
+                                                    <input type="checkbox" class="form_check_input opt_ap" name="sms_agree" id="sms_agree" value="y"<?php if($array["sms_agree"] == "y") echo " checked";?>>
                                                     <label class="form_check_label">SNS</label>
                                                 </div>
                                             </div>
@@ -2093,59 +2093,59 @@ $array = mysqli_fetch_array($result);
             }
 
             // 선택약관 항목별 자동선택
-            var collectApplyEl = document.getElementById("opt_apply1");
-            var marketApplyEl = document.getElementById("opt_apply2");
-            var emailApplyEl = document.getElementById("email_apply");
-            var smsApplyEl = document.getElementById("sms_apply");
+            var collectagreeEl = document.getElementById("opt_agree1");
+            var marketagreeEl = document.getElementById("opt_agree2");
+            var emailagreeEl = document.getElementById("email_agree");
+            var smsagreeEl = document.getElementById("sms_agree");
 
-            collectApplyEl.onclick = function(){
-                var isChecked = collectApplyEl.checked;
+            collectagreeEl.onclick = function(){
+                var isChecked = collectagreeEl.checked;
                 optionEl.checked = isChecked;
-                marketApplyEl.checked = isChecked;
-                emailApplyEl.checked = isChecked;
-                smsApplyEl.checked = isChecked;
+                marketagreeEl.checked = isChecked;
+                emailagreeEl.checked = isChecked;
+                smsagreeEl.checked = isChecked;
             }
-            marketApplyEl.onclick = function(){
-                var isChecked = marketApplyEl.checked;
+            marketagreeEl.onclick = function(){
+                var isChecked = marketagreeEl.checked;
                 if(isChecked){
                     optionEl.checked = true;
-                    collectApplyEl.checked = true;
-                    emailApplyEl.checked = true;
-                    smsApplyEl.checked = true;
+                    collectagreeEl.checked = true;
+                    emailagreeEl.checked = true;
+                    smsagreeEl.checked = true;
                 } else {
                     optionEl.checked = false;
-                    emailApplyEl.checked = false;
-                    smsApplyEl.checked = false;
+                    emailagreeEl.checked = false;
+                    smsagreeEl.checked = false;
                 }
             }
-            emailApplyEl.onclick = function(){
-                var isChecked = emailApplyEl.checked;
-                var isSmsChecked = smsApplyEl.checked;
+            emailagreeEl.onclick = function(){
+                var isChecked = emailagreeEl.checked;
+                var isSmsChecked = smsagreeEl.checked;
                 if(isChecked === true){
-                    collectApplyEl.checked = true;
-                    marketApplyEl.checked = true;
+                    collectagreeEl.checked = true;
+                    marketagreeEl.checked = true;
                     if(isSmsChecked === true){
                         optionEl.checked = true;
                     }
                 } else {
                     if(isSmsChecked === false){
-                        marketApplyEl.checked = false;
+                        marketagreeEl.checked = false;
                     }
                     optionEl.checked = false;
                 }
             }
-            smsApplyEl.onclick = function(){
-                var isChecked = smsApplyEl.checked;
-                var isEmailChecked = emailApplyEl.checked;
+            smsagreeEl.onclick = function(){
+                var isChecked = smsagreeEl.checked;
+                var isEmailChecked = emailagreeEl.checked;
                 if(isChecked === true){
-                    collectApplyEl.checked = true;
-                    marketApplyEl.checked = true;
+                    collectagreeEl.checked = true;
+                    marketagreeEl.checked = true;
                     if(isEmailChecked === true){
                         optionEl.checked = true;
                     }
                 } else {
                     if(!isEmailChecked){
-                        marketApplyEl.checked = false;
+                        marketagreeEl.checked = false;
                     }
                     optionEl.checked = false;
                 }

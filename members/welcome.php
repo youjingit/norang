@@ -55,14 +55,14 @@ $array = mysqli_fetch_array($result);
             <p>이메일 아이디 : <span><?php echo $array["u_id"];?></span></p>
         </div>
 
-    <div class="apply_wrap">
-       <p class="apply_title">잠깐! 할인혜택도 놓치지 마세요</p>
+    <div class="agree_wrap">
+       <p class="agree_title">잠깐! 할인혜택도 놓치지 마세요</p>
        
         <input type="checkbox" id="receive">
         <label for="receive">
-            <span class="apply_check">할인, 쿠폰 혜택 수신에 동의(휴대폰, 이메일)</span>
+            <span class="agree_check">할인, 쿠폰 혜택 수신에 동의(휴대폰, 이메일)</span>
         </label>
-        <p class="apply_notice">마케팅 수신 미동의시 혜택은 발송되지 않습니다.</p>
+        <p class="agree_notice">마케팅 수신 미동의시 혜택은 발송되지 않습니다.</p>
     </div>
         <div class="btn_wrap">
             <button type="button" id="login_btn" onclick="location.href='../login/login.php'">바로 로그인</button>

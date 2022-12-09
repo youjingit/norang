@@ -39,23 +39,23 @@
     font-weight: bold;
 }
 
-.apply_wrap {
+.agree_wrap {
     display: inline-block;
     margin-left: 30px;
 }
 
-.apply_title {
+.agree_title {
     font-size: 16px;
     font-weight: bold;
 }
 
-.apply_check {
+.agree_check {
     font-size: 14px;
     font-weight: bold;
     color: #666;
 }
 
-.apply_notice {
+.agree_notice {
     font-size: 14px;
     font-weight: bold;
     color: #f34848;

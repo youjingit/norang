@@ -6,7 +6,7 @@ include "../inc/session.php";
 $order_number = uniqid();
 $p_id = $_GET["n_idx"];
 $u_id = $s_id;
-$opt_apply = $_POST["opt_apply"] == "y" ? "y" : "n";
+$opt_agree = $_POST["opt_agree"] == "y" ? "y" : "n";
 $u_name = $_POST["u_name"];
 $birth = $_POST["birth"];
 $email = $_POST["email"];
@@ -27,12 +27,12 @@ include "../inc/dbcon.php";
 // // 쿼리 작성
 
 $sql = "insert into orders(";
-$sql .= "idx, p_id, u_id, opt_apply, ";
+$sql .= "idx, p_id, u_id, opt_agree, ";
 $sql .= "u_name, birth, email, ";
 $sql .= "mobile, adult_num, kid_num, todd_num, ";
 $sql .= "request, tourist_json_array, office, reg_date";
 $sql .= ") values(";
-$sql .= "'$order_number', '$p_id', '$u_id', '$opt_apply', ";
+$sql .= "'$order_number', '$p_id', '$u_id', '$opt_agree', ";
 $sql .= "'$u_name', '$birth', '$email', ";
 $sql .= "'$mobile', '$adult_num', '$kid_num', '$todd_num', ";
 $sql .= "'$request', '$tourist_json_array', '$office', '$reg_date');";

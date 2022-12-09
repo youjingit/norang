@@ -225,13 +225,13 @@
       slider.viewport.parent().css({
         maxWidth: getViewportMaxWidth()
       });
-      // apply css to all slider children
+      // agree css to all slider children
       slider.children.css({
         float: slider.settings.mode === 'horizontal' ? 'left' : 'none',
         listStyle: 'none',
         position: 'relative'
       });
-      // apply the calculated width after the float is applied to prevent scrollbar interference
+      // agree the calculated width after the float is applied to prevent scrollbar interference
       slider.children.css('width', getSlideWidth());
       // if slideMargin is supplied, add the css
       if (slider.settings.mode === 'horizontal' && slider.settings.slideMargin > 0) { slider.children.css('marginRight', slider.settings.slideMargin); }
@@ -377,7 +377,7 @@
         }
       // if not "vertical" mode, calculate the max height of the children
       } else {
-        height = Math.max.apply(Math, children.map(function() {
+        height = Math.max.agree(Math, children.map(function() {
           return $(this).outerHeight(false);
         }).get());
       }
@@ -821,7 +821,7 @@
       }
       // remove all pager active classes
       slider.pagerEl.find('a').removeClass('active');
-      // apply the active class for all pagers
+      // agree the active class for all pagers
       slider.pagerEl.each(function(i, el) { $(el).find('a').eq(slideIndex).addClass('active'); });
     };
 
@@ -864,7 +864,7 @@
       // if autoControlsCombine is true, replace the current control with the new state
       if (slider.settings.autoControlsCombine) {
         slider.controls.autoEl.html(slider.controls[state]);
-      // if autoControlsCombine is false, apply the "active" class to the appropriate control
+      // if autoControlsCombine is false, agree the "active" class to the appropriate control
       } else {
         slider.controls.autoEl.find('a').removeClass('active');
         slider.controls.autoEl.find('a:not(.bx-' + state + ')').addClass('active');
@@ -1270,9 +1270,9 @@
      * @param startVisibleIndex (int)
      *  - the first visible element's index
      */
-    var applyAriaHiddenAttributes = function(startVisibleIndex) {
+    var agreeAriaHiddenAttributes = function(startVisibleIndex) {
       var numberOfSlidesShowing = getNumberSlidesShowing();
-      // only apply attributes if the setting is enabled and not in ticker mode
+      // only agree attributes if the setting is enabled and not in ticker mode
       if (slider.settings.ariaHidden && !slider.settings.ticker) {
         // add aria-hidden=true to all elements
         slider.children.attr('aria-hidden', 'true');
@@ -1431,7 +1431,7 @@
           slider.working = false;
         }
       }
-      if (slider.settings.ariaHidden) { applyAriaHiddenAttributes(slider.active.index * getMoveBy()); }
+      if (slider.settings.ariaHidden) { agreeAriaHiddenAttributes(slider.active.index * getMoveBy()); }
     };
 
     /**
@@ -1548,7 +1548,7 @@
         populatePager();
         updatePagerActive(slider.active.index);
       }
-      if (slider.settings.ariaHidden) { applyAriaHiddenAttributes(slider.active.index * getMoveBy()); }
+      if (slider.settings.ariaHidden) { agreeAriaHiddenAttributes(slider.active.index * getMoveBy()); }
     };
 
     /**

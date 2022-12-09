@@ -120,9 +120,9 @@
                     <span id="err_privacy_year" class="err_txt"></span>
                 </div>
                 <h3 class="hide">회원가입 약관동의</h3>
-                <div class="terms_apply">
+                <div class="terms_agree">
                     <div>
-                        <div class="essential apply">
+                        <div class="essential agree">
                             <input type="checkbox" id="essential_ap">
                             <label for="essential_ap">필수 약관에 동의합니다.</label>
                         </div>
@@ -131,8 +131,8 @@
                                 <p>필수</p>
                                 <li class="between">
                                     <div>
-                                        <input type="checkbox" class="essent_ap" name="essen_apply1" id="essen_apply1">
-                                        <label for="essen_apply1">노랑풍선 이용약관 동의</label>
+                                        <input type="checkbox" class="essent_ap" name="essen_agree1" id="essen_agree1">
+                                        <label for="essen_agree1">노랑풍선 이용약관 동의</label>
                                     </div>
                                     <span class="read_all"><a href="join_terms.php" target="_blank">전체보기</a></span>
                                 </li>
@@ -143,8 +143,8 @@
                                 </li>
                                 <li class="between">
                                     <div>
-                                        <input type="checkbox" class="essent_ap" name="essen_apply2" id="essen_apply2">
-                                        <label for="essen_apply2">개인정보 수집 및 이용 동의</label>
+                                        <input type="checkbox" class="essent_ap" name="essen_agree2" id="essen_agree2">
+                                        <label for="essen_agree2">개인정보 수집 및 이용 동의</label>
                                     </div>
                                     <span class="read_all"><a href="join_terms.php" target="_blank">전체보기</a></span>
                                 </li>
@@ -153,7 +153,7 @@
                     </div>
                     <span id="err_ess_terms" class="err_txt"></span>
                     <div>
-                        <div class="option apply">
+                        <div class="option agree">
                             <input type="checkbox" id="option_ap" class="opt_ap">
                             <label for="option_ap">선택 약관에 동의합니다.</label>
                         </div>
@@ -162,22 +162,22 @@
                                 <p>선택</p>
                                 <li class="between">
                                     <div>
-                                        <input type="checkbox" class="opt_ap receive_apply" name="info_collect_apply" id="opt_apply1" value="y">
-                                        <label for="opt_apply1">개인정보 수집 및 이용동의</label>
+                                        <input type="checkbox" class="opt_ap receive_agree" name="info_collect_agree" id="opt_agree1" value="y">
+                                        <label for="opt_agree1">개인정보 수집 및 이용동의</label>
                                     </div>
                                     <span class="read_all"><a href="join_terms.php" target="_blank">전체보기</a></span>
                                 </li>
                                 <li>
-                                    <input type="checkbox" class="opt_ap receive_apply" name="marketing_apply" id="opt_apply2" value="y">
-                                    <label for="opt_apply2">마케팅 정보 수신 동의</label>
-                                    <ul class="apply2_li">
+                                    <input type="checkbox" class="opt_ap receive_agree" name="marketing_agree" id="opt_agree2" value="y">
+                                    <label for="opt_agree2">마케팅 정보 수신 동의</label>
+                                    <ul class="agree2_li">
                                         <li>
-                                            <input type="checkbox" class="opt_ap" name="email_apply" id="email_apply" value="y">
-                                            <label for="email_apply">이메일</label>
+                                            <input type="checkbox" class="opt_ap" name="email_agree" id="email_agree" value="y">
+                                            <label for="email_agree">이메일</label>
                                         </li>
                                         <li>
-                                            <input type="checkbox" class="opt_ap" name="sms_apply" id="sms_apply" value="y">
-                                            <label for="sms_apply">SMS</label>
+                                            <input type="checkbox" class="opt_ap" name="sms_agree" id="sms_agree" value="y">
+                                            <label for="sms_agree">SMS</label>
                                         </li>
                                     </ul>
                                 </li>
@@ -439,59 +439,59 @@
         }
 
         // 선택약관 항목별 자동선택
-        var collectApplyEl = document.getElementById("opt_apply1");
-        var marketApplyEl = document.getElementById("opt_apply2");
-        var emailApplyEl = document.getElementById("email_apply");
-        var smsApplyEl = document.getElementById("sms_apply");
+        var collectagreeEl = document.getElementById("opt_agree1");
+        var marketagreeEl = document.getElementById("opt_agree2");
+        var emailagreeEl = document.getElementById("email_agree");
+        var smsagreeEl = document.getElementById("sms_agree");
 
-        collectApplyEl.onclick = function(){
-            var isChecked = collectApplyEl.checked;
+        collectagreeEl.onclick = function(){
+            var isChecked = collectagreeEl.checked;
             optionEl.checked = isChecked;
-            marketApplyEl.checked = isChecked;
-            emailApplyEl.checked = isChecked;
-            smsApplyEl.checked = isChecked;
+            marketagreeEl.checked = isChecked;
+            emailagreeEl.checked = isChecked;
+            smsagreeEl.checked = isChecked;
         }
-        marketApplyEl.onclick = function(){
-            var isChecked = marketApplyEl.checked;
+        marketagreeEl.onclick = function(){
+            var isChecked = marketagreeEl.checked;
             if(isChecked){
                 optionEl.checked = true;
-                collectApplyEl.checked = true;
-                emailApplyEl.checked = true;
-                smsApplyEl.checked = true;
+                collectagreeEl.checked = true;
+                emailagreeEl.checked = true;
+                smsagreeEl.checked = true;
             } else {
                 optionEl.checked = false;
-                emailApplyEl.checked = false;
-                smsApplyEl.checked = false;
+                emailagreeEl.checked = false;
+                smsagreeEl.checked = false;
             }
         }
-        emailApplyEl.onclick = function(){
-            var isChecked = emailApplyEl.checked;
-            var isSmsChecked = smsApplyEl.checked;
+        emailagreeEl.onclick = function(){
+            var isChecked = emailagreeEl.checked;
+            var isSmsChecked = smsagreeEl.checked;
             if(isChecked === true){
-                collectApplyEl.checked = true;
-                marketApplyEl.checked = true;
+                collectagreeEl.checked = true;
+                marketagreeEl.checked = true;
                 if(isSmsChecked === true){
                     optionEl.checked = true;
                 }
             } else {
                 if(isSmsChecked === false){
-                    marketApplyEl.checked = false;
+                    marketagreeEl.checked = false;
                 }
                 optionEl.checked = false;
             }
         }
-        smsApplyEl.onclick = function(){
-            var isChecked = smsApplyEl.checked;
-            var isEmailChecked = emailApplyEl.checked;
+        smsagreeEl.onclick = function(){
+            var isChecked = smsagreeEl.checked;
+            var isEmailChecked = emailagreeEl.checked;
             if(isChecked === true){
-                collectApplyEl.checked = true;
-                marketApplyEl.checked = true;
+                collectagreeEl.checked = true;
+                marketagreeEl.checked = true;
                 if(isEmailChecked === true){
                     optionEl.checked = true;
                 }
             } else {
                 if(!isEmailChecked){
-                    marketApplyEl.checked = false;
+                    marketagreeEl.checked = false;
                 }
                 optionEl.checked = false;
             }

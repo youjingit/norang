@@ -1564,7 +1564,7 @@ $array = mysqli_fetch_array($result);
                     </div>
                     <div class="cont_box">
                         <span class="term_title">선택 약관 동의</span>
-                        <input type="checkbox" id="opt_apply" name="opt_apply" value="y"><label for="opt_apply">개인정보 수집 및 이용동의</label>
+                        <input type="checkbox" id="opt_agree" name="opt_agree" value="y"><label for="opt_agree">개인정보 수집 및 이용동의</label>
                         <a href="">자세히 보기</a>
                     </div>
                 </div>
