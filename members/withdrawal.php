@@ -1,5 +1,8 @@
 <?php
 include "../inc/session.php";
+
+// 로그인 사용자만 접근
+include "../inc/login_check.php";
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -1759,7 +1762,7 @@ include "../inc/session.php";
                             <h4>노랑풍선에 바라는 점 (선택)</h4>
                             <p>기타 사유나 노랑풍선에 전달하실 내용이 있으시면 작성하세요.</p>
                             <textarea class="wish" name="wish" id="wish" cols="50" rows="16" maxlength="400" placeholder="내용을 입력하세요." title="노랑풍선에 바라는 점"></textarea>
-                            <div id="test_cnt">(0 / 400)</div>
+                            <div id="text_cnt">(0 / 400)</div>
                         </div>
                     </div>
                     <hr>

@@ -4,6 +4,9 @@
 $s_idx =  isset($_SESSION["s_idx"])?  $_SESSION["s_idx"] : ""; */
 include "../inc/session.php";
 
+// 로그인 사용자만 접근
+include "../inc/login_check.php";
+
 // DB 연결
 include "../inc/dbcon.php";
 
