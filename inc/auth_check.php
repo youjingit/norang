@@ -6,6 +6,15 @@ session_start();
 $u_id = $_POST["u_id"];
 $pwd = $_POST["pwd"];
 // echo $u_id." / ".$pwd;
+if($u_id !== $s_id ){
+    echo "
+        <script type=\"text/javascript\">
+            alert(\"일치하는 아이디가 없습니다.\");
+            location.href=\"../members/my_page_auth.php\";
+        </script>
+    ";
+    exit;
+}
 
 // DB 연결
 include "../inc/dbcon.php";

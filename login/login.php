@@ -22,7 +22,7 @@
                     <h2 class="screen_out">사용자메뉴</h2>
                     <ul class="depth1_top_menu">
                         <li><a href="#">로그인</a></li>
-                        <li><a href="../members/join_pre.php">회원가입</a></li>
+                        <li><a href="/norang/members/join_pre.php">회원가입</a></li>
                         <li><a href="#">고객센터</a></li>
                         
                     </ul>
@@ -51,9 +51,9 @@
             </form>
             <div>
                 <ul class="sub_menu">
-                    <li><a href="../members/find_id.php">아이디/비밀번호 찾기</a></li>
-                    <li><a href="../nonmember/nonmember_reserve_pkg.php">비회원 예약조회</a></li>
-                    <li><a href="../members/join_pre.php">간편 회원가입</a></li>
+                    <li><a href="/norang/members/find_id.php">아이디/비밀번호 찾기</a></li>
+                    <li><a href="/norang/nonmember/nonmember_reserve_pkg.php">비회원 예약조회</a></li>
+                    <li><a href="/norang/members/join_pre.php">간편 회원가입</a></li>
                 </ul>
             </div>
             <div class="simple_login_title">

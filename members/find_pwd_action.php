@@ -6,7 +6,7 @@ $u_id = $_POST["u_id"];
 
 include "../inc/dbcon.php";
 
-$sql = "select u_id from members where u_id='$u_id';";
+$sql = "select u_id from members where u_id='$u_id' and withdrawal='n';";
 
 $result = mysqli_query($dbcon, $sql);
 
