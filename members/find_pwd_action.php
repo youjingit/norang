@@ -17,7 +17,7 @@ $u_id2 = $array["u_id"];
 if($u_id2){ 
     $temp_pwd = uniqid();
 
-    $upd_sql = "update members set pwd='$temp_pwd' where u_id='$u_id';";
+    $upd_sql = "update members set pwd='$temp_pwd' where u_id='$u_id' and withdrawal='n';";
 
     $upd_result = mysqli_query($dbcon, $upd_sql);
 }

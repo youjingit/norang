@@ -41,7 +41,7 @@ $array = mysqli_fetch_array($result);
                 <div class="depth1_right">
                     <h2 class="screen_out">사용자메뉴</h2>
                     <ul class="depth1_top_menu">
-                        <li><a href="../login/login.php">로그인</a></li>
+                        <li><a href="/chayam/login/login.php">로그인</a></li>
                         <li><a href="join_pre.php">회원가입</a></li>
                         <li><a href="#">고객센터</a></li>
                         
@@ -61,7 +61,7 @@ $array = mysqli_fetch_array($result);
         </div>
 
         <div class="btn_wrap">
-            <button type="button" id="login_btn" onclick="location.href='../login/login.php'">바로 로그인</button>
+            <button type="button" id="login_btn" onclick="location.href='./chayam/login/login.php'">바로 로그인</button>
             <button type="button" id="home_btn" onclick="location.href='../index.php'">메인으로</button>
         </div>
     </div>

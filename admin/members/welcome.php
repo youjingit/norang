@@ -40,7 +40,7 @@ $array = mysqli_fetch_array($result);
             <p>이메일 아이디 : <span><?php echo $array["u_id"];?></span></p>
         </div>
         <div class="btn_wrap">
-            <button type="button" id="login_btn" onclick="location.href='../login/login.php'">바로 로그인</button>
+            <button type="button" id="login_btn" onclick="location.href='./chayam/login/login.php'">바로 로그인</button>
             <button type="button" id="home_btn" onclick="location.href='../index.php'">메인으로</button>
         </div>
     </div>

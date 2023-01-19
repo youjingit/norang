@@ -18,7 +18,7 @@ include "../inc/dbcon.php";
 // 쿼리 작성
 // update 테이블명 set 필드명='값', 필드명='값',,,, where 필드명='값';
 
-$sql = "select u_id from members where u_name='$u_name' and mobile='$mobile';";
+$sql = "select u_id from members where u_name='$u_name' and mobile='$mobile' and withdrawal='n';";
 
 $result = mysqli_query($dbcon, $sql);
 

@@ -254,7 +254,7 @@
 }
 
 /* 검색창 */
-fieldset {
+.depth2_search_right fieldset {
   display: flex;
 }
 
