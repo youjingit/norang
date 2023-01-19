@@ -25,16 +25,16 @@ include "../inc/session.php";
                     <ul class="depth1_top_menu">
                     <?php if(!$s_idx){ ?>
                         <!-- 로그인 전 -->
-                        <li><a href="/chayam/login/login.php">로그인</a></li>
+                        <li><a href="/login/login.php">로그인</a></li>
                         <li><a href="../members/join_pre.php">회원가입</a></li>
                         <li><a href="nonmember_reserve_pkg.php">예약확인</a></li>
                     <?php } else if($s_id == "admin@abc.com"){ ?>
                         <!-- 관리자 로그인 -->
-                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
-                        <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
+                        <li><a href="/login/logout.php">로그아웃</a></li>
+                        <li><a href="/admin/index.php">관리자 페이지</a></li>
                     <?php } else{ ?>
                         <!-- 로그인 후 -->   
-                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/login/logout.php">로그아웃</a></li>
                         <li><a href="../members/my_page.php">마이페이지</a></li>
                     <?php }; ?>    
                         <li><a href="#">단체문의</a></li>
