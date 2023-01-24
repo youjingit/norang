@@ -1,23 +1,25 @@
 <?php
 // 세션 시작
-session_start();
+include "session.php";
 
 // 데이터 가져오기
 $u_id = $_POST["u_id"];
 $pwd = $_POST["pwd"];
 // echo $u_id." / ".$pwd;
 if($u_id !== $s_id ){
-    echo "
-        <script type=\"text/javascript\">
-            alert(\"일치하는 아이디가 없습니다.\");
-            location.href=\"../members/my_page_auth.php\";
-        </script>
-    ";
+    echo $u_id;
+    echo $s_id;
+    // echo "
+    //     <script type=\"text/javascript\">
+    //         alert(\"일치하는 아이디가 없습니다.\");
+    //         location.href=\"../members/my_page_auth.php\";
+    //     </script>
+    // ";
     exit;
 }
 
 // DB 연결
-include "../inc/dbcon.php";
+include "dbcon.php";
 
 // 쿼리 작성
 // select u_id, pwd from members where u_id='$u_id';

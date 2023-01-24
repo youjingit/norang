@@ -1,3 +1,6 @@
+관리자 아이디 : admin@abc.com
+비밀번호 : 1234bb@@
+
 create database youjindev
 default character set utf8
 default collate utf8_general_ci;
@@ -34,7 +37,7 @@ insert into members(
     'admin@abc.com', '1234bb@@', '관리자',
     '01011112222', '19910403', 'f',
     'until_withdraw', 'y', 'y', 'y', 'y',
-    '2022-11-23', '', '', ''
+    '2022-11-23', 'n', '', ''
 );
 insert into members(
     u_id, pwd, u_name,
@@ -46,7 +49,7 @@ insert into members(
     'youjin@naver.com', '1234bb@@', '유진이',
     '01091305555', '19910403', 'f',
     '5y', 'y', 'y', 'y', 'y',
-    '2022-11-23', '', '', ''
+    '2022-11-23', 'n', '', ''
 );
 insert into members(
     u_id, pwd, u_name,
@@ -58,7 +61,7 @@ insert into members(
     'meron@gmail.com', '1234bb@@', '김메론',
     '01022224444', '20000403', 'f',
     '1y', 'y', 'y', 'y', 'y',
-    '2022-11-23', '', '', ''
+    '2022-11-23', 'n', '', ''
 );
 insert into members(
     u_id, pwd, u_name,
@@ -70,7 +73,7 @@ insert into members(
     'strawberry@nate.com', '1234bb@@', '송딸기',
     '01012345678', '19911206', 'm',
     'until_withdraw', 'y', 'y', 'y', 'y',
-    '2022-11-23', '', '', ''
+    '2022-11-23', 'n', '', ''
 );
 insert into members(
     u_id, pwd, u_name,
@@ -82,7 +85,7 @@ insert into members(
     'grape@nate.com', '1234bb@@', '박포도',
     '01091305914', '20011206', 'm',
     'until_withdraw', 'y', 'y', 'y', 'y',
-    '2022-11-23', '', '', ''
+    '2022-11-23', 'n', '', ''
 );
 insert into members(
     u_id, pwd, u_name,
@@ -94,7 +97,7 @@ insert into members(
     'carrot@naver.com', '1234bb@@', '이당근',
     '01077887788', '20010208', 'f',
     '3y', 'y', 'y', 'y', 'y',
-    '2022-11-23', '', '', ''
+    '2022-11-23', 'n', '', ''
 );
 
 
